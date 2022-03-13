@@ -4,6 +4,7 @@ import store from "./ReduxFolder/store";
 import Register from "./Pages/Register";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
+import NavBar from "./Components/Navbar";
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
     <Provider store={store}>
       <>
         <BrowserRouter>
-          {/* <NavBar /> */}
+          <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Register />} />
