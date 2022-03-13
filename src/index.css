@@ -9,11 +9,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply !max-w-[100vw];
+  @apply !max-w-[100vw] overflow-x-hidden;
 }
 
 container {
-  @apply md:max-w-[1200px];
+  @apply md:max-w-[1200px] px-12;
 }
 
 code {
