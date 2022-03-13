@@ -1,0 +1,4 @@
+.orange-button {
+  @apply rounded-[0.25rem] bg-oraange border border-oraange text-whiite font-bold hover:bg-greey hover:text-whiite hover:border-whiite hover:font-black;
+  transition: all 0.6s;
+}
