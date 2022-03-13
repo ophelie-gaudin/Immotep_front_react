@@ -127,6 +127,36 @@ export default function HomePage() {
       <%end%> */}
         </div>
       </section>
+
+      <section className="min-h-[100vh] bg-oraange  flex justify-center items-center p-12">
+        <div className="container flex items-center justify-between flex-wrap md:flex-nowrap">
+          <div className="mb-8 md:mb-0 md:w-1/2 mx-8">
+            <div className="frame">
+              <div data-aos="zoom-out-right">
+                {/* <%= image_tag 'decohome.jpg', :style=>'width:100%' %> */}
+              </div>
+              <div className="bg-whiite w-[40vw] h-[300px]"></div>
+            </div>
+          </div>
+
+          <div className=" md:w-1/2 mx-8">
+            <h2 className="font-bold text-2xl text-greey">
+              Trouver un bien immobilier rentable semble compliqué...
+            </h2>
+            <p className="text-white text-justify mt-6">
+              Les annonces sont nombreuses et via divers canaux (internet,
+              agences, bouche à oreille...), ce qui demande beaucoup
+              d'organisation pour ne pas perdre les annonces intéressantes.
+              <br />
+              <br />
+              Lors des visites, vous pouvez facilement oublier des informations
+              cruciales pour évaluer la rentabilité d'un bien ou vous laisser
+              porter par un coup de coeur (ce qui n'est pas l'objectif d'un
+              investissement immobilier!).
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
