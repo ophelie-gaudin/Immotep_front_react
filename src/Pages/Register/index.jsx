@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Cookies from "js-cookie";
-import { userLogin } from "../../redux/stateUser/userAction";
+import { userLogin } from "../../ReduxFolder/stateUser/userAction";
 import { useDispatch } from "react-redux";
 
 const Register = () => {
@@ -39,26 +39,16 @@ const Register = () => {
 
   return (
     <div>
-      <form action="post" className="Form" onSubmit={handleSubmit}>
-        <imput
-          label="Email"
-          variant="filled"
-          type="email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <imput
-          label="Password"
-          variant="filled"
-          type="password"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit" variant="contained" color="primary">
-          Register
-        </button>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Email
+          <input type="text" name="email" onChange={(e) => setEmail(e.target.value)} />
+        </label>
+        <label>
+          Password
+          <input type="text" name="password" onChange={(e) => setPassword(e.target.value)} />
+        </label>
+        <button type="submit">Register</button>
       </form>
     </div>
   );
