@@ -1,15 +1,7 @@
-import OrangeButton from "./Components/Main/OrangeButton";
-
-import PhantomButton from "./Components/Main/PhantomButton";
+import ProjectCard from "./Components/Main/ProjectCard";
 
 function App() {
-  return (
-    <div className="text-red-300 font-black">
-      Hello!!!
-      <PhantomButton>Phantom</PhantomButton>
-    </div>
-  );
-
+  return <div className="text-red-300 font-black flex">Hello!!!</div>;
 }
 
 export default App;
