@@ -1,4 +1,5 @@
 import OrangeButton from "./Components/Main/OrangeButton";
+
 import PhantomButton from "./Components/Main/PhantomButton";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <PhantomButton>Phantom</PhantomButton>
     </div>
   );
+
 }
 
 export default App;
