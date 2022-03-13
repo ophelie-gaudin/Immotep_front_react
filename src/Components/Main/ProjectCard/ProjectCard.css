@@ -1,0 +1,44 @@
+.project-card {
+  @apply flex justify-between items-end w-1/4 rounded-[0.25rem] m-10 px-2 py-5 bg-oraange border border-oraange text-whiite font-bold hover:bg-greey hover:text-whiite hover:border hover:border-whiite hover:font-black hover:scale-105 hover:drop-shadow-lg;
+  transition: all 0.1s;
+}
+
+.project-card-title {
+  @apply pl-6 pt-1 text-3xl;
+}
+.project-card-localization {
+  @apply uppercase flex pt-4 italic tracking-wide justify-center text-lg font-normal;
+}
+.project-card-comment {
+  @apply pl-12 pt-3 text-justify text-lg;
+}
+
+.project-card-icon {
+  color: white;
+  font-size: 1em;
+  width: 30px;
+  height: 30px;
+  margin: -1px;
+}
+
+.project-card:hover .rotate {
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

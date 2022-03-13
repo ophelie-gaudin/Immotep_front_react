@@ -22,10 +22,8 @@ function App() {
           {/* <Footer /> */}
         </BrowserRouter>
       </>
-    </Provider>
-    
+    </Provider>  
   );
-
 }
 
 export default App;
