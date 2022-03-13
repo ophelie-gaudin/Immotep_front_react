@@ -1,9 +1,11 @@
+import HomePage from "./HomePage";
 import OrangeButton from "./Components/Main/OrangeButton";
 
 function App() {
   return (
-    <div className="text-red-300 font-black">
-      Hello!!!
+    <div className="">
+      Hello!!!!
+      <HomePage />
       <OrangeButton />
     </div>
   );
