@@ -5,11 +5,10 @@ import Register from "./Pages/Register";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import NavBar from "./Components/Navbar";
-
+import DashboardPage from "./Pages/DashboardPage";
 
 function App() {
   return (
-    
     <Provider store={store}>
       <>
         <BrowserRouter>
@@ -18,11 +17,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
           </Routes>
           {/* <Footer /> */}
         </BrowserRouter>
       </>
-    </Provider>  
+    </Provider>
   );
 }
 
