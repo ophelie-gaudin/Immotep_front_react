@@ -1,3 +1,3 @@
 .warning-area {
-  @apply bg-oraange bg-opacity-75 text-whiite ml-40 mr-24 px-5 py-10 border border-oraange;
+  @apply rounded-[0.25rem] bg-oraange bg-opacity-75 text-whiite ml-40 mr-24 px-5 py-10 border border-oraange;
 }
