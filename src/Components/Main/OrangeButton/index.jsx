@@ -1,11 +1,11 @@
 import React from "react";
 import "./OrangeButton.css";
 
-const OrangeButton = () => {
+const OrangeButton = (props) => {
   return (
     <div>
-      <a className="orange-button p-4" href="/">
-        Mon bouton
+      <a className="orange-button" href="/">
+        {props.children}
       </a>
     </div>
   );
