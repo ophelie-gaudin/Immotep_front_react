@@ -6,10 +6,8 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import NavBar from "./Components/Navbar";
 
-
 function App() {
   return (
-    
     <Provider store={store}>
       <>
         <BrowserRouter>
@@ -22,7 +20,7 @@ function App() {
           {/* <Footer /> */}
         </BrowserRouter>
       </>
-    </Provider>  
+    </Provider>
   );
 }
 
