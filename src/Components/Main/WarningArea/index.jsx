@@ -3,7 +3,7 @@ import "./WarningArea.css";
 
 const WarningArea = (props) => {
   return (
-    <div className="warning-area">
+    <div data-aos="fade-left" className="warning-area">
       <p>{props.children}</p>
     </div>
   );
