@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <div className="">
       <section className="min-h-[100vh] bg-greey flex items-center">
-        <div className="flex flex-col py-10 mx-auto md:mx-16 max-w-[540px] container">
+        <div className="flex flex-col py-10 mx-auto md:mx-12 max-w-[540px] container">
           <h1 className="font-bold text-5xl text-whiite ">
             Devenez rentier
             <div className="words-to-change font-semibold">
@@ -90,9 +90,9 @@ export default function HomePage() {
             </div>
 
             <div className="md:w-1/3 sm:w-1/2 p-4">
-              <span class="text-4xl  font-bold">68 % </span>
-              <p class="d-block text-muted fs-lg mt-1">
-                <span class=" font-semibold">
+              <span className="text-4xl  font-bold">68 % </span>
+              <p className="d-block text-muted fs-lg mt-1">
+                <span className=" font-semibold">
                   des français estiment que l'immobilier est le meilleur
                   investissement, loin devant les marchés financiers 7%
                 </span>{" "}
@@ -103,10 +103,10 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div class="md:w-1/3 sm:w-1/2 p-4">
-              <span class="text-4xl  font-bold">1,29 %</span>
-              <p class="d-block text-muted fs-lg mt-1">
-                <span class=" font-semibold">
+            <div className="md:w-1/3 sm:w-1/2 p-4">
+              <span className="text-4xl  font-bold">1,29 %</span>
+              <p className="d-block text-muted fs-lg mt-1">
+                <span className=" font-semibold">
                   taux moyen des crédits immobiliers en juin 2019, contre 6%
                   dans les années 2000.{" "}
                 </span>
@@ -189,192 +189,99 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-15 bg-oraange ">
-        <div className="container">
+      <section className=" min-h-[100vh] bg-oraange  flex justify-center items-center p-12 ">
+        <div className="container flex flex-col">
           <h2 className="text-whiite font-semibold text-4xl">
-            Comment utiliser notre outil
+            Comment utiliser notre outil :
           </h2>
-        </div>
-        <div
-          className="card d-flex align-items-center w-100"
-          id="vertical-steps-container"
-        >
-          <div className="card-body " id="vertical-steps">
-            <div className="accordion accordion-steps" id="accordion-steps">
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="heading-steps-1">
-                  <div
-                    className="accordion-button fs-5 collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapse-steps-1"
-                    aria-expanded="false"
-                    aria-controls="collapse-steps-1"
-                  >
-                    <h6 className="step-title" data-aos="fade-right">
-                      Créez un ou plusieurs{" "}
-                      <strong>projets immobiliers locatifs</strong>
-                    </h6>
-                  </div>
-                </h2>
-                <div
-                  id="collapse-steps-1"
-                  className="accordion-collapse"
-                  aria-labelledby="heading-steps-1"
-                  data-bs-parent="#accordion-steps"
-                >
-                  <div className="accordion-body">
-                    <p
-                      className="step-block text-white p-2"
-                      data-aos="fade-left"
-                    >
-                      Définissez les critères importants dans votre recherche de
-                      bien immobilier.
-                    </p>
-                  </div>
-                </div>
+          <ul className="flex flex-col relative items-center w-100 my-8">
+            <li className="my-4 max-w-[500px]">
+              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-oraange absolute after:border after:border-whiite">
+                1
               </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="heading-steps-2">
-                  <button
-                    className="accordion-button fs-5 collapsed mb-1"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapse-steps-2"
-                    aria-expanded="false"
-                    aria-controls="collapse-steps-2"
-                  >
-                    <h6 className="step-title" data-aos="fade-right">
-                      Stockez les informations des annonces{" "}
-                      <strong>au même endroit</strong>{" "}
-                    </h6>
-                  </button>
-                </h2>
-                <div
-                  id="collapse-steps-2"
-                  className="accordion-collapse "
-                  aria-labelledby="heading-steps-2"
-                  data-bs-parent="#accordion-steps"
-                >
-                  <div className="accordion-body">
-                    <p
-                      className=" p-2 text-white step-block"
-                      data-aos="fade-left"
-                    >
-                      Lorsque vous trouvez des biens qui vous intéressent,
-                      stockez toutes leurs informations ainsi que le lien vers
-                      leur annonce.
-                    </p>
-                  </div>
-                </div>
+              <h6 className="text-xl text-whiite" data-aos="fade-right">
+                Créez un ou plusieurs{" "}
+                <strong>projets immobiliers locatifs</strong>
+              </h6>
+              <div className="bg-whiite/20 p-2 my-2">
+                <p className="text-whiite p-2" data-aos="fade-left">
+                  Définissez les critères importants dans votre recherche de
+                  bien immobilier.
+                </p>
               </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="heading-steps-2">
-                  <button
-                    className="accordion-button fs-5 collapsed "
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapse-steps-3"
-                    aria-expanded="false"
-                    aria-controls="collapse-steps-3"
-                  >
-                    <h6 className="step-title" data-aos="fade-right">
-                      Visitez et posez les <strong>bonnes questions</strong>
-                    </h6>
-                  </button>
-                </h2>
-                <div
-                  id="collapse-steps-2"
-                  className="accordion-collapse "
-                  aria-labelledby="heading-steps-2"
-                  data-bs-parent="#accordion-steps"
-                >
-                  <div className="accordion-body">
-                    <p
-                      className="p-2 text-white step-block"
-                      data-aos="fade-left"
-                    >
-                      Lors de la visite d'un bien ou d'un entretien
-                      téléphonique, posez les{" "}
-                      <strong>questions pertinentes</strong> dans le cas d'un
-                      investissement locatif.
-                    </p>
-                  </div>
-                </div>
+            </li>
+
+            <li className="my-4 max-w-[500px]">
+              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-oraange absolute after:border after:border-whiite">
+                2
               </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="heading-steps-2">
-                  <button
-                    className="accordion-button fs-5 collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapse-steps-4"
-                    aria-expanded="false"
-                    aria-controls="collapse-steps-4"
-                  >
-                    <h6 className="step-title" data-aos="fade-right">
-                      Utilisez le calculateur de <strong>rentabilité</strong>
-                    </h6>
-                  </button>
-                </h2>
-                <div
-                  id="collapse-steps-2"
-                  className="accordion-collapse "
-                  aria-labelledby="heading-steps-2"
-                  data-bs-parent="#accordion-steps"
-                >
-                  <div className="accordion-body">
-                    <p
-                      className="p-2 text-white step-block"
-                      data-aos="fade-left"
-                    >
-                      Notre outil calcule pour vous la{" "}
-                      <strong>rentabilité</strong> des biens que vous avez
-                      stockés.
-                    </p>
-                  </div>
-                </div>
+              <h6 className="text-xl text-whiite" data-aos="fade-right">
+                Stockez les informations des annonces{" "}
+                <strong>au même endroit</strong>{" "}
+              </h6>
+              <div className="bg-whiite/20 p-2 my-2">
+                <p className="text-whiite p-2" data-aos="fade-left">
+                  Lorsque vous trouvez des biens qui vous intéressent, stockez
+                  toutes leurs informations ainsi que le lien vers leur annonce.
+                </p>
               </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="heading-steps-3">
-                  <button
-                    className="accordion-button fs-5 collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapse-steps-5"
-                    aria-expanded="false"
-                    aria-controls="collapse-steps-5"
-                  >
-                    <h6 className="step-title" data-aos="fade-right">
-                      Trouvez le <strong>meilleur investissement</strong>
-                    </h6>
-                  </button>
-                </h2>
-                <div
-                  id="collapse-steps-3"
-                  className="accordion-collapse "
-                  aria-labelledby="heading-steps-3"
-                  data-bs-parent="#accordion-steps"
-                >
-                  <div className="accordion-body">
-                    <p
-                      className="text-white p-2  step-block"
-                      data-aos="fade-left"
-                    >
-                      <strong>Comparez</strong> les biens et{" "}
-                      <strong>choisissez</strong> celui qui correspond à vos
-                      attentes.
-                    </p>
-                  </div>
-                </div>
+            </li>
+
+            <li className="my-4 max-w-[500px]">
+              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-oraange absolute after:border after:border-whiite">
+                3
               </div>
-            </div>
-          </div>
-          {/* <% if isUser? %>
+              <h6 className="text-xl text-whiite" data-aos="fade-right">
+                Visitez et posez les <strong>bonnes questions</strong>
+              </h6>
+              <div className="bg-whiite/20 p-2 my-2">
+                <p className="text-whiite p-2" data-aos="fade-left">
+                  Lors de la visite d'un bien ou d'un entretien téléphonique,
+                  posez les <strong>questions pertinentes</strong> dans le cas
+                  d'un investissement locatif.
+                </p>
+              </div>
+            </li>
+
+            <li className="my-4 max-w-[500px]">
+              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-oraange absolute after:border after:border-whiite">
+                4
+              </div>
+              <h6 className="text-xl text-whiite" data-aos="fade-right">
+                Utilisez le calculateur de <strong>rentabilité</strong>
+              </h6>
+              <div className="bg-whiite/20 p-2 my-2">
+                <p className="text-whiite p-2" data-aos="fade-left">
+                  Notre outil calcule pour vous la <strong>rentabilité</strong>{" "}
+                  des biens que vous avez stockés.
+                </p>
+              </div>
+            </li>
+
+            <li className="my-4 max-w-[500px]">
+              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-oraange absolute after:border after:border-whiite">
+                5
+              </div>
+              <h6 className="text-xl text-whiite" data-aos="fade-right">
+                Trouvez le <strong>meilleur investissement</strong>
+              </h6>
+              <div className="bg-whiite/20 p-2 my-2">
+                <p className="text-whiite p-2" data-aos="fade-left">
+                  <strong>Comparez</strong> les biens et{" "}
+                  <strong>choisissez</strong> celui qui correspond à vos
+                  attentes.
+                </p>
+              </div>
+            </li>
+
+            {/* <% if isUser? %>
       <%= link_to 'Commencez maintenant', projects_path(current_user.id),  class:"btn btn-light rounded mt-2" %>
     <%else%>
       <%= link_to 'Commencez maintenant', new_user_registration_path,  class:"btn btn-light rounded mt-2" %>
     <%end%> */}
+          </ul>
+
+          <OrangeButton>Commencez maintenant !</OrangeButton>
         </div>
       </section>
     </div>
