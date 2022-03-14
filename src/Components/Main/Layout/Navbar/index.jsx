@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logout from "../Logout";
+import Logout from "../../../Logout";
 import { useSelector } from "react-redux";
 
 export default function Navbar() {
-
   const auth = useSelector((state) => state.connected);
 
   return (
@@ -22,7 +21,7 @@ export default function Navbar() {
           </div>
         )}
         {auth.connected && (
-          <div>           
+          <div>
             <button>
               <Link to="/profile">Mon compte</Link>
             </button>
