@@ -10,6 +10,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import WarningArea from "./Components/Main/WarningArea";
 
+
 function App() {
   useEffect(() => {
     AOS.init({
