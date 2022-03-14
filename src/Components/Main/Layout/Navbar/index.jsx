@@ -30,7 +30,6 @@ export default function Navbar() {
             <Link className="mx-4" to="/profile">
               Profil
             </Link>
-
             <div className="mx-4">
               <Logout />
             </div>
