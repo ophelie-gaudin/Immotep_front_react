@@ -7,6 +7,10 @@ module.exports = {
         whiite: "#F8ECDA",
         greey: "#313E50",
       },
+      fontFamily: {
+        bakbak: ["Bakbak One", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+      },
     },
   },
   plugins: [],

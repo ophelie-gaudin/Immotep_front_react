@@ -7,30 +7,33 @@ export default function Navbar() {
   const auth = useSelector((state) => state.connected);
 
   return (
-    <nav>
-      <div>
-        <Link to="/">Home</Link>
+    <nav className="bg-whiite h-12 flex items-center fixed w-full z-50">
+      <div className=" flex w-[90%] justify-between mx-auto items-center">
+        <Link className="font-bakbak text-2xl" to="/">
+          Immotep
+        </Link>
         {!auth.connected && (
-          <div>
-            <button>
-              <Link to="/login">Connexion</Link>
-            </button>
-            <button>
-              <Link to="/register">Inscription</Link>
-            </button>
+          <div className="flex">
+            <Link className="mx-4" to="/login">
+              Connexion
+            </Link>
+            <Link className="mx-4" to="/register">
+              Inscription
+            </Link>
           </div>
         )}
         {auth.connected && (
-          <div>
-            <button>
-              <Link to="/profile">Mon compte</Link>
-            </button>
-            {/* <button>
-              <Link to="/annonces">Mes Projets</Link>
-            </button> */}
-            <button>
-              <Logout>Déconnexion</Logout>
-            </button>
+          <div className="flex">
+            <Link className="mx-4" to="/dashboard">
+              Mes Projets
+            </Link>
+            <Link className="mx-4" to="/profile">
+              Profil
+            </Link>
+
+            <div className="mx-4">
+              <Logout />
+            </div>
           </div>
         )}
       </div>
