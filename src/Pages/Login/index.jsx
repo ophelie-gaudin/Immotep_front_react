@@ -3,6 +3,7 @@ import Cookies from "js-cookie";
 import { userLogin } from "../../ReduxFolder/stateUser/userAction";
 import { useDispatch } from "react-redux";
 import Input from "../../Components/Main/Input";
+import FormsCard from "../../Components/FormsCard";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -40,23 +41,29 @@ const Login = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <Input
-          label="Email"
-          type="text"
-          name="email"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <Input
-          label="Password"
-          type="password"
-          name="password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button className="orange-button forms-buttons" type="submit">
-          Sign In
-        </button>
-      </form>
+      {" "}
+      <FormsCard title="Connexion">
+        <>
+          {" "}
+          <form onSubmit={handleSubmit}>
+            <Input
+              label="Email"
+              type="text"
+              name="email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <Input
+              label="Password"
+              type="password"
+              name="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button className="orange-button forms-buttons" type="submit">
+              Sign In
+            </button>
+          </form>
+        </>
+      </FormsCard>
     </div>
   );
 };
