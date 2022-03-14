@@ -1,4 +1,5 @@
 import React from "react";
+
 import OrangeButton from "./Components/Main/OrangeButton";
 
 export default function Home() {
@@ -286,4 +287,5 @@ export default function Home() {
       </section>
     </div>
   );
+
 }
