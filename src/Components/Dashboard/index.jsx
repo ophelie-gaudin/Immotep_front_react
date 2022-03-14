@@ -4,6 +4,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import WarningArea from "../Main/WarningArea";
 import ProjectCard from "../Main/ProjectCard";
 import OrangeButton from "../Main/OrangeButton";
+import Input from "../Main/Input";
 
 const Dashboard = () => {
   return (
@@ -23,6 +24,21 @@ const Dashboard = () => {
           Ici, vous pouvez retrouver tous vos projets locatifs en cours, en
           créer de nouveaux et accéder au comparateur de logements.{" "}
         </WarningArea>
+
+        <div>
+          <div>
+            <Input label="essai Label" type="text" name="text" />
+          </div>
+          <div>
+            <Input label="essai Label" type="text" name="text" />
+          </div>
+          <div>
+            <Input label="essai Label" type="text" name="text" />
+          </div>
+          <div>
+            <Input type="text" name="text" />
+          </div>
+        </div>
       </div>
       <div className="bg-greey">
         <div className="flex flex-wrap">

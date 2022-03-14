@@ -1,10 +1,10 @@
 import React from "react";
 import "./OrangeButton.css";
 
-const OrangeButton = (props) => {
+const OrangeButton = (props, type) => {
   return (
     <div>
-      <a className="orange-button" href="/">
+      <a className="orange-button" href="/" type={type}>
         {props.children}
       </a>
     </div>
