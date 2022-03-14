@@ -2,3 +2,11 @@
   @apply rounded-[0.25rem] px-4 py-3 bg-oraange border border-oraange text-whiite font-bold hover:bg-greey hover:text-whiite hover:border-whiite hover:font-black;
   transition: all 0.6s;
 }
+
+.forms-buttons {
+  margin: auto;
+  margin-top: 60px;
+  text-align: center;
+  display: block;
+  width: 90%;
+}
