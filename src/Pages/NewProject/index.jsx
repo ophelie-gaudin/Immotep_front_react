@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormsCard from "../../Components/FormsCard";
 import Input from "../../Components/Main/Input";
+import Cookies from "js-cookie";
 
 const NewProject = () => {
   const [title, setTitle] = useState("");
@@ -13,6 +14,7 @@ const NewProject = () => {
       method: "post",
       headers: {
         "Content-Type": "application/json",
+        Authorization: ${Cookies.get("token")},
       },
       body: JSON.stringify({
         project: {
