@@ -25,7 +25,7 @@ const Dashboard = () => {
         </WarningArea>
       </div>
       <div className="bg-greey">
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap mb-12">
           <ProjectCard
             title="hello"
             localization="Montpellier"
@@ -41,7 +41,11 @@ const Dashboard = () => {
             localization="Montpellier"
             comment="tailwind c'est cool mais c'est pas facile"
           />
-          <OrangeButton>Créer un nouveau Logement</OrangeButton>
+        </div>
+        <div className="mb-10 mr-8 flex justify-end">
+          <a href="/dashboard/new">
+            <OrangeButton>Créer un nouveau Projet</OrangeButton>
+          </a>
         </div>
       </div>
     </div>

@@ -7,6 +7,10 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Layout from "./Components/Main/Layout";
 import DashboardPage from "./Pages/DashboardPage";
+
+import Profile from "./Pages/Profile";
+import NewProject from "./Pages/NewProject";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -28,6 +32,8 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
               <Route path="/dashboard" element={<DashboardPage />} />
+              <Route path="/dashboard/new" element={<NewProject />} />
+              <Route path="/profile" element={<Profile />} />
             </Routes>
           </Layout>
         </BrowserRouter>
