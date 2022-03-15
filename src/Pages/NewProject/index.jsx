@@ -14,7 +14,7 @@ const NewProject = () => {
       method: "post",
       headers: {
         "Content-Type": "application/json",
-        Authorization: ${Cookies.get("token")},
+        Authorization: `${Cookies.get("token")}`,
       },
       body: JSON.stringify({
         project: {
