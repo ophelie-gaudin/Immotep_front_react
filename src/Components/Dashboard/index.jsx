@@ -44,7 +44,7 @@ const Dashboard = () => {
         </div>
         <div className="mb-10 mr-8 flex justify-end">
           <a href="/dashboard/new">
-            <OrangeButton>Créer un nouveau Logement</OrangeButton>
+            <OrangeButton>Créer un nouveau Projet</OrangeButton>
           </a>
         </div>
       </div>
