@@ -7,6 +7,10 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Layout from "./Components/Main/Layout";
 import DashboardPage from "./Pages/DashboardPage";
+<<<<<<< HEAD
+=======
+
+>>>>>>> aaf8dd10e99f213cdda24ee660e12b4f23b2f08f
 import Profile from "./Pages/Profile";
 import NewProject from "./Pages/NewProject";
 
