@@ -43,22 +43,22 @@ export default function Footer() {
     //   </div>
     // </footer>
 
-    <footer class="text-center lg:text-left bg-gray-100 text-gray-600">
-      <div class="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
+    <footer class="text-center lg:text-left bg-greeen text-light">
+      <div class="flex justify-center items-center lg:justify-around p-6 border-b border-[#AAEABC] ">
         <div class="mr-12">
-          <span>Suivez l'avancement des fonctionnalités de notre outil :</span>
+          <span>Suivez l'avancement des fonctionnalités de notre outil:</span>
         </div>
         <div class="flex justify-center">
           <a
             href="https://trello.com/b/GwGKjodS/immotep-v2"
-            class="mr-6 text-gray-600"
+            class="mr-6 text-light"
             alt="Trello"
           >
             <FaTrello />
           </a>
           <a
             href="https://github.com/ophelie-gaudin/Immotep_front_react"
-            class="mr-6 text-gray-600"
+            class="mr-6 text-gray-light"
             alt="GitHub Front"
           >
             <FaGithubAlt />
@@ -66,7 +66,7 @@ export default function Footer() {
 
           <a
             href="https://github.com/istarengwa/Immotep_API"
-            class="text-gray-600"
+            class="text-light"
           >
             <svg
               aria-hidden="true"
@@ -86,7 +86,7 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <div class="mx-6 py-10 text-center md:text-left">
+      <div class="mx-6 py-10 text-center md:text-left text-light ">
         <div class="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div class="">
             <div className="w-full flex justify-center mb-4">
@@ -100,7 +100,7 @@ export default function Footer() {
           flex
           items-center
           justify-center
-        "
+          "
             >
               Immotep
             </h6>
@@ -115,17 +115,17 @@ export default function Footer() {
               Outil
             </h6>
             <p class="mb-4">
-              <a href="#!" class="text-gray-600">
+              <a href="#!" class="">
                 Description
               </a>
             </p>
             <p class="mb-4">
-              <a href="#!" class="text-gray-600">
+              <a href="#!" class="">
                 Mode d'emploi
               </a>
             </p>
             <p class="mb-4">
-              <a href="#!" class="text-gray-600">
+              <a href="#!" class="">
                 Lancez-vous !
               </a>
             </p>
@@ -135,18 +135,18 @@ export default function Footer() {
               Qui sommes-nous ?
             </h6>
             <p class="mb-4">
-              <a href="#!" class="text-gray-600">
+              <a href="#!" class="">
                 Notre équipe
               </a>
             </p>
 
             <p class="mb-4">
-              <a href="#!" class="text-gray-600">
+              <a href="#!" class="">
                 Rejoignez-nous !
               </a>
             </p>
             <p>
-              <a href="#!" class="text-gray-600">
+              <a href="#!" class="">
                 Mentions légales
               </a>
             </p>
@@ -233,10 +233,26 @@ export default function Footer() {
             </p>
           </div>
         </div>
+        <div className="w-full flex justify-center">
+          <p class="mb-4 max-w-[700px] italic text-center">
+            <small>
+              Cet outil a été créé avec amour 💝 par notre équipe de
+              développeurs. Si vous appréciez notre travail, n'hésitez pas à
+              nous{" "}
+              <a
+                className="font-bold"
+                href="https://checkout.stripe.com/pay/cs_test_a1Bl7Qyw9kBbDBMP8uRG7RoIhdvtErjXN4oS9B1nvyxBKmWHlYFtXHJjo4#fidkdWxOYHwnPyd1blpxYHZxWjA0TjNnSV9AYFdDMTA1ZlZtPGZwYV0zalx1T3Y0MFVca2NuYk9DZHVdNWFBR3FLSkJrRnxrSnNucUhiZ0M9YDw0YVY1MExxT1MzZmFiN3JVNDFNM2dgf2JONTVKPTM3aGRjQicpJ2hsYXYnP34nYnBsYSc%2FJz01MDQ9ZDJnKDc2NDAoMWZgYCg9NWQyKDYxMjNjZzVmMzc2MDIzYWAwYycpJ2hwbGEnPyc0M2YyZmNkYSg8MDRgKDEzMTAoZDU0MShgNmM2NzFmMjEwMzRhMmQ1NDYnKSd2bGEnPycyNWBgZz0zZyg2ZjQ0KDFjZmMoPDdjMSg2NDNkY2AxMTZgM2MxYGE3MmMneCknZ2BxZHYnP15YKSdpZHxqcHFRfHVgJz8ndmxrYmlgWmxxYGgnKSd3YGNgd3dgd0p3bGJsayc%2FJ21xcXV2PyoqbGhoanFgdSttYHdqbnBkdXUrZmpoJ3gl"
+              >
+                payer un café pour nos encourager
+              </a>
+              , nous vous en remercions d'avance ! ☕
+            </small>
+          </p>
+        </div>
       </div>
-      <div class="text-center p-6 bg-gray-200">
+      <div class="text-center p-6 bg-[#AAEABC]">
         <span>© 2022 Copyright:</span>
-        <p class="text-gray-600 font-semibold">IMMOTEP</p>
+        <p class="text-light font-semibold">IMMOTEP</p>
       </div>
     </footer>
   );
