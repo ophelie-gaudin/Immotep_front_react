@@ -151,7 +151,7 @@ export default function Footer() {
               </a>
             </p>
           </div>
-          <div class="">
+          <div class=" mb-4">
             <h6 class="uppercase font-semibold mb-4 flex justify-center md:justify-start">
               Contact
             </h6>
@@ -234,7 +234,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="w-full flex justify-center">
-          <p class="mb-4 max-w-[700px] italic text-center">
+          <p class="mb-4 max-w-[500px] italic text-center">
             <small>
               Cet outil a été créé avec amour 💝 par notre équipe de
               développeurs. Si vous appréciez notre travail, n'hésitez pas à
@@ -251,8 +251,10 @@ export default function Footer() {
         </div>
       </div>
       <div class="text-center p-6 bg-[#AAEABC]">
-        <span>© 2022 Copyright:</span>
-        <p class="text-light font-semibold">IMMOTEP</p>
+        <p>
+          © 2022 Copyright:{" "}
+          <span class="text-light font-semibold">IMMOTEP</span>
+        </p>
       </div>
     </footer>
   );
