@@ -92,7 +92,7 @@ export default function Navbar() {
             <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
               <li>
                 <a
-                  href="/projects"
+                  href="/dashboard"
                   className="block py-2 pr-4 pl-3 text-white rounded border-b border-light md:p-0 md:px-2 md:py:1 dark:text-white hover:bg-greeen  md:border-none  hover:font-bold"
                   aria-current="page"
                 >
@@ -119,7 +119,7 @@ export default function Navbar() {
             <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
               <li>
                 <a
-                  href="/users/sign_in"
+                  href="/login"
                   className="block py-2 pr-4 pl-3 text-white rounded md:p-0 dark:text-white hover:bg-greeen  md:px-2 md:py:1 hover:font-bold  border-b border-light md:border-none"
                 >
                   Se connecter
@@ -128,7 +128,7 @@ export default function Navbar() {
 
               <li>
                 <a
-                  href="/users/sign_up"
+                  href="/register"
                   className="block py-2 pr-4 pl-3 text-light font-black hover:text-greey hover:font-bold rounded md:p-0 dark:text-white bg-greeen  md:px-2 md:py:1 "
                 >
                   S'inscrire
