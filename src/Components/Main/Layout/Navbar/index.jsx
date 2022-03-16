@@ -3,89 +3,56 @@ import { Link } from "react-router-dom";
 import Logout from "../../../Logout";
 import { useSelector } from "react-redux";
 import { FaUserCircle } from "react-icons/fa";
+import logo from "../../../../assets/immotep_logo.png";
 
 export default function Navbar() {
   const auth = useSelector((state) => state.connected);
 
   return (
-    //
+    // <nav className="bg-whiite h-12 flex items-center fixed w-full z-50">
+    // //   <div className=" flex w-[90%] justify-between mx-auto items-center">
+    // //     <Link className="font-bakbak text-2xl hover:text-oraange" to="/">
+    // //       Immotep
+    // //     </Link>
+    // //     {!auth.connected && (
+    //       <div className="flex">
+    //         <Link className="mx-4 hover:text-oraange" to="/login">
+    //           Connexion
+    //         </Link>
+    //         <Link className="mx-4 hover:text-oraange" to="/register">
+    //           Inscription
+    //         </Link>
+    //       </div>
+    //     )}
+    //     {auth.connected && (
+    //       <div className="flex">
+    //         <Link className="mx-4 hover:text-oraange" to="/dashboard">
+    //           Mes Projets
+    //         </Link>
+    //         <Link className="mx-4 hover:text-oraange" to="/profile">
+    //           Profil
+    //         </Link>
+    //         <div className="mx-4 hover:text-oraange">
+    //           <Logout />
+    //         </div>
+    //       </div>
+    //     )}
+    //   </div>
+    // </nav>
 
-    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
+    <nav class="bg-[#AAEABC] border-gray-200 px-2 sm:px-4 py-2.5 rounded fixed w-full z-50 text-light">
       <div class="container flex flex-wrap justify-between items-center mx-auto">
-        <a href="#" class="flex items-center">
-          <img
-            src="/docs/images/logo.svg"
-            class="mr-3 h-6 sm:h-10"
-            alt="Flowbite Logo"
-          />
+        <a href="/" class="flex items-center">
+          <img src={logo} class="mr-3 h-14 sm:h-10" alt="Immotep Logo" />
           <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-            Flowbite
+            Immotep
           </span>
         </a>
         <div class="flex items-center md:order-2">
           <button
-            type="button"
-            class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-            id="user-menu-button"
-            aria-expanded="false"
-            type="button"
-            data-dropdown-toggle="dropdown"
-          >
-            <span class="sr-only">Open user menu</span>
-            <FaUserCircle />
-          </button>
-          {/* <!-- Dropdown menu --> */}
-          <div
-            class="hidden z-50 my-4 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600"
-            id="dropdown"
-          >
-            <div class="py-3 px-4">
-              <span class="block text-sm text-gray-900 dark:text-white">
-                Bonnie Green
-              </span>
-              <span class="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">
-                name@flowbite.com
-              </span>
-            </div>
-            <ul class="py-1" aria-labelledby="dropdown">
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                >
-                  Dashboard
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                >
-                  Settings
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                >
-                  Earnings
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                >
-                  Sign out
-                </a>
-              </li>
-            </ul>
-          </div>
-          <button
             data-collapse-toggle="mobile-menu-2"
             type="button"
-            class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            class="inline-flex items-center p-2 ml-1 text-sm text-light rounded-lg hover:bg-greeen focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="mobile-menu-2"
             aria-expanded="false"
           >
@@ -123,43 +90,44 @@ export default function Navbar() {
           <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
             <li>
               <a
-                href="#"
-                class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                href="/dashboard"
+                class="block py-2 pr-4 pl-3 text-white rounded border-b border-light md:p-0 md:px-2 md:py:1 dark:text-white hover:bg-greeen  md:border-none"
                 aria-current="page"
               >
-                Home
+                Mes projets
               </a>
             </li>
             <li>
               <a
-                href="#"
-                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                href="/profil"
+                class="block py-2 pr-4 pl-3 text-white rounded border-b border-light md:p-0 dark:text-white hover:bg-greeen md:border-none  md:px-2 md:py:1 "
               >
-                About
+                Mon profil
               </a>
             </li>
             <li>
               <a
-                href="#"
-                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                href="/logout"
+                class="block py-2 pr-4 pl-3 text-white rounded  md:p-0 dark:text-white hover:bg-greeen "
               >
-                Services
+                Me déconnecter
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/sign-up"
+                class="block py-2 pr-4 pl-3 text-white rounded border-b border-light md:border-none md:p-0 dark:text-white hover:bg-greeen  md:px-2 md:py:1 "
+              >
+                S'inscrire
               </a>
             </li>
             <li>
               <a
-                href="#"
-                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                href="/sign-in"
+                class="block py-2 pr-4 pl-3 text-white rounded md:p-0 dark:text-white hover:bg-greeen  md:px-2 md:py:1 "
               >
-                Pricing
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Contact
+                Se connecter
               </a>
             </li>
           </ul>

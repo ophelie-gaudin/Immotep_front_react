@@ -14,6 +14,8 @@ import NewProject from "./Pages/NewProject";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+import "flowbite";
+
 function App() {
   useEffect(() => {
     AOS.init({
