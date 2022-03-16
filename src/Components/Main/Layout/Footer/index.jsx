@@ -87,7 +87,7 @@ export default function Footer() {
               </a>
             </p>
             <p class="mb-4">
-              <a href="/users/sign_up" class="">
+              <a href="/register" class="">
                 Lancez-vous !
               </a>
             </p>
