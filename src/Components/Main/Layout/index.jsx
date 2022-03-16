@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 
 export default function Layout(props) {
   return (
-    <div>
+    <div className=" !min-h-[100vh] flex flex-col justify-between">
       <Navbar />
       <div className="h-[60px]"></div>
       {props.children}

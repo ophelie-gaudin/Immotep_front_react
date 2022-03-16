@@ -5,44 +5,6 @@ import logo from "../../../../assets/immotep_logo.png";
 
 export default function Footer() {
   return (
-    // <footer className="bg-greey text-whiite flex justify-around md:flex-col py-12">
-    //   <div className="md:max-w-1/3 px-4 flex flex-col items-center">
-    //     LOGO
-    //     <p>Immotep</p>
-    //   </div>
-    //   <div className="md:max-w-1/3 px-4">
-    //     <ul>
-    //       <li className="">
-    //         <a className="hover:text-oraange" href="/contact">
-    //           Nous contacter
-    //         </a>
-    //       </li>
-    //       <li>
-    //         <a className="hover:text-oraange" href="/staff">
-    //           Notre équipe
-    //         </a>
-    //       </li>
-    //       <li>
-    //         <a className="hover:text-oraange" href="/contact">
-    //           Recrutement
-    //         </a>
-    //       </li>
-    //       <li>
-    //         <a className="hover:text-oraange" href="/">
-    //           Mentions légales
-    //         </a>
-    //       </li>
-    //     </ul>
-    //   </div>
-    //   <div className="md:max-w-1/3 px-4">
-    //     <p className="text-whiiite text-sm text-justify">
-    //       Cet outil représente plus de 600h de travail pour vous aider à
-    //       investir. Si vous appréciez notre travail, n'hésitez pas à nous payer
-    //       un café, nous vous en remercions d'avance !{" "}
-    //     </p>
-    //   </div>
-    // </footer>
-
     <footer class="text-center lg:text-left bg-greeen text-light">
       <div class="flex justify-center items-center lg:justify-around p-6 border-b border-[#AAEABC] ">
         <div class="mr-12">
@@ -115,17 +77,17 @@ export default function Footer() {
               Outil
             </h6>
             <p class="mb-4">
-              <a href="#!" class="">
+              <a href="/" class="">
                 Description
               </a>
             </p>
             <p class="mb-4">
-              <a href="#!" class="">
+              <a href="/" class="">
                 Mode d'emploi
               </a>
             </p>
             <p class="mb-4">
-              <a href="#!" class="">
+              <a href="/users/sign_up" class="">
                 Lancez-vous !
               </a>
             </p>
@@ -135,18 +97,18 @@ export default function Footer() {
               Qui sommes-nous ?
             </h6>
             <p class="mb-4">
-              <a href="#!" class="">
+              <a href="/" class="">
                 Notre équipe
               </a>
             </p>
 
             <p class="mb-4">
-              <a href="#!" class="">
+              <a href="/" class="">
                 Rejoignez-nous !
               </a>
             </p>
             <p>
-              <a href="#!" class="">
+              <a href="/" class="">
                 Mentions légales
               </a>
             </p>
