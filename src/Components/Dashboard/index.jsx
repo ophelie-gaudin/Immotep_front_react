@@ -4,10 +4,31 @@ import { FaArrowLeft } from "react-icons/fa";
 import WarningArea from "../Main/WarningArea";
 import ProjectCard from "../Main/ProjectCard";
 import OrangeButton from "../Main/OrangeButton";
+import { useEffect, useState } from "react";
 
 const Dashboard = () => {
+  const [myProjects, setMyProjects] = useState(null);
+
+  useEffect(() => {
+    fetch(`https://immotep-api.herokuapp.com/projects`, {
+      method: "get",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  }).then((res) => {
+    if (res.ok) {
+      console.log(res);
+      setMyProjects(res);
+      window.location.href = "/dashboard";
+      return res.json();
+    } else {
+      throw new Error(res);
+    }
+  });
+
   return (
-    <div className="flex flex-col  rounded-[0.25rem] mx-auto w-[90vw] border border-2 border-oraange text-black ">
+    <div className="flex flex-col  rounded-[0.25rem] mx-auto w-[90vw] border-2 border-oraange text-black ">
       <div className="px-8 py-8 bg-oraange">
         <a className="flex text-2xl" href="/">
           <FaArrowLeft className="dashboard-arrow-icon" /> Accueil
@@ -26,26 +47,18 @@ const Dashboard = () => {
       </div>
       <div className="bg-greey">
         <div className="flex flex-wrap mb-12">
-          <ProjectCard
-            title="hello"
-            localization="Montpellier"
-            comment=" tailwind c'est cool mais c'est pas facile tailwind c'est cool mais c'est pas facile tailwind c'est cool mais c'est pas facile"
-          />
-          <ProjectCard
-            title="hello"
-            localization="Montpellier"
-            comment="tailwind c'est cool mais c'est pas facile"
-          />
-          <ProjectCard
-            title="hello"
-            localization="Montpellier"
-            comment="tailwind c'est cool mais c'est pas facile"
-          />
+          {myProjects.map((project) => {
+            <ProjectCard
+              title={project.title}
+              localization={project.localization}
+              comment={project.comment}
+            />;
+          })}
         </div>
         <div className="mb-10 mr-8 flex justify-end">
-          <a href="/dashboard/new">
-            <OrangeButton>Créer un nouveau Projet</OrangeButton>
-          </a>
+          <OrangeButton url="/dashboard/new">
+            Créer un nouveau Projet
+          </OrangeButton>
         </div>
       </div>
     </div>

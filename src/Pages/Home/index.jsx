@@ -74,7 +74,7 @@ export default function Home() {
             </span>
           </p>
 
-          <div class="flex py-14  flex-wrap">
+          <div className="flex py-14  flex-wrap">
             <div className="md:w-1/3 sm:w-1/2 p-4">
               <span className="text-4xl font-bold">61 % </span>
               <p className="d-block text-muted fs-lg mt-1">

@@ -5,22 +5,22 @@ import logo from "../../../../assets/immotep_logo.png";
 
 export default function Footer() {
   return (
-    <footer class="text-center lg:text-left bg-greeen text-light">
-      <div class="flex justify-center items-center lg:justify-around p-6 border-b border-[#AAEABC] ">
-        <div class="mr-12">
+    <footer className="text-center lg:text-left bg-greeen text-light">
+      <div className="flex justify-center items-center lg:justify-around p-6 border-b border-[#AAEABC] ">
+        <div className="mr-12">
           <span>Suivez l'avancement des fonctionnalités de notre outil:</span>
         </div>
-        <div class="flex justify-center">
+        <div className="flex justify-center">
           <a
             href="https://trello.com/b/GwGKjodS/immotep-v2"
-            class="mr-6 text-light"
+            className="mr-6 text-light"
             alt="Trello"
           >
             <FaTrello />
           </a>
           <a
             href="https://github.com/ophelie-gaudin/Immotep_front_react"
-            class="mr-6 text-gray-light"
+            className="mr-6 text-gray-light"
             alt="GitHub Front"
           >
             <FaGithubAlt />
@@ -28,14 +28,14 @@ export default function Footer() {
 
           <a
             href="https://github.com/istarengwa/Immotep_API"
-            class="text-light"
+            className="text-light"
           >
             <svg
               aria-hidden="true"
               focusable="false"
               data-prefix="fab"
               data-icon="github"
-              class="w-4"
+              className="w-4"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 496 512"
@@ -48,14 +48,14 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <div class="mx-6 py-10 text-center md:text-left text-light ">
-        <div class="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="">
+      <div className="mx-6 py-10 text-center md:text-left text-light ">
+        <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="">
             <div className="w-full flex justify-center mb-4">
               <img src={logo} alt="logo" />
             </div>
             <h6
-              class="
+              className="
           uppercase
           font-semibold
           
@@ -72,58 +72,58 @@ export default function Footer() {
               immobiliers.
             </p>
           </div>
-          <div class="">
-            <h6 class="uppercase font-semibold mb-4 flex justify-center md:justify-start">
+          <div className="">
+            <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
               Outil
             </h6>
-            <p class="mb-4">
-              <a href="/" class="">
+            <p className="mb-4">
+              <a href="/" className="">
                 Description
               </a>
             </p>
-            <p class="mb-4">
-              <a href="/" class="">
+            <p className="mb-4">
+              <a href="/" className="">
                 Mode d'emploi
               </a>
             </p>
-            <p class="mb-4">
-              <a href="/register" class="">
+            <p className="mb-4">
+              <a href="/register" className="">
                 Lancez-vous !
               </a>
             </p>
           </div>
-          <div class="">
-            <h6 class="uppercase font-semibold mb-4 flex justify-center md:justify-start">
+          <div className="">
+            <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
               Qui sommes-nous ?
             </h6>
-            <p class="mb-4">
-              <a href="/" class="">
+            <p className="mb-4">
+              <a href="/" className="">
                 Notre équipe
               </a>
             </p>
 
-            <p class="mb-4">
-              <a href="/" class="">
+            <p className="mb-4">
+              <a href="/" className="">
                 Rejoignez-nous !
               </a>
             </p>
             <p>
-              <a href="/" class="">
+              <a href="/" className="">
                 Mentions légales
               </a>
             </p>
           </div>
-          <div class=" mb-4">
-            <h6 class="uppercase font-semibold mb-4 flex justify-center md:justify-start">
+          <div className=" mb-4">
+            <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
               Contact
             </h6>
-            <p class="flex items-center justify-center md:justify-start mb-4">
+            <p className="flex items-center justify-center md:justify-start mb-4">
               <svg
                 aria-hidden="true"
                 focusable="false"
                 data-prefix="fas"
                 data-icon="home"
-                class="w-4 mr-4"
+                className="w-4 mr-4"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 576 512"
@@ -139,13 +139,13 @@ export default function Footer() {
               <br />
               FRANCE
             </p>
-            <p class="flex items-center justify-center md:justify-start mb-4">
+            <p className="flex items-center justify-center md:justify-start mb-4">
               <svg
                 aria-hidden="true"
                 focusable="false"
                 data-prefix="fas"
                 data-icon="envelope"
-                class="w-4 mr-4"
+                className="w-4 mr-4"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
@@ -157,13 +157,13 @@ export default function Footer() {
               </svg>
               immotep.thp@gmail.com
             </p>
-            <p class="flex items-center justify-center md:justify-start mb-4">
+            <p className="flex items-center justify-center md:justify-start mb-4">
               <svg
                 aria-hidden="true"
                 focusable="false"
                 data-prefix="fas"
                 data-icon="phone"
-                class="w-4 mr-4"
+                className="w-4 mr-4"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
@@ -175,13 +175,13 @@ export default function Footer() {
               </svg>
               + 01 234 567 88
             </p>
-            <p class="flex items-center justify-center md:justify-start">
+            <p className="flex items-center justify-center md:justify-start">
               <svg
                 aria-hidden="true"
                 focusable="false"
                 data-prefix="fas"
                 data-icon="print"
-                class="w-4 mr-4"
+                className="w-4 mr-4"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
@@ -196,7 +196,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="w-full flex justify-center">
-          <p class="mb-4 max-w-[500px] italic text-center">
+          <p className="mb-4 max-w-[500px] italic text-center">
             <small>
               Cet outil a été créé avec amour 💝 par notre équipe de
               développeurs. Si vous appréciez notre travail, n'hésitez pas à
@@ -212,10 +212,10 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <div class="text-center p-6 bg-[#AAEABC]">
+      <div className="text-center p-6 bg-[#AAEABC]">
         <p>
           © 2022 Copyright:{" "}
-          <span class="text-light font-semibold">IMMOTEP</span>
+          <span className="text-light font-semibold">IMMOTEP</span>
         </p>
       </div>
     </footer>
