@@ -7,12 +7,15 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Layout from "./Components/Main/Layout";
 import DashboardPage from "./Pages/DashboardPage";
+
 import Profile from "./Pages/Profile";
 import NewHousing from "./Pages/NewHousing";
 import NewProject from "./Pages/NewProject";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+import "flowbite";
 
 function App() {
   useEffect(() => {

@@ -14,9 +14,7 @@ export default function LogOut() {
 
   return (
     <div>
-      <button onClick={() => logout()}>
-        Logout
-      </button>
+      <button onClick={() => logout()}>Déconnexion</button>
     </div>
   );
 }
