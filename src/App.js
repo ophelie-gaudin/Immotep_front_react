@@ -7,6 +7,8 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Layout from "./Components/Main/Layout";
 import DashboardPage from "./Pages/DashboardPage";
+import MailPassword from "./Pages/MailPassword";
+import NewPassword from "./Pages/NewPassword";
 
 import Profile from "./Pages/Profile";
 import NewHousing from "./Pages/NewHousing";
@@ -32,6 +34,8 @@ function App() {
           <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/forgotpassword" element={<MailPassword />} />
+              <Route path="/newpassword" element={<NewPassword />} />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
               <Route path="/dashboard" element={<DashboardPage />} />

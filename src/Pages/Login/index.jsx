@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Cookies from "js-cookie";
+import { Link } from "react-router-dom";
 import { userLogin } from "../../ReduxFolder/stateUser/userAction";
 import { useDispatch } from "react-redux";
 import Input from "../../Components/Main/Input";
@@ -60,6 +61,9 @@ const Login = () => {
             />
             <button className="orange-button forms-buttons" type="submit">
               Sign In
+            </button>
+            <button className="orange-button forms-buttons">
+              <Link to="/forgotpassword">Mot de passe Oublié</Link>
             </button>
           </form>
         </>
