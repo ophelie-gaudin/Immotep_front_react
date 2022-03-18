@@ -12,28 +12,28 @@ export default function Navbar() {
   return (
     // <nav classNameName="bg-whiite h-12 flex items-center fixed w-full z-50">
     // //   <div classNameName=" flex w-[90%] justify-between mx-auto items-center">
-    // //     <Link classNameName="font-bakbak text-2xl hover:text-oraange" to="/">
+    // //     <Link classNameName="font-bakbak text-2xl hover:text-primary" to="/">
     // //       Immotep
     // //     </Link>
     // //     {!auth.connected && (
     //       <div className="flex">
-    //         <Link className="mx-4 hover:text-oraange" to="/login">
+    //         <Link className="mx-4 hover:text-primary" to="/login">
     //           Connexion
     //         </Link>
-    //         <Link className="mx-4 hover:text-oraange" to="/register">
+    //         <Link className="mx-4 hover:text-primary" to="/register">
     //           Inscription
     //         </Link>
     //       </div>
     //     )}
     //     {auth.connected && (
     //       <div className="flex">
-    //         <Link className="mx-4 hover:text-oraange" to="/dashboard">
+    //         <Link className="mx-4 hover:text-primary" to="/dashboard">
     //           Mes Projets
     //         </Link>
-    //         <Link className="mx-4 hover:text-oraange" to="/profile">
+    //         <Link className="mx-4 hover:text-primary" to="/profile">
     //           Profil
     //         </Link>
-    //         <div className="mx-4 hover:text-oraange">
+    //         <div className="mx-4 hover:text-primary">
     //           <Logout />
     //         </div>
     //       </div>
@@ -41,7 +41,7 @@ export default function Navbar() {
     //   </div>
     // </nav>
 
-    <nav className="bg-[#AAEABC] border-gray-200 px-2 sm:px-4 py-2.5 rounded fixed w-full z-50 text-light">
+    <nav className="bg-primary-light border-gray-200 px-2 sm:px-4 py-2.5 rounded fixed w-full z-50 text-light">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <a href="/" className="flex items-center">
           <img src={logo} className="mr-3 h-14 sm:h-10" alt="Immotep Logo" />
@@ -53,7 +53,7 @@ export default function Navbar() {
           <button
             data-collapse-toggle="mobile-menu-2"
             type="button"
-            className="inline-flex items-center p-2 ml-1 text-sm text-light rounded-lg hover:bg-greeen focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            className="inline-flex items-center p-2 ml-1 text-sm text-light rounded-lg hover:bg-primary focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="mobile-menu-2"
             aria-expanded="false"
           >
@@ -93,7 +93,7 @@ export default function Navbar() {
               <li>
                 <a
                   href="/dashboard"
-                  className="block py-2 pr-4 pl-3 text-white rounded border-b border-light md:p-0 md:px-2 md:py:1 dark:text-white hover:bg-greeen  md:border-none  hover:font-bold"
+                  className="block py-2 pr-4 pl-3 text-white rounded border-b border-light md:p-0 md:px-2 md:py:1 dark:text-white hover:bg-primary  md:border-none  hover:font-bold"
                   aria-current="page"
                 >
                   Mes projets
@@ -102,13 +102,13 @@ export default function Navbar() {
               <li>
                 <a
                   href="/profile"
-                  className="block py-2 pr-4 pl-3 text-white rounded border-b border-light md:p-0 dark:text-white hover:bg-greeen md:border-none  md:px-2 md:py:1  hover:font-bold"
+                  className="block py-2 pr-4 pl-3 text-white rounded border-b border-light md:p-0 dark:text-white hover:bg-primary md:border-none  md:px-2 md:py:1  hover:font-bold"
                 >
                   Mon profil
                 </a>
               </li>
               <li>
-                <div className="block py-2 pr-4 pl-3 text-white rounded  md:p-0 dark:text-white hover:bg-greeen  hover:font-bold">
+                <div className="block py-2 pr-4 pl-3 text-white rounded  md:p-0 dark:text-white hover:bg-primary  hover:font-bold">
                   <LogOut />
                 </div>
               </li>
@@ -120,7 +120,7 @@ export default function Navbar() {
               <li>
                 <a
                   href="/login"
-                  className="block py-2 pr-4 pl-3 text-white rounded md:p-0 dark:text-white hover:bg-greeen  md:px-2 md:py:1 hover:font-bold  border-b border-light md:border-none"
+                  className="block py-2 pr-4 pl-3 text-white rounded md:p-0 dark:text-white hover:bg-primary  md:px-2 md:py:1 hover:font-bold  border-b border-light md:border-none"
                 >
                   Se connecter
                 </a>
@@ -129,7 +129,7 @@ export default function Navbar() {
               <li>
                 <a
                   href="/register"
-                  className="block py-2 pr-4 pl-3 text-light font-black hover:text-greey hover:font-bold rounded md:p-0 dark:text-white bg-greeen  md:px-2 md:py:1 "
+                  className="block py-2 pr-4 pl-3 text-light font-black hover:text-greey hover:font-bold rounded md:p-0 dark:text-white bg-primary  md:px-2 md:py:1 "
                 >
                   S'inscrire
                 </a>

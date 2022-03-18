@@ -7,8 +7,8 @@ import OrangeButton from "../Main/OrangeButton";
 
 const Dashboard = () => {
   return (
-    <div className="flex flex-col  rounded-[0.25rem] mx-auto w-[90vw] border border-2 border-oraange text-black ">
-      <div className="px-8 py-8 bg-oraange">
+    <div className="flex flex-col  rounded-[0.25rem] mx-auto w-[90vw] border border-2 border-primary text-black ">
+      <div className="px-8 py-8 bg-primary">
         <a className="flex text-2xl" href="/">
           <FaArrowLeft className="dashboard-arrow-icon" /> Accueil
         </a>

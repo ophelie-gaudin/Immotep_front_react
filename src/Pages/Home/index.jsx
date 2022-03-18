@@ -129,7 +129,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="min-h-[100vh] bg-oraange  flex justify-center items-center p-12">
+      <section className="min-h-[100vh] bg-primary  flex justify-center items-center p-12">
         <div className="container flex items-center justify-between flex-wrap md:flex-nowrap">
           <div className="mb-8 md:mb-0 md:w-1/2 mx-8">
             <div className="frame">
@@ -184,20 +184,20 @@ export default function Home() {
               <div data-aos="zoom-out-right">
                 {/* <%= image_tag 'decohome.jpg', :style=>'width:100%' %> */}
               </div>
-              <div className="bg-oraange w-[40vw] h-[300px]"></div>
+              <div className="bg-primary w-[40vw] h-[300px]"></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className=" min-h-[100vh] bg-oraange  flex justify-center items-center p-12 ">
+      <section className=" min-h-[100vh] bg-primary  flex justify-center items-center p-12 ">
         <div className="container flex flex-col">
           <h2 className="text-whiite font-semibold text-4xl">
             Comment utiliser notre outil :
           </h2>
           <ul className="flex flex-col relative items-center w-100 my-8">
             <li className="my-4 max-w-[500px]">
-              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-oraange absolute after:border after:border-whiite">
+              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary absolute after:border after:border-whiite">
                 1
               </div>
               <h6 className="text-xl text-whiite" data-aos="fade-right">
@@ -213,7 +213,7 @@ export default function Home() {
             </li>
 
             <li className="my-4 max-w-[500px]">
-              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-oraange absolute after:border after:border-whiite">
+              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary absolute after:border after:border-whiite">
                 2
               </div>
               <h6 className="text-xl text-whiite" data-aos="fade-right">
@@ -229,7 +229,7 @@ export default function Home() {
             </li>
 
             <li className="my-4 max-w-[500px]">
-              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-oraange absolute after:border after:border-whiite">
+              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary absolute after:border after:border-whiite">
                 3
               </div>
               <h6 className="text-xl text-whiite" data-aos="fade-right">
@@ -245,7 +245,7 @@ export default function Home() {
             </li>
 
             <li className="my-4 max-w-[500px]">
-              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-oraange absolute after:border after:border-whiite">
+              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary absolute after:border after:border-whiite">
                 4
               </div>
               <h6 className="text-xl text-whiite" data-aos="fade-right">
@@ -260,7 +260,7 @@ export default function Home() {
             </li>
 
             <li className="my-4 max-w-[500px]">
-              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-oraange absolute after:border after:border-whiite">
+              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary absolute after:border after:border-whiite">
                 5
               </div>
               <h6 className="text-xl text-whiite" data-aos="fade-right">
