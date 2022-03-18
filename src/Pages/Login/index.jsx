@@ -26,18 +26,16 @@ const Login = () => {
       }),
     })
       .then((res) => {
-        debugger
         if (res.ok) {
-          console.log(res);
           Cookies.set("token", res.headers.get("Authorization"));
           changeConnectedStatus(userLogin());
-          window.location.href = "/";
+          //window.location.href = "/";
           return res.json();
         } else {
           throw new Error(res);
         }
       })
-      .then((json) => console.log(json.user.id))
+      .then((json) => console.log(json.user))
       .catch((err) => console.error(err));
   };
 

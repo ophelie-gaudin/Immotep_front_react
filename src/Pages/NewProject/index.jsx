@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FormsCard from "../../Components/FormsCard";
-import Input from "../../Components/Main/Input";
+//import Input from "../../Components/Main/Input";
 import Cookies from "js-cookie";
 
 const NewProject = () => {
@@ -41,24 +41,30 @@ const NewProject = () => {
       <FormsCard title="Créer un nouveau projet ">
         <>
           <form onSubmit={handleSubmit}>
-            <Input
-              label="Titre du projet"
-              type="text"
-              name="title"
-              onChange={(e) => setTitle(e.target.value)}
-            />
-            <Input
-              label="Localisation"
-              type="text"
-              name="localization"
-              onChange={(e) => setLocalization(e.target.value)}
-            />
-            <Input
-              label="Vos notes"
-              type="text"
-              name="comment"
-              onChange={(e) => setComment(e.target.value)}
-            />
+            <label>
+              Titre du projet
+              <input
+                type="text"
+                name="title"
+                onChange={(e) => setTitle(e.target.value)}
+              />
+            </label>
+            <label>
+              Localisation
+              <input
+                type="text"
+                name="localization"
+                onChange={(e) => setLocalization(e.target.value)}
+              />
+            </label>
+            <label>
+              Vos notes
+              <input
+                type="text"
+                name="comment"
+                onChange={(e) => setComment(e.target.value)}
+              />
+            </label>
             <div className="flex justify-end mb-8 mt-8 mr-6">
               <button className="orange-button forms-buttons" type="submit">
                 Créer
