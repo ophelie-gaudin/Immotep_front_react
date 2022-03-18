@@ -15,7 +15,7 @@ module.exports = {
       },
       fontFamily: {
         pacifico: ["Pacifico", "sans-serif"],
-        roboto: ["Roboto", "sans-serif"],
+        lato: ["Lato", "sans-serif"],
       },
     },
   },
