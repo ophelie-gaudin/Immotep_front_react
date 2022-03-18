@@ -5,8 +5,8 @@ import logo from "../../../../assets/immotep_logo.png";
 
 export default function Footer() {
   return (
-    <footer className="text-center lg:text-left bg-greeen text-light">
-      <div className="flex justify-center items-center lg:justify-around p-6 border-b border-[#AAEABC] ">
+    <footer className="text-center lg:text-left bg-primary text-light">
+      <div className="flex justify-center items-center lg:justify-around p-6 border-b border-primary-light ">
         <div className="mr-12">
           <span>Suivez l'avancement des fonctionnalités de notre outil:</span>
         </div>
@@ -56,12 +56,11 @@ export default function Footer() {
             </div>
             <h6
               className="
-          uppercase
           font-semibold
-          
+          font-pacifico text-3xl
           flex
           items-center
-          justify-center
+          justify-center mb-4
           "
             >
               Immotep
@@ -212,7 +211,7 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <div className="text-center p-6 bg-[#AAEABC]">
+      <div className="text-center p-6 bg-primary-light">
         <p>
           © 2022 Copyright:{" "}
           <span className="text-light font-semibold">IMMOTEP</span>

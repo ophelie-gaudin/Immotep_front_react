@@ -6,8 +6,8 @@ const FormsCard = (props) => {
   return (
     <div>
       {" "}
-      <div className="flex flex-col rounded-[0.25rem] my-24 mx-auto w-[40vw] border border-2 border-oraange text-black ">
-        <div className="px-8 py-8 bg-oraange mb-8">
+      <div className="flex flex-col rounded-[0.25rem] my-24 mx-auto w-[40vw] border border-2 border-primary text-black ">
+        <div className="px-8 py-8 bg-primary mb-8">
           <a className="flex text-xl" href="/">
             <FaArrowLeft className="form-arrow-icon" /> Retour
           </a>

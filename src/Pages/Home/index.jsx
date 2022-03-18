@@ -1,17 +1,18 @@
 import React from "react";
 
 import OrangeButton from "../../Components/Main/OrangeButton";
+import BackgroundVideo from "../../assets/video-2.mp4";
 
 export default function Home() {
   return (
     <div className="">
-      <section className="min-h-[100vh] bg-greey flex items-center">
-        <div className="flex flex-col py-10 mx-auto md:mx-12 max-w-[540px] container">
-          <h1 className="font-bold text-5xl text-whiite ">
+      <section className="relative flex items-center justify-center md:justify-start h-[93vh] overflow-hidden">
+        <div className="relative z-30 flex flex-col py-10 mx-auto md:mx-12 max-w-[540px] w-[85%] container bg-black/20 px-8">
+          <h1 className="font-bold text-5xl text-whiite">
             Devenez rentier
             <div className="words-to-change font-semibold">
-              <span>
-                sans vous prendre <br /> la tête{" "}
+              <span className="font-medium text-primary-light">
+                sans vous prendre la tête{" "}
               </span>
               {/* <br />
                   <span>
@@ -32,7 +33,7 @@ export default function Home() {
             meilleur bien vous semble trop complexe?
             <br />
             <br />
-            Nous avons la solution pour vous :{" "}
+            Nous avons la solution pour vous !
           </p>
           <br />
           <OrangeButton>Commencez maintenant !</OrangeButton>
@@ -42,30 +43,24 @@ export default function Home() {
           <%= link_to 'Commencez maintenant', new_user_registration_path,  className:"btn btn-primary rounded" %>
         <%end%> */}
         </div>
-
-        {/* VIDEO BACKGROUND */}
-        {/* <div
-          className="background background-overlay  aos-init aos-animate"
-          data-aos-delay="200"
+        <video
+          autoPlay
+          loop
+          muted
+          className="absolute z-10 w-auto min-w-full min-h-full max-w-none"
+          id="video"
         >
-          <div
-            tabindex="0"
-            className="plyr  plyr--video plyr--html5 plyr--fullscreen-enabled   plyr--playing"
-          >
-            <video data-video="" playsinline="" autoplay="" muted="" loop="" width="100%" height="100%">
-        <source src='/assets/video-2-fd5897e39137e9d3cf82d673724fe8002d70d671b015914d4a8a58327f980dd4.mp4' >
-      </video>
-            <div className="plyr__poster"></div>
-          </div>
-        </div> */}
+          <source src={BackgroundVideo} type="video/mp4" />
+        </video>
       </section>
-      <section
-        className="min-h-[100vh] bg-whiite  flex justify-center items-center p-12"
-        data-aos="fade-up"
-        data-aos-duration="2000"
-      >
-        <div className="container flex flex-col justify-center items-center">
-          <p className="text-3xl font-semibold italic text-justify">
+
+      <section className="min-h-[100vh] bg-whiite  flex justify-center items-center p-12">
+        <div
+          className="container flex flex-col justify-center items-center"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          <p className="text-3xl font-semibold italic text-justify text-primary">
             &#10077; L’immobilier apparaît comme la valeur la plus sûre du
             marché pour la majorité des français. &#10078;
             <br />
@@ -76,7 +71,7 @@ export default function Home() {
 
           <div className="flex py-14  flex-wrap">
             <div className="md:w-1/3 sm:w-1/2 p-4">
-              <span className="text-4xl font-bold">61 % </span>
+              <span className="text-5xl font-bold font-pacifico">61 % </span>
               <p className="d-block text-muted fs-lg mt-1">
                 {" "}
                 <span className=" font-semibold">
@@ -91,7 +86,7 @@ export default function Home() {
             </div>
 
             <div className="md:w-1/3 sm:w-1/2 p-4">
-              <span className="text-4xl  font-bold">68 % </span>
+              <span className="text-5xl font-bold font-pacifico">68 % </span>
               <p className="d-block text-muted fs-lg mt-1">
                 <span className=" font-semibold">
                   des français estiment que l'immobilier est le meilleur
@@ -105,7 +100,7 @@ export default function Home() {
             </div>
 
             <div className="md:w-1/3 sm:w-1/2 p-4">
-              <span className="text-4xl  font-bold">1,29 %</span>
+              <span className="text-5xl font-bold font-pacifico">1,29 %</span>
               <p className="d-block text-muted fs-lg mt-1">
                 <span className=" font-semibold">
                   taux moyen des crédits immobiliers en juin 2019, contre 6%
@@ -129,7 +124,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="min-h-[100vh] bg-oraange  flex justify-center items-center p-12">
+      <section className="min-h-[100vh] bg-primary  flex justify-center items-center p-12">
         <div className="container flex items-center justify-between flex-wrap md:flex-nowrap">
           <div className="mb-8 md:mb-0 md:w-1/2 mx-8">
             <div className="frame">
@@ -141,7 +136,7 @@ export default function Home() {
           </div>
 
           <div className=" md:w-1/2 mx-8">
-            <h2 className="font-semibold text-4xl text-greey">
+            <h2 className="font-semibold text-4xl text-whiite font-pacifico">
               Trouver un bien immobilier rentable semble compliqué...
             </h2>
             <p className="text-white text-justify mt-6">
@@ -162,8 +157,8 @@ export default function Home() {
       <section className="min-h-[100vh] bg-whiite  flex justify-center items-center p-12">
         <div className="container flex items-center justify-between flex-wrap md:flex-nowrap">
           <div className=" md:w-1/2 mx-8">
-            <h2 className="font-semibold text-4xl text-greey">
-              ... sauf si vous avez les bons outils !
+            <h2 className="font-semibold text-4xl text-primary font-pacifico">
+              ... sauf si vous avez les bons outils!
             </h2>
             <p className="text-greey text-justify mt-6">
               Notre outil vous permet de stocker les informations de l'ensemble
@@ -184,94 +179,150 @@ export default function Home() {
               <div data-aos="zoom-out-right">
                 {/* <%= image_tag 'decohome.jpg', :style=>'width:100%' %> */}
               </div>
-              <div className="bg-oraange w-[40vw] h-[300px]"></div>
+              <div className="bg-primary w-[40vw] h-[300px]"></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className=" min-h-[100vh] bg-oraange  flex justify-center items-center p-12 ">
+      <section className=" min-h-[100vh] bg-primary-light  flex justify-center items-center p-12 ">
         <div className="container flex flex-col">
-          <h2 className="text-whiite font-semibold text-4xl">
-            Comment utiliser notre outil :
+          <h2 className="text-primary font-semibold text-4xl">
+            Comment utiliser notre outil ?
           </h2>
           <ul className="flex flex-col relative items-center w-100 my-8">
-            <li className="my-4 max-w-[500px]">
-              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-oraange absolute after:border after:border-whiite">
-                1
+            <li className="my-4 max-w-[500px] flex items-start hover:scale-110 transition-transform">
+              <div>
+                <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary  mr-8">
+                  1
+                </div>
+                {/* after:border after:border-whiite */}
               </div>
-              <h6 className="text-xl text-whiite" data-aos="fade-right">
-                Créez un ou plusieurs{" "}
-                <strong>projets immobiliers locatifs</strong>
-              </h6>
-              <div className="bg-whiite/20 p-2 my-2">
-                <p className="text-whiite p-2" data-aos="fade-left">
-                  Définissez les critères importants dans votre recherche de
-                  bien immobilier.
-                </p>
+
+              <div className="flex flex-col">
+                <h6
+                  className="text-xl text-whiite  font-pacifico"
+                  data-aos="fade-right"
+                >
+                  Créez un ou plusieurs{" "}
+                  <span className="underline underline-offset-4">
+                    projets immobiliers locatifs
+                  </span>
+                </h6>
+                <div className="bg-whiite/20 p-2 my-2">
+                  <p className="text-whiite p-2" data-aos="fade-left">
+                    Définissez les critères importants dans votre recherche de
+                    bien immobilier.
+                  </p>
+                </div>
               </div>
             </li>
 
-            <li className="my-4 max-w-[500px]">
-              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-oraange absolute after:border after:border-whiite">
-                2
+            <li className="my-4 max-w-[500px] flex items-start hover:scale-110  transition-transform">
+              <div>
+                <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary  mr-8">
+                  2
+                </div>
               </div>
-              <h6 className="text-xl text-whiite" data-aos="fade-right">
-                Stockez les informations des annonces{" "}
-                <strong>au même endroit</strong>{" "}
-              </h6>
-              <div className="bg-whiite/20 p-2 my-2">
-                <p className="text-whiite p-2" data-aos="fade-left">
-                  Lorsque vous trouvez des biens qui vous intéressent, stockez
-                  toutes leurs informations ainsi que le lien vers leur annonce.
-                </p>
+
+              <div className="flex flex-col">
+                <h6
+                  className="text-xl text-whiite  font-pacifico"
+                  data-aos="fade-right"
+                >
+                  Stockez les informations des annonces{" "}
+                  <span className="underline underline-offset-4">
+                    au même endroit
+                  </span>{" "}
+                </h6>
+                <div className="bg-whiite/20 p-2 my-2">
+                  <p className="text-whiite p-2" data-aos="fade-left">
+                    Lorsque vous trouvez des biens qui vous intéressent, stockez
+                    toutes leurs informations ainsi que le lien vers leur
+                    annonce.
+                  </p>
+                </div>
               </div>
             </li>
 
-            <li className="my-4 max-w-[500px]">
-              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-oraange absolute after:border after:border-whiite">
-                3
+            <li className="my-4 max-w-[500px] flex items-start hover:scale-110  transition-transform">
+              <div>
+                <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary  mr-8">
+                  3
+                </div>
               </div>
-              <h6 className="text-xl text-whiite" data-aos="fade-right">
-                Visitez et posez les <strong>bonnes questions</strong>
-              </h6>
-              <div className="bg-whiite/20 p-2 my-2">
-                <p className="text-whiite p-2" data-aos="fade-left">
-                  Lors de la visite d'un bien ou d'un entretien téléphonique,
-                  posez les <strong>questions pertinentes</strong> dans le cas
-                  d'un investissement locatif.
-                </p>
+
+              <div className="flex flex-col">
+                <h6
+                  className="text-xl text-whiite  font-pacifico"
+                  data-aos="fade-right"
+                >
+                  Visitez et posez les{" "}
+                  <span className="underline underline-offset-4">
+                    bonnes questions
+                  </span>
+                </h6>
+                <div className="bg-whiite/20 p-2 my-2">
+                  <p className="text-whiite p-2" data-aos="fade-left">
+                    Lors de la visite d'un bien ou d'un entretien téléphonique,
+                    posez les <strong>questions pertinentes</strong> dans le cas
+                    d'un investissement locatif.
+                  </p>
+                </div>
               </div>
             </li>
 
-            <li className="my-4 max-w-[500px]">
-              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-oraange absolute after:border after:border-whiite">
-                4
+            <li className="my-4 max-w-[500px] flex items-start hover:scale-110  transition-transform">
+              <div>
+                <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary  mr-8">
+                  4
+                </div>
               </div>
-              <h6 className="text-xl text-whiite" data-aos="fade-right">
-                Utilisez le calculateur de <strong>rentabilité</strong>
-              </h6>
-              <div className="bg-whiite/20 p-2 my-2">
-                <p className="text-whiite p-2" data-aos="fade-left">
-                  Notre outil calcule pour vous la <strong>rentabilité</strong>{" "}
-                  des biens que vous avez stockés.
-                </p>
+
+              <div className="flex flex-col">
+                <h6
+                  className="text-xl text-whiite  font-pacifico"
+                  data-aos="fade-right"
+                >
+                  Utilisez le calculateur de{" "}
+                  <span className="underline underline-offset-4">
+                    rentabilité
+                  </span>
+                </h6>
+                <div className="bg-whiite/20 p-2 my-2">
+                  <p className="text-whiite p-2" data-aos="fade-left">
+                    Notre outil calcule pour vous la{" "}
+                    <strong>rentabilité</strong> des biens que vous avez
+                    stockés.
+                  </p>
+                </div>
               </div>
             </li>
 
-            <li className="my-4 max-w-[500px]">
-              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-oraange absolute after:border after:border-whiite">
-                5
+            <li className="my-4 max-w-[500px] flex items-start hover:scale-110  transition-transform">
+              <div>
+                <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary  mr-8">
+                  5
+                </div>
               </div>
-              <h6 className="text-xl text-whiite" data-aos="fade-right">
-                Trouvez le <strong>meilleur investissement</strong>
-              </h6>
-              <div className="bg-whiite/20 p-2 my-2">
-                <p className="text-whiite p-2" data-aos="fade-left">
-                  <strong>Comparez</strong> les biens et{" "}
-                  <strong>choisissez</strong> celui qui correspond à vos
-                  attentes.
-                </p>
+
+              <div className="flex flex-col">
+                <h6
+                  className="text-xl text-whiite  font-pacifico"
+                  data-aos="fade-right"
+                >
+                  Trouvez le{" "}
+                  <span className="underline underline-offset-4">
+                    meilleur investissement
+                  </span>
+                </h6>
+                <div className="bg-whiite/20 p-2 my-2">
+                  <p className="text-whiite p-2" data-aos="fade-left">
+                    <strong>Comparez</strong> les biens et{" "}
+                    <strong>choisissez</strong> celui qui correspond à vos
+                    attentes.
+                  </p>
+                </div>
               </div>
             </li>
 
@@ -282,7 +333,9 @@ export default function Home() {
     <%end%> */}
           </ul>
 
-          <OrangeButton>Commencez maintenant !</OrangeButton>
+          <div className="mx-auto">
+            <OrangeButton>Commencez maintenant !</OrangeButton>
+          </div>
         </div>
       </section>
     </div>
