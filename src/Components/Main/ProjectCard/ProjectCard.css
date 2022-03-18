@@ -1,6 +1,7 @@
 .project-card {
-  @apply flex justify-between items-end w-1/4 rounded-[0.25rem] m-10 px-2 py-5 bg-primary border border-primary text-whiite font-bold hover:bg-greey hover:text-whiite hover:border hover:border-whiite hover:font-black hover:scale-105 hover:drop-shadow-lg;
-  transition: all 0.1s;
+  @apply flex justify-between  w-3/4 rounded-[0.25rem] m-10 px-2 py-5 bg-primary border border-greey text-whiite font-bold hover:bg-greey hover:text-whiite hover:border hover:border-whiite hover:font-black hover:scale-105 hover:border-black hover:drop-shadow-lg hover:bg-opacity-50 hover:z-50;
+
+  transition: all 0.3s;
 }
 
 .project-card-title {
@@ -14,7 +15,7 @@
 }
 
 .project-card-icon {
-  color: white;
+  color: #fffb4e;
   font-size: 1em;
   width: 30px;
   height: 30px;

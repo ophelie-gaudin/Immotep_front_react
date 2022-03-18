@@ -3,7 +3,7 @@ import Dashboard from "../../Components/Dashboard/index";
 
 const DashboardPage = () => {
   return (
-    <div>
+    <div className="mt-12 mb-8">
       <Dashboard />
     </div>
   );
