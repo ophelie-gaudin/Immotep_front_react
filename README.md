@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+<h1 align="center">Welcome to IMMOTEP 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/istarengwa/Immotep_API" target="_blank">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> /!\ Ce site n'est pas destiné à mettre en lien les vendeurs et les acheteurs. Lors des visites, certaines informations sont cruciales pour pouvoir faire une analyse objective du potentiel d'un bien (charges, loyer annuel, taux d'occupation...) et il est impératif que le futur acheteur y ait accès pour pouvoir comparer plusieurs biens entre eux et choisir l’investissement qui lui correspondra le mieux. Nous souhaitons donc mettre en place un outil lui permettant de récolter ces informations importantes sans risquer d'en oublier, et d'obtenir une analyse objective des biens qu'il a visités.
 
-## Available Scripts
+### 🏠 [Homepage](https://immotep.vercel.app/)
 
-In the project directory, you can run:
+### ✨ [Demo](https://immotep-g0o12xtyf-ophelie-gaudin.vercel.app/)
 
-### `npm start`
+## Install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```sh
+npm -i
+npm start
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+```sh
+You can add Housings to your Projects after you create an account on &#34;https://immotep.vercel.app/register&#34;
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Run tests
 
-### `npm run build`
+```sh
+npm react-scripts test
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Author
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+👤 **DELDEM JEREMIE & GAUDIN OPHELIE & MULLER LILIAN**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Github: [@8UK0W5K1 ophelie-gaudin ISTARENGWA ](https://github.com/8UK0W5K1 ophelie-gaudin ISTARENGWA )
+- LinkedIn: [@https:\/\/www.linkedin.com\/in\/j%C3%A9r%C3%A9mie-deldem-5b36b3217\/ https:\/\/www.linkedin.com\/in\/lilianmu\/ https:\/\/www.linkedin.com\/in\/oph%C3%A9lie-gaudin-aa3122222\/](https://linkedin.com/in/https:\/\/www.linkedin.com\/in\/j%C3%A9r%C3%A9mie-deldem-5b36b3217\/ https:\/\/www.linkedin.com\/in\/lilianmu\/ https:\/\/www.linkedin.com\/in\/oph%C3%A9lie-gaudin-aa3122222\/)
 
-### `npm run eject`
+## Show your support
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Give a ⭐️ if this project helped you!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<a href="https://www.patreon.com/https:\/\/checkout.stripe.com\/pay\/cs\_test\_a1Bl7Qyw9kBbDBMP8uRG7RoIhdvtErjXN4oS9B1nvyxBKmWHlYFtXHJjo4\#fidkdWxOYHwnPyd1blpxYHZxWjA0TjNnSV9AYFdDMTA1ZlZtPGZwYV0zalx1T3Y0MFVca2NuYk9DZHVdNWFBR3FLSkJrRnxrSnNucUhiZ0M9YDw0YVY1MExxT1MzZmFiN3JVNDFNM2dgf2JONTVKPTM3aGRjQicpJ2hsYXYnP34nYnBsYSc%2FJz01MDQ9ZDJnKDc2NDAoMWZgYCg9NWQyKDYxMjNjZzVmMzc2MDIzYWAwYycpJ2hwbGEnPyc0M2YyZmNkYSg8MDRgKDEzMTAoZDU0MShgNmM2NzFmMjEwMzRhMmQ1NDYnKSd2bGEnPycyNWBgZz0zZyg2ZjQ0KDFjZmMoPDdjMSg2NDNkY2AxMTZgM2MxYGE3MmMneCknZ2BxZHYnP15YKSdpZHxqcHFRfHVgJz8ndmxrYmlgWmxxYGgnKSd3YGNgd3dgd0p3bGJsayc%2FJ21xcXV2PyoqbGhoanFgdSttYHdqbnBkdXUrZmpoJ3gl">
+  <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
+</a>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
