@@ -1,5 +1,5 @@
 .project-card {
-  @apply flex justify-between items-end w-1/4 rounded-[0.25rem] m-10 px-2 py-5 bg-oraange border border-oraange text-whiite font-bold hover:bg-greey hover:text-whiite hover:border hover:border-whiite hover:font-black hover:scale-105 hover:drop-shadow-lg;
+  @apply flex justify-between items-end w-1/4 rounded-[0.25rem] m-10 px-2 py-5 bg-primary border border-primary text-whiite font-bold hover:bg-greey hover:text-whiite hover:border hover:border-whiite hover:font-black hover:scale-105 hover:drop-shadow-lg;
   transition: all 0.1s;
 }
 
