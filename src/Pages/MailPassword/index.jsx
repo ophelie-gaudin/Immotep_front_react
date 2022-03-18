@@ -31,7 +31,11 @@ export default function MailPassword() {
 
   return (
     <div>
-      <FormsCard title="Oubli de mot de passe">
+      <FormsCard
+        title="Oubli de mot de passe"
+        returnText="Me connecter"
+        returnUrl="/login"
+      >
         <form onSubmit={handleSubmit}>
           <label>
             Email

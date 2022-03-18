@@ -41,7 +41,7 @@ const Register = () => {
 
   return (
     <div>
-      <FormsCard title="Inscription">
+      <FormsCard title="Inscription" returnText="Accueil">
         <form onSubmit={handleSubmit}>
           <label>
             Email

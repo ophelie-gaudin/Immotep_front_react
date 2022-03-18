@@ -12,6 +12,7 @@ import NewPassword from "./Pages/NewPassword";
 import ProjectPage from "./Pages/ProjectPage";
 
 import Profile from "./Pages/Profile";
+import ProfileEditPage from "./Pages/ProfileEditPage";
 import NewHousing from "./Pages/NewHousing";
 import NewProject from "./Pages/NewProject";
 
@@ -47,6 +48,7 @@ function App() {
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/dashboard/new" element={<NewProject />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/profile/edit" element={<ProfileEditPage />} />
             </Routes>
           </Layout>
         </BrowserRouter>
