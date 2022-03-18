@@ -9,6 +9,7 @@ import Layout from "./Components/Main/Layout";
 import DashboardPage from "./Pages/DashboardPage";
 import MailPassword from "./Pages/MailPassword";
 import NewPassword from "./Pages/NewPassword";
+import ProjectPage from "./Pages/ProjectPage";
 
 import Profile from "./Pages/Profile";
 import NewHousing from "./Pages/NewHousing";
@@ -38,6 +39,7 @@ function App() {
               <Route path="/users/password/edit" element={<NewPassword />} />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/dashboard/:project_id" element={<ProjectPage />} />
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/dashboard/new" element={<NewProject />} />
               <Route path="/profile" element={<Profile />} />
