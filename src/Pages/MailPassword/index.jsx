@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import FormsCard from "../../Components/FormsCard";
+
 
 export default function MailPassword() {
   const [email, setEmail] = useState("");
@@ -30,16 +32,18 @@ export default function MailPassword() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email
-          <input
-            type="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          ></input>
-        </label>
-        <button>Envoyer</button>
-      </form>
+      <FormsCard>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Email
+            <input
+              type="Email"
+              onChange={(e) => setEmail(e.target.value)}
+            ></input>
+          </label>
+          <button className="orange-button forms-buttons">Envoyer</button>
+        </form>
+      </FormsCard>
     </div>
   );
 }
