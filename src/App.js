@@ -40,13 +40,13 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
               <Route path="/dashboard/:project_id" element={<ProjectPage />} />
+              <Route
+                path="/dashboard/:project_id/housings/new"
+                element={<NewHousing />}
+              />
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/dashboard/new" element={<NewProject />} />
               <Route path="/profile" element={<Profile />} />
-              <Route
-                path="/projects/:project_id/housings"
-                element={<NewHousing />}
-              />
             </Routes>
           </Layout>
         </BrowserRouter>
