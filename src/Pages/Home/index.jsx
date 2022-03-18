@@ -157,7 +157,7 @@ export default function Home() {
       <section className="min-h-[100vh] bg-whiite  flex justify-center items-center p-12">
         <div className="container flex items-center justify-between flex-wrap md:flex-nowrap">
           <div className=" md:w-1/2 mx-8">
-            <h2 className="font-semibold text-4xl text-greey font-pacifico">
+            <h2 className="font-semibold text-4xl text-primary font-pacifico">
               ... sauf si vous avez les bons outils!
             </h2>
             <p className="text-greey text-justify mt-6">
@@ -185,9 +185,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className=" min-h-[100vh] bg-primary  flex justify-center items-center p-12 ">
+      <section className=" min-h-[100vh] bg-primary-light  flex justify-center items-center p-12 ">
         <div className="container flex flex-col">
-          <h2 className="text-whiite font-semibold text-4xl">
+          <h2 className="text-primary font-semibold text-4xl">
             Comment utiliser notre outil ?
           </h2>
           <ul className="flex flex-col relative items-center w-100 my-8">
