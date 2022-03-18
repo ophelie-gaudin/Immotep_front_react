@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Cookies from "js-cookie";
-import HousingCard from "../Main/ProjectCard";
+import HousingCard from "../Main/HousingCard";
 import OrangeButton from '../Main/OrangeButton';
 
 export default function Projects() {
