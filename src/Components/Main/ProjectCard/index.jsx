@@ -3,7 +3,7 @@ import "./ProjectCard.css";
 import { FaKey } from "react-icons/fa";
 
 const ProjectCard = (props) => {
-  const {data} = props;
+  const { data } = props;
 
   return (
     <div className="project-card">
