@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormsCard from "../../Components/FormsCard";
 
+
 export default function MailPassword() {
   const [email, setEmail] = useState("");
 
