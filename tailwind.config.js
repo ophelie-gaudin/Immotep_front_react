@@ -14,7 +14,7 @@ module.exports = {
         "primary-light": "#83DCBE",
       },
       fontFamily: {
-        bakbak: ["Bakbak One", "sans-serif"],
+        pacifico: ["Pacifico", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
       },
     },

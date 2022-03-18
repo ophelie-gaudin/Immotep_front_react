@@ -56,12 +56,11 @@ export default function Footer() {
             </div>
             <h6
               class="
-          uppercase
           font-semibold
-          
+          font-pacifico text-3xl
           flex
           items-center
-          justify-center
+          justify-center mb-4
           "
             >
               Immotep

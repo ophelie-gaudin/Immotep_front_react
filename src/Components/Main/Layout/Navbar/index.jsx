@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     // <nav classNameName="bg-whiite h-12 flex items-center fixed w-full z-50">
     // //   <div classNameName=" flex w-[90%] justify-between mx-auto items-center">
-    // //     <Link classNameName="font-bakbak text-2xl hover:text-primary" to="/">
+    // //     <Link classNameName="font-pacifico text-2xl hover:text-primary" to="/">
     // //       Immotep
     // //     </Link>
     // //     {!auth.connected && (
@@ -45,7 +45,7 @@ export default function Navbar() {
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <a href="/" className="flex items-center">
           <img src={logo} className="mr-3 h-14 sm:h-10" alt="Immotep Logo" />
-          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-3xl font-semibold whitespace-nowrap dark:text-white font-pacifico">
             Immotep
           </span>
         </a>
