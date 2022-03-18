@@ -29,7 +29,7 @@ const Login = () => {
         if (res.ok) {
           Cookies.set("token", res.headers.get("Authorization"));
           changeConnectedStatus(userLogin());
-          //window.location.href = "/";
+          window.location.href = "/";
           return res.json();
         } else {
           throw new Error(res);
