@@ -3,7 +3,6 @@ import Cookies from "js-cookie";
 import { Link } from "react-router-dom";
 import { userLogin } from "../../ReduxFolder/stateUser/userAction";
 import { useDispatch } from "react-redux";
-import Input from "../../Components/Main/Input";
 import FormsCard from "../../Components/FormsCard";
 
 const Login = () => {
@@ -36,7 +35,7 @@ const Login = () => {
           throw new Error(res);
         }
       })
-      .then((json) => console.log(json.user.id))
+      .then((json) => console.log(json.user))
       .catch((err) => console.error(err));
   };
 
@@ -47,18 +46,22 @@ const Login = () => {
         <>
           {" "}
           <form onSubmit={handleSubmit}>
-            <Input
-              label="Email"
-              type="text"
-              name="email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <Input
-              label="Password"
-              type="password"
-              name="password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <label>
+              Email
+              <input
+                type="text"
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </label>
+            <label>
+              Password
+              <input
+                type="password"
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </label>
             <button className="orange-button forms-buttons" type="submit">
               Sign In
             </button>

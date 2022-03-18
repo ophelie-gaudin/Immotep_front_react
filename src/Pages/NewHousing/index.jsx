@@ -1,26 +1,27 @@
 import React, { useState } from "react";
+import { useParams } from "react-router";
 import FormsCard from "../../Components/FormsCard";
 //import Input from "../../Components/Main/Input";
-import Cookies from "js-cookie";
 
-const NewProject = () => {
-  const [title, setTitle] = useState("");
+const NewAd = () => {
+  const [propertyCategory, setPropertyCategory] = useState("");
   const [localization, setLocalization] = useState("");
-  const [comment, setComment] = useState("");
+  const [adPrice, setAdPrice] = useState("");
+
+  const { projectId } = useParams();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`https://immotep-api.herokuapp.com/projects`, {
+    fetch(`https://immotep-api.herokuapp.com//projects/${projectId}/housings`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `${Cookies.get("token")}`,
       },
       body: JSON.stringify({
-        project: {
-          title,
+        housing: {
+          propertyCategory,
           localization,
-          comment,
+          adPrice,
         },
       }),
     })
@@ -38,17 +39,26 @@ const NewProject = () => {
 
   return (
     <div>
-      <FormsCard title="Créer un nouveau projet ">
+      <FormsCard title="Créer un nouveau logement ">
         <>
           <form onSubmit={handleSubmit}>
             <label>
-              Titre du projet
+              Type de bien
               <input
                 type="text"
-                name="title"
-                onChange={(e) => setTitle(e.target.value)}
+                name="property-category"
+                onChange={(e) => setPropertyCategory(e.target.value)}
               />
             </label>
+
+            <select name="hypothesis" id="hypothesis">
+              <option value="volvo">Studio</option>
+              <option value="saab">T1 et T2</option>
+              <option value="mercedes">grand appartement</option>
+              <option value="audi">Audi</option>
+              <option value="audi">Audi</option>
+            </select>
+
             <label>
               Localisation
               <input
@@ -58,11 +68,11 @@ const NewProject = () => {
               />
             </label>
             <label>
-              Vos notes
+              Prix de l'annonce
               <input
                 type="text"
-                name="comment"
-                onChange={(e) => setComment(e.target.value)}
+                name="adPrice"
+                onChange={(e) => setAdPrice(e.target.value)}
               />
             </label>
             <div className="flex justify-end mb-8 mt-8 mr-6">
@@ -77,4 +87,4 @@ const NewProject = () => {
   );
 };
 
-export default NewProject;
+export default NewAd;
