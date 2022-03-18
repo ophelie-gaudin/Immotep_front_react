@@ -24,13 +24,13 @@ const Dashboard = () => {
       });
 
     return (
-      <div className="flex flex-col  rounded-[0.25rem] mx-auto w-[90vw] border border-2 border-primary text-black ">
+      <div className="flex flex-col  rounded-[0.25rem] mx-auto w-[90vw] border-2 border-primary text-whiite ">
         <div className="px-8 py-8 bg-primary">
-          <a className="flex text-2xl" href="/">
-            <FaArrowLeft className="dashboard-arrow-icon" /> Accueil
+          <a className="flex !text-md items-center" href="/">
+            <FaArrowLeft className="h-4 w-4 mr-8" /> Accueil
           </a>
-          <h2 className="text-3xl font-semibold">
-            Bienvenue sur <span>vos projets</span>{" "}
+          <h2 className="text-3xl font-pacifico text-center mt-8">
+            Bienvenue sur vos projets{" "}
           </h2>
           <WarningArea>
             Ici, vous pouvez retrouver tous vos projets locatifs en cours, en
@@ -41,7 +41,7 @@ const Dashboard = () => {
           <div className="flex flex-wrap mb-12"></div>
           <div className="mb-10 mr-8 flex justify-end">
             <OrangeButton url="/dashboard/new">
-              Créer un nouveau Projet
+              J'ai un nouveau projet !
             </OrangeButton>
           </div>
         </div>
@@ -49,7 +49,7 @@ const Dashboard = () => {
     );
   } else {
     return (
-      <div className="flex flex-col  rounded-[0.25rem] mx-auto w-[90vw] border border-2 border-primary text-black ">
+      <div className="flex flex-col  rounded-[0.25rem] mx-auto w-[90vw] border-2 border-primary text-black ">
         <div className="px-8 py-8 bg-primary">
           <a className="flex text-2xl" href="/">
             <FaArrowLeft className="dashboard-arrow-icon" /> Accueil
@@ -74,7 +74,7 @@ const Dashboard = () => {
           </div>
           <div className="mb-10 mr-8 flex justify-end">
             <OrangeButton url="/dashboard/new">
-              Créer un nouveau Projet
+              <div className="flex items-center">J'ai un nouveau projet !</div>
             </OrangeButton>
           </div>
         </div>

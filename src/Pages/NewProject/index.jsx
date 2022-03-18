@@ -38,7 +38,11 @@ const NewProject = () => {
 
   return (
     <div>
-      <FormsCard title="Créer un nouveau projet ">
+      <FormsCard
+        title="Créer un nouveau projet "
+        returnText="Mes projets"
+        returnUrl="/dashboard"
+      >
         <>
           <form onSubmit={handleSubmit}>
             <label>
@@ -50,7 +54,7 @@ const NewProject = () => {
               />
             </label>
             <label>
-              Localisation
+              Localisation souhaitée du bien
               <input
                 type="text"
                 name="localization"
@@ -67,7 +71,7 @@ const NewProject = () => {
             </label>
             <div className="flex justify-end mb-8 mt-8 mr-6">
               <button className="orange-button forms-buttons" type="submit">
-                Créer
+                Je crée un nouveau projet
               </button>
             </div>
           </form>

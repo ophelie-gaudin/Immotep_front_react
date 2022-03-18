@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import FormsCard from "../../Components/FormsCard";
 
-
 export default function MailPassword() {
   const [email, setEmail] = useState("");
 
@@ -32,7 +31,11 @@ export default function MailPassword() {
 
   return (
     <div>
-      <FormsCard>
+      <FormsCard
+        title="Oubli de mot de passe"
+        returnText="Me connecter"
+        returnUrl="/login"
+      >
         <form onSubmit={handleSubmit}>
           <label>
             Email
@@ -41,7 +44,9 @@ export default function MailPassword() {
               onChange={(e) => setEmail(e.target.value)}
             ></input>
           </label>
-          <button className="orange-button forms-buttons">Envoyer</button>
+          <button className="orange-button forms-buttons">
+            Je récupère mon mot de passe
+          </button>
         </form>
       </FormsCard>
     </div>

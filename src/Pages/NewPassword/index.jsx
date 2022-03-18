@@ -35,7 +35,11 @@ export default function MailPassword() {
 
   return (
     <div>
-      <FormsCard title="Modifier mon mot de passe">
+      <FormsCard
+        title="Modifier mon mot de passe"
+        returnText="Me connecter"
+        returnUrl="/login"
+      >
         <form onSubmit={handleSubmit}>
           <label>
             Mot de passe

@@ -42,7 +42,7 @@ const Login = () => {
   return (
     <div>
       {" "}
-      <FormsCard title="Connexion">
+      <FormsCard title="Connexion" returnText="Accueil">
         <>
           {" "}
           <form onSubmit={handleSubmit}>
@@ -55,7 +55,7 @@ const Login = () => {
               />
             </label>
             <label>
-              Password
+              Mot de passe
               <input
                 type="password"
                 name="password"
@@ -63,11 +63,20 @@ const Login = () => {
               />
             </label>
             <button className="orange-button forms-buttons" type="submit">
-              Sign In
+              Je me connecte
             </button>
-            <button className="orange-button forms-buttons">
-              <Link to="/forgotpassword">Mot de passe Oublié</Link>
-            </button>
+            {/* <button className="orange-button forms-buttons"> */}
+            <div className="w-full flex justify-center text-primary mb-8">
+              {" "}
+              <Link
+                to="/forgotpassword"
+                className="hover:underline underline-offset-2"
+              >
+                J'ai oublié mon mot de passe
+              </Link>
+            </div>
+
+            {/* </button> */}
           </form>
         </>
       </FormsCard>

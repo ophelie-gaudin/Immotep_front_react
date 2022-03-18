@@ -10,8 +10,9 @@ import DashboardPage from "./Pages/DashboardPage";
 import MailPassword from "./Pages/MailPassword";
 import NewPassword from "./Pages/NewPassword";
 import ProjectPage from "./Pages/ProjectPage";
-
+import ErrorNotFoundPage from "./Pages/NotFoundedPage";
 import Profile from "./Pages/Profile";
+import ProfileEditPage from "./Pages/ProfileEditPage";
 import NewHousing from "./Pages/NewHousing";
 import NewProject from "./Pages/NewProject";
 
@@ -19,6 +20,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import "flowbite";
+import ServorErrorPage from "./Pages/ServorErrorPage";
 
 function App() {
   useEffect(() => {
@@ -47,6 +49,9 @@ function App() {
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/dashboard/new" element={<NewProject />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/profile/edit" element={<ProfileEditPage />} />
+              <Route path="/404" element={<ErrorNotFoundPage />} />
+              <Route path="/500" element={<ServorErrorPage />} />
             </Routes>
           </Layout>
         </BrowserRouter>

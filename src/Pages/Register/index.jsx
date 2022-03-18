@@ -41,7 +41,7 @@ const Register = () => {
 
   return (
     <div>
-      <FormsCard title="Inscription">
+      <FormsCard title="Inscription" returnText="Accueil">
         <form onSubmit={handleSubmit}>
           <label>
             Email
@@ -60,7 +60,7 @@ const Register = () => {
             />
           </label>
           <button className="orange-button forms-buttons" type="submit">
-            Register
+            Je m'enregistre
           </button>
         </form>
       </FormsCard>
