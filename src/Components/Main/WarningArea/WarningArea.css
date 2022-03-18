@@ -1,0 +1,3 @@
+.warning-area {
+  @apply rounded-[0.25rem] bg-greey bg-opacity-75 text-whiite ml-40 mr-24 px-5 py-10 border border-primary;
+}

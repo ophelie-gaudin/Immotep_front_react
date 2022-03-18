@@ -1,13 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+/* FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap");
+
+/* PROPERTIES */
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @apply !max-w-[100vw] overflow-x-hidden font-lato text-greey;
+}
+
+container {
+  @apply md:max-w-[1200px] px-12;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/** HOME PAGE **/
+
+/* Texte qui défile */
+.codinfox-changing-keywords {
+  vertical-align: top;
+  overflow: hidden;
+  height: 150px;
+  position: relative;
+  display: block;
+  width: 800px;
+}
+.hidden {
+  position: absolute;
+  top: 60px;
+  display: block;
+  width: 800px;
+  opacity: 0;
+  animation: slideme 8s infinite;
+}
+.hidden:nth-child(3) {
+  animation-delay: 2s;
+}
+.hidden:nth-child(5) {
+  animation-delay: 4s;
+}
+.hidden:nth-child(7) {
+  animation-delay: 6s;
+}
+/* Texte qui défile ci-dessus */
+
+/* Accordion stepsection */
+
+/* Accordion stepsection */

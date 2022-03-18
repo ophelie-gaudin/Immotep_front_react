@@ -1,0 +1,4 @@
+.phantom-button {
+  @apply rounded-[0.25rem] px-4 py-3 bg-transparent border border-primary text-whiite font-bold hover:bg-greey hover:text-whiite hover:border-whiite hover:font-black;
+  transition: all 0.4s;
+}

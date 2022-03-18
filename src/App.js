@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import { useEffect } from "react";
+import store from "./ReduxFolder/store";
+import Register from "./Pages/Register";
+import Home from "./Pages/Home";
+import Login from "./Pages/Login";
+import Layout from "./Components/Main/Layout";
+import DashboardPage from "./Pages/DashboardPage";
+import MailPassword from "./Pages/MailPassword";
+import NewPassword from "./Pages/NewPassword";
+
+import Profile from "./Pages/Profile";
+import NewProject from "./Pages/NewProject";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+import "flowbite";
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      delay: 200,
+      duration: 1200,
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <>
+        <BrowserRouter>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/forgotpassword" element={<MailPassword />} />
+              <Route path="/newpassword" element={<NewPassword />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/dashboard" element={<DashboardPage />} />
+              <Route path="/dashboard/new" element={<NewProject />} />
+              <Route path="/profile" element={<Profile />} />
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </>
+    </Provider>
   );
 }
 
