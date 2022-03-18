@@ -35,7 +35,7 @@ export default function MailPassword() {
       <form onSubmit={handleSubmit}>
         <label>
           Mot de passe
-          <input type="Email" onChange={(e) => setPassword(e.target.value)}></input>
+          <input type="password" onChange={(e) => setPassword(e.target.value)}></input>
         </label>
         <button>Envoyer</button>
       </form>

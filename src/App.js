@@ -34,7 +34,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/forgotpassword" element={<MailPassword />} />
-              <Route path="/newpassword" element={<NewPassword />} />
+              <Route path="/users/password/edit" element={<NewPassword />} />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
               <Route path="/dashboard" element={<DashboardPage />} />
