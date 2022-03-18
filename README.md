@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to IMMOTEP 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-1.1.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/istarengwa/Immotep_API" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
@@ -9,7 +9,7 @@
   </a>
 </p>
 
-> /!\ Ce site n'est pas destiné à mettre en lien les vendeurs et les acheteurs. Lors des visites, certaines informations sont cruciales pour pouvoir faire une analyse objective du potentiel d'un bien (charges, loyer annuel, taux d'occupation...) et il est impératif que le futur acheteur y ait accès pour pouvoir comparer plusieurs biens entre eux et choisir l’investissement qui lui correspondra le mieux. Nous souhaitons donc mettre en place un outil lui permettant de récolter ces informations importantes sans risquer d'en oublier, et d'obtenir une analyse objective des biens qu'il a visités.
+> Investir dans l'immobilier est quelque chose que nous avons (presque) tous déjà rêvé de faire. Que ce soit pour soi-même ou pour espérer en tirer un revenu régulier, nous pouvons très rapidement nous perdre face à la masse des éléments à prendre en compte et leur complexité.Nous nous plaçons ici dans le cas précis d'une personne souhaitant acquérir un bien pour le mettre à la location (et non pas pour faire de l'achat/revente OU en faire sa résidence principale -bien que ces fonctionnalités puissent être développées plus tard pour étendre l'offre). /!\ Ce site n'est pas destiné à mettre en lien les vendeurs et les acheteurs. Lors des visites, certaines informations sont cruciales pour pouvoir faire une analyse objective du potentiel d'un bien (charges, loyer annuel, taux d'occupation...) et il est impératif que le futur acheteur y ait accès pour pouvoir comparer plusieurs biens entre eux et choisir l’investissement qui lui correspondra le mieux. Nous souhaitons donc mettre en place un outil lui permettant de récolter ces informations importantes sans risquer d'en oublier, et d'obtenir une analyse objective des biens qu'il a visités.
 
 ### 🏠 [Homepage](https://immotep.vercel.app/)
 
@@ -38,8 +38,8 @@ npm react-scripts test
 
 👤 **DELDEM JEREMIE & GAUDIN OPHELIE & MULLER LILIAN**
 
-- Github: [@8UK0W5K1 ophelie-gaudin ISTARENGWA ](https://github.com/8UK0W5K1 ophelie-gaudin ISTARENGWA )
-- LinkedIn: [@https:\/\/www.linkedin.com\/in\/j%C3%A9r%C3%A9mie-deldem-5b36b3217\/ https:\/\/www.linkedin.com\/in\/lilianmu\/ https:\/\/www.linkedin.com\/in\/oph%C3%A9lie-gaudin-aa3122222\/](https://linkedin.com/in/https:\/\/www.linkedin.com\/in\/j%C3%A9r%C3%A9mie-deldem-5b36b3217\/ https:\/\/www.linkedin.com\/in\/lilianmu\/ https:\/\/www.linkedin.com\/in\/oph%C3%A9lie-gaudin-aa3122222\/)
+- Github: [@Jérémie Deldem](https://github.com/8UK0W5K1) [@Ophelie Gaudin](https://github.com/ophelie-gaudin) [@Lilian Muller](https://github.com/ISTARENGWA)
+- LinkedIn: [@Jérémie Deldem](https://www.linkedin.com/in/j%C3%A9r%C3%A9mie-deldem-5b36b3217) [@Lilian Muller](https://www.linkedin.com/in/lilianmu/) [@Ophelie Gaudin](https://www.linkedin.com/in/oph%C3%A9lie-gaudin-aa3122222/)
 
 ## Show your support
 
