@@ -60,7 +60,7 @@ const Register = () => {
             />
           </label>
           <button className="orange-button forms-buttons" type="submit">
-            Register
+            Je m'enregistre
           </button>
         </form>
       </FormsCard>
