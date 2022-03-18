@@ -1,0 +1,84 @@
+import React, { useState } from "react";
+import { useParams } from "react-router";
+import FormsCard from "../../Components/FormsCard";
+import Input from "../../Components/Main/Input";
+
+const NewAd = () => {
+  const [propertyCategory, setPropertyCategory] = useState("");
+  const [localization, setLocalization] = useState("");
+  const [adPrice, setAdPrice] = useState("");
+
+  const { projectId } = useParams();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch(`https://immotep-api.herokuapp.com//projects/${projectId}/housings`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        housing: {
+          propertyCategory,
+          localization,
+          adPrice,
+        },
+      }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          window.location.href = "/dashboard";
+          return res.json();
+        } else {
+          throw new Error(res);
+        }
+      })
+      .then((json) => console.log(json.user.id))
+      .catch((err) => console.error(err));
+  };
+
+  return (
+    <div>
+      <FormsCard title="Créer un nouveau logement ">
+        <>
+          <form onSubmit={handleSubmit}>
+            <Input
+              label="Type de bien"
+              type="text"
+              name="property-category"
+              onChange={(e) => setPropertyCategory(e.target.value)}
+            />
+
+            <select name="hypothesis" id="hypothesis">
+              <option value="volvo">Studio</option>
+              <option value="saab">T1 et T2</option>
+              <option value="mercedes">grand appartement</option>
+              <option value="audi">Audi</option>
+              <option value="audi">Audi</option>
+            </select>
+
+            <Input
+              label="Localisation"
+              type="text"
+              name="localization"
+              onChange={(e) => setLocalization(e.target.value)}
+            />
+            <Input
+              label="Prix de l'annonce"
+              type="text"
+              name="adPrice"
+              onChange={(e) => setAdPrice(e.target.value)}
+            />
+            <div className="flex justify-end mb-8 mt-8 mr-6">
+              <button className="orange-button forms-buttons" type="submit">
+                Créer
+              </button>
+            </div>
+          </form>
+        </>
+      </FormsCard>
+    </div>
+  );
+};
+
+export default NewAd;

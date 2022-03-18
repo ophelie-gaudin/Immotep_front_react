@@ -6,7 +6,7 @@ import BackgroundVideo from "../../assets/video-2.mp4";
 export default function Home() {
   return (
     <div className="">
-      <section class="relative flex items-center justify-center md:justify-start h-[93vh] overflow-hidden">
+      <section className="relative flex items-center justify-center md:justify-start h-[93vh] overflow-hidden">
         <div className="relative z-30 flex flex-col py-10 mx-auto md:mx-12 max-w-[540px] w-[85%] container bg-black/20 px-8">
           <h1 className="font-bold text-5xl text-whiite">
             Devenez rentier
@@ -69,7 +69,7 @@ export default function Home() {
             </span>
           </p>
 
-          <div class="flex py-14  flex-wrap">
+          <div className="flex py-14  flex-wrap">
             <div className="md:w-1/3 sm:w-1/2 p-4">
               <span className="text-5xl font-bold font-pacifico">61 % </span>
               <p className="d-block text-muted fs-lg mt-1">
