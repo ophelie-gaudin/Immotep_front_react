@@ -8,7 +8,7 @@ export default function Home() {
     <div className="">
       <section class="relative flex items-center justify-center md:justify-start h-[93vh] overflow-hidden">
         <div className="relative z-30 flex flex-col py-10 mx-auto md:mx-12 max-w-[540px] w-[85%] container bg-black/20 px-8">
-          <h1 className="font-bold text-5xl text-whiite !font-lato">
+          <h1 className="font-bold text-5xl text-whiite">
             Devenez rentier
             <div className="words-to-change font-semibold">
               <span className="font-medium text-primary-light">
@@ -60,7 +60,7 @@ export default function Home() {
           data-aos="fade-up"
           data-aos-duration="2000"
         >
-          <p className="text-3xl font-semibold italic text-justify">
+          <p className="text-3xl font-semibold italic text-justify text-primary">
             &#10077; L’immobilier apparaît comme la valeur la plus sûre du
             marché pour la majorité des français. &#10078;
             <br />
@@ -71,7 +71,7 @@ export default function Home() {
 
           <div class="flex py-14  flex-wrap">
             <div className="md:w-1/3 sm:w-1/2 p-4">
-              <span className="text-4xl font-bold">61 % </span>
+              <span className="text-5xl font-bold font-pacifico">61 % </span>
               <p className="d-block text-muted fs-lg mt-1">
                 {" "}
                 <span className=" font-semibold">
@@ -86,7 +86,7 @@ export default function Home() {
             </div>
 
             <div className="md:w-1/3 sm:w-1/2 p-4">
-              <span className="text-4xl  font-bold">68 % </span>
+              <span className="text-5xl font-bold font-pacifico">68 % </span>
               <p className="d-block text-muted fs-lg mt-1">
                 <span className=" font-semibold">
                   des français estiment que l'immobilier est le meilleur
@@ -100,7 +100,7 @@ export default function Home() {
             </div>
 
             <div className="md:w-1/3 sm:w-1/2 p-4">
-              <span className="text-4xl  font-bold">1,29 %</span>
+              <span className="text-5xl font-bold font-pacifico">1,29 %</span>
               <p className="d-block text-muted fs-lg mt-1">
                 <span className=" font-semibold">
                   taux moyen des crédits immobiliers en juin 2019, contre 6%
@@ -136,7 +136,7 @@ export default function Home() {
           </div>
 
           <div className=" md:w-1/2 mx-8">
-            <h2 className="font-semibold text-4xl text-whiite">
+            <h2 className="font-semibold text-4xl text-whiite font-pacifico">
               Trouver un bien immobilier rentable semble compliqué...
             </h2>
             <p className="text-white text-justify mt-6">
@@ -157,8 +157,8 @@ export default function Home() {
       <section className="min-h-[100vh] bg-whiite  flex justify-center items-center p-12">
         <div className="container flex items-center justify-between flex-wrap md:flex-nowrap">
           <div className=" md:w-1/2 mx-8">
-            <h2 className="font-semibold text-4xl text-greey">
-              ... sauf si vous avez les bons outils !
+            <h2 className="font-semibold text-4xl text-greey font-pacifico">
+              ... sauf si vous avez les bons outils!
             </h2>
             <p className="text-greey text-justify mt-6">
               Notre outil vous permet de stocker les informations de l'ensemble
@@ -188,16 +188,21 @@ export default function Home() {
       <section className=" min-h-[100vh] bg-primary  flex justify-center items-center p-12 ">
         <div className="container flex flex-col">
           <h2 className="text-whiite font-semibold text-4xl">
-            Comment utiliser notre outil :
+            Comment utiliser notre outil ?
           </h2>
           <ul className="flex flex-col relative items-center w-100 my-8">
             <li className="my-4 max-w-[500px]">
               <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary absolute after:border after:border-whiite">
                 1
               </div>
-              <h6 className="text-xl text-whiite" data-aos="fade-right">
+              <h6
+                className="text-xl text-whiite  font-pacifico"
+                data-aos="fade-right"
+              >
                 Créez un ou plusieurs{" "}
-                <strong>projets immobiliers locatifs</strong>
+                <span className="underline underline-offset-4">
+                  projets immobiliers locatifs
+                </span>
               </h6>
               <div className="bg-whiite/20 p-2 my-2">
                 <p className="text-whiite p-2" data-aos="fade-left">
@@ -211,9 +216,14 @@ export default function Home() {
               <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary absolute after:border after:border-whiite">
                 2
               </div>
-              <h6 className="text-xl text-whiite" data-aos="fade-right">
+              <h6
+                className="text-xl text-whiite  font-pacifico"
+                data-aos="fade-right"
+              >
                 Stockez les informations des annonces{" "}
-                <strong>au même endroit</strong>{" "}
+                <span className="underline underline-offset-4">
+                  au même endroit
+                </span>{" "}
               </h6>
               <div className="bg-whiite/20 p-2 my-2">
                 <p className="text-whiite p-2" data-aos="fade-left">
@@ -227,8 +237,14 @@ export default function Home() {
               <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary absolute after:border after:border-whiite">
                 3
               </div>
-              <h6 className="text-xl text-whiite" data-aos="fade-right">
-                Visitez et posez les <strong>bonnes questions</strong>
+              <h6
+                className="text-xl text-whiite  font-pacifico"
+                data-aos="fade-right"
+              >
+                Visitez et posez les{" "}
+                <span className="underline underline-offset-4">
+                  bonnes questions
+                </span>
               </h6>
               <div className="bg-whiite/20 p-2 my-2">
                 <p className="text-whiite p-2" data-aos="fade-left">
@@ -243,8 +259,14 @@ export default function Home() {
               <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary absolute after:border after:border-whiite">
                 4
               </div>
-              <h6 className="text-xl text-whiite" data-aos="fade-right">
-                Utilisez le calculateur de <strong>rentabilité</strong>
+              <h6
+                className="text-xl text-whiite  font-pacifico"
+                data-aos="fade-right"
+              >
+                Utilisez le calculateur de{" "}
+                <span className="underline underline-offset-4">
+                  rentabilité
+                </span>
               </h6>
               <div className="bg-whiite/20 p-2 my-2">
                 <p className="text-whiite p-2" data-aos="fade-left">
@@ -258,8 +280,14 @@ export default function Home() {
               <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary absolute after:border after:border-whiite">
                 5
               </div>
-              <h6 className="text-xl text-whiite" data-aos="fade-right">
-                Trouvez le <strong>meilleur investissement</strong>
+              <h6
+                className="text-xl text-whiite  font-pacifico"
+                data-aos="fade-right"
+              >
+                Trouvez le{" "}
+                <span className="underline underline-offset-4">
+                  meilleur investissement
+                </span>
               </h6>
               <div className="bg-whiite/20 p-2 my-2">
                 <p className="text-whiite p-2" data-aos="fade-left">

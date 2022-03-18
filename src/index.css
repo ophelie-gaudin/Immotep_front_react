@@ -19,15 +19,6 @@ body {
   @apply !max-w-[100vw] overflow-x-hidden font-lato text-greey;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-pacifico;
-}
-
 container {
   @apply md:max-w-[1200px] px-12;
 }
