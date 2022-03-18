@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router";
 import FormsCard from "../../Components/FormsCard";
-import Input from "../../Components/Main/Input";
+//import Input from "../../Components/Main/Input";
 
 const NewAd = () => {
   const [propertyCategory, setPropertyCategory] = useState("");
@@ -42,12 +42,14 @@ const NewAd = () => {
       <FormsCard title="Créer un nouveau logement ">
         <>
           <form onSubmit={handleSubmit}>
-            <Input
-              label="Type de bien"
-              type="text"
-              name="property-category"
-              onChange={(e) => setPropertyCategory(e.target.value)}
-            />
+            <label>
+              Type de bien
+              <input
+                type="text"
+                name="property-category"
+                onChange={(e) => setPropertyCategory(e.target.value)}
+              />
+            </label>
 
             <select name="hypothesis" id="hypothesis">
               <option value="volvo">Studio</option>
@@ -57,18 +59,22 @@ const NewAd = () => {
               <option value="audi">Audi</option>
             </select>
 
-            <Input
-              label="Localisation"
-              type="text"
-              name="localization"
-              onChange={(e) => setLocalization(e.target.value)}
-            />
-            <Input
-              label="Prix de l'annonce"
-              type="text"
-              name="adPrice"
-              onChange={(e) => setAdPrice(e.target.value)}
-            />
+            <label>
+              Localisation
+              <input
+                type="text"
+                name="localization"
+                onChange={(e) => setLocalization(e.target.value)}
+              />
+            </label>
+            <label>
+              Prix de l'annonce
+              <input
+                type="text"
+                name="adPrice"
+                onChange={(e) => setAdPrice(e.target.value)}
+              />
+            </label>
             <div className="flex justify-end mb-8 mt-8 mr-6">
               <button className="orange-button forms-buttons" type="submit">
                 Créer
