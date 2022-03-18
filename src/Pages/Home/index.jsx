@@ -157,7 +157,7 @@ export default function Home() {
       <section className="min-h-[100vh] bg-whiite  flex justify-center items-center p-12">
         <div className="container flex items-center justify-between flex-wrap md:flex-nowrap">
           <div className=" md:w-1/2 mx-8">
-            <h2 className="font-semibold text-4xl text-greey font-pacifico">
+            <h2 className="font-semibold text-4xl text-primary font-pacifico">
               ... sauf si vous avez les bons outils!
             </h2>
             <p className="text-greey text-justify mt-6">
@@ -185,116 +185,144 @@ export default function Home() {
         </div>
       </section>
 
-      <section className=" min-h-[100vh] bg-primary  flex justify-center items-center p-12 ">
+      <section className=" min-h-[100vh] bg-primary-light  flex justify-center items-center p-12 ">
         <div className="container flex flex-col">
-          <h2 className="text-whiite font-semibold text-4xl">
+          <h2 className="text-primary font-semibold text-4xl">
             Comment utiliser notre outil ?
           </h2>
           <ul className="flex flex-col relative items-center w-100 my-8">
-            <li className="my-4 max-w-[500px]">
-              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary absolute after:border after:border-whiite">
-                1
+            <li className="my-4 max-w-[500px] flex items-start hover:scale-110 transition-transform">
+              <div>
+                <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary  mr-8">
+                  1
+                </div>
+                {/* after:border after:border-whiite */}
               </div>
-              <h6
-                className="text-xl text-whiite  font-pacifico"
-                data-aos="fade-right"
-              >
-                Créez un ou plusieurs{" "}
-                <span className="underline underline-offset-4">
-                  projets immobiliers locatifs
-                </span>
-              </h6>
-              <div className="bg-whiite/20 p-2 my-2">
-                <p className="text-whiite p-2" data-aos="fade-left">
-                  Définissez les critères importants dans votre recherche de
-                  bien immobilier.
-                </p>
+
+              <div className="flex flex-col">
+                <h6
+                  className="text-xl text-whiite  font-pacifico"
+                  data-aos="fade-right"
+                >
+                  Créez un ou plusieurs{" "}
+                  <span className="underline underline-offset-4">
+                    projets immobiliers locatifs
+                  </span>
+                </h6>
+                <div className="bg-whiite/20 p-2 my-2">
+                  <p className="text-whiite p-2" data-aos="fade-left">
+                    Définissez les critères importants dans votre recherche de
+                    bien immobilier.
+                  </p>
+                </div>
               </div>
             </li>
 
-            <li className="my-4 max-w-[500px]">
-              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary absolute after:border after:border-whiite">
-                2
+            <li className="my-4 max-w-[500px] flex items-start hover:scale-110  transition-transform">
+              <div>
+                <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary  mr-8">
+                  2
+                </div>
               </div>
-              <h6
-                className="text-xl text-whiite  font-pacifico"
-                data-aos="fade-right"
-              >
-                Stockez les informations des annonces{" "}
-                <span className="underline underline-offset-4">
-                  au même endroit
-                </span>{" "}
-              </h6>
-              <div className="bg-whiite/20 p-2 my-2">
-                <p className="text-whiite p-2" data-aos="fade-left">
-                  Lorsque vous trouvez des biens qui vous intéressent, stockez
-                  toutes leurs informations ainsi que le lien vers leur annonce.
-                </p>
+
+              <div className="flex flex-col">
+                <h6
+                  className="text-xl text-whiite  font-pacifico"
+                  data-aos="fade-right"
+                >
+                  Stockez les informations des annonces{" "}
+                  <span className="underline underline-offset-4">
+                    au même endroit
+                  </span>{" "}
+                </h6>
+                <div className="bg-whiite/20 p-2 my-2">
+                  <p className="text-whiite p-2" data-aos="fade-left">
+                    Lorsque vous trouvez des biens qui vous intéressent, stockez
+                    toutes leurs informations ainsi que le lien vers leur
+                    annonce.
+                  </p>
+                </div>
               </div>
             </li>
 
-            <li className="my-4 max-w-[500px]">
-              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary absolute after:border after:border-whiite">
-                3
+            <li className="my-4 max-w-[500px] flex items-start hover:scale-110  transition-transform">
+              <div>
+                <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary  mr-8">
+                  3
+                </div>
               </div>
-              <h6
-                className="text-xl text-whiite  font-pacifico"
-                data-aos="fade-right"
-              >
-                Visitez et posez les{" "}
-                <span className="underline underline-offset-4">
-                  bonnes questions
-                </span>
-              </h6>
-              <div className="bg-whiite/20 p-2 my-2">
-                <p className="text-whiite p-2" data-aos="fade-left">
-                  Lors de la visite d'un bien ou d'un entretien téléphonique,
-                  posez les <strong>questions pertinentes</strong> dans le cas
-                  d'un investissement locatif.
-                </p>
+
+              <div className="flex flex-col">
+                <h6
+                  className="text-xl text-whiite  font-pacifico"
+                  data-aos="fade-right"
+                >
+                  Visitez et posez les{" "}
+                  <span className="underline underline-offset-4">
+                    bonnes questions
+                  </span>
+                </h6>
+                <div className="bg-whiite/20 p-2 my-2">
+                  <p className="text-whiite p-2" data-aos="fade-left">
+                    Lors de la visite d'un bien ou d'un entretien téléphonique,
+                    posez les <strong>questions pertinentes</strong> dans le cas
+                    d'un investissement locatif.
+                  </p>
+                </div>
               </div>
             </li>
 
-            <li className="my-4 max-w-[500px]">
-              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary absolute after:border after:border-whiite">
-                4
+            <li className="my-4 max-w-[500px] flex items-start hover:scale-110  transition-transform">
+              <div>
+                <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary  mr-8">
+                  4
+                </div>
               </div>
-              <h6
-                className="text-xl text-whiite  font-pacifico"
-                data-aos="fade-right"
-              >
-                Utilisez le calculateur de{" "}
-                <span className="underline underline-offset-4">
-                  rentabilité
-                </span>
-              </h6>
-              <div className="bg-whiite/20 p-2 my-2">
-                <p className="text-whiite p-2" data-aos="fade-left">
-                  Notre outil calcule pour vous la <strong>rentabilité</strong>{" "}
-                  des biens que vous avez stockés.
-                </p>
+
+              <div className="flex flex-col">
+                <h6
+                  className="text-xl text-whiite  font-pacifico"
+                  data-aos="fade-right"
+                >
+                  Utilisez le calculateur de{" "}
+                  <span className="underline underline-offset-4">
+                    rentabilité
+                  </span>
+                </h6>
+                <div className="bg-whiite/20 p-2 my-2">
+                  <p className="text-whiite p-2" data-aos="fade-left">
+                    Notre outil calcule pour vous la{" "}
+                    <strong>rentabilité</strong> des biens que vous avez
+                    stockés.
+                  </p>
+                </div>
               </div>
             </li>
 
-            <li className="my-4 max-w-[500px]">
-              <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary absolute after:border after:border-whiite">
-                5
+            <li className="my-4 max-w-[500px] flex items-start hover:scale-110  transition-transform">
+              <div>
+                <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary  mr-8">
+                  5
+                </div>
               </div>
-              <h6
-                className="text-xl text-whiite  font-pacifico"
-                data-aos="fade-right"
-              >
-                Trouvez le{" "}
-                <span className="underline underline-offset-4">
-                  meilleur investissement
-                </span>
-              </h6>
-              <div className="bg-whiite/20 p-2 my-2">
-                <p className="text-whiite p-2" data-aos="fade-left">
-                  <strong>Comparez</strong> les biens et{" "}
-                  <strong>choisissez</strong> celui qui correspond à vos
-                  attentes.
-                </p>
+
+              <div className="flex flex-col">
+                <h6
+                  className="text-xl text-whiite  font-pacifico"
+                  data-aos="fade-right"
+                >
+                  Trouvez le{" "}
+                  <span className="underline underline-offset-4">
+                    meilleur investissement
+                  </span>
+                </h6>
+                <div className="bg-whiite/20 p-2 my-2">
+                  <p className="text-whiite p-2" data-aos="fade-left">
+                    <strong>Comparez</strong> les biens et{" "}
+                    <strong>choisissez</strong> celui qui correspond à vos
+                    attentes.
+                  </p>
+                </div>
               </div>
             </li>
 
@@ -305,7 +333,9 @@ export default function Home() {
     <%end%> */}
           </ul>
 
-          <OrangeButton>Commencez maintenant !</OrangeButton>
+          <div className="mx-auto">
+            <OrangeButton>Commencez maintenant !</OrangeButton>
+          </div>
         </div>
       </section>
     </div>

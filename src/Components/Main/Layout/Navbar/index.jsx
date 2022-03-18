@@ -41,7 +41,7 @@ export default function Navbar() {
     //   </div>
     // </nav>
 
-    <nav className="bg-primary-light border-gray-200 px-2 sm:px-4 py-2.5 rounded fixed w-full z-50 text-light">
+    <nav className="bg-primary-light px-2 sm:px-4 py-2.5 rounded fixed w-full z-50 text-light">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <a href="/" className="flex items-center">
           <img src={logo} className="mr-3 h-14 sm:h-10" alt="Immotep Logo" />
