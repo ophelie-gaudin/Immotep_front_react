@@ -4,18 +4,18 @@ import { FaArrowLeft } from "react-icons/fa";
 import WarningArea from "../Main/WarningArea";
 import ProjectCard from "../Main/ProjectCard";
 import OrangeButton from "../Main/OrangeButton";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import Cookies from "js-cookie";
 
 const Dashboard = () => {
-  const [myProjects, setMyProjects] = useState(null);
+  const [myProjects, setMyProjects] = useState({});
 
-  useEffect(() => {
-    fetch(`https://immotep-api.herokuapp.com/projects`, {
-      method: "get",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+  fetch(`https://immotep-api.herokuapp.com/projects`, {
+    method: "get",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: Cookies.get("token"),
+    },
   }).then((res) => {
     if (res.ok) {
       console.log(res);
@@ -47,13 +47,13 @@ const Dashboard = () => {
       </div>
       <div className="bg-greey">
         <div className="flex flex-wrap mb-12">
-          {myProjects.map((project) => {
+          {/* {myProjects.map((project) => {
             <ProjectCard
               title={project.title}
               localization={project.localization}
               comment={project.comment}
             />;
-          })}
+          })} */}
         </div>
         <div className="mb-10 mr-8 flex justify-end">
           <OrangeButton url="/dashboard/new">
