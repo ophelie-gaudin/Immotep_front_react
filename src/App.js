@@ -11,6 +11,7 @@ import MailPassword from "./Pages/MailPassword";
 import NewPassword from "./Pages/NewPassword";
 
 import Profile from "./Pages/Profile";
+import NewHousing from "./Pages/NewHousing";
 import NewProject from "./Pages/NewProject";
 
 import AOS from "aos";
@@ -40,6 +41,10 @@ function App() {
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/dashboard/new" element={<NewProject />} />
               <Route path="/profile" element={<Profile />} />
+              <Route
+                path="/projects/:project_id/housings"
+                element={<NewHousing />}
+              />
             </Routes>
           </Layout>
         </BrowserRouter>
