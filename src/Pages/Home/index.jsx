@@ -1,10 +1,59 @@
 import React from "react";
 
 import OrangeButton from "../../Components/Main/OrangeButton";
+import BackgroundVideo from "../../assets/video-2.mp4";
 
 export default function Home() {
   return (
     <div className="">
+      <header class="relative flex items-center h-screen mb-12 overflow-hidden">
+        <div className="relative z-30 flex flex-col py-10 mx-auto md:mx-12 max-w-[540px] container">
+          <h1 className="font-bold text-5xl text-whiite ">
+            Devenez rentier
+            <div className="words-to-change font-semibold">
+              <span>
+                sans vous prendre <br /> la tête{" "}
+              </span>
+              {/* <br />
+                  <span>
+                    en faisant des <br /> choix éclairés
+                  </span>
+                  <br />
+                  <span>
+                    sans perdre <br /> votre temps
+                  </span>
+                  <br />
+                  <span>en toute simplicité</span> */}
+              {/* https://usefulangle.com/post/75/typing-effect-animation-javascript-css */}
+            </div>
+          </h1>
+
+          <p className="text-whiite text-xl my-16">
+            Vous aimeriez investir dans l'immobilier locatif mais trouver le
+            meilleur bien vous semble trop complexe?
+            <br />
+            <br />
+            Nous avons la solution pour vous :{" "}
+          </p>
+          <br />
+          <OrangeButton>Commencez maintenant !</OrangeButton>
+          {/* <% if isUser? %>
+          <%= link_to 'Commencez maintenant', projects_path(current_user.id),  className:"btn btn-primary rounded" %>
+        <%else%>
+          <%= link_to 'Commencez maintenant', new_user_registration_path,  className:"btn btn-primary rounded" %>
+        <%end%> */}
+        </div>
+        <video
+          autoPlay
+          loop
+          muted
+          className="absolute z-10 w-auto min-w-full min-h-full max-w-none"
+          id="video"
+        >
+          <source src={BackgroundVideo} type="video/mp4" />
+        </video>
+      </header>
+
       <section className="min-h-[100vh] bg-greey flex items-center">
         <div className="flex flex-col py-10 mx-auto md:mx-12 max-w-[540px] container">
           <h1 className="font-bold text-5xl text-whiite ">
