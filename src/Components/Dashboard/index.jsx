@@ -30,7 +30,7 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="flex flex-col  rounded-[0.25rem] mx-auto w-[90vw] border border-2 border-primary text-black ">
+    <div className="flex flex-col my-12 rounded-[0.25rem] mx-auto w-[90vw] border border-2 border-primary text-black ">
       <div className="px-8 py-8 bg-primary">
         <a className="flex text-2xl" href="/">
           <FaArrowLeft className="dashboard-arrow-icon" /> Accueil
