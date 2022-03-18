@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router";
 import FormsCard from "../../Components/FormsCard";
+import Cookies from "js-cookie";
 //import Input from "../../Components/Main/Input";
 
 const NewAd = () => {
@@ -8,14 +9,15 @@ const NewAd = () => {
   const [localization, setLocalization] = useState("");
   const [adPrice, setAdPrice] = useState("");
 
-  const { projectId } = useParams();
+  const id_project = window.location.href.slice(window.location.href.indexOf("dashboard")).substring(10, 12);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`https://immotep-api.herokuapp.com//projects/${projectId}/housings`, {
+    fetch(`https://immotep-api.herokuapp.com/projects/${id_project}/housings`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `${Cookies.get("token")}`,
       },
       body: JSON.stringify({
         housing: {
@@ -51,13 +53,13 @@ const NewAd = () => {
               />
             </label>
 
-            <select name="hypothesis" id="hypothesis">
+            {/* <select name="hypothesis" id="hypothesis">
               <option value="volvo">Studio</option>
               <option value="saab">T1 et T2</option>
               <option value="mercedes">grand appartement</option>
               <option value="audi">Audi</option>
               <option value="audi">Audi</option>
-            </select>
+            </select> */}
 
             <label>
               Localisation
