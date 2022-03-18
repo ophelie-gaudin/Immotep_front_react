@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import Cookies from "js-cookie";
 import HousingCard from "../Main/ProjectCard";
+import OrangeButton from '../Main/OrangeButton';
 
-export default function Projects(data) {
+export default function Projects() {
   const [myHousings, setMyHousings] = useState([])
+  const id_project = window.location.href.slice(window.location.href.indexOf("dashboard")).substring(10, 12);
 
   if (myHousings.length === 0) {
-    fetch(`https://immotep-api.herokuapp.com/projects/${data.id}/housings`, {
+    fetch(`https://immotep-api.herokuapp.com/projects/${id_project}/housings`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -21,6 +23,10 @@ export default function Projects(data) {
     return (
       <div>
         <h1> Aucun Housings </h1>
+        <br />
+          <OrangeButton url={`/dashboard/${id_project}/housings/new`} >
+            Ajouter un Housing
+          </OrangeButton>
       </div>
       
     )
@@ -35,6 +41,10 @@ export default function Projects(data) {
             </div>
           )
         })}
+        <br />
+          <OrangeButton url={`/dashboard/${id_project}/housings/new`} >
+            Ajouter un Housing
+          </OrangeButton>
       </div>
     )
   }

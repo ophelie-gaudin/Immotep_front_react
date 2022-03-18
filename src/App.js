@@ -39,7 +39,7 @@ function App() {
               <Route path="/users/password/edit" element={<NewPassword />} />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/projects/:project_id" element={<ProjectPage />} />
+              <Route path="/dashboard/:project_id" element={<ProjectPage />} />
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/dashboard/new" element={<NewProject />} />
               <Route path="/profile" element={<Profile />} />
