@@ -10,10 +10,6 @@ import Cookies from "js-cookie";
 const Dashboard = () => {
   const [myProjects, setMyProjects] = useState([]);
 
-  const handleRefreshLike = () => {
-    setMyProjects([]);
-  }
-
   if (myProjects.length === 0) {
     fetch(`https://immotep-api.herokuapp.com/projects`, {
       method: "GET",
@@ -21,15 +17,11 @@ const Dashboard = () => {
         "Content-Type": "application/json",
         Authorization: Cookies.get("token"),
       },
-    }).then((res) => {
-      if (res.ok) {
-        console.log(res);
-        setMyProjects(res);
-        return res.json();
-      } else {
-        throw new Error(res);
-      }
-    });
+    })
+    .then((response) => response.json())
+    .then((response) => {
+      setMyProjects(response)
+    })
   
     return (
       <div className="flex flex-col  rounded-[0.25rem] mx-auto w-[90vw] border border-2 border-primary text-black ">
@@ -75,17 +67,15 @@ const Dashboard = () => {
         </div>
       <div className="">
         <div className="flex flex-wrap mb-12">
-          {/* {myProjects.map((project) => {
-            <div key={project.id}>
-              <ProjectCard
-                title={project.title}
-                localization={project.localization}
-                comment={project.comment}
-                onRefresh={handleRefreshLike}
-              />
-              ;
-            </div>;
-          })} */}
+          {myProjects.map((data) => {
+            return (
+              <div key={data.id}>
+                <ProjectCard
+                  key={data.id}
+                  data={data}
+                />
+              </div>
+            )})}
         </div>
         <div className="mb-10 mr-8 flex justify-end">
           <OrangeButton url="/dashboard/new">
