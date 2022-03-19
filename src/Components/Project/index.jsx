@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Cookies from "js-cookie";
 import HousingCard from "../Main/HousingCard";
 import OrangeButton from "../Main/OrangeButton";
+import ProjectDelete from "../ProjectDelete";
 
 export default function Project() {
   const [myHousings, setMyHousings] = useState([]);
@@ -24,6 +25,9 @@ export default function Project() {
 
     return (
       <div>
+        <br />
+        <ProjectDelete />
+        <br />
         <h1> Aucun Housings </h1>
         <br />
         <OrangeButton url={`/dashboard/${id_project}/housings/new`}>
@@ -34,6 +38,8 @@ export default function Project() {
   } else {
     return (
       <div>
+        <br />
+        <ProjectDelete />
         <h1>Liste des housings de votre projet</h1>
         {myHousings.map((data) => {
           return (
