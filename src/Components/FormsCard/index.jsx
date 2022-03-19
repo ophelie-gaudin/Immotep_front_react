@@ -16,7 +16,7 @@ const FormsCard = (props) => {
           <h2 className="text-center text-3xl font-pacifico">{props.title}</h2>
           {props.warning && <WarningArea>{props.warning}</WarningArea>}
         </div>
-        {props.children}
+        <div className="p-6">{props.children}</div>
       </div>
     </div>
   );
