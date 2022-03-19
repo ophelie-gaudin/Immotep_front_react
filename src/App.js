@@ -15,6 +15,8 @@ import Profile from "./Pages/Profile";
 import ProfileEditPage from "./Pages/ProfileEditPage";
 import NewHousing from "./Pages/NewHousing";
 import NewProject from "./Pages/NewProject";
+import HousingPage from "./Pages/HousingPage";
+import HousingEdit from "./Pages/HousingEditPage"
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -45,6 +47,14 @@ function App() {
               <Route
                 path="/dashboard/:project_id/housings/new"
                 element={<NewHousing />}
+              />
+              <Route
+                path="/dashboard/:project_id/housing/:housing_id"
+                element={<HousingPage />}
+              />
+              <Route
+                path="/dashboard/:project_id/housing/:housing_id/edit"
+                element={<HousingEdit />}
               />
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/dashboard/new" element={<NewProject />} />
