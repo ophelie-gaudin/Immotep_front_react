@@ -13,7 +13,6 @@ const HousingCardInfo = (props) => {
         <div className="project-card-localization">{data.localization}</div>
         <div className="project-card-title">{data.ad_price}</div>
         <div className="project-card-comment">{data.property_category}</div>
-        <div className="project-card-comment">{data.property_category}</div>
         <div className="project-card-comment">{data.area}</div>
         <div className="project-card-comment">{data.ad_url}</div>
         <div className="project-card-comment">{data.comment}</div>

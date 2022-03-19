@@ -13,7 +13,6 @@ export default function HousingEdit() {
   
   const data = {
     ad_price,
-
   }
   
   const handleSubmit = (e) => {
@@ -41,9 +40,9 @@ export default function HousingEdit() {
   return (
     <div>
       <FormsCard
-        title="Modifier mes informations personnelles"
-        returnText="Mon profil"
-        returnUrl="/profile"
+        title="Modifier mon logement"
+        returnText="Mon Logement"
+        returnUrl={`/dashboard/${id_project}/housing/${id_housing}`}
       >
         <form onSubmit={handleSubmit}>
           <label className="font-medium">
