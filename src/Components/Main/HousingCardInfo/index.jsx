@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import HousingDelete from "../../HousingDelete";
 
 const HousingCardInfo = (props) => {
   const { data } = props;
@@ -32,6 +33,9 @@ const HousingCardInfo = (props) => {
         <div className="project-card-comment">{data.rental_vacancy}</div>
         
         <Link to={`/dashboard/${id_project}/housing/${data.id}/edit`}>Modifier le logement</Link>
+        <br />
+        <HousingDelete />
+        
       </div>
     </div>
   );
