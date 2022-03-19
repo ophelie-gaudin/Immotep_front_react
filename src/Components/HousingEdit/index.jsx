@@ -3,9 +3,26 @@ import FormsCard from '../FormsCard';
 import Cookies from "js-cookie";
 
 export default function HousingEdit() {
-  const [ad_price, setAd_price] = useState();
+  const [localization, setLocalization] = useState();
+  const [ad_price, setAdPrice] = useState();
+  const [property_category, setProperty_Category] = useState();
   const [area, setArea] = useState();
+  const [ad_url, setAdUrl] = useState();
+  const [comment, setComment] = useState();
+  const [offer_price, setOfferPrice] = useState();
+  const [repairs_price, setRepairsPrice] = useState();
+  const [annual_rent, setAnnualRent] = useState();
+  const [agency_fees, setAgencyFees] = useState();
+  const [pno_insurance, setPnoInsurance] = useState();
+  const [property_tax, setPropertyTax] = useState();
+  const [rental_management, setRentalManagement] = useState();
+  const [rental_unpayment_insurance, setRentalUnpaymentInsurance] = useState();
   const [building_co_tax, setBuilding_Co_Tax] = useState();
+  const [maintenance_percentage, setMaintenancePercentage] = useState();
+  const [ad_profitability, setAdProfitability] = useState();
+  const [offer_profitability, setOfferProfitability] = useState();
+  const [new_property, setNewProperty] = useState();
+  const [rental_vacancy, setRentalVacancy] = useState();
 
   const id_project = window.location.href
     .slice(window.location.href.indexOf("dashboard"))
@@ -15,9 +32,26 @@ export default function HousingEdit() {
     .substring(8, 10);
   
   const data = {
+    localization,
     ad_price,
+    property_category,
     area,
-    building_co_tax
+    ad_url,
+    comment,
+    offer_price,
+    repairs_price,
+    annual_rent,
+    agency_fees,
+    pno_insurance,
+    property_tax,
+    rental_management,
+    rental_unpayment_insurance,
+    building_co_tax,
+    maintenance_percentage,
+    ad_profitability,
+    offer_profitability,
+    new_property,
+    rental_vacancy
   }
   
   const handleSubmit = (e) => {
@@ -32,7 +66,7 @@ export default function HousingEdit() {
     })
       .then((res) => {
         if (res.ok) {
-          //window.location.href = "/profile";
+          window.location.href = `/dashboard/${id_project}/housing/${id_housing}`;
           return res.json();
         } else {
           throw new Error(res);
@@ -51,11 +85,19 @@ export default function HousingEdit() {
       >
         <form onSubmit={handleSubmit}>
           <label className="font-medium">
+            Localisation
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setLocalization(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
             Prix du logement
             <input
               type="text"
               className="mt-2"
-              onChange={(e) => setAd_price(e.target.value)}
+              onChange={(e) => setAdPrice(e.target.value)}
             />
           </label>
           <label className="font-medium">
