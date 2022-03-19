@@ -25,7 +25,8 @@ export default function Project() {
       .then((response) => response.json())
       .then((response) => {
         setMyHousings(response);
-      });
+      })
+      .catch((err) => console.error(err));
     };
     fetchList(`https://immotep-api.herokuapp.com/`, housingArgument);
   }, [housingArgument])

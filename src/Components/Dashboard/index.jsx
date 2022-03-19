@@ -23,7 +23,8 @@ export default function Dashboard() {
       .then((response) => response.json())
       .then((response) => {
         setMyProjects(response);
-      });
+      })
+      .catch((err) => console.error(err));
     };
     fetchList(`https://immotep-api.herokuapp.com/`, projectArgument);
   }, [])
