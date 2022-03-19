@@ -11,8 +11,8 @@ const Login = () => {
 
   const changeConnectedStatus = useDispatch();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
+    ///e.preventDefault();
     fetch(`https://immotep-api.herokuapp.com/users/sign_in`, {
       method: "post",
       headers: {
@@ -49,9 +49,10 @@ const Login = () => {
             <label>
               Email
               <input
-                type="text"
+                type="email"
                 name="email"
                 onChange={(e) => setEmail(e.target.value)}
+                required
               />
             </label>
             <label>
@@ -60,6 +61,7 @@ const Login = () => {
                 type="password"
                 name="password"
                 onChange={(e) => setPassword(e.target.value)}
+                required
               />
             </label>
             <button className="orange-button forms-buttons" type="submit">

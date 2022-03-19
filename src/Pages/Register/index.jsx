@@ -46,9 +46,10 @@ const Register = () => {
           <label>
             Email
             <input
-              type="text"
+              type="email"
               name="email"
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </label>
           <label>
@@ -57,6 +58,7 @@ const Register = () => {
               type="password"
               name="password"
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
           </label>
           <button className="orange-button forms-buttons" type="submit">
