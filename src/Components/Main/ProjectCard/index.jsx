@@ -2,6 +2,7 @@ import React from "react";
 import "./ProjectCard.css";
 import { FaKey } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import ProjectDelete from "../../ProjectDelete";
 
 const ProjectCard = (props) => {
   const { data } = props;
@@ -19,6 +20,8 @@ const ProjectCard = (props) => {
       <span>
         <FaKey className="project-card-icon rotate" />
       </span>
+      <br />
+        <ProjectDelete data={data.id}/>
     </div>
   );
 };
