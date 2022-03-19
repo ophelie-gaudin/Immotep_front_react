@@ -3,16 +3,21 @@ import FormsCard from '../FormsCard';
 import Cookies from "js-cookie";
 
 export default function HousingEdit() {
-  const [ad_price, setAd_price] = useState("");
+  const [ad_price, setAd_price] = useState();
+  const [area, setArea] = useState();
+  const [building_co_tax, setBuilding_Co_Tax] = useState();
+
   const id_project = window.location.href
     .slice(window.location.href.indexOf("dashboard"))
     .substring(10, 12);
   const id_housing = window.location.href
-  .slice(window.location.href.indexOf("housing"))
-  .substring(8, 10);
+    .slice(window.location.href.indexOf("housing"))
+    .substring(8, 10);
   
   const data = {
     ad_price,
+    area,
+    building_co_tax
   }
   
   const handleSubmit = (e) => {
@@ -51,6 +56,22 @@ export default function HousingEdit() {
               type="text"
               className="mt-2"
               onChange={(e) => setAd_price(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
+            m2
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setArea(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
+            Taxe ??
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setBuilding_Co_Tax(e.target.value)}
             />
           </label>
           <button className="orange-button forms-buttons">J'enregistre</button>
