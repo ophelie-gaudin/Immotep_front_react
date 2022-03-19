@@ -9,7 +9,9 @@ const NewAd = () => {
   const [localization, setLocalization] = useState("");
   const [adPrice, setAdPrice] = useState("");
 
-  const id_project = window.location.href.slice(window.location.href.indexOf("dashboard")).substring(10, 12);
+  const id_project = window.location.href
+    .slice(window.location.href.indexOf("dashboard"))
+    .substring(10, 12);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,25 +43,33 @@ const NewAd = () => {
 
   return (
     <div>
-      <FormsCard title="Créer un nouveau logement ">
+      <FormsCard
+        title="Créer un nouveau logement"
+        returnText="Mon projet"
+        returnUrl={`/dashboard/${id_project}`}
+      >
         <>
           <form onSubmit={handleSubmit}>
-            <label>
+            <label className="flex flex-col w-[90%] items-start">
               Type de bien
-              <input
+              {/* <input
                 type="text"
                 name="property-category"
                 onChange={(e) => setPropertyCategory(e.target.value)}
-              />
+              /> */}
+              <select
+                className="w-full"
+                name="property-category"
+                id="hypothesis"
+                onChange={(e) => setPropertyCategory(e.target.value)}
+              >
+                <option value="Studio">Studio</option>
+                <option value="T1 et T2">T1 et T2</option>
+                <option value="Grand appartement">Grand appartement</option>
+                <option value="Maison">Maison</option>
+                <option value="Immeuble">Immeuble</option>
+              </select>
             </label>
-
-            {/* <select name="hypothesis" id="hypothesis">
-              <option value="volvo">Studio</option>
-              <option value="saab">T1 et T2</option>
-              <option value="mercedes">grand appartement</option>
-              <option value="audi">Audi</option>
-              <option value="audi">Audi</option>
-            </select> */}
 
             <label>
               Localisation
