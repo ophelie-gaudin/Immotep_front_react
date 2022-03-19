@@ -4,6 +4,7 @@ import HousingDelete from "../../HousingDelete";
 
 const HousingCardInfo = (props) => {
   const { data } = props;
+  console.log(data)
   const id_project = window.location.href
     .slice(window.location.href.indexOf("dashboard"))
     .substring(10, 12);
@@ -34,7 +35,7 @@ const HousingCardInfo = (props) => {
         
         <Link to={`/dashboard/${id_project}/housing/${data.id}/edit`}>Modifier le logement</Link>
         <br />
-        <HousingDelete />
+        <HousingDelete data={data}/>
         
       </div>
     </div>
