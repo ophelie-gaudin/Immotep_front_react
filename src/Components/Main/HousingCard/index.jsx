@@ -1,5 +1,4 @@
 import React from "react";
-import "./HousingCard.css";
 import { FaKey } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
