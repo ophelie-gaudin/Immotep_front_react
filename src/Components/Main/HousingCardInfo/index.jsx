@@ -5,9 +5,6 @@ import HousingDelete from "../../HousingDelete";
 const HousingCardInfo = (props) => {
   const { data } = props;
   console.log(data)
-  const id_project = window.location.href
-    .slice(window.location.href.indexOf("dashboard"))
-    .substring(10, 12);
 
   return (
     <div className="project-card">
@@ -33,7 +30,7 @@ const HousingCardInfo = (props) => {
         <div className="project-card-comment">{data.new_property}</div>
         <div className="project-card-comment">{data.rental_vacancy}</div>
         
-        <Link to={`/dashboard/${id_project}/housing/${data.id}/edit`}>Modifier le logement</Link>
+        <Link to={`/dashboard/${data.project_id}/housing/${data.id}/edit`}>Modifier le logement</Link>
         <br />
         <HousingDelete data={data}/>
         
