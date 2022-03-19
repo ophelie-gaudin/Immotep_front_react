@@ -22,7 +22,7 @@ export default function Housing() {
     })
       .then((response) => response.json())
       .then((response) => {
-        console.log(response)
+        //console.log(response)
         setMyHousingsInfo(response);
       });
 
