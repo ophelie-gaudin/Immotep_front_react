@@ -1,25 +1,17 @@
 .project-card {
-  @apply flex justify-between  w-3/4 rounded-[0.25rem] m-10 px-2 py-5 bg-primary border border-greey text-whiite font-bold hover:bg-greey hover:text-whiite hover:border hover:border-whiite hover:font-black hover:scale-105 hover:border-black hover:drop-shadow-lg hover:bg-opacity-50 hover:z-50;
+  @apply flex flex-col justify-between rounded-[0.25rem] m-8 px-6 py-8 bg-primary-light border text-whiite font-bold hover:bg-primary hover:text-whiite hover:border-primary hover:font-black hover:scale-105 hover:drop-shadow-lg hover:z-50 w-full md:w-1/3 lg:w-1/4;
 
   transition: all 0.3s;
 }
 
 .project-card-title {
-  @apply pl-6 pt-1 text-3xl;
+  @apply text-xl underline underline-offset-4;
 }
 .project-card-localization {
-  @apply uppercase flex pt-4 italic tracking-wide justify-center text-lg font-normal;
+  @apply pt-2 italic tracking-wide font-normal;
 }
 .project-card-comment {
-  @apply pl-12 pt-3 text-justify text-lg;
-}
-
-.project-card-icon {
-  color: #fffb4e;
-  font-size: 1em;
-  width: 30px;
-  height: 30px;
-  margin: -1px;
+  @apply pt-3 text-justify font-normal;
 }
 
 .project-card:hover .rotate {

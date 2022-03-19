@@ -63,13 +63,9 @@ const Dashboard = () => {
           </WarningArea>
         </div>
         <div className="">
-          <div className="flex flex-wrap mb-12">
+          <div className="flex flex-wrap mb-12 justify-center">
             {myProjects.map((data) => {
-              return (
-                <div key={data.id}>
-                  <ProjectCard key={data.id} data={data} />
-                </div>
-              );
+              return <ProjectCard key={data.id} data={data} />;
             })}
           </div>
           <div className="mb-10 mr-8 flex justify-end">
