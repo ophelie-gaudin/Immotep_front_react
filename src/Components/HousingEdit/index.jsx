@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 export default function HousingEdit() {
   const [localization, setLocalization] = useState();
   const [ad_price, setAdPrice] = useState();
-  const [property_category, setProperty_Category] = useState();
+  const [property_category, setPropertyCategory] = useState();
   const [area, setArea] = useState();
   const [ad_url, setAdUrl] = useState();
   const [comment, setComment] = useState();
@@ -17,7 +17,7 @@ export default function HousingEdit() {
   const [property_tax, setPropertyTax] = useState();
   const [rental_management, setRentalManagement] = useState();
   const [rental_unpayment_insurance, setRentalUnpaymentInsurance] = useState();
-  const [building_co_tax, setBuilding_Co_Tax] = useState();
+  const [building_co_tax, setBuildingCoTax] = useState();
   const [maintenance_percentage, setMaintenancePercentage] = useState();
   const [ad_profitability, setAdProfitability] = useState();
   const [offer_profitability, setOfferProfitability] = useState();
@@ -101,6 +101,14 @@ export default function HousingEdit() {
             />
           </label>
           <label className="font-medium">
+            Afaire
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setPropertyCategory(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
             m2
             <input
               type="text"
@@ -109,11 +117,131 @@ export default function HousingEdit() {
             />
           </label>
           <label className="font-medium">
+            Afaire
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setAdUrl(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
+            Afaire
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setComment(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
+            Afaire
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setOfferPrice(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
+            Afaire
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setRepairsPrice(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
+            Afaire
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setAnnualRent(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
+            Afaire
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setAgencyFees(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
+            Afaire
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setPnoInsurance(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
+            Afaire
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setPropertyTax(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
+            Afaire
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setRentalManagement(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
+            Afaire
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setRentalUnpaymentInsurance(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
             Taxe ??
             <input
               type="text"
               className="mt-2"
-              onChange={(e) => setBuilding_Co_Tax(e.target.value)}
+              onChange={(e) => setBuildingCoTax(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
+            Afaire
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setMaintenancePercentage(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
+            Afaire
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setAdProfitability(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
+            Afaire
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setOfferProfitability(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
+            Afaire
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setNewProperty(e.target.value)}
+            />
+          </label>
+          <label className="font-medium">
+            Afaire
+            <input
+              type="text"
+              className="mt-2"
+              onChange={(e) => setRentalVacancy(e.target.value)}
             />
           </label>
           <button className="orange-button forms-buttons">J'enregistre</button>
