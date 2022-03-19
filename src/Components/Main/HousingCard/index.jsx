@@ -21,6 +21,7 @@ const HousingCard = (props) => {
       </span>
       <div className="project-card-comment">
         <Link to={`/dashboard/${id_project}/housing/${data.id}/edit`}>Modifier le logement</Link>
+        <Link to={`/dashboard/${id_project}/housing/${data.id}`}>Voir le logement</Link>
       </div>
     </div>
   );
