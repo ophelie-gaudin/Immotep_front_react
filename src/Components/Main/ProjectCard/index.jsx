@@ -14,7 +14,9 @@ const ProjectCard = (props) => {
         <div className="project-card-localization">{data.localization}</div>
         <div className="project-card-comment">{data.comment}</div>
         <div className="project-card-comment">
-          <Link to={`/dashboard/${data.id}`}>Voir plus d'informations</Link>
+          <Link to={`/dashboard/${data.id}`}
+            state={{data}}>
+              Voir plus d'informations</Link>
         </div>
       </div>
       <span>

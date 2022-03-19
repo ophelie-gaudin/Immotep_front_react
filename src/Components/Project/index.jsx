@@ -3,13 +3,12 @@ import Cookies from "js-cookie";
 import HousingCard from "../Main/HousingCard";
 import OrangeButton from "../Main/OrangeButton";
 import ProjectDelete from "../ProjectDelete";
+import { useLocation } from "react-router-dom";
 
 export default function Project() {
   const [myHousings, setMyHousings] = useState([]);
-
-  const id_project = window.location.href
-    .slice(window.location.href.indexOf("dashboard"))
-    .substring(10, 12);
+  const location = useLocation();
+  const id_project = location.state.data.id;
   const housingArgument = `projects/${id_project}/housings`;
 
   useEffect(()=> {
