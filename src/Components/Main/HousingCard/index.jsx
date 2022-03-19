@@ -19,8 +19,12 @@ const HousingCard = (props) => {
         <FaKey className="project-card-icon rotate" />
       </span>
       <div className="project-card-comment">
-        <Link to={`/dashboard/${id_project}/housing/${data.id}/edit`}>Modifier le logement</Link>
-        <Link to={`/dashboard/${id_project}/housing/${data.id}`}>Voir le logement</Link>
+        <Link to={`/dashboard/${id_project}/housing/${data.id}/edit`}
+          state={{data}}>
+            Modifier le logement</Link>
+        <Link to={`/dashboard/${id_project}/housing/${data.id}`}
+          state={{data}}>
+            Voir le logement</Link>
       </div>
     </div>
   );
