@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 
 export default function ProjectDelete(props) {
   const { data } = props
-  console.log(data)
+  //console.log(data)
   const deleteproject = () => {
 
     fetch(`https://immotep-api.herokuapp.com/projects/${data}`, {
