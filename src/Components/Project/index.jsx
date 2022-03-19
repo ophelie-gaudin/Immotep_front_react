@@ -26,7 +26,7 @@ export default function Project() {
     return (
       <div>
         <br />
-        <ProjectDelete />
+        <ProjectDelete data={id_project}/>
         <br />
         <h1> Aucun Housings </h1>
         <br />
@@ -39,7 +39,7 @@ export default function Project() {
     return (
       <div>
         <br />
-        <ProjectDelete />
+        <ProjectDelete data={id_project}/>
         <h1>Liste des housings de votre projet</h1>
         {myHousings.map((data) => {
           return (
