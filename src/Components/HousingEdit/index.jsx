@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import FormsCard from '../FormsCard';
 import Cookies from "js-cookie";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams, useNavigate } from "react-router-dom";
 
 export default function HousingEdit() {
   const location = useLocation();
-  const id_project = location.state.data.project_id;
-  const id_housing = location.state.data.id;
 
+  const navigate = useNavigate()
+  const { housing_id, project_id } = useParams()
+  console.log(useParams())
+
+  //console.log(location)
   const [localization, setLocalization] = useState();
   const [ad_price, setAdPrice] = useState();
   const [property_category, setPropertyCategory] = useState();
@@ -54,7 +57,7 @@ export default function HousingEdit() {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`https://immotep-api.herokuapp.com/projects/${id_project}/housings/${id_housing}`, {
+    fetch(`https://immotep-api.herokuapp.com/projects/${project_id}/housings/${housing_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -65,7 +68,8 @@ export default function HousingEdit() {
       .then((res) => {
         if (res.ok) {
           //window.location.href = `/dashboard/${id_project}/housing/${id_housing}`;
-          window.location.href = `/dashboard`;
+          //window.location.href = `/dashboard`;
+          navigate(`/dashboard/${project_id}/housing/${housing_id}`)
         } else {
           throw new Error(res);
         }
@@ -78,7 +82,7 @@ export default function HousingEdit() {
       <FormsCard
         title="Modifier mon logement"
         returnText="Mon Logement"
-        returnUrl={`/dashboard/${id_project}/housing/${id_housing}`}
+        returnUrl={`/dashboard/${project_id}/housing/${housing_id}`}
         returnState={location.state}
       >
         <form onSubmit={handleSubmit}>

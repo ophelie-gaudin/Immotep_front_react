@@ -26,13 +26,13 @@ const Login = () => {
       }),
     })
       .then((res) => {
-        if (res.ok) {
+        if (res.headers.get("Authorization")) {
           Cookies.set("token", res.headers.get("Authorization"));
           changeConnectedStatus(userLogin());
-          window.location.href = "/";
-          return res.json();
+          //window.location.href = "/"; // TODO replace with navigate
+          return res.json(); 
         } else {
-          throw new Error(res);
+          throw new Error("Non enregistré"); // TODO refaire l'erreur
         }
       })
       .then((json) => console.log(json.user))
