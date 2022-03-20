@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
 import FormsCard from '../FormsCard';
 import Cookies from "js-cookie";
+import { useLocation } from "react-router-dom";
 
 export default function HousingEdit() {
+  const location = useLocation();
+  const id_project = location.state.data.project_id;
+  const id_housing = location.state.data.id;
+
   const [localization, setLocalization] = useState();
   const [ad_price, setAdPrice] = useState();
   const [property_category, setPropertyCategory] = useState();
@@ -23,13 +28,6 @@ export default function HousingEdit() {
   const [offer_profitability, setOfferProfitability] = useState();
   const [new_property, setNewProperty] = useState();
   const [rental_vacancy, setRentalVacancy] = useState();
-
-  const id_project = window.location.href
-    .slice(window.location.href.indexOf("dashboard"))
-    .substring(10, 12);
-  const id_housing = window.location.href
-    .slice(window.location.href.indexOf("housing"))
-    .substring(8, 10);
   
   const data = {
     localization,
@@ -66,13 +64,12 @@ export default function HousingEdit() {
     })
       .then((res) => {
         if (res.ok) {
-          window.location.href = `/dashboard/${id_project}/housing/${id_housing}`;
-          return res.json();
+          //window.location.href = `/dashboard/${id_project}/housing/${id_housing}`;
+          window.location.href = `/dashboard`;
         } else {
           throw new Error(res);
         }
       })
-      .then((json) => console.log(json))
       .catch((err) => console.error(err));
   };
 
@@ -82,6 +79,7 @@ export default function HousingEdit() {
         title="Modifier mon logement"
         returnText="Mon Logement"
         returnUrl={`/dashboard/${id_project}/housing/${id_housing}`}
+        returnState={location.state}
       >
         <form onSubmit={handleSubmit}>
           <label className="font-medium">
