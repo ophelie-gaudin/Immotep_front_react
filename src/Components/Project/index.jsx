@@ -6,6 +6,7 @@ import FormsCard from "../FormsCard";
 import { data } from "autoprefixer";
 import { FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
 
+
 export default function Project() {
   const [myHousings, setMyHousings] = useState([]);
   const id_project = window.location.href

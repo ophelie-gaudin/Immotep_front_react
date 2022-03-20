@@ -11,8 +11,8 @@ const Login = () => {
 
   const changeConnectedStatus = useDispatch();
 
-  const handleSubmit = () => {
-    ///e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     fetch(`https://immotep-api.herokuapp.com/users/sign_in`, {
       method: "post",
       headers: {
