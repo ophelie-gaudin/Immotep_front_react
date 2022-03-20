@@ -5,7 +5,7 @@ import "./Profile.css";
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 
-const Profile = (props) => {
+const Profile = () => {
   const [myProfile, setMyProfile] = useState("");
 
   const myProfileArgument = `member-data`;

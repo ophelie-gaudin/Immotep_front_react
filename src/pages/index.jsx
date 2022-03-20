@@ -1,7 +1,7 @@
 import React from "react";
 
-import OrangeButton from "../../Components/Main/OrangeButton";
-import BackgroundVideo from "../../assets/video-2.mp4";
+import OrangeButton from "../Components/Main/OrangeButton";
+import BackgroundVideo from "../assets/video-2.mp4";
 
 export default function Home() {
   return (

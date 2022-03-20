@@ -2,27 +2,27 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { useEffect } from "react";
 import store from "./ReduxFolder/store";
-import Register from "./Pages/Register";
-import Home from "./Pages/Home";
-import Login from "./Pages/Login";
+import Register from "./pages/Register";
+import Home from "./pages/";
+import Login from "./pages/Login";
 import Layout from "./Components/Main/Layout";
-import DashboardPage from "./Pages/DashboardPage";
-import MailPassword from "./Pages/MailPassword";
-import NewPassword from "./Pages/NewPassword";
-import ProjectPage from "./Pages/ProjectPage";
-import ErrorNotFoundPage from "./Pages/NotFoundedPage";
-import Profile from "./Pages/Profile";
-import ProfileEditPage from "./Pages/ProfileEditPage";
-import NewHousing from "./Pages/NewHousing";
-import NewProject from "./Pages/NewProject";
-import HousingPage from "./Pages/HousingPage";
-import HousingEdit from "./Pages/HousingEditPage"
+import DashboardPage from "./pages/DashboardPage";
+import MailPassword from "./pages/MailPassword";
+import NewPassword from "./pages/NewPassword";
+import ProjectPage from "./pages/ProjectPage";
+import ErrorNotFoundPage from "./pages/NotFoundedPage";
+import Profile from "./pages/Profile";
+import ProfileEditPage from "./pages/ProfileEditPage";
+import NewHousing from "./pages/NewHousing";
+import NewProject from "./pages/NewProject";
+import HousingPage from "./pages/HousingPage";
+import HousingEdit from "./pages/HousingEditPage";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 import "flowbite";
-import ServorErrorPage from "./Pages/ServorErrorPage";
+import ServorErrorPage from "./pages/ServorErrorPage";
 
 function App() {
   useEffect(() => {
