@@ -4,7 +4,11 @@ import "./OrangeButton.css";
 const OrangeButton = (props) => {
   return (
     <div>
-      <a className="orange-button" href={props.url} type={props.type}>
+      <a
+        className="orange-button inline-block "
+        href={props.url}
+        type={props.type}
+      >
         {props.children}
       </a>
     </div>
