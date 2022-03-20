@@ -57,6 +57,33 @@ export default function Dashboard() {
           <OrangeButton url="/dashboard/new">
             <div className="flex items-center">J'ai un nouveau projet !</div>
           </OrangeButton>
+    {/* );
+  } else {
+    return (
+      <div className="flex flex-col  rounded-[0.25rem] mx-auto w-[90vw] border-2 border-primary text-whiite ">
+        <div className="px-8 py-8 bg-primary">
+          <a className="flex !text-md items-center" href="/">
+            <FaArrowLeft className="dashboard-arrow-icon" /> Accueil
+          </a>
+          <h2 className="text-3xl font-pacifico text-center mt-8">
+            Bienvenue sur <span>vos projets</span>{" "}
+          </h2>
+          <WarningArea>
+            Ici, vous pouvez retrouver tous vos projets locatifs en cours, en
+            créer de nouveaux et accéder au comparateur de logements.{" "}
+          </WarningArea>
+        </div>
+        <div className="">
+          <div className="flex flex-wrap mb-12 justify-center">
+            {myProjects.map((data) => {
+              return <ProjectCard key={data.id} data={data} />;
+            })}
+          </div>
+          <div className="mb-10 mr-8 flex justify-end">
+            <OrangeButton url="/dashboard/new">
+              J'ai un nouveau projet !
+            </OrangeButton>
+          </div> */}
         </div>
       </div>
     </div>
