@@ -6,9 +6,9 @@ import { useLocation } from "react-router-dom";
 export default function Housing() {
   const [myHousingsInfo, setMyHousingsInfo] = useState("");
   const location = useLocation();
-  console.log(location.state)
-  const id_project = location.state.project_id;
-  const id_housings = location.state.id;
+  console.log(location.state.data)
+  const id_project = location.state.data.project_id;
+  const id_housings = location.state.data.id;
   
   const oneHousingArgument = `projects/${id_project}/housings/${id_housings}`;
 
