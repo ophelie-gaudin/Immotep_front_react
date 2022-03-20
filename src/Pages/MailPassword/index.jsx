@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import FormsCard from "../../Components/FormsCard";
+import { useNavigate } from "react-router-dom";
 
 export default function MailPassword() {
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +21,7 @@ export default function MailPassword() {
     })
       .then((res) => {
         if (res.ok) {
-          window.location.href = "/";
+          navigate("/login");
           return res.json();
         } else {
           throw new Error(res);

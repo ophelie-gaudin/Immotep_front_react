@@ -4,10 +4,12 @@ import { userLogin } from "../../ReduxFolder/stateUser/userAction";
 import { useDispatch } from "react-redux";
 //import Input from "../../Components/Main/Input";
 import FormsCard from "../../Components/FormsCard";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const changeConnectedStatus = useDispatch();
 
@@ -29,7 +31,7 @@ const Register = () => {
         if (res.ok) {
           Cookies.set("token", res.headers.get("Authorization"));
           changeConnectedStatus(userLogin());
-          window.location.href = "/";
+          navigate("/dashboard");
           return res.json();
         } else {
           throw new Error(res);

@@ -3,19 +3,19 @@ import React, { useState } from "react";
 import FormsCard from "../../Components/FormsCard";
 import Cookies from "js-cookie";
 //import Input from "../../Components/Main/Input";
+import { useParams, useNavigate } from "react-router-dom";
 
 const NewAd = () => {
   const [propertyCategory, setPropertyCategory] = useState("");
   const [localization, setLocalization] = useState("");
   const [adPrice, setAdPrice] = useState("");
 
-  const id_project = window.location.href
-    .slice(window.location.href.indexOf("dashboard"))
-    .substring(10, 12);
+  const navigate = useNavigate();
+  const { project_id } = useParams();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`https://immotep-api.herokuapp.com/projects/${id_project}/housings`, {
+    fetch(`https://immotep-api.herokuapp.com/projects/${project_id}/housings`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +31,7 @@ const NewAd = () => {
     })
       .then((res) => {
         if (res.ok) {
-          window.location.href = "/dashboard";
+          navigate(`/dashboard/${project_id}`);
           return res.json();
         } else {
           throw new Error(res);
@@ -46,7 +46,7 @@ const NewAd = () => {
       <FormsCard
         title="Créer un nouveau logement"
         returnText="Mon projet"
-        returnUrl={`/dashboard/${id_project}`}
+        returnUrl={`/dashboard/${project_id}`}
       >
         <>
           <form onSubmit={handleSubmit}>

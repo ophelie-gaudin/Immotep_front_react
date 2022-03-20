@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import FormsCard from "../../Components/FormsCard";
 //import Input from "../../Components/Main/Input";
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const NewProject = () => {
   const [title, setTitle] = useState("");
   const [localization, setLocalization] = useState("");
   const [comment, setComment] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,7 +29,7 @@ const NewProject = () => {
     })
       .then((res) => {
         if (res.ok) {
-          window.location.href = "/dashboard";
+          navigate("/dashboard");
           return res.json();
         } else {
           throw new Error(res);

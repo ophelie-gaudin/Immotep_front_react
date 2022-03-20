@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import FormsCard from "../../Components/FormsCard";
+import { useNavigate } from "react-router-dom";
 
 export default function ProfileEditPage() {
   const [email, setEmail] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +22,7 @@ export default function ProfileEditPage() {
     })
       .then((res) => {
         if (res.ok) {
-          window.location.href = "/profile";
+          navigate("/profile");
           return res.json();
         } else {
           throw new Error(res);
