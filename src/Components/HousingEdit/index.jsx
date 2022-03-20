@@ -64,7 +64,8 @@ export default function HousingEdit() {
     })
       .then((res) => {
         if (res.ok) {
-          window.location.href = `/dashboard/${id_project}/housing/${id_housing}`;
+          //window.location.href = `/dashboard/${id_project}/housing/${id_housing}`;
+          window.location.href = `/dashboard`;
         } else {
           throw new Error(res);
         }
@@ -78,6 +79,7 @@ export default function HousingEdit() {
         title="Modifier mon logement"
         returnText="Mon Logement"
         returnUrl={`/dashboard/${id_project}/housing/${id_housing}`}
+        returnState={location.state.data}
       >
         <form onSubmit={handleSubmit}>
           <label className="font-medium">

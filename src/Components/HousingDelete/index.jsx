@@ -21,7 +21,8 @@ export default function HousingDelete(props) {
       <button
         className="block py-2 pr-4 pl-3 text-white rounded border-b border-light md:p-0 dark:text-white hover:bg-primary md:border-none  md:px-2 md:py:1  hover:font-bold"
         onClick={() => {
-          window.location.href = `/dashboard/${data.project_id}`
+          // window.location.href = `/dashboard/${data.project_id}`
+          window.location.href = `/dashboard`
           deletehousing()
         }}
       >
