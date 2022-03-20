@@ -1,12 +1,12 @@
 import React from "react";
 import { FaKey } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const HousingCard = (props) => {
   const { data } = props;
-  const id_project = window.location.href
-    .slice(window.location.href.indexOf("dashboard"))
-    .substring(10, 12);
+
+  const { housing_id, project_id } = useParams();
 
   return (
     <div className="project-card">
@@ -19,12 +19,18 @@ const HousingCard = (props) => {
         <FaKey className="project-card-icon rotate" />
       </span>
       <div className="project-card-comment">
-        <Link to={`/dashboard/${id_project}/housing/${data.id}/edit`}
-          state={{data}}>
-            Modifier le logement</Link>
-        <Link to={`/dashboard/${id_project}/housing/${data.id}`}
-          state={{data}}>
-            Voir le logement</Link>
+        <Link
+          to={`/dashboard/${project_id}/housing/${housing_id}/edit`}
+          state={{ data }}
+        >
+          Modifier le logement
+        </Link>
+        <Link
+          to={`/dashboard/${project_id}/housing/${housing_id}`}
+          state={{ data }}
+        >
+          Voir le logement
+        </Link>
       </div>
     </div>
   );

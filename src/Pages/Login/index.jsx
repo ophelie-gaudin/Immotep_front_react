@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Cookies from "js-cookie";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { userLogin } from "../../ReduxFolder/stateUser/userAction";
 import { useDispatch } from "react-redux";
 import FormsCard from "../../Components/FormsCard";
@@ -10,6 +10,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const changeConnectedStatus = useDispatch();
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,8 +31,8 @@ const Login = () => {
         if (res.headers.get("Authorization")) {
           Cookies.set("token", res.headers.get("Authorization"));
           changeConnectedStatus(userLogin());
-          //window.location.href = "/"; // TODO replace with navigate
-          return res.json(); 
+          navigate("/dashboard");
+          return res.json();
         } else {
           throw new Error("Non enregistré"); // TODO refaire l'erreur
         }

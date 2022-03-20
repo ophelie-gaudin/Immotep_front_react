@@ -2,14 +2,17 @@ import React from "react";
 import Cookies from "js-cookie";
 import { useDispatch } from "react-redux";
 import { userLogout } from "../../ReduxFolder/stateUser/userAction";
+import { useNavigate } from "react-router-dom";
 
 export default function LogOut() {
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
 
   const logout = () => {
     Cookies.remove("token");
     dispatch(userLogout());
-    window.location.href = "/";
+    navigate("/");
   };
 
   return (
