@@ -1,0 +1,3 @@
+.warning-area {
+  @apply rounded-[0.25rem] mt-8 bg-white/20 text-whiite p-5;
+}

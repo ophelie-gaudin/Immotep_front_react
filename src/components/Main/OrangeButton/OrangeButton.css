@@ -1,0 +1,14 @@
+.orange-button {
+  @apply rounded-[0.25rem] px-4 py-3 bg-primary border border-primary text-whiite font-bold hover:bg-whiite hover:text-primary hover:border-primary;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.forms-buttons {
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  text-align: center;
+  display: block;
+  width: 90%;
+}
