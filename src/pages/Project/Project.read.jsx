@@ -11,7 +11,6 @@ import { FaRegEdit, FaRegTrashAlt } from 'react-icons/fa';
 export default function ProjectRead() {
   const [myHousings, setMyHousings] = useState([]);
   const { project_id } = useParams();
-
   const housingArgument = `projects/${project_id}/housings`;
 
   useEffect(() => {
