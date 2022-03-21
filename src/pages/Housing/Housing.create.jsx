@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 import { useParams, useNavigate } from "react-router-dom";
 
 const HousingCreate = () => {
-  const [propertyCategory, setPropertyCategory] = useState("");
+  const [propertyCategory, setPropertyCategory] = useState("Studio");
   const [localization, setLocalization] = useState("");
   const [ad_price, setAdPrice] = useState("");
 
@@ -62,6 +62,7 @@ const HousingCreate = () => {
                 className="w-full"
                 name="property-category"
                 id="hypothesis"
+                value={propertyCategory}
                 onChange={(e) => setPropertyCategory(e.target.value)}
               >
                 <option value="Studio">Studio</option>
