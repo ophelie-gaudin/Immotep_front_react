@@ -100,13 +100,21 @@ export default function HousingUpdate() {
                 onChange={(e) => setAdPrice(e.target.value)}
               />
             </label>
-            <label className='font-medium'>
+
+            <label className='flex flex-col font-medium w-[95%] items-start'>
               Type de bien :
-              <input
-                type='text'
-                className='mt-2'
+              <select
+                className='w-full'
+                name='property-category'
+                id='hypothesis'
                 onChange={(e) => setPropertyCategory(e.target.value)}
-              />
+              >
+                <option value='Studio'>Studio</option>
+                <option value='T1 et T2'>T1 et T2</option>
+                <option value='Grand appartement'>Grand appartement</option>
+                <option value='Maison'>Maison</option>
+                <option value='Immeuble'>Immeuble</option>
+              </select>
             </label>
             <label className='font-medium'>
               Surface en m² :
