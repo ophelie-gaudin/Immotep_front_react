@@ -2,27 +2,27 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { useEffect } from "react";
 import store from "./reduxFolder/store";
-import Register from "./pages/Register";
+import Register from "./pages/register";
 import Home from "./pages/";
-import Login from "./pages/Login";
+import Login from "./pages/login";
 import Layout from "./components/Main/Layout";
 import Dashboard from "./pages/Dashboard";
-import MailPassword from "./pages/MailPassword";
-import NewPassword from "./pages/NewPassword";
-import ErrorNotFoundPage from "./pages/NotFoundedPage";
-import Profile from "./pages/Profile";
-import ProfileEditPage from "./pages/ProfileEditPage";
+import ErrorNotFoundPage from "./pages/404";
 import HousingUpdate from "./pages/Housing/Housing.edit";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 import "flowbite";
-import ServorErrorPage from "./pages/ServorErrorPage";
+import ServorErrorPage from "./pages/500";
 import HousingCreate from "./pages/Housing/Housing.create";
 import HousingRead from "./pages/Housing/Housing.read";
 import ProjectRead from "./pages/Project/Project.read";
 import ProjectCreate from "./pages/Project/Project.create";
+import ProfileUpdate from "./pages/Profile/Profile.update";
+import PasswordCreate from "./pages/Password/Password.create";
+import PasswordUpdate from "./pages/Password/Password.update";
+import ProfileRead from "./pages/Profile/Profile.read";
 
 function App() {
   useEffect(() => {
@@ -38,12 +38,20 @@ function App() {
         <BrowserRouter>
           <Layout>
             <Routes>
+              {/* MAIN */}
               <Route path="/" element={<Home />} />
-              <Route path="/forgotpassword" element={<MailPassword />} />
-              <Route path="/users/password/edit" element={<NewPassword />} />
+              <Route path="/404" element={<ErrorNotFoundPage />} />
+              <Route path="/500" element={<ServorErrorPage />} />
+
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+
+              {/* PROJECT */}
+              <Route path="/dashboard/new" element={<ProjectCreate />} />
               <Route path="/dashboard/:project_id" element={<ProjectRead />} />
+
+              {/* HOUSING */}
               <Route
                 path="/dashboard/:project_id/housings/new"
                 element={<HousingCreate />}
@@ -56,12 +64,16 @@ function App() {
                 path="/dashboard/:project_id/housing/:housing_id/edit"
                 element={<HousingUpdate />}
               />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/dashboard/new" element={<ProjectCreate />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/profile/edit" element={<ProfileEditPage />} />
-              <Route path="/404" element={<ErrorNotFoundPage />} />
-              <Route path="/500" element={<ServorErrorPage />} />
+
+              {/* PROFILE */}
+
+              <Route path="/profile" element={<ProfileRead />} />
+              <Route path="/profile/edit" element={<ProfileUpdate />} />
+
+              {/* PASSWORD */}
+
+              <Route path="/forgotpassword" element={<PasswordCreate />} />
+              <Route path="/users/password/edit" element={<PasswordUpdate />} />
             </Routes>
           </Layout>
         </BrowserRouter>

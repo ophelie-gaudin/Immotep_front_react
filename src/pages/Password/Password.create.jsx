@@ -2,25 +2,20 @@ import React, { useState } from "react";
 import FormsCard from "../../components/FormsCard";
 import { useNavigate } from "react-router-dom";
 
-export default function MailPassword() {
-  const [password, setPassword] = useState("");
-  const password_token = window.location.href
-    .slice(window.location.href.indexOf("="))
-    .substring(2); // TODO: fix to get password token
-
+export default function PasswordCreate() {
+  const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(`https://immotep-api.herokuapp.com/users/password`, {
-      method: "PUT",
+      method: "post",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         user: {
-          password: password,
-          reset_password_token: password_token,
+          email: email,
         },
       }),
     })
@@ -39,19 +34,21 @@ export default function MailPassword() {
   return (
     <div>
       <FormsCard
-        title="Modifier mon mot de passe"
+        title="Oubli de mot de passe"
         returnText="Me connecter"
         returnUrl="/login"
       >
         <form onSubmit={handleSubmit}>
           <label>
-            Mot de passe
+            Email
             <input
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
+              type="Email"
+              onChange={(e) => setEmail(e.target.value)}
             ></input>
           </label>
-          <button className="orange-button forms-buttons">Envoyer</button>
+          <button className="orange-button forms-buttons">
+            Je récupère mon mot de passe
+          </button>
         </form>
       </FormsCard>
     </div>

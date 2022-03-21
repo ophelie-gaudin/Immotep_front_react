@@ -1,11 +1,10 @@
 import React from "react";
 import FormsCard from "../../components/FormsCard";
 import OrangeButton from "../../components/Main/OrangeButton";
-import "./Profile.css";
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 
-const Profile = () => {
+const ProfileRead = () => {
   const [myProfile, setMyProfile] = useState("");
 
   const myProfileArgument = `member-data`;
@@ -51,4 +50,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default ProfileRead;

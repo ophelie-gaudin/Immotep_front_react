@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FormsCard from "../../components/FormsCard";
 import { useNavigate } from "react-router-dom";
 
-export default function ProfileEditPage() {
+export default function ProfileUpdate() {
   const [email, setEmail] = useState("");
 
   const navigate = useNavigate();

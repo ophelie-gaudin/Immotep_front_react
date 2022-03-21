@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Cookies from "js-cookie";
 import { Link, useNavigate } from "react-router-dom";
-import { userLogin } from "../../reduxFolder/stateUser/userAction";
+import { userLogin } from "../reduxFolder/stateUser/userAction";
 import { useDispatch } from "react-redux";
-import FormsCard from "../../components/FormsCard";
+import FormsCard from "../components/FormsCard";
 
 const Login = () => {
   const [email, setEmail] = useState("");
