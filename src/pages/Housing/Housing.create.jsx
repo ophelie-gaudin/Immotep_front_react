@@ -26,7 +26,7 @@ const HousingCreate = () => {
           property_category: propertyCategory,
           localization,
           ad_price,
-          offer_price: ad_price,
+          // offer_price: ad_price,
         },
       }),
     })

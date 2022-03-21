@@ -56,17 +56,17 @@ export default function ProjectRead() {
               >
                 <th className="font-normal text-center">Type de bien</th>
                 <th
-                  className="font-normal text-center pl-12"
+                  className="font-normal text-center pl-12 flex"
                   title="De base, nous affichons le prix de l'annonce. Dès que vous rentrez un prix d'offre, nous prenons ce dernier en compte."
                 >
-                  Prix <GoInfo />
+                  Prix <GoInfo className="ml-2" />
                 </th>
                 <th className="font-normal text-center pl-12">Localisation</th>
                 <th
-                  className="font-normal text-center pl-12"
+                  className="font-normal text-center pl-12 flex"
                   title="De base, notre calcul de rentabilité s'effectue avec le prix de l'annonce. Dès que vous rentrez un prix d'offre, nous prenons ce dernier en compte."
                 >
-                  Rentabilité <GoInfo />
+                  Rentabilité <GoInfo className="ml-2" />
                 </th>
                 <th className="font-normal text-center">
                   Actions <br /> <small className="text-greey/70">[date]</small>
@@ -90,17 +90,8 @@ export default function ProjectRead() {
                     <td className="pl-20">{data.offer_profitability}</td>
 
                     <td className=" flex flex-col justify-center">
-                      <div className="flex text-xl">
-                        <button href="">
-                          <FaRegTrashAlt />
-                        </button>
-                        <button>
-                          <FaRegEdit />
-                        </button>
-                      </div>
-
                       <small className="text-greey/70">
-                        {Date(data.updated_at)}
+                        {new Date(data.updated_at).toLocaleDateString("en-US")}
                       </small>
                     </td>
                   </tr>
