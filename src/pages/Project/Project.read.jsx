@@ -6,7 +6,7 @@ import ProjectDelete from "../../components/ProjectDelete";
 import { useParams, Link } from "react-router-dom";
 // import FormsCard from "../FormsCard";
 // import { data } from "autoprefixer";
-import { FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
+import { FaEllipsisH, FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
 import { GoInfo } from "react-icons/go";
 
 export default function ProjectRead() {
@@ -56,17 +56,21 @@ export default function ProjectRead() {
               >
                 <th className="font-normal text-center">Type de bien</th>
                 <th
-                  className="font-normal text-center pl-12 flex"
+                  className="font-normal text-center "
                   title="De base, nous affichons le prix de l'annonce. Dès que vous rentrez un prix d'offre, nous prenons ce dernier en compte."
                 >
-                  Prix <GoInfo className="ml-2" />
+                  <div className="flex justify-center">
+                    Prix <GoInfo className="ml-2" />
+                  </div>
                 </th>
-                <th className="font-normal text-center pl-12">Localisation</th>
+                <th className="font-normal text-center">Localisation</th>
                 <th
-                  className="font-normal text-center pl-12 flex"
+                  className="font-normal text-center"
                   title="De base, notre calcul de rentabilité s'effectue avec le prix de l'annonce. Dès que vous rentrez un prix d'offre, nous prenons ce dernier en compte."
                 >
-                  Rentabilité <GoInfo className="ml-2" />
+                  <div className="flex  justify-center">
+                    Rentabilité <GoInfo className="ml-2" />
+                  </div>
                 </th>
                 <th className="font-normal text-center">
                   Actions <br /> <small className="text-greey/70">[date]</small>
@@ -80,19 +84,30 @@ export default function ProjectRead() {
                   <tr
                     key={data.id}
                     tabIndex="0"
-                    className="focus:outline-none h-20 text-sm leading-none text-gray-800 dark:text-white  bg-white dark:bg-gray-800  hover:bg-gray-100 dark:hover:bg-gray-900  border-b border-t border-gray-100 dark:border-gray-700 "
+                    className="focus:outline-none h-20 text-sm leading-none text-gray-800 dark:text-white  bg-white dark:bg-gray-800  hover:bg-primary-light/20 dark:hover:bg-gray-900  border-b border-t border-gray-100 dark:border-gray-700 "
                   >
-                    <td className="pl-4 flex items-center">
+                    <td className="pl-12 flex items-center">
                       {data.property_category}
                     </td>
                     <td className="pl-12">{data.offer_price}</td>
                     <td className="pl-12">{data.localization}</td>
-                    <td className="pl-20">{data.offer_profitability}</td>
+                    <td className="pl-12">{data.offer_profitability}</td>
 
-                    <td className=" flex flex-col justify-center">
-                      <small className="text-greey/70">
-                        {new Date(data.updated_at).toLocaleDateString("en-US")}
-                      </small>
+                    <td className="h-full">
+                      <Link
+                        to={`/dashboard/${project_id}/housing/${data.id}`}
+                        className="flex flex-col justify-center items-center"
+                      >
+                        <span className="text-xl text-greey mb-2">
+                          <FaEllipsisH />
+                        </span>
+
+                        <small className="text-greey/70">
+                          {new Date(data.updated_at).toLocaleDateString(
+                            "en-US"
+                          )}
+                        </small>
+                      </Link>
                     </td>
                   </tr>
                 );
