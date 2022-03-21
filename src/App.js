@@ -50,6 +50,7 @@ function App() {
               {/* PROJECT */}
               <Route path="/dashboard/new" element={<ProjectCreate />} />
               <Route path="/dashboard/:project_id" element={<ProjectRead />} />
+              <Route path="/dashboard/:project_id/edit" element={<ProjectUpdate/>}
 
               {/* HOUSING */}
               <Route
