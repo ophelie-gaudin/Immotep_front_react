@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
-import Cookies from "js-cookie";
-import HousingCardInfo from "../../components/Main/HousingCardInfo";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import Cookies from 'js-cookie';
+import HousingCardInfo from '../../components/Main/HousingCardInfo';
+import { useParams } from 'react-router-dom';
+import FormsCard from '../../components/FormsCard';
 
 export default function HousingRead() {
-  const [myHousingsInfo, setMyHousingsInfo] = useState("");
+  const [myHousingsInfo, setMyHousingsInfo] = useState('');
 
   const { housing_id, project_id } = useParams();
 
@@ -14,10 +15,10 @@ export default function HousingRead() {
     const fetchList = (url, argument) => {
       const finalURL = argument ? `${url}${argument}` : url;
       fetch(`${finalURL}`, {
-        method: "GET",
+        method: 'GET',
         headers: {
-          "Content-Type": "application/json",
-          Authorization: Cookies.get("token"),
+          'Content-Type': 'application/json',
+          Authorization: Cookies.get('token'),
         },
       })
         .then((response) => response.json())
@@ -30,13 +31,19 @@ export default function HousingRead() {
   }, [oneHousingArgument]);
 
   return (
-    <div className="mt-12 mb-8">
-      <div>
-        <h1>Informations concernant le logement</h1>
-        <div>
-          <HousingCardInfo data={myHousingsInfo} />
+    <>
+      <FormsCard
+        title='Informations concernant le logement'
+        returnUrl={`dashboard/${project_id}/housing/${housing_id}`}
+      >
+        <div className='mt-12 mb-8'>
+          <div>
+            <div>
+              <HousingCardInfo data={myHousingsInfo} />
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </FormsCard>
+    </>
   );
 }

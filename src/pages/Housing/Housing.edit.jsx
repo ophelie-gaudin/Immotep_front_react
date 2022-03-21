@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import FormsCard from "../../components/FormsCard";
-import Cookies from "js-cookie";
-import { useParams, useNavigate } from "react-router-dom";
+import FormsCard from '../../components/FormsCard';
+import Cookies from 'js-cookie';
+import { useParams, useNavigate } from 'react-router-dom';
 
 export default function HousingUpdate() {
   const navigate = useNavigate();
   const { housing_id, project_id } = useParams();
-  console.log(useParams());
 
   const [localization, setLocalization] = useState();
   const [ad_price, setAdPrice] = useState();
@@ -58,10 +57,10 @@ export default function HousingUpdate() {
     fetch(
       `https://immotep-api.herokuapp.com/projects/${project_id}/housings/${housing_id}`,
       {
-        method: "PUT",
+        method: 'PUT',
         headers: {
-          "Content-Type": "application/json",
-          Authorization: Cookies.get("token"),
+          'Content-Type': 'application/json',
+          Authorization: Cookies.get('token'),
         },
         body: JSON.stringify(data),
       }
@@ -77,176 +76,176 @@ export default function HousingUpdate() {
   };
 
   return (
-    <div className="mt-12 mb-8">
+    <div className='mt-12 mb-8'>
       <div>
         <FormsCard
-          title="Modifier mon logement"
-          returnText="Mon Logement"
+          title='Modifier mon logement'
+          returnText='Mon Logement'
           returnUrl={`/dashboard/${project_id}/housing/${housing_id}`}
           // returnState={location.state}
         >
           <form onSubmit={handleSubmit}>
-            <label className="font-medium">
+            <label className='font-medium'>
               Localisation
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setLocalization(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Prix du logement
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setAdPrice(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Afaire
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setPropertyCategory(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               m2
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setArea(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Afaire
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setAdUrl(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Afaire
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setComment(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Afaire
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setOfferPrice(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Afaire
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setRepairsPrice(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Afaire
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setAnnualRent(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Afaire
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setAgencyFees(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Afaire
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setPnoInsurance(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Afaire
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setPropertyTax(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Afaire
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setRentalManagement(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Afaire
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setRentalUnpaymentInsurance(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Taxe ??
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setBuildingCoTax(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Afaire
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setMaintenancePercentage(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Afaire
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setAdProfitability(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Afaire
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setOfferProfitability(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Afaire
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setNewProperty(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Afaire
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setRentalVacancy(e.target.value)}
               />
             </label>
-            <button className="orange-button forms-buttons">
+            <button className='orange-button forms-buttons'>
               J'enregistre
             </button>
           </form>

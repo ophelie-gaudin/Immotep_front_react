@@ -8,7 +8,7 @@ import { useParams, useNavigate } from "react-router-dom";
 const HousingCreate = () => {
   const [propertyCategory, setPropertyCategory] = useState("");
   const [localization, setLocalization] = useState("");
-  const [adPrice, setAdPrice] = useState("");
+  const [ad_price, setAdPrice] = useState("");
 
   const navigate = useNavigate();
   const { project_id } = useParams();
@@ -23,10 +23,10 @@ const HousingCreate = () => {
       },
       body: JSON.stringify({
         housing: {
-          propertyCategory,
+          property_category: propertyCategory,
           localization,
-          adPrice,
-          offerPrice: adPrice,
+          ad_price,
+          offer_price: ad_price,
         },
       }),
     })
@@ -84,7 +84,7 @@ const HousingCreate = () => {
               Prix de l'annonce
               <input
                 type="text"
-                name="adPrice"
+                name="ad_price"
                 onChange={(e) => setAdPrice(e.target.value)}
               />
             </label>

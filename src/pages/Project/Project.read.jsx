@@ -47,49 +47,49 @@ export default function ProjectRead() {
           );
         })}
 
-        <div class="bg-white dark:bg-gray-800  shadow px-4 md:px-10 pt-4 md:pt-7 pb-5 overflow-y-auto">
-          <table class="w-full whitespace-nowrap">
+        <div className="bg-white dark:bg-gray-800  shadow px-4 md:px-10 pt-4 md:pt-7 pb-5 overflow-y-auto">
+          <table className="w-full whitespace-nowrap">
             <thead>
               <tr
-                tabindex="0"
-                class="focus:outline-none h-16 w-full text-sm leading-none text-gray-800 dark:text-white "
+                tabIndex="0"
+                className="focus:outline-none h-16 w-full text-sm leading-none text-gray-800 dark:text-white "
               >
-                <th class="font-normal text-center">Type de bien</th>
+                <th className="font-normal text-center">Type de bien</th>
                 <th
-                  class="font-normal text-center pl-12"
+                  className="font-normal text-center pl-12"
                   title="De base, nous affichons le prix de l'annonce. Dès que vous rentrez un prix d'offre, nous prenons ce dernier en compte."
                 >
                   Prix <GoInfo />
                 </th>
-                <th class="font-normal text-center pl-12">Localisation</th>
+                <th className="font-normal text-center pl-12">Localisation</th>
                 <th
-                  class="font-normal text-center pl-12"
+                  className="font-normal text-center pl-12"
                   title="De base, notre calcul de rentabilité s'effectue avec le prix de l'annonce. Dès que vous rentrez un prix d'offre, nous prenons ce dernier en compte."
                 >
                   Rentabilité <GoInfo />
                 </th>
-                <th class="font-normal text-center">
+                <th className="font-normal text-center">
                   Actions <br /> <small className="text-greey/70">[date]</small>
                 </th>
-                {/* <th class="font-normal text-left pl-16">Members</th> */}
+                {/* <th className="font-normal text-left pl-16">Members</th> */}
               </tr>
             </thead>
-            <tbody class="w-full">
+            <tbody className="w-full">
               {myHousings.map((data) => {
                 return (
                   <tr
                     key={data.id}
-                    tabindex="0"
-                    class="focus:outline-none h-20 text-sm leading-none text-gray-800 dark:text-white  bg-white dark:bg-gray-800  hover:bg-gray-100 dark:hover:bg-gray-900  border-b border-t border-gray-100 dark:border-gray-700 "
+                    tabIndex="0"
+                    className="focus:outline-none h-20 text-sm leading-none text-gray-800 dark:text-white  bg-white dark:bg-gray-800  hover:bg-gray-100 dark:hover:bg-gray-900  border-b border-t border-gray-100 dark:border-gray-700 "
                   >
-                    <td class="pl-4 flex items-center">
+                    <td className="pl-4 flex items-center">
                       {data.property_category}
                     </td>
-                    <td class="pl-12">{data.offer_price}</td>
-                    <td class="pl-12">{data.localization}</td>
-                    <td class="pl-20">{data.offer_profitability}</td>
+                    <td className="pl-12">{data.offer_price}</td>
+                    <td className="pl-12">{data.localization}</td>
+                    <td className="pl-20">{data.offer_profitability}</td>
 
-                    <td class=" flex flex-col justify-center">
+                    <td className=" flex flex-col justify-center">
                       <div className="flex text-xl">
                         <button href="">
                           <FaRegTrashAlt />
