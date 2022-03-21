@@ -11,7 +11,33 @@ import { GoInfo } from "react-icons/go";
 
 export default function ProjectRead() {
   const [myHousings, setMyHousings] = useState([]);
+  const [myProject, setMyProject] = useState([]);
+
   const { project_id } = useParams();
+
+  // Get project
+  const projectArgument = `projects/${project_id}`;
+
+  useEffect(() => {
+    const fetchList = (url, argument) => {
+      const finalURL = argument ? `${url}${argument}` : url;
+      fetch(`${finalURL}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: Cookies.get("token"),
+        },
+      })
+        .then((response) => response.json())
+        .then((response) => {
+          setMyProject(response);
+        })
+        .catch((err) => console.error(err));
+    };
+    fetchList(`https://immotep-api.herokuapp.com/`, projectArgument);
+  }, [projectArgument]);
+
+  // Get housings
 
   const housingArgument = `projects/${project_id}/housings`;
 
@@ -36,10 +62,22 @@ export default function ProjectRead() {
 
   return (
     <FormsCard
-      title="Mon projet"
+      title="Mon projet et mes biens repérés"
       returnText="Mes projets"
       returnUrl={`/dashboard`}
     >
+      <div className="w-full text-greey">
+        <b>Titre : </b>
+        {myProject.title}
+        <br />
+        <br />
+        <b>Localisation :</b> {myProject.localization}
+        <br />
+        <br />
+        <b>Commentaires :</b> {myProject.comment}
+        <br />
+        <br />
+      </div>
       <div className="flex w-full justify-end mb-4">
         <Link
           to={`/dashboard/${project_id}/edit`}
