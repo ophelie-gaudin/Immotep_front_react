@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { useEffect } from "react";
-import store from "./ReduxFolder/store";
+import store from "./reduxFolder/store";
 import Register from "./pages/Register";
 import Home from "./pages/";
 import Login from "./pages/Login";
-import Layout from "./Components/Main/Layout";
-import DashboardPage from "./pages/DashboardPage";
+import Layout from "./components/Main/Layout";
+import Dashboard from "./pages/Dashboard";
 import MailPassword from "./pages/MailPassword";
 import NewPassword from "./pages/NewPassword";
 import ProjectPage from "./pages/ProjectPage";
@@ -16,7 +16,7 @@ import ProfileEditPage from "./pages/ProfileEditPage";
 import NewHousing from "./pages/NewHousing";
 import NewProject from "./pages/NewProject";
 import HousingPage from "./pages/HousingPage";
-import HousingEdit from "./pages/HousingEditPage";
+import HousingUpdate from "./pages/Housing/Housing.edit";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -54,9 +54,9 @@ function App() {
               />
               <Route
                 path="/dashboard/:project_id/housing/:housing_id/edit"
-                element={<HousingEdit />}
+                element={<HousingUpdate />}
               />
-              <Route path="/dashboard" element={<DashboardPage />} />
+              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/dashboard/new" element={<NewProject />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/profile/edit" element={<ProfileEditPage />} />

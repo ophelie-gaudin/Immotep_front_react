@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowLeft } from "react-icons/fa";
-import WarningArea from "../../Components/Main/WarningArea";
-import ProjectCard from "../../Components/Main/ProjectCard";
-import OrangeButton from "../../Components/Main/OrangeButton";
+import WarningArea from "../../components/Main/WarningArea";
+import ProjectCard from "../../components/Main/ProjectCard";
+import OrangeButton from "../../components/Main/OrangeButton";
 
 import Cookies from "js-cookie";
 
-export default function DashboardPage() {
+export default function Dashboard() {
   const [myProjects, setMyProjects] = useState([]);
   const projectArgument = "projects";
 

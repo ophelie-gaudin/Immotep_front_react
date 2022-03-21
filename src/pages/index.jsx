@@ -1,6 +1,6 @@
 import React from "react";
 
-import OrangeButton from "../Components/Main/OrangeButton";
+import OrangeButton from "../components/Main/OrangeButton";
 import BackgroundVideo from "../assets/video-2.mp4";
 
 export default function Home() {

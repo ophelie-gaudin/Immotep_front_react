@@ -1,7 +1,7 @@
 import React from "react";
 import Cookies from "js-cookie";
 import { useDispatch } from "react-redux";
-import { userLogout } from "../../ReduxFolder/stateUser/userAction";
+import { userLogout } from "../../reduxFolder/stateUser/userAction";
 import { useNavigate } from "react-router-dom";
 
 export default function LogOut() {

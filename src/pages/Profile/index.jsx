@@ -1,6 +1,6 @@
 import React from "react";
-import FormsCard from "../../Components/FormsCard";
-import OrangeButton from "../../Components/Main/OrangeButton";
+import FormsCard from "../../components/FormsCard";
+import OrangeButton from "../../components/Main/OrangeButton";
 import "./Profile.css";
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";

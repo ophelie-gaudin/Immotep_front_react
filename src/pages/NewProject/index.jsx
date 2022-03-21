@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FormsCard from "../../Components/FormsCard";
+import FormsCard from "../../components/FormsCard";
 //import Input from "../../Components/Main/Input";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 //import { useParams } from "react-router";
-import FormsCard from "../../Components/FormsCard";
+import FormsCard from "../../components/FormsCard";
 import Cookies from "js-cookie";
 //import Input from "../../Components/Main/Input";
 import { useParams, useNavigate } from "react-router-dom";

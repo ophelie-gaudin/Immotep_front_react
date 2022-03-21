@@ -1,5 +1,5 @@
 import React from "react";
-import Housing from "../../Components/Housing";
+import Housing from "../../components/Housing";
 
 export default function HousingPage() {
   return (

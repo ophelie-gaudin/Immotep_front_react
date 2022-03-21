@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FormsCard from "../../Components/FormsCard";
+import FormsCard from "../../components/FormsCard";
 import { useNavigate } from "react-router-dom";
 
 export default function MailPassword() {
