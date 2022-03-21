@@ -42,6 +42,7 @@ export default function ProjectRead() {
   const housingArgument = `projects/${project_id}/housings`;
 
   useEffect(() => {
+    // TODO : request with objects sorted by offer_profitability
     const fetchList = (url, argument) => {
       const finalURL = argument ? `${url}${argument}` : url;
       fetch(`${finalURL}`, {
