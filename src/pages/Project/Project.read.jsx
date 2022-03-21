@@ -14,7 +14,6 @@ export default function ProjectRead() {
   const [myProject, setMyProject] = useState([]);
 
   const { project_id } = useParams();
-<<<<<<< HEAD
 
   // Get project
   const projectArgument = `projects/${project_id}`;
@@ -40,8 +39,6 @@ export default function ProjectRead() {
 
   // Get housings
 
-=======
->>>>>>> 4e340acc1335aa099eb264988defb074d9f27ff4
   const housingArgument = `projects/${project_id}/housings`;
 
   useEffect(() => {
