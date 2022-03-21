@@ -82,7 +82,6 @@ export default function HousingUpdate() {
           title='Modifier mon logement'
           returnText='Mon Logement'
           returnUrl={`/dashboard/${project_id}/housing/${housing_id}`}
-          // returnState={location.state}
         >
           <form onSubmit={handleSubmit}>
             <label className='font-medium'>

@@ -34,7 +34,8 @@ export default function HousingRead() {
     <>
       <FormsCard
         title='Informations concernant le logement'
-        returnUrl={`dashboard/${project_id}/housing/${housing_id}`}
+        returnText="Retour sur mon projet"
+        returnUrl={`/dashboard/${project_id}`}
       >
         <div className='mt-12 mb-8'>
           <div>
