@@ -181,22 +181,6 @@ export default function HousingUpdate() {
               />
             </label>
             <label className='font-medium'>
-              Montant des frais de gestion locataire :
-              <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => setRentalManagement(e.target.value)}
-              />
-            </label>
-            <label className='font-medium'>
-              Montant de l'assurance des loyers impayés :
-              <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => setRentalUnpaymentInsurance(e.target.value)}
-              />
-            </label>
-            <label className='font-medium'>
               Montant des frais de co-propriété :
               <input
                 type='number'
@@ -237,7 +221,7 @@ export default function HousingUpdate() {
               />
             </label>
             <label className='font-medium'>
-              Nouvelle propriété :
+              Bien neuf :
               <input
                 type='checkbox'
                 className='ml-8 mt-2'
@@ -246,6 +230,29 @@ export default function HousingUpdate() {
               ></input>{' '}
               Oui
             </label>
+            <hr />
+            <label className='font-medium'>
+              Assurance des loyers impayés :
+              <input
+                type='checkbox'
+                className='ml-8 mt-2'
+                name='controlled'
+                onChange={(e) => setRentalUnpaymentInsurance(e.target.value)}
+              />{' '}
+              Oui{' '}
+            </label>
+            <hr />
+            <label className='font-medium'>
+              Gestion Locative :
+              <input
+                type='checkbox'
+                className='ml-8 mt-2'
+                name='controlled'
+                onChange={(e) => setRentalManagement(e.target.value)}
+              />{' '}
+              Oui{' '}
+            </label>
+
             <button className='orange-button forms-buttons'>
               J'enregistre
             </button>
