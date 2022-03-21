@@ -7,6 +7,7 @@ import { useParams, Link } from "react-router-dom";
 // import FormsCard from "../FormsCard";
 // import { data } from "autoprefixer";
 import { FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
+import { GoInfo } from "react-icons/go";
 
 export default function ProjectRead() {
   const [myHousings, setMyHousings] = useState([]);
@@ -54,11 +55,21 @@ export default function ProjectRead() {
                 class="focus:outline-none h-16 w-full text-sm leading-none text-gray-800 dark:text-white "
               >
                 <th class="font-normal text-center">Type de bien</th>
-                <th class="font-normal text-center pl-12">Prix</th>
+                <th
+                  class="font-normal text-center pl-12"
+                  title="De base, nous affichons le prix de l'annonce. Dès que vous rentrez un prix d'offre, nous prenons ce dernier en compte."
+                >
+                  Prix <GoInfo />
+                </th>
                 <th class="font-normal text-center pl-12">Localisation</th>
-                <th class="font-normal text-center pl-12">Rentabilité</th>
+                <th
+                  class="font-normal text-center pl-12"
+                  title="De base, notre calcul de rentabilité s'effectue avec le prix de l'annonce. Dès que vous rentrez un prix d'offre, nous prenons ce dernier en compte."
+                >
+                  Rentabilité <GoInfo />
+                </th>
                 <th class="font-normal text-center">
-                  Actions <br /> <small>[date]</small>
+                  Actions <br /> <small className="text-greey/70">[date]</small>
                 </th>
                 {/* <th class="font-normal text-left pl-16">Members</th> */}
               </tr>
