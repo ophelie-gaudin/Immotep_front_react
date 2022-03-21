@@ -45,7 +45,6 @@ const HousingCardInfo = (props) => {
           <button className='block py-2 pr-4 pl-3 text-white rounded border-b border-light md:p-0 dark:text-white bg-primary md:border-none  md:px-2 md:py:1  hover:font-bold'>
             <Link
               to={`/dashboard/${data.project_id}/housing/${data.id}/edit`}
-              state={{ data }}
             >
               Modifier le logement
             </Link>
