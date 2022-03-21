@@ -9,13 +9,9 @@ import Layout from "./components/Main/Layout";
 import Dashboard from "./pages/Dashboard";
 import MailPassword from "./pages/MailPassword";
 import NewPassword from "./pages/NewPassword";
-import ProjectPage from "./pages/ProjectPage";
 import ErrorNotFoundPage from "./pages/NotFoundedPage";
 import Profile from "./pages/Profile";
 import ProfileEditPage from "./pages/ProfileEditPage";
-import NewHousing from "./pages/NewHousing";
-import NewProject from "./pages/NewProject";
-import HousingPage from "./pages/HousingPage";
 import HousingUpdate from "./pages/Housing/Housing.edit";
 
 import AOS from "aos";
@@ -23,6 +19,10 @@ import "aos/dist/aos.css";
 
 import "flowbite";
 import ServorErrorPage from "./pages/ServorErrorPage";
+import HousingCreate from "./pages/Housing/Housing.create";
+import HousingRead from "./pages/Housing/Housing.read";
+import ProjectRead from "./pages/Project/Project.read";
+import ProjectCreate from "./pages/Project/Project.create";
 
 function App() {
   useEffect(() => {
@@ -43,21 +43,21 @@ function App() {
               <Route path="/users/password/edit" element={<NewPassword />} />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/dashboard/:project_id" element={<ProjectPage />} />
+              <Route path="/dashboard/:project_id" element={<ProjectRead />} />
               <Route
                 path="/dashboard/:project_id/housings/new"
-                element={<NewHousing />}
+                element={<HousingCreate />}
               />
               <Route
                 path="/dashboard/:project_id/housing/:housing_id"
-                element={<HousingPage />}
+                element={<HousingRead />}
               />
               <Route
                 path="/dashboard/:project_id/housing/:housing_id/edit"
                 element={<HousingUpdate />}
               />
               <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/dashboard/new" element={<NewProject />} />
+              <Route path="/dashboard/new" element={<ProjectCreate />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/profile/edit" element={<ProfileEditPage />} />
               <Route path="/404" element={<ErrorNotFoundPage />} />

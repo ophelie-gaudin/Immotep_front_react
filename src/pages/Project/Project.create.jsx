@@ -4,7 +4,7 @@ import FormsCard from "../../components/FormsCard";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 
-const NewProject = () => {
+const ProjectCreate = () => {
   const [title, setTitle] = useState("");
   const [localization, setLocalization] = useState("");
   const [comment, setComment] = useState("");
@@ -84,4 +84,4 @@ const NewProject = () => {
   );
 };
 
-export default NewProject;
+export default ProjectCreate;

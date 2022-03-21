@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
-import HousingCardInfo from "../Main/HousingCardInfo";
+import HousingCardInfo from "../../components/Main/HousingCardInfo";
 import { useParams } from "react-router-dom";
 
-export default function Housing() {
+export default function HousingRead() {
   const [myHousingsInfo, setMyHousingsInfo] = useState("");
 
   const { housing_id, project_id } = useParams();
@@ -30,10 +30,12 @@ export default function Housing() {
   }, [oneHousingArgument]);
 
   return (
-    <div>
-      <h1>Informations concernant le logement</h1>
+    <div className="mt-12 mb-8">
       <div>
-        <HousingCardInfo data={myHousingsInfo} />
+        <h1>Informations concernant le logement</h1>
+        <div>
+          <HousingCardInfo data={myHousingsInfo} />
+        </div>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 //import Input from "../../Components/Main/Input";
 import { useParams, useNavigate } from "react-router-dom";
 
-const NewAd = () => {
+const HousingCreate = () => {
   const [propertyCategory, setPropertyCategory] = useState("");
   const [localization, setLocalization] = useState("");
   const [adPrice, setAdPrice] = useState("");
@@ -99,4 +99,4 @@ const NewAd = () => {
   );
 };
 
-export default NewAd;
+export default HousingCreate;
