@@ -23,6 +23,7 @@ import ProfileUpdate from "./pages/Profile/Profile.update";
 import PasswordCreate from "./pages/Password/Password.create";
 import PasswordUpdate from "./pages/Password/Password.update";
 import ProfileRead from "./pages/Profile/Profile.read";
+import ProjectUpdate from "./pages/Project/Project.update";
 
 function App() {
   useEffect(() => {
@@ -50,7 +51,10 @@ function App() {
               {/* PROJECT */}
               <Route path="/dashboard/new" element={<ProjectCreate />} />
               <Route path="/dashboard/:project_id" element={<ProjectRead />} />
-              <Route path="/dashboard/:project_id/edit" element={<ProjectUpdate/>}
+              <Route
+                path="/dashboard/:project_id/edit"
+                element={<ProjectUpdate />}
+              />
 
               {/* HOUSING */}
               <Route

@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 import HousingCard from "../../components/Main/HousingCard";
 import OrangeButton from "../../components/Main/OrangeButton";
 import ProjectDelete from "../../components/ProjectDelete";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 // import FormsCard from "../FormsCard";
 // import { data } from "autoprefixer";
 import { FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
@@ -101,6 +101,12 @@ export default function ProjectRead() {
 
         <br />
         <div className="flex w-full justify-end">
+          <Link
+            to={`/dashboard/${project_id}/edit`}
+            className="text-primary hover:underline mr-6"
+          >
+            Modifier ce projet
+          </Link>
           <OrangeButton url={`/dashboard/${project_id}/housings/new`}>
             J'ajoute un logement
           </OrangeButton>
