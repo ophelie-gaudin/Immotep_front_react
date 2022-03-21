@@ -1,6 +1,5 @@
 import React from "react";
 import { FaGithubAlt, FaTrello } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import logo from "../../../../assets/immotep_logo.png";
 
 export default function Footer() {

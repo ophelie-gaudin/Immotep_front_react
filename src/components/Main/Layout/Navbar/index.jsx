@@ -1,8 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Logout from "../../../Logout";
 import { useSelector } from "react-redux";
-import { FaUserCircle } from "react-icons/fa";
 import logo from "../../../../assets/immotep_logo.png";
 import LogOut from "../../../Logout";
 
