@@ -6,9 +6,9 @@ import Cookies from "js-cookie";
 import { useParams, useNavigate } from "react-router-dom";
 
 const HousingCreate = () => {
-  const [propertyCategory, setPropertyCategory] = useState("");
+  const [propertyCategory, setPropertyCategory] = useState("Studio");
   const [localization, setLocalization] = useState("");
-  const [adPrice, setAdPrice] = useState("");
+  const [ad_price, setAdPrice] = useState("");
 
   const navigate = useNavigate();
   const { project_id } = useParams();
@@ -23,9 +23,10 @@ const HousingCreate = () => {
       },
       body: JSON.stringify({
         housing: {
-          propertyCategory,
+          property_category: propertyCategory,
           localization,
-          adPrice,
+          ad_price,
+          // offer_price: ad_price,
         },
       }),
     })
@@ -61,6 +62,7 @@ const HousingCreate = () => {
                 className="w-full"
                 name="property-category"
                 id="hypothesis"
+                value={propertyCategory}
                 onChange={(e) => setPropertyCategory(e.target.value)}
               >
                 <option value="Studio">Studio</option>
@@ -83,7 +85,7 @@ const HousingCreate = () => {
               Prix de l'annonce
               <input
                 type="text"
-                name="adPrice"
+                name="ad_price"
                 onChange={(e) => setAdPrice(e.target.value)}
               />
             </label>

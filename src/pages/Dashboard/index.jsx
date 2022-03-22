@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft, FaMapPin } from "react-icons/fa";
 import WarningArea from "../../components/Main/WarningArea";
-import ProjectCard from "../../components/Main/ProjectCard";
 import OrangeButton from "../../components/Main/OrangeButton";
+import { FiArrowDownRight } from 'react-icons/fi';
+
+import { Link } from 'react-router-dom';
 
 import Cookies from "js-cookie";
 
@@ -47,7 +49,25 @@ export default function Dashboard() {
         <div className="">
           <div className="flex flex-wrap mb-12 justify-center">
             {myProjects.map((data) => {
-              return <ProjectCard key={data.id} data={data} />;
+              return (
+                <Link to={`/dashboard/${data.id}`} className='project-card group'>
+                  <div className='project-card-text-scale'>
+                    <div className='project-card-localization flex items-center'>
+                      {' '}
+                      <span className='mr-4'>
+                        <FaMapPin className='text-lg' />
+                      </span>
+                      {data.localization}
+                    </div>
+                    <div className='project-card-comment italic'>{data.comment}</div>
+                    <div className='project-card-comment flex items-between w-full justify-end'>
+                      <span>
+                        <FiArrowDownRight className='project-card-icon text-3xl font-bold group-hover:animate-bounce' />
+                      </span>
+                    </div>
+                  </div>
+                </Link> 
+                );
             })}
           </div>
           <div className="mb-10 mr-8 flex justify-end">

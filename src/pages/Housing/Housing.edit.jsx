@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import FormsCard from "../../components/FormsCard";
-import Cookies from "js-cookie";
-import { useParams, useNavigate } from "react-router-dom";
+import FormsCard from '../../components/FormsCard';
+import Cookies from 'js-cookie';
+import { useParams, useNavigate } from 'react-router-dom';
 
 export default function HousingUpdate() {
   const navigate = useNavigate();
   const { housing_id, project_id } = useParams();
-  console.log(useParams());
 
   const [localization, setLocalization] = useState();
   const [ad_price, setAdPrice] = useState();
@@ -58,10 +57,10 @@ export default function HousingUpdate() {
     fetch(
       `https://immotep-api.herokuapp.com/projects/${project_id}/housings/${housing_id}`,
       {
-        method: "PUT",
+        method: 'PUT',
         headers: {
-          "Content-Type": "application/json",
-          Authorization: Cookies.get("token"),
+          'Content-Type': 'application/json',
+          Authorization: Cookies.get('token'),
         },
         body: JSON.stringify(data),
       }
@@ -77,176 +76,192 @@ export default function HousingUpdate() {
   };
 
   return (
-    <div className="mt-12 mb-8">
+    <div className='mt-12 mb-8'>
       <div>
         <FormsCard
-          title="Modifier mon logement"
-          returnText="Mon Logement"
+          title='Modifier mon logement'
+          returnText='Mon Logement'
           returnUrl={`/dashboard/${project_id}/housing/${housing_id}`}
-          // returnState={location.state}
         >
           <form onSubmit={handleSubmit}>
-            <label className="font-medium">
-              Localisation
+            <label className='font-medium'>
+              Localisation :
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setLocalization(e.target.value)}
               />
             </label>
-            <label className="font-medium">
-              Prix du logement
+            <label className='font-medium'>
+              Prix du logement :
               <input
-                type="text"
-                className="mt-2"
+                type='number'
+                className='mt-2'
                 onChange={(e) => setAdPrice(e.target.value)}
               />
             </label>
-            <label className="font-medium">
-              Afaire
-              <input
-                type="text"
-                className="mt-2"
+
+            <label className='flex flex-col font-medium w-[95%] items-start'>
+              Type de bien :
+              <select
+                className='w-full'
+                name='property-category'
+                id='hypothesis'
                 onChange={(e) => setPropertyCategory(e.target.value)}
-              />
+              >
+                <option value='Studio'>Studio</option>
+                <option value='T1 et T2'>T1 et T2</option>
+                <option value='Grand appartement'>Grand appartement</option>
+                <option value='Maison'>Maison</option>
+                <option value='Immeuble'>Immeuble</option>
+              </select>
             </label>
-            <label className="font-medium">
-              m2
+            <label className='font-medium'>
+              Surface en m² :
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setArea(e.target.value)}
               />
             </label>
-            <label className="font-medium">
-              Afaire
+            <label className='font-medium'>
+              Lien vers l'annonce :
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setAdUrl(e.target.value)}
               />
             </label>
-            <label className="font-medium">
-              Afaire
+            <label className='font-medium'>
+              Commentaires :
               <input
-                type="text"
-                className="mt-2"
+                type='text'
+                className='mt-2'
                 onChange={(e) => setComment(e.target.value)}
               />
             </label>
-            <label className="font-medium">
-              Afaire
+            <label className='font-medium'>
+              Prix de l'offre :
               <input
-                type="text"
-                className="mt-2"
+                type='number'
+                className='mt-2'
                 onChange={(e) => setOfferPrice(e.target.value)}
               />
             </label>
-            <label className="font-medium">
-              Afaire
+            <label className='font-medium'>
+              Montant des réparations
               <input
-                type="text"
-                className="mt-2"
+                type='number'
+                className='mt-2'
                 onChange={(e) => setRepairsPrice(e.target.value)}
               />
             </label>
-            <label className="font-medium">
-              Afaire
+            <label className='font-medium'>
+              Location annuel :
               <input
-                type="text"
-                className="mt-2"
+                type='number'
+                className='mt-2'
                 onChange={(e) => setAnnualRent(e.target.value)}
               />
             </label>
-            <label className="font-medium">
-              Afaire
+            <label className='font-medium'>
+              Frais d'agence :
               <input
-                type="text"
-                className="mt-2"
+                type='number'
+                className='mt-2'
                 onChange={(e) => setAgencyFees(e.target.value)}
               />
             </label>
-            <label className="font-medium">
-              Afaire
+            <label className='font-medium'>
+              Montant de l'Assurance Propriétaire Non-Occupant (P.N.O.)
               <input
-                type="text"
-                className="mt-2"
+                type='number'
+                className='mt-2'
                 onChange={(e) => setPnoInsurance(e.target.value)}
               />
             </label>
-            <label className="font-medium">
-              Afaire
+            <label className='font-medium'>
+              Montant de la taxe foncière :
               <input
-                type="text"
-                className="mt-2"
+                type='number'
+                className='mt-2'
                 onChange={(e) => setPropertyTax(e.target.value)}
               />
             </label>
-            <label className="font-medium">
-              Afaire
+            <label className='font-medium'>
+              Montant des frais de co-propriété :
               <input
-                type="text"
-                className="mt-2"
-                onChange={(e) => setRentalManagement(e.target.value)}
-              />
-            </label>
-            <label className="font-medium">
-              Afaire
-              <input
-                type="text"
-                className="mt-2"
-                onChange={(e) => setRentalUnpaymentInsurance(e.target.value)}
-              />
-            </label>
-            <label className="font-medium">
-              Taxe ??
-              <input
-                type="text"
-                className="mt-2"
+                type='number'
+                className='mt-2'
                 onChange={(e) => setBuildingCoTax(e.target.value)}
               />
             </label>
-            <label className="font-medium">
-              Afaire
+            <label className='font-medium'>
+              Pourcentage de maintenance :
               <input
-                type="text"
-                className="mt-2"
+                type='number'
+                className='mt-2'
                 onChange={(e) => setMaintenancePercentage(e.target.value)}
               />
             </label>
-            <label className="font-medium">
-              Afaire
+            <label className='font-medium'>
+              Montant profitabilité ?????
               <input
-                type="text"
-                className="mt-2"
+                type='number'
+                className='mt-2'
                 onChange={(e) => setAdProfitability(e.target.value)}
               />
             </label>
-            <label className="font-medium">
-              Afaire
+            <label className='font-medium'>
+              Indice de profitabilité :
               <input
-                type="text"
-                className="mt-2"
+                type='number'
+                className='mt-2'
                 onChange={(e) => setOfferProfitability(e.target.value)}
               />
             </label>
-            <label className="font-medium">
-              Afaire
+            <label className='font-medium'>
+              % de disponibilité du logement :
               <input
-                type="text"
-                className="mt-2"
-                onChange={(e) => setNewProperty(e.target.value)}
-              />
-            </label>
-            <label className="font-medium">
-              Afaire
-              <input
-                type="text"
-                className="mt-2"
+                type='number'
+                className='mt-2'
                 onChange={(e) => setRentalVacancy(e.target.value)}
               />
             </label>
-            <button className="orange-button forms-buttons">
+            <label className='font-medium'>
+              Bien neuf :
+              <input
+                type='checkbox'
+                className='ml-8 mt-2'
+                name='controlled'
+                onChange={(e) => setNewProperty(e.target.value)}
+              ></input>{' '}
+              Oui
+            </label>
+            <hr />
+            <label className='font-medium'>
+              Assurance des loyers impayés :
+              <input
+                type='checkbox'
+                className='ml-8 mt-2'
+                name='controlled'
+                onChange={(e) => setRentalUnpaymentInsurance(e.target.value)}
+              />{' '}
+              Oui{' '}
+            </label>
+            <hr />
+            <label className='font-medium'>
+              Gestion Locative :
+              <input
+                type='checkbox'
+                className='ml-8 mt-2'
+                name='controlled'
+                onChange={(e) => setRentalManagement(e.target.value)}
+              />{' '}
+              Oui{' '}
+            </label>
+
+            <button className='orange-button forms-buttons'>
               J'enregistre
             </button>
           </form>
