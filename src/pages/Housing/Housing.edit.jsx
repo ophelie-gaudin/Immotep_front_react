@@ -100,13 +100,21 @@ export default function HousingUpdate() {
                 onChange={(e) => setAdPrice(e.target.value)}
               />
             </label>
-            <label className='font-medium'>
+
+            <label className='flex flex-col font-medium w-[95%] items-start'>
               Type de bien :
-              <input
-                type='text'
-                className='mt-2'
+              <select
+                className='w-full'
+                name='property-category'
+                id='hypothesis'
                 onChange={(e) => setPropertyCategory(e.target.value)}
-              />
+              >
+                <option value='Studio'>Studio</option>
+                <option value='T1 et T2'>T1 et T2</option>
+                <option value='Grand appartement'>Grand appartement</option>
+                <option value='Maison'>Maison</option>
+                <option value='Immeuble'>Immeuble</option>
+              </select>
             </label>
             <label className='font-medium'>
               Surface en m² :
@@ -181,22 +189,6 @@ export default function HousingUpdate() {
               />
             </label>
             <label className='font-medium'>
-              Montant des frais de gestion locataire :
-              <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => setRentalManagement(e.target.value)}
-              />
-            </label>
-            <label className='font-medium'>
-              Montant de l'assurance des loyers impayés :
-              <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => setRentalUnpaymentInsurance(e.target.value)}
-              />
-            </label>
-            <label className='font-medium'>
               Montant des frais de co-propriété :
               <input
                 type='number'
@@ -237,7 +229,7 @@ export default function HousingUpdate() {
               />
             </label>
             <label className='font-medium'>
-              Nouvelle propriété :
+              Bien neuf :
               <input
                 type='checkbox'
                 className='ml-8 mt-2'
@@ -246,6 +238,29 @@ export default function HousingUpdate() {
               ></input>{' '}
               Oui
             </label>
+            <hr />
+            <label className='font-medium'>
+              Assurance des loyers impayés :
+              <input
+                type='checkbox'
+                className='ml-8 mt-2'
+                name='controlled'
+                onChange={(e) => setRentalUnpaymentInsurance(e.target.value)}
+              />{' '}
+              Oui{' '}
+            </label>
+            <hr />
+            <label className='font-medium'>
+              Gestion Locative :
+              <input
+                type='checkbox'
+                className='ml-8 mt-2'
+                name='controlled'
+                onChange={(e) => setRentalManagement(e.target.value)}
+              />{' '}
+              Oui{' '}
+            </label>
+
             <button className='orange-button forms-buttons'>
               J'enregistre
             </button>
