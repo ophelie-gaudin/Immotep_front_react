@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
-import HousingCard from "../../components/Main/HousingCard";
 import OrangeButton from "../../components/Main/OrangeButton";
 import ProjectDelete from "../../components/ProjectDelete";
 import { useParams, Link } from "react-router-dom";
