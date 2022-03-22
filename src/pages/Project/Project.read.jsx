@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import OrangeButton from "../../components/Main/OrangeButton";
-import ProjectDelete from "../../components/ProjectDelete";
+import ProjectDelete from "../../components/Delete/Project.delete";
 import { useParams, Link } from "react-router-dom";
 import FormsCard from "../../components/FormsCard";
 
