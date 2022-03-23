@@ -3,7 +3,6 @@ import { FaArrowLeft, FaMapPin } from 'react-icons/fa';
 import WarningArea from '../../components/Main/WarningArea';
 import OrangeButton from '../../components/Main/OrangeButton';
 import { FiArrowDownRight } from 'react-icons/fi';
-
 import { Link } from 'react-router-dom';
 
 import Cookies from 'js-cookie';
