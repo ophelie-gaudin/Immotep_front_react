@@ -151,11 +151,23 @@ export default function HousingRead() {
         warning="⚠ Attention : notre outil permet de conseiller nos utilisateurs en facilitant la comparaison de biens immobiliers selon certains critères déterminés par les utilisateurs eux-mêmes. Nous ne pourrons donc être tenus pour responsables des conséquences des achats effectués."
       >
         <div className="text-greey w-full">
-          <div className="w-full mb-8">
-            Mes remarques sur ce logement : <br />
-            <span className=" text-greey/70 italic">
-              {myHousingsInfo.comment} Blablabla
-            </span>
+          <div className="flex w-full">
+            <div className=" mb-8 w-1/2">
+              Mes remarques sur ce logement : <br />
+              <span className=" text-greey/70 italic">
+                {myHousingsInfo.comment}
+              </span>
+            </div>
+            <div className="flex flex-col w-1/2">
+              <p>
+                Rentabilité (selon prix de l'annonce) :{" "}
+                {myHousingsInfo.ad_profitability}
+              </p>
+              <p>
+                Rentabilité (selon prix de l'offre) :{" "}
+                {myHousingsInfo.offer_profitability}
+              </p>
+            </div>
           </div>
 
           <div className="w-full flex flex-wrap justify-center">
@@ -185,6 +197,7 @@ export default function HousingRead() {
                     {myHousingsInfo.localization}
                   </span>{" "}
                 </p>
+                <br />
                 <p>
                   Lien vers l'annonce :{" "}
                   <Link
@@ -194,7 +207,6 @@ export default function HousingRead() {
                     {myHousingsInfo.ad_url} Blablabla
                   </Link>{" "}
                 </p>
-                <br />
               </div>
             </div>
 
@@ -255,6 +267,7 @@ export default function HousingRead() {
                     {myHousingsInfo.pno_insurance}
                   </span>{" "}
                 </p>
+                <br />
                 <p>
                   Assurance Loyers impayés ?{" "}
                   <span className=" text-greey/70 italic">
@@ -290,6 +303,7 @@ export default function HousingRead() {
                     {myHousingsInfo.rental_vacancy} %
                   </span>{" "}
                 </p>
+                <br />
                 <p>
                   Pourcentage de provision pour entretien :{" "}
                   <span className=" text-greey/70 italic">
