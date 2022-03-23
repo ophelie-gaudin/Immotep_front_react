@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import EditForm from "./EditForm";
 import FormsCard from "../../components/FormsCard";
 import Cookies from "js-cookie";
 import { useParams, useNavigate } from "react-router-dom";
@@ -79,7 +78,7 @@ export default function HousingUpdate() {
     fetch(
       `https://immotep-api.herokuapp.com/projects/${project_id}/housings/${housing_id}`,
       {
-        method: "PATCH",
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
           Authorization: Cookies.get("token"),
