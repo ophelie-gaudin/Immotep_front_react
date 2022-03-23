@@ -114,7 +114,7 @@ export default function ProjectRead() {
                 </div>
               </th>
               <th className="font-normal text-center">
-                Voir les détails <br />{" "}
+                Voir + d'infos <br />{" "}
                 <small className="text-greey/70">[dernière modif]</small>
               </th>
               {/* <th className="font-normal text-left pl-16">Members</th> */}
@@ -140,7 +140,6 @@ export default function ProjectRead() {
                       to={`/dashboard/${project_id}/housing/${data.id}`}
                       className="flex flex-col justify-center items-center"
                     >
-                      {/* <span className="text-greey/80">Voir les détails</span> */}
                       <span className="text-xl text-greey mb-2">
                         <FaRegEye />
                       </span>
