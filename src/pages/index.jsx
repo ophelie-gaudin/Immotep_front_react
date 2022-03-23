@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import OrangeButton from '../components/Main/OrangeButton';
 import BackgroundVideo from '../assets/video-2.mp4';
 
 export default function Home() {
