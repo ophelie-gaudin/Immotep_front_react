@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import { useParams, Link } from "react-router-dom";
 import HousingDelete from "../../components/Delete/Housing.delete";
-import { FaArrowLeft } from "react-icons/fa";
-import WarningArea from "../../components/Main/WarningArea/index";
 import "../../components/FormsCard/FormsCard.css";
 import FormsCard from "../../components/FormsCard";
 
