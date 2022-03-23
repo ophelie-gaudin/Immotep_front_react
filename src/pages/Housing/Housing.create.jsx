@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-//import { useParams } from "react-router";
 import FormsCard from "../../components/FormsCard";
 import Cookies from "js-cookie";
-//import Input from "../../Components/Main/Input";
 import { useParams, useNavigate } from "react-router-dom";
 
 const HousingCreate = () => {
@@ -26,7 +24,6 @@ const HousingCreate = () => {
           property_category: propertyCategory,
           localization,
           ad_price,
-          // offer_price: ad_price,
         },
       }),
     })
