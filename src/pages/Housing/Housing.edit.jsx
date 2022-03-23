@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import FormsCard from "../../components/FormsCard";
-import Cookies from "js-cookie";
-import { useParams, useNavigate } from "react-router-dom";
-import WarningArea from "../../components/Main/WarningArea";
+import React, { useState, useEffect } from 'react';
+import FormsCard from '../../components/FormsCard';
+import Cookies from 'js-cookie';
+import { useParams, useNavigate } from 'react-router-dom';
+import WarningArea from '../../components/Main/WarningArea';
 
 export default function HousingUpdate() {
   const navigate = useNavigate();
   const { housing_id, project_id } = useParams();
-  const [myHousingsInfo, setMyHousingsInfo] = useState("");
+  const [myHousingsInfo, setMyHousingsInfo] = useState('');
 
   const oneHousingArgument = `projects/${project_id}/housings/${housing_id}`;
 
@@ -15,10 +15,10 @@ export default function HousingUpdate() {
     const fetchList = (url, argument) => {
       const finalURL = argument ? `${url}${argument}` : url;
       fetch(`${finalURL}`, {
-        method: "GET",
+        method: 'GET',
         headers: {
-          "Content-Type": "application/json",
-          Authorization: Cookies.get("token"),
+          'Content-Type': 'application/json',
+          Authorization: Cookies.get('token'),
         },
       })
         .then((response) => response.json())
@@ -31,10 +31,10 @@ export default function HousingUpdate() {
   }, [oneHousingArgument]);
 
   const [localization, setLocalization] = useState();
-  const [ad_price, setAdPrice] = useState();
+  const [ad_price, setAdPrice] = useState(0);
   const [property_category, setPropertyCategory] = useState();
   const [area, setArea] = useState();
-  const [ad_url, setAdUrl] = useState();
+  const [ad_url, setAdUrl] = useState('');
   const [comment, setComment] = useState();
   const [offer_price, setOfferPrice] = useState();
   const [repairs_price, setRepairsPrice] = useState();
@@ -81,10 +81,10 @@ export default function HousingUpdate() {
     fetch(
       `https://immotep-api.herokuapp.com/projects/${project_id}/housings/${housing_id}`,
       {
-        method: "PUT",
+        method: 'PUT',
         headers: {
-          "Content-Type": "application/json",
-          Authorization: Cookies.get("token"),
+          'Content-Type': 'application/json',
+          Authorization: Cookies.get('token'),
         },
         body: JSON.stringify(data),
       }
@@ -100,55 +100,56 @@ export default function HousingUpdate() {
   };
 
   return (
-    <div className="mt-12 mb-8">
+    <div className='mt-12 mb-8'>
       <div>
         <FormsCard
-          title="Modifier mon logement"
-          returnText="Mon Logement"
+          title='Modifier mon logement'
+          returnText='Mon Logement'
           returnUrl={`/dashboard/${project_id}/housing/${housing_id}`}
         >
-          <form onSubmit={handleSubmit} className="text-greey">
-            <h2 className="text-lg">Références de l'annonce: </h2>
-            <label className="font-medium">
+          <form onSubmit={handleSubmit} className='text-greey'>
+            <h2 className='text-lg'>Références de l'annonce: </h2>
+            <label className='font-medium'>
               Lien vers l'annonce :
               <input
-                type="text"
-                className="mt-2"
-                value={myHousingsInfo.ad_url}
+                type='text'
+                className='mt-2'
+                // placeholder={myHousingsInfo.ad_url}
                 onChange={(e) => setAdUrl(e.target.value)}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Prix du logement :
               <input
-                type="number"
-                className="mt-2"
-                value={myHousingsInfo.ad_price}
-                onChange={(e) => setAdPrice(e.target.value)}
+                type='number'
+                className='mt-2'
+                // placeholder={myHousingsInfo.ad_price}
+                onChange={(e) => setAdPrice(Number(e.target.value))}
               />
-            </label>
-            <label className="flex flex-col font-medium w-[95%] items-start">
-              Type de bien :
+            </label>{' '}
+            */}
+            <label className='flex flex-col font-medium w-[95%] items-start'>
+              d Type de bien :
               <select
-                className="w-full"
-                name="property-category"
-                id="hypothesis"
-                value={myHousingsInfo.property_category}
+                className='w-full'
+                name='property-category'
+                id='hypothesis'
+                placeholder={myHousingsInfo.property_category}
                 onChange={(e) => setPropertyCategory(e.target.value)}
               >
-                <option value="Studio">Studio</option>
-                <option value="T1 et T2">T1 et T2</option>
-                <option value="Grand appartement">Grand appartement</option>
-                <option value="Maison">Maison</option>
-                <option value="Immeuble">Immeuble</option>
+                <option value='Studio'>Studio</option>
+                <option value='T1 et T2'>T1 et T2</option>
+                <option value='Grand appartement'>Grand appartement</option>
+                <option value='Maison'>Maison</option>
+                <option value='Immeuble'>Immeuble</option>
               </select>
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Localisation :
               <input
-                type="text"
-                className="mt-2"
-                value={myHousingsInfo.localization}
+                type='text'
+                className='mt-2'
+                placeholder={myHousingsInfo.localization}
                 onChange={(e) => setLocalization(e.target.value)}
               />
             </label>
@@ -158,37 +159,37 @@ export default function HousingUpdate() {
               avec le prix annoncé. N'hésitez pas à questionner le propriétaire
               ou l'agence lors de la visite.
             </WarningArea>
-            <h2 className="text-lg">Caractéristiques du bien : </h2>
-            <label className="font-medium">
+            <h2 className='text-lg'>Caractéristiques du bien : </h2>
+            <label className='font-medium'>
               Surface en m² :
               <input
-                type="text"
-                className="mt-2"
-                value={myHousingsInfo.area}
+                type='text'
+                className='mt-2'
+                placeholder={myHousingsInfo.area}
                 onChange={(e) => setArea(e.target.value)}
               />
             </label>
             <WarningArea>
               ⓘ Nous vous conseillons de vérifier le prix au mètre carré pour la
-              localisation du bien.{" "}
+              localisation du bien.{' '}
             </WarningArea>
-            <label className="font-medium">
+            <label className='font-medium'>
               Montant des réparations
               <input
-                type="number"
-                className="mt-2"
-                value={myHousingsInfo.repairs_price}
-                onChange={(e) => setRepairsPrice(e.target.value)}
+                type='number'
+                className='mt-2'
+                placeholder={myHousingsInfo.repairs_price}
+                onChange={(e) => setRepairsPrice(Number(e.target.value))}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               <input
-                type="checkbox"
-                className="ml-8 mt-2"
-                name="controlled"
-                value={myHousingsInfo.new_property}
+                type='checkbox'
+                className='ml-8 mt-2'
+                name='controlled'
+                placeholder={myHousingsInfo.new_property}
                 onChange={(e) => setNewProperty(e.target.value)}
-              ></input>{" "}
+              ></input>{' '}
               Bien neuf
             </label>
             <WarningArea>
@@ -204,31 +205,31 @@ export default function HousingUpdate() {
                 <li></li>
               </ul>
             </WarningArea>
-            <h2 className="text-lg">Charges : </h2>
-            <label className="font-medium">
+            <h2 className='text-lg'>Charges : </h2>
+            <label className='font-medium'>
               Charges de co-propriété (en €) :
               <input
-                type="number"
-                className="mt-2"
-                value={myHousingsInfo.building_co_tax}
-                onChange={(e) => setBuildingCoTax(e.target.value)}
+                type='number'
+                className='mt-2'
+                placeholder={myHousingsInfo.building_co_tax}
+                onChange={(e) => setBuildingCoTax(Number(e.target.value))}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Taxe foncière (en €) :
               <input
-                type="number"
-                className="mt-2"
-                value={myHousingsInfo.property_tax}
-                onChange={(e) => setPropertyTax(e.target.value)}
+                type='number'
+                className='mt-2'
+                placeholder={myHousingsInfo.property_tax}
+                onChange={(e) => setPropertyTax(Number(e.target.value))}
               />
             </label>
             Souhaiterez-vous souscrire à une ...? <br />
-            <label className="font-medium">
+            <label className='font-medium'>
               <input
-                type="checkbox"
-                className="mt-2"
-                value={myHousingsInfo.pno_insurance}
+                type='checkbox'
+                className='mt-2'
+                placeholder={myHousingsInfo.pno_insurance}
                 onChange={(e) => setPnoInsurance(e.target.value)}
               />
               Assurance P.N.O.
@@ -237,16 +238,16 @@ export default function HousingUpdate() {
               ⓘ L'assurance Propriétaire Non Occupant garantit au propriétaire
               bailleur une couverture équivalente à la multirisque habitation.
               <br />
-              Elle correspond généralement à environ 7% du loyer.{" "}
+              Elle correspond généralement à environ 7% du loyer.{' '}
             </WarningArea>
-            <label className="font-medium">
+            <label className='font-medium'>
               <input
-                type="checkbox"
-                className="ml-8 mt-2"
-                name="controlled"
-                value={myHousingsInfo.rental_unpayment_insurance}
+                type='checkbox'
+                className='ml-8 mt-2'
+                name='controlled'
+                placeholder={myHousingsInfo.rental_unpayment_insurance}
                 onChange={(e) => setRentalUnpaymentInsurance(e.target.value)}
-              />{" "}
+              />{' '}
               Assurance des loyers impayés
             </label>
             <WarningArea>
@@ -255,24 +256,24 @@ export default function HousingUpdate() {
               <br />
               Elle correspond généralement à environ 7% du loyer.
             </WarningArea>
-            <h2 className="text-lg">Investissement : </h2>
-            <label className="font-medium">
+            <h2 className='text-lg'>Investissement : </h2>
+            <label className='font-medium'>
               Loyer annuel complet (en €):
               <input
-                type="number"
-                className="mt-2"
-                value={myHousingsInfo.annual_rent}
-                onChange={(e) => setAnnualRent(e.target.value)}
+                type='number'
+                className='mt-2'
+                placeholder={myHousingsInfo.annual_rent}
+                onChange={(e) => setAnnualRent(Number(e.target.value))}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               <input
-                type="checkbox"
-                className="ml-8 mt-2"
-                name="controlled"
-                value={myHousingsInfo.rental_management}
+                type='checkbox'
+                className='ml-8 mt-2'
+                name='controlled'
+                placeholder={myHousingsInfo.rental_management}
                 onChange={(e) => setRentalManagement(e.target.value)}
-              />{" "}
+              />{' '}
               Gestion Locative
             </label>
             <WarningArea>
@@ -282,15 +283,15 @@ export default function HousingUpdate() {
               du logement.
               <br />
               Il faut compter environ 7% du loyer ainsi qu'un mois de loyer par
-              changement de locataire.{" "}
+              changement de locataire.{' '}
             </WarningArea>
-            <label className="font-medium">
+            <label className='font-medium'>
               Pourcentage de vacance locative (en %)
               <input
-                type="number"
-                className="mt-2"
-                value={myHousingsInfo.rental_vacancy}
-                onChange={(e) => setRentalVacancy(e.target.value)}
+                type='number'
+                className='mt-2'
+                placeholder={myHousingsInfo.rental_vacancy}
+                onChange={(e) => setRentalVacancy(Number(e.target.value))}
               />
             </label>
             <WarningArea>
@@ -300,14 +301,16 @@ export default function HousingUpdate() {
               de vacance locative représente 2% de vacance locative sur un an.
               <small>Pourcentage minimal conseillé: 6%</small>
             </WarningArea>
-            <label className="font-medium">
+            <label className='font-medium'>
               Pourcentage de provision pour entretien sur le montant du loyer
               (en %):
               <input
-                type="number"
-                className="mt-2"
-                value={myHousingsInfo.maintenance_percentage}
-                onChange={(e) => setMaintenancePercentage(e.target.value)}
+                type='number'
+                className='mt-2'
+                placeholder={myHousingsInfo.maintenance_percentage}
+                onChange={(e) =>
+                  setMaintenancePercentage(Number(e.target.value))
+                }
               />
             </label>
             <WarningArea>
@@ -316,13 +319,13 @@ export default function HousingUpdate() {
               logement. Cette somme ne rentre pas en compte dans les bénéfices.
               <small>Pourcentage minimal conseillé: 2%</small>
             </WarningArea>
-            <h2 className="text-lg">Offre : </h2>
-            <label className="font-medium">
+            <h2 className='text-lg'>Offre : </h2>
+            <label className='font-medium'>
               Vos remarques :<br />
               <textarea
-                type="text"
-                className="mt-2 ml-7"
-                value={myHousingsInfo.comment}
+                type='text'
+                className='mt-2 ml-7'
+                placeholder={myHousingsInfo.comment}
                 onChange={(e) => setComment(e.target.value)}
               />
             </label>
@@ -330,15 +333,15 @@ export default function HousingUpdate() {
             <WarningArea>
               ⓘ N'hésitez pas à visiter le logement à différents moments de la
               journée et de la semaine pour vérifier les éventuelles nuisances
-              (bar, travaux, circulation...) présentes dans le quartier.{" "}
+              (bar, travaux, circulation...) présentes dans le quartier.{' '}
             </WarningArea>
-            <label className="font-medium">
+            <label className='font-medium'>
               Prix de l'offre (en €) :
               <input
-                type="number"
-                className="mt-2"
-                value={myHousingsInfo.offer_price}
-                onChange={(e) => setOfferPrice(e.target.value)}
+                type='number'
+                className='mt-2'
+                placeholder={myHousingsInfo.offer_price}
+                onChange={(e) => setOfferPrice(Number(e.target.value))}
               />
             </label>
             <WarningArea>
@@ -348,29 +351,29 @@ export default function HousingUpdate() {
               Renseignez-vous sur la durée durant laquelle le propriétaire a
               vécu dans le bien : si le propriétaire habite ici depuis
               longtemps, il a eu davantage le temps de rembourser son crédit et
-              sera surement davantage ouvert à une offre.{" "}
+              sera surement davantage ouvert à une offre.{' '}
             </WarningArea>
-            <label className="font-medium">
+            <label className='font-medium'>
               Frais de notaire (en €) :
               <input
-                type="number"
-                className="mt-2"
-                value={myHousingsInfo.notary_fees}
-                onChange={(e) => setNotaryFees(e.target.value)}
+                type='number'
+                className='mt-2'
+                placeholder={myHousingsInfo.notary_fees}
+                onChange={(e) => setNotaryFees(Number(e.target.value))}
               />
             </label>
-            <label className="font-medium">
+            <label className='font-medium'>
               Frais d'agence (en €):
               <input
-                type="number"
-                className="mt-2"
-                value={myHousingsInfo.agency_fees}
-                onChange={(e) => setAgencyFees(e.target.value)}
+                type='number'
+                className='mt-2'
+                placeholder={myHousingsInfo.agency_fees}
+                onChange={(e) => setAgencyFees(Number(e.target.value))}
               />
             </label>
             <hr />
             <hr />
-            <button className="orange-button forms-buttons">
+            <button className='orange-button forms-buttons' type='submit'>
               J'enregistre
             </button>
           </form>
