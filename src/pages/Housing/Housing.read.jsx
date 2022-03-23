@@ -35,7 +35,7 @@ export default function HousingRead() {
 
   return (
     <>
-      <div>
+      {/* <div>
         <div>
           <div className="flex flex-col rounded-[0.25rem] mt-24 mb-12 mx-auto w-[85vw] max-w-[1800px] border-2 border-primary text-whiite ">
             <div className="px-8 py-8 bg-primary mb-8">
@@ -142,7 +142,7 @@ export default function HousingRead() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <FormsCard
         title="Informations concernant le logement"
@@ -159,7 +159,7 @@ export default function HousingRead() {
           </div>
 
           <div className="w-full flex flex-wrap justify-center">
-            <div className=" md:w-1/2">
+            <div className=" md:w-1/2 w-full">
               <div className="m-2 border border-primary-light p-5 ">
                 <h5 className="text-lg mb-2 font-bold w-full text-center  ">
                   Références de l'annonce{" "}
@@ -198,10 +198,10 @@ export default function HousingRead() {
               </div>
             </div>
 
-            <div className=" md:w-1/2">
+            <div className=" md:w-1/2 w-full">
               <div className="m-2 border border-primary-light p-5 ">
                 <h5 className="text-lg mb-2 font-bold w-full text-center">
-                  Caractéristiques du bien :{" "}
+                  Caractéristiques du bien{" "}
                 </h5>{" "}
                 <br />
                 <p>
@@ -229,7 +229,7 @@ export default function HousingRead() {
               </div>
             </div>
 
-            <div className=" md:w-1/2">
+            <div className=" md:w-1/2 w-full">
               <div className="m-2 border border-primary-light p-5 ">
                 <h5 className="text-lg mb-2 font-bold w-full text-center">
                   Charges{" "}
@@ -261,12 +261,10 @@ export default function HousingRead() {
                     {myHousingsInfo.rental_unpayment_insurance}
                   </span>{" "}
                 </p>
-                <br />
-                <br />
               </div>
             </div>
 
-            <div className=" md:w-1/2">
+            <div className=" md:w-1/2 w-full">
               <div className="m-2 border border-primary-light p-5 ">
                 <h5 className="text-lg mb-2 font-bold w-full text-center">
                   Investissement{" "}
@@ -301,7 +299,7 @@ export default function HousingRead() {
               </div>
             </div>
 
-            <div className=" md:w-1/2">
+            <div className=" md:w-1/2 w-full">
               <div className="m-2 border border-primary-light p-5 ">
                 <h5 className="text-lg mb-2 font-bold w-full text-center">
                   Offre{" "}
