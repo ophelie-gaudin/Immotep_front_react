@@ -34,7 +34,7 @@ export default function HousingUpdate() {
   const [ad_price, setAdPrice] = useState(0);
   const [property_category, setPropertyCategory] = useState();
   const [area, setArea] = useState();
-  const [ad_url, setAdUrl] = useState('');
+  const [ad_url, setAdUrl] = useState();
   const [comment, setComment] = useState();
   const [offer_price, setOfferPrice] = useState();
   const [repairs_price, setRepairsPrice] = useState();
@@ -46,8 +46,6 @@ export default function HousingUpdate() {
   const [rental_unpayment_insurance, setRentalUnpaymentInsurance] = useState();
   const [building_co_tax, setBuildingCoTax] = useState();
   const [maintenance_percentage, setMaintenancePercentage] = useState();
-  // const [ad_profitability, setAdProfitability] = useState();
-  // const [offer_profitability, setOfferProfitability] = useState();
   const [new_property, setNewProperty] = useState();
   const [rental_vacancy, setRentalVacancy] = useState();
   const [notary_fees, setNotaryFees] = useState();
@@ -69,8 +67,6 @@ export default function HousingUpdate() {
     rental_unpayment_insurance,
     building_co_tax,
     maintenance_percentage,
-    // ad_profitability,
-    // offer_profitability,
     new_property,
     rental_vacancy,
     notary_fees,
@@ -114,7 +110,7 @@ export default function HousingUpdate() {
               <input
                 type='text'
                 className='mt-2'
-                // placeholder={myHousingsInfo.ad_url}
+                placeholder={myHousingsInfo.ad_url}
                 onChange={(e) => setAdUrl(e.target.value)}
               />
             </label>
@@ -123,13 +119,12 @@ export default function HousingUpdate() {
               <input
                 type='number'
                 className='mt-2'
-                // placeholder={myHousingsInfo.ad_price}
+                placeholder={myHousingsInfo.ad_price}
                 onChange={(e) => setAdPrice(Number(e.target.value))}
               />
             </label>{' '}
-            */}
             <label className='flex flex-col font-medium w-[95%] items-start'>
-              d Type de bien :
+              Type de bien :
               <select
                 className='w-full'
                 name='property-category'
@@ -187,7 +182,7 @@ export default function HousingUpdate() {
                 type='checkbox'
                 className='ml-8 mt-2'
                 name='controlled'
-                placeholder={myHousingsInfo.new_property}
+                //placeholder={myHousingsInfo.new_property}
                 onChange={(e) => setNewProperty(e.target.value)}
               ></input>{' '}
               Bien neuf
@@ -229,7 +224,7 @@ export default function HousingUpdate() {
               <input
                 type='checkbox'
                 className='mt-2'
-                placeholder={myHousingsInfo.pno_insurance}
+                //placeholder={myHousingsInfo.pno_insurance}
                 onChange={(e) => setPnoInsurance(e.target.value)}
               />
               Assurance P.N.O.
@@ -245,7 +240,7 @@ export default function HousingUpdate() {
                 type='checkbox'
                 className='ml-8 mt-2'
                 name='controlled'
-                placeholder={myHousingsInfo.rental_unpayment_insurance}
+                //placeholder={myHousingsInfo.rental_unpayment_insurance}
                 onChange={(e) => setRentalUnpaymentInsurance(e.target.value)}
               />{' '}
               Assurance des loyers impayés
@@ -271,7 +266,7 @@ export default function HousingUpdate() {
                 type='checkbox'
                 className='ml-8 mt-2'
                 name='controlled'
-                placeholder={myHousingsInfo.rental_management}
+                //placeholder={myHousingsInfo.rental_management}
                 onChange={(e) => setRentalManagement(e.target.value)}
               />{' '}
               Gestion Locative

@@ -52,6 +52,7 @@ export default function Dashboard() {
                 <Link
                   to={`/dashboard/${data.id}`}
                   className='project-card group'
+                  key={data.id}
                 >
                   <div className='project-card-text-scale'>
                     <div className='hover:underline hover:underline-offset-4'>
