@@ -12,6 +12,8 @@ export default function Footer() {
         <div className='flex justify-center'>
           <a
             href='https://trello.com/b/GwGKjodS/immotep-v2'
+            target='_blank'
+            rel='noreferrer'
             className='mr-6 text-light'
             alt='Trello'
           >
@@ -19,6 +21,8 @@ export default function Footer() {
           </a>
           <a
             href='https://github.com/ophelie-gaudin/Immotep_front_react'
+            target='_blank'
+            rel='noreferrer'
             className='mr-6 text-gray-light'
             alt='GitHub Front'
           >
@@ -27,6 +31,8 @@ export default function Footer() {
 
           <a
             href='https://github.com/istarengwa/Immotep_API'
+            target='_blank'
+            rel='noreferrer'
             className='text-light'
           >
             <svg
@@ -78,7 +84,7 @@ export default function Footer() {
               <a
                 href='https://github.com/ISTARENGWA'
                 target='_blank'
-                className=''
+                rel='noreferrer'
               >
                 Lilian Muller
               </a>
@@ -87,7 +93,7 @@ export default function Footer() {
               <a
                 href='https://github.com/ophelie-gaudin'
                 target='_blank'
-                className=''
+                rel='noreferrer'
               >
                 Ophélie Gaudin
               </a>
@@ -96,7 +102,7 @@ export default function Footer() {
               <a
                 href='https://github.com/8UK0W5K1'
                 target='_blank'
-                className=''
+                rel='noreferrer'
               >
                 {' '}
                 Jérémie Deldem
@@ -111,7 +117,7 @@ export default function Footer() {
               <a
                 href='https://www.thehackingproject.org/'
                 target='_blank'
-                className=''
+                rel='noreferrer'
               >
                 Remerciements
               </a>
@@ -121,7 +127,7 @@ export default function Footer() {
               <a
                 href='https://github.com/ophelie-gaudin/Immotep_front_react/blob/development/LICENSE.txt'
                 target='_blank'
-                className=''
+                rel='noreferrer'
               >
                 Licence
               </a>
