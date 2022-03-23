@@ -204,7 +204,7 @@ export default function HousingRead() {
                     to={`${myHousingsInfo.ad_url}`}
                     className="text-primary hover:underline"
                   >
-                    {myHousingsInfo.ad_url} Blablabla
+                    {myHousingsInfo.ad_url}
                   </Link>{" "}
                 </p>
               </div>
@@ -233,7 +233,7 @@ export default function HousingRead() {
                 <p>
                   Neuf ?{" "}
                   <span className=" text-greey/70 italic">
-                    {myHousingsInfo.new_property}
+                    {myHousingsInfo.new_property === true ? "Oui" : "Non"}
                   </span>{" "}
                 </p>
                 <br />
@@ -264,14 +264,16 @@ export default function HousingRead() {
                 <p>
                   Assurance P.N.O ?{" "}
                   <span className=" text-greey/70 italic">
-                    {myHousingsInfo.pno_insurance}
+                    {myHousingsInfo.pno_insurance === true ? "Oui" : "Non"}
                   </span>{" "}
                 </p>
                 <br />
                 <p>
                   Assurance Loyers impayés ?{" "}
                   <span className=" text-greey/70 italic">
-                    {myHousingsInfo.rental_unpayment_insurance}
+                    {myHousingsInfo.rental_unpayment_insurance === true
+                      ? "Oui"
+                      : "Non"}
                   </span>{" "}
                 </p>
               </div>
@@ -293,7 +295,7 @@ export default function HousingRead() {
                 <p>
                   Gestion locative ?{" "}
                   <span className=" text-greey/70 italic">
-                    {myHousingsInfo.rental_management}
+                    {myHousingsInfo.rental_management === true ? "Oui" : "Non"}
                   </span>{" "}
                 </p>
                 <br />
@@ -333,12 +335,6 @@ export default function HousingRead() {
                   </span>{" "}
                 </p>
                 <br />
-                <p>
-                  Localisation :{" "}
-                  <span className=" text-greey/70 italic">
-                    {myHousingsInfo.localization}
-                  </span>{" "}
-                </p>
                 <p>
                   Frais d'agence :{" "}
                   <span className=" text-greey/70 italic">
