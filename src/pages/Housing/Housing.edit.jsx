@@ -223,7 +223,7 @@ export default function HousingUpdate() {
                 onChange={(e) => setPropertyTax(e.target.value)}
               />
             </label>
-            Souhaiterez-vous souscrire à une ...?
+            Souhaiterez-vous souscrire à une ...? <br />
             <label className="font-medium">
               <input
                 type="checkbox"

@@ -152,85 +152,188 @@ export default function HousingRead() {
       >
         <div className="text-greey w-full">
           <div className="w-full mb-8">
-            Mes notes sur ce logement : <br />
+            Mes remarques sur ce logement : <br />
             <span className=" text-greey/70 italic">
               {myHousingsInfo.comment} Blablabla
             </span>
           </div>
 
-          <div className="w-full flex">
-            <div className=" flex  flex-col md:m-2 p-5 border border-primary-light md:w-1/2">
-              <h5 className="text-lg mb-2 font-bold w-full text-center">
-                Références de l'annonce{" "}
-              </h5>{" "}
-              <br />
-              <p>
-                Prix de l'annonce :{" "}
-                <span className=" text-greey/70 italic">
-                  {myHousingsInfo.ad_price} €
-                </span>{" "}
-              </p>
-              <br />
-              <p>
-                Type de bien :{" "}
-                <span className=" text-greey/70 italic">
-                  {myHousingsInfo.property_category}
-                </span>{" "}
-              </p>
-              <br />
-              <p>
-                Localisation :{" "}
-                <span className=" text-greey/70 italic">
-                  {myHousingsInfo.localization}
-                </span>{" "}
-              </p>
-              <p>
-                Lien vers l'annonce :{" "}
-                <Link
-                  to={`${myHousingsInfo.ad_url}`}
-                  className="text-primary hover:underline"
-                >
-                  {myHousingsInfo.ad_url} Blablabla
-                </Link>{" "}
-              </p>
-              <br />
+          <div className="w-full flex flex-wrap justify-center">
+            <div className=" md:w-1/2">
+              <div className="m-2 border border-primary-light p-5 ">
+                <h5 className="text-lg mb-2 font-bold w-full text-center  ">
+                  Références de l'annonce{" "}
+                </h5>{" "}
+                <br />
+                <p>
+                  Prix de l'annonce :{" "}
+                  <span className=" text-greey/70 italic">
+                    {myHousingsInfo.ad_price} €
+                  </span>{" "}
+                </p>
+                <br />
+                <p>
+                  Type de bien :{" "}
+                  <span className=" text-greey/70 italic">
+                    {myHousingsInfo.property_category}
+                  </span>{" "}
+                </p>
+                <br />
+                <p>
+                  Localisation :{" "}
+                  <span className=" text-greey/70 italic">
+                    {myHousingsInfo.localization}
+                  </span>{" "}
+                </p>
+                <p>
+                  Lien vers l'annonce :{" "}
+                  <Link
+                    to={`${myHousingsInfo.ad_url}`}
+                    className="text-primary hover:underline"
+                  >
+                    {myHousingsInfo.ad_url} Blablabla
+                  </Link>{" "}
+                </p>
+                <br />
+              </div>
             </div>
 
-            <div className=" flex  flex-col md:m-2 p-5 border border-primary-light md:w-1/2 md">
-              <h5 className="text-lg mb-2 font-bold w-full text-center">
-                Références de l'annonce{" "}
-              </h5>{" "}
-              <br />
-              <p>
-                Prix de l'annonce :{" "}
-                <span className=" text-greey/70 italic">
-                  {myHousingsInfo.ad_price} €
-                </span>{" "}
-              </p>
-              <br />
-              <p>
-                Type de bien :{" "}
-                <span className=" text-greey/70 italic">
-                  {myHousingsInfo.property_category}
-                </span>{" "}
-              </p>
-              <br />
-              <p>
-                Localisation :{" "}
-                <span className=" text-greey/70 italic">
-                  {myHousingsInfo.localization}
-                </span>{" "}
-              </p>
-              <p>
-                Lien vers l'annonce :{" "}
-                <Link
-                  to={`${myHousingsInfo.ad_url}`}
-                  className="text-primary hover:underline"
-                >
-                  {myHousingsInfo.ad_url} Blablabla
-                </Link>{" "}
-              </p>
-              <br />
+            <div className=" md:w-1/2">
+              <div className="m-2 border border-primary-light p-5 ">
+                <h5 className="text-lg mb-2 font-bold w-full text-center">
+                  Caractéristiques du bien :{" "}
+                </h5>{" "}
+                <br />
+                <p>
+                  Surface en m² :{" "}
+                  <span className=" text-greey/70 italic">
+                    {myHousingsInfo.area} €
+                  </span>{" "}
+                </p>
+                <br />
+                <p>
+                  Montant des réparations :{" "}
+                  <span className=" text-greey/70 italic">
+                    {myHousingsInfo.repairs_price} €
+                  </span>{" "}
+                </p>
+                <br />
+                <p>
+                  Neuf ?{" "}
+                  <span className=" text-greey/70 italic">
+                    {myHousingsInfo.new_property}
+                  </span>{" "}
+                </p>
+                <br />
+                <br />
+              </div>
+            </div>
+
+            <div className=" md:w-1/2">
+              <div className="m-2 border border-primary-light p-5 ">
+                <h5 className="text-lg mb-2 font-bold w-full text-center">
+                  Charges{" "}
+                </h5>{" "}
+                <br />
+                <p>
+                  Charges de co-propriété:{" "}
+                  <span className=" text-greey/70 italic">
+                    {myHousingsInfo.building_co_tax} €
+                  </span>{" "}
+                </p>
+                <br />
+                <p>
+                  Taxe foncière :{" "}
+                  <span className=" text-greey/70 italic">
+                    {myHousingsInfo.property_tax} €
+                  </span>{" "}
+                </p>
+                <br />
+                <p>
+                  Assurance P.N.O ?{" "}
+                  <span className=" text-greey/70 italic">
+                    {myHousingsInfo.pno_insurance}
+                  </span>{" "}
+                </p>
+                <p>
+                  Assurance Loyers impayés ?{" "}
+                  <span className=" text-greey/70 italic">
+                    {myHousingsInfo.rental_unpayment_insurance}
+                  </span>{" "}
+                </p>
+                <br />
+                <br />
+              </div>
+            </div>
+
+            <div className=" md:w-1/2">
+              <div className="m-2 border border-primary-light p-5 ">
+                <h5 className="text-lg mb-2 font-bold w-full text-center">
+                  Investissement{" "}
+                </h5>{" "}
+                <br />
+                <p>
+                  Loyer annuel :{" "}
+                  <span className=" text-greey/70 italic">
+                    {myHousingsInfo.annual_rent} €
+                  </span>{" "}
+                </p>
+                <br />
+                <p>
+                  Gestion locative ?{" "}
+                  <span className=" text-greey/70 italic">
+                    {myHousingsInfo.rental_management}
+                  </span>{" "}
+                </p>
+                <br />
+                <p>
+                  Pourcentage de vacance locative :{" "}
+                  <span className=" text-greey/70 italic">
+                    {myHousingsInfo.rental_vacancy} %
+                  </span>{" "}
+                </p>
+                <p>
+                  Pourcentage de provision pour entretien :{" "}
+                  <span className=" text-greey/70 italic">
+                    {myHousingsInfo.maintenance_percentage} %
+                  </span>{" "}
+                </p>
+              </div>
+            </div>
+
+            <div className=" md:w-1/2">
+              <div className="m-2 border border-primary-light p-5 ">
+                <h5 className="text-lg mb-2 font-bold w-full text-center">
+                  Offre{" "}
+                </h5>{" "}
+                <br />
+                <p>
+                  Prix de l'offre:{" "}
+                  <span className=" text-greey/70 italic">
+                    {myHousingsInfo.offer_price} €
+                  </span>{" "}
+                </p>
+                <br />
+                <p>
+                  Frais de notaire :{" "}
+                  <span className=" text-greey/70 italic">
+                    {myHousingsInfo.notary_fees}
+                  </span>{" "}
+                </p>
+                <br />
+                <p>
+                  Localisation :{" "}
+                  <span className=" text-greey/70 italic">
+                    {myHousingsInfo.localization}
+                  </span>{" "}
+                </p>
+                <p>
+                  Frais d'agence :{" "}
+                  <span className=" text-greey/70 italic">
+                    {myHousingsInfo.agency_fees}
+                  </span>{" "}
+                </p>
+              </div>
             </div>
           </div>
         </div>
