@@ -5,7 +5,7 @@ import ProjectDelete from "../../components/Delete/Project.delete";
 import { useParams, Link } from "react-router-dom";
 import FormsCard from "../../components/FormsCard";
 
-import { FaEllipsisH } from "react-icons/fa";
+import { FaRegEye } from "react-icons/fa";
 import { GoInfo } from "react-icons/go";
 
 export default function ProjectRead() {
@@ -114,7 +114,8 @@ export default function ProjectRead() {
                 </div>
               </th>
               <th className="font-normal text-center">
-                Actions <br /> <small className="text-greey/70">[date]</small>
+                Voir + d'infos <br />{" "}
+                <small className="text-greey/70">[dernière modif]</small>
               </th>
               {/* <th className="font-normal text-left pl-16">Members</th> */}
             </tr>
@@ -140,9 +141,8 @@ export default function ProjectRead() {
                       className="flex flex-col justify-center items-center"
                     >
                       <span className="text-xl text-greey mb-2">
-                        <FaEllipsisH />
+                        <FaRegEye />
                       </span>
-
                       <small className="text-greey/70">
                         {new Date(data.updated_at).toLocaleDateString("en-US")}
                       </small>
