@@ -24,6 +24,10 @@
 
 .dialog-box-title {
   color: #30a781;
+  font-size: xx-large;
+}
+.dialog-box-message {
+  color: #30a781;
   font-size: larger;
 }
 
