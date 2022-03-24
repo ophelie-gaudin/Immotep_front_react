@@ -4,7 +4,6 @@ import { useParams, Link } from 'react-router-dom';
 import HousingDelete from '../../components/Delete/Housing.delete';
 import '../../components/FormsCard/FormsCard.css';
 import FormsCard from '../../components/FormsCard';
-import Modal from '../../components/Main/Modal/index.jsx';
 
 export default function HousingRead() {
   const [myHousingsInfo, setMyHousingsInfo] = useState('');
@@ -359,7 +358,7 @@ export default function HousingRead() {
       </FormsCard>
 
       <div className='flex justify-around mb-24'>
-        {dialog.isLoading && <Modal message={dialog.message} />}
+        {dialog.isLoading && <HousingDelete message={dialog.message} />}
 
         <button className='orange-button'>
           <Link

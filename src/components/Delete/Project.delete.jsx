@@ -1,8 +1,9 @@
 import React from 'react';
 import Cookies from 'js-cookie';
 import { useParams, useNavigate } from 'react-router-dom';
+import './delete.css';
 
-export default function ProjectDelete(props) {
+export default function ProjectDelete({ message }) {
   const { project_id } = useParams();
   const navigate = useNavigate();
 
@@ -19,16 +20,27 @@ export default function ProjectDelete(props) {
   };
 
   return (
-    <div>
-      <button
-        className='text-reed text-sm border border-primary p-2 mr-4 rounded-[0.25rem] font-bold hover:border-primary;'
-        onClick={() => {
-          navigate(`/dashboard`);
-          deleteproject();
-        }}
-      >
-        Supprimer ce projet
-      </button>
+    <div id='modal' className='dialog'>
+      <div className='dialog-box'>
+        <h3 className='dialog-box-title'>{message}</h3>
+        <div className='dialog-buttons'>
+          <button
+            onClick={() => {
+              navigate(`/dashboard`);
+              deleteproject();
+            }}
+            className='orange-button forms-buttons dialog-buttons'
+          >
+            Oui
+          </button>
+          <button
+            className='orange-button forms-buttons dialog-buttons'
+            onClick={(e) => navigate(`/dashboard`)}
+          >
+            Non
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

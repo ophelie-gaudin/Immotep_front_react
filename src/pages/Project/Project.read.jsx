@@ -17,6 +17,18 @@ export default function ProjectRead() {
   // Get project
   const projectArgument = `projects/${project_id}`;
 
+  const [dialog, setDialog] = useState({
+    message: '',
+    isLoading: false,
+  });
+
+  function handleModal() {
+    setDialog({
+      message: 'Êtes-vous sûr de vouloir supprimer ?',
+      isLoading: true,
+    });
+  }
+
   useEffect(() => {
     const fetchList = (url, argument) => {
       const finalURL = argument ? `${url}${argument}` : url;
@@ -80,13 +92,19 @@ export default function ProjectRead() {
         <br />
       </div>
       <div className='flex w-full justify-end mb-4'>
+        {dialog.isLoading && <ProjectDelete message={dialog.message} />}
         <Link
           to={`/dashboard/${project_id}/edit`}
           className='text-primary text-sm border border-primary p-2 mr-4 rounded-[0.25rem] font-bold hover:border-primary;'
         >
           Modifier ce projet
         </Link>
-        <ProjectDelete data={project_id} />
+        <button
+          className='block py-2 pr-4 pl-3 text-white rounded border-b border-light md:p-0 dark:text-white bg-primary   hover:border hover:border-primary hover:bg-white hover:text-bold hover:text-[#E24E58] md:px-2 md:py:1  hover:font-bold hover:border hover:border-primary hover:bg-white hover:text-bold hover:text-[#E24E58] md:px-2 md:py:1  hover:font-bold text-bolder '
+          onClick={() => handleModal()}
+        >
+          Supprimer le logement
+        </button>
       </div>
 
       <div className='bg-white dark:bg-gray-800  shadow px-4 md:px-10 pt-4 md:pt-7 pb-5 overflow-y-auto'>
