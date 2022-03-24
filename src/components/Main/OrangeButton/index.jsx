@@ -1,11 +1,11 @@
-import React from "react";
-import "./OrangeButton.css";
+import React from 'react';
+import './OrangeButton.css';
 
 const OrangeButton = (props) => {
   return (
     <div>
       <a
-        className="orange-button inline-block "
+        className='orange-button inline-block '
         href={props.url}
         type={props.type}
       >

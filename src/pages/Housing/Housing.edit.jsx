@@ -1,15 +1,37 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
 import FormsCard from '../../components/FormsCard';
 import Cookies from 'js-cookie';
 import { useParams, useNavigate } from 'react-router-dom';
+import WarningArea from '../../components/Main/WarningArea';
 
 export default function HousingUpdate() {
   const navigate = useNavigate();
   const { housing_id, project_id } = useParams();
+  const [myHousingsInfo, setMyHousingsInfo] = useState('');
+
+  const oneHousingArgument = `projects/${project_id}/housings/${housing_id}`;
+
+  useEffect(() => {
+    const fetchList = (url, argument) => {
+      const finalURL = argument ? `${url}${argument}` : url;
+      fetch(`${finalURL}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: Cookies.get('token'),
+        },
+      })
+        .then((response) => response.json())
+        .then((response) => {
+          setMyHousingsInfo(response);
+        })
+        .catch((err) => console.error(err));
+    };
+    fetchList(`https://immotep-api.herokuapp.com/`, oneHousingArgument);
+  }, [oneHousingArgument]);
 
   const [localization, setLocalization] = useState();
-  const [ad_price, setAdPrice] = useState();
+  const [ad_price, setAdPrice] = useState(0);
   const [property_category, setPropertyCategory] = useState();
   const [area, setArea] = useState();
   const [ad_url, setAdUrl] = useState();
@@ -24,10 +46,9 @@ export default function HousingUpdate() {
   const [rental_unpayment_insurance, setRentalUnpaymentInsurance] = useState();
   const [building_co_tax, setBuildingCoTax] = useState();
   const [maintenance_percentage, setMaintenancePercentage] = useState();
-  const [ad_profitability, setAdProfitability] = useState();
-  const [offer_profitability, setOfferProfitability] = useState();
   const [new_property, setNewProperty] = useState();
   const [rental_vacancy, setRentalVacancy] = useState();
+  const [notary_fees, setNotaryFees] = useState();
 
   const data = {
     localization,
@@ -46,10 +67,9 @@ export default function HousingUpdate() {
     rental_unpayment_insurance,
     building_co_tax,
     maintenance_percentage,
-    ad_profitability,
-    offer_profitability,
     new_property,
     rental_vacancy,
+    notary_fees,
   };
 
   const handleSubmit = (e) => {
@@ -83,13 +103,15 @@ export default function HousingUpdate() {
           returnText='Mon Logement'
           returnUrl={`/dashboard/${project_id}/housing/${housing_id}`}
         >
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className='text-greey'>
+            <h2 className='text-lg'>Références de l'annonce: </h2>
             <label className='font-medium'>
-              Localisation :
+              Lien vers l'annonce :
               <input
                 type='text'
                 className='mt-2'
-                onChange={(e) => setLocalization(e.target.value)}
+                placeholder={myHousingsInfo.ad_url}
+                onChange={(e) => setAdUrl(e.target.value)}
               />
             </label>
             <label className='font-medium'>
@@ -97,16 +119,17 @@ export default function HousingUpdate() {
               <input
                 type='number'
                 className='mt-2'
-                onChange={(e) => setAdPrice(e.target.value)}
+                placeholder={myHousingsInfo.ad_price}
+                onChange={(e) => setAdPrice(Number(e.target.value))}
               />
-            </label>
-
+            </label>{' '}
             <label className='flex flex-col font-medium w-[95%] items-start'>
               Type de bien :
               <select
                 className='w-full'
                 name='property-category'
                 id='hypothesis'
+                placeholder={myHousingsInfo.property_category}
                 onChange={(e) => setPropertyCategory(e.target.value)}
               >
                 <option value='Studio'>Studio</option>
@@ -117,151 +140,235 @@ export default function HousingUpdate() {
               </select>
             </label>
             <label className='font-medium'>
+              Localisation :
+              <input
+                type='text'
+                className='mt-2'
+                placeholder={myHousingsInfo.localization}
+                onChange={(e) => setLocalization(e.target.value)}
+              />
+            </label>
+            <WarningArea>
+              ⓘ Nous vous conseillons de vérifier sur plusieurs annonces le prix
+              des biens similaires afin de voir s'il n'y a pas d'incohérence
+              avec le prix annoncé. N'hésitez pas à questionner le propriétaire
+              ou l'agence lors de la visite.
+            </WarningArea>
+            <h2 className='text-lg'>Caractéristiques du bien : </h2>
+            <label className='font-medium'>
               Surface en m² :
               <input
                 type='text'
                 className='mt-2'
+                placeholder={myHousingsInfo.area}
                 onChange={(e) => setArea(e.target.value)}
               />
             </label>
-            <label className='font-medium'>
-              Lien vers l'annonce :
-              <input
-                type='text'
-                className='mt-2'
-                onChange={(e) => setAdUrl(e.target.value)}
-              />
-            </label>
-            <label className='font-medium'>
-              Commentaires :
-              <input
-                type='text'
-                className='mt-2'
-                onChange={(e) => setComment(e.target.value)}
-              />
-            </label>
-            <label className='font-medium'>
-              Prix de l'offre :
-              <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => setOfferPrice(e.target.value)}
-              />
-            </label>
+            <WarningArea>
+              ⓘ Nous vous conseillons de vérifier le prix au mètre carré pour la
+              localisation du bien.{' '}
+            </WarningArea>
             <label className='font-medium'>
               Montant des réparations
               <input
                 type='number'
                 className='mt-2'
-                onChange={(e) => setRepairsPrice(e.target.value)}
+                placeholder={myHousingsInfo.repairs_price}
+                onChange={(e) => setRepairsPrice(Number(e.target.value))}
               />
             </label>
             <label className='font-medium'>
-              Location annuel :
-              <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => setAnnualRent(e.target.value)}
-              />
-            </label>
-            <label className='font-medium'>
-              Frais d'agence :
-              <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => setAgencyFees(e.target.value)}
-              />
-            </label>
-            <label className='font-medium'>
-              Montant de l'Assurance Propriétaire Non-Occupant (P.N.O.)
-              <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => setPnoInsurance(e.target.value)}
-              />
-            </label>
-            <label className='font-medium'>
-              Montant de la taxe foncière :
-              <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => setPropertyTax(e.target.value)}
-              />
-            </label>
-            <label className='font-medium'>
-              Montant des frais de co-propriété :
-              <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => setBuildingCoTax(e.target.value)}
-              />
-            </label>
-            <label className='font-medium'>
-              Pourcentage de maintenance :
-              <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => setMaintenancePercentage(e.target.value)}
-              />
-            </label>
-            <label className='font-medium'>
-              Montant profitabilité ?????
-              <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => setAdProfitability(e.target.value)}
-              />
-            </label>
-            <label className='font-medium'>
-              Indice de profitabilité :
-              <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => setOfferProfitability(e.target.value)}
-              />
-            </label>
-            <label className='font-medium'>
-              % de disponibilité du logement :
-              <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => setRentalVacancy(e.target.value)}
-              />
-            </label>
-            <label className='font-medium'>
-              Bien neuf :
               <input
                 type='checkbox'
                 className='ml-8 mt-2'
                 name='controlled'
+                //placeholder={myHousingsInfo.new_property}
                 onChange={(e) => setNewProperty(e.target.value)}
               ></input>{' '}
-              Oui
+              Bien neuf
             </label>
-            <hr />
+            <WarningArea>
+              ⓘ Lors de la visite, il faut impérativement poser des questions
+              sur l'état du bien et plus particulièrement trois éléments qui
+              peuvent très rapidement faire grimper le coût des travaux à
+              prévoir:
+              <ul>
+                <li>la toiture (environ 250€/m² de toit),</li>
+                <li>la façade (environ 30€/m² de mur),</li>
+                la chaudière (à condensation gaz : entre 3000 - 6000 €,
+                classique: entre 500 - 2500€).
+                <li></li>
+              </ul>
+            </WarningArea>
+            <h2 className='text-lg'>Charges : </h2>
             <label className='font-medium'>
-              Assurance des loyers impayés :
+              Charges de co-propriété (en €) :
+              <input
+                type='number'
+                className='mt-2'
+                placeholder={myHousingsInfo.building_co_tax}
+                onChange={(e) => setBuildingCoTax(Number(e.target.value))}
+              />
+            </label>
+            <label className='font-medium'>
+              Taxe foncière (en €) :
+              <input
+                type='number'
+                className='mt-2'
+                placeholder={myHousingsInfo.property_tax}
+                onChange={(e) => setPropertyTax(Number(e.target.value))}
+              />
+            </label>
+            Souhaiterez-vous souscrire à une ...? <br />
+            <label className='font-medium'>
+              <input
+                type='checkbox'
+                className='mt-2'
+                //placeholder={myHousingsInfo.pno_insurance}
+                onChange={(e) => setPnoInsurance(e.target.value)}
+              />
+              Assurance P.N.O.
+            </label>
+            <WarningArea>
+              ⓘ L'assurance Propriétaire Non Occupant garantit au propriétaire
+              bailleur une couverture équivalente à la multirisque habitation.
+              <br />
+              Elle correspond généralement à environ 7% du loyer.{' '}
+            </WarningArea>
+            <label className='font-medium'>
               <input
                 type='checkbox'
                 className='ml-8 mt-2'
                 name='controlled'
+                //placeholder={myHousingsInfo.rental_unpayment_insurance}
                 onChange={(e) => setRentalUnpaymentInsurance(e.target.value)}
               />{' '}
-              Oui{' '}
+              Assurance des loyers impayés
             </label>
-            <hr />
+            <WarningArea>
+              ⓘ L'assurance pour loyers impayés garantit le versement du loyer
+              au propriétaire en cas de défault de paiement par le locataire.
+              <br />
+              Elle correspond généralement à environ 7% du loyer.
+            </WarningArea>
+            <h2 className='text-lg'>Investissement : </h2>
             <label className='font-medium'>
-              Gestion Locative :
+              Loyer annuel complet (en €):
+              <input
+                type='number'
+                className='mt-2'
+                placeholder={myHousingsInfo.annual_rent}
+                onChange={(e) => setAnnualRent(Number(e.target.value))}
+              />
+            </label>
+            <label className='font-medium'>
               <input
                 type='checkbox'
                 className='ml-8 mt-2'
                 name='controlled'
+                //placeholder={myHousingsInfo.rental_management}
                 onChange={(e) => setRentalManagement(e.target.value)}
               />{' '}
-              Oui{' '}
+              Gestion Locative
             </label>
-
-            <button className='orange-button forms-buttons'>
+            <WarningArea>
+              ⓘ La gestion locative permet à un tiers (souvent une agence
+              immobilière) de gérer la recherche d'un locataire, le suivi du
+              paiement des loyers ainsi que les contrôles périodiques de l'état
+              du logement.
+              <br />
+              Il faut compter environ 7% du loyer ainsi qu'un mois de loyer par
+              changement de locataire.{' '}
+            </WarningArea>
+            <label className='font-medium'>
+              Pourcentage de vacance locative (en %)
+              <input
+                type='number'
+                className='mt-2'
+                placeholder={myHousingsInfo.rental_vacancy}
+                onChange={(e) => setRentalVacancy(Number(e.target.value))}
+              />
+            </label>
+            <WarningArea>
+              ⓘ Le pourcentage de vacance locative permet de prendre en compte
+              dans nos calculs les périodes sans locataire (périodes entre le
+              départ d'un locataire et l'arrivée d'un nouveau, etc.) Une semaine
+              de vacance locative représente 2% de vacance locative sur un an.
+              <small>Pourcentage minimal conseillé: 6%</small>
+            </WarningArea>
+            <label className='font-medium'>
+              Pourcentage de provision pour entretien sur le montant du loyer
+              (en %):
+              <input
+                type='number'
+                className='mt-2'
+                placeholder={myHousingsInfo.maintenance_percentage}
+                onChange={(e) =>
+                  setMaintenancePercentage(Number(e.target.value))
+                }
+              />
+            </label>
+            <WarningArea>
+              ⓘ Le pourcentage de réserve permet de mettre chaque mois une somme
+              de côté pour prendre en compte l'entretien à faire sur un
+              logement. Cette somme ne rentre pas en compte dans les bénéfices.
+              <small>Pourcentage minimal conseillé: 2%</small>
+            </WarningArea>
+            <h2 className='text-lg'>Offre : </h2>
+            <label className='font-medium'>
+              Vos remarques :<br />
+              <textarea
+                type='text'
+                className='mt-2 ml-7'
+                placeholder={myHousingsInfo.comment}
+                onChange={(e) => setComment(e.target.value)}
+              />
+            </label>
+            <br />
+            <WarningArea>
+              ⓘ N'hésitez pas à visiter le logement à différents moments de la
+              journée et de la semaine pour vérifier les éventuelles nuisances
+              (bar, travaux, circulation...) présentes dans le quartier.{' '}
+            </WarningArea>
+            <label className='font-medium'>
+              Prix de l'offre (en €) :
+              <input
+                type='number'
+                className='mt-2'
+                placeholder={myHousingsInfo.offer_price}
+                onChange={(e) => setOfferPrice(Number(e.target.value))}
+              />
+            </label>
+            <WarningArea>
+              ⓘ Demandez les raisons de la vente du bien : si la vente est
+              urgente, vous pourrez plus facilement négocier le prix.
+              <br />
+              Renseignez-vous sur la durée durant laquelle le propriétaire a
+              vécu dans le bien : si le propriétaire habite ici depuis
+              longtemps, il a eu davantage le temps de rembourser son crédit et
+              sera surement davantage ouvert à une offre.{' '}
+            </WarningArea>
+            <label className='font-medium'>
+              Frais de notaire (en €) :
+              <input
+                type='number'
+                className='mt-2'
+                placeholder={myHousingsInfo.notary_fees}
+                onChange={(e) => setNotaryFees(Number(e.target.value))}
+              />
+            </label>
+            <label className='font-medium'>
+              Frais d'agence (en €):
+              <input
+                type='number'
+                className='mt-2'
+                placeholder={myHousingsInfo.agency_fees}
+                onChange={(e) => setAgencyFees(Number(e.target.value))}
+              />
+            </label>
+            <hr />
+            <hr />
+            <button className='orange-button forms-buttons' type='submit'>
               J'enregistre
             </button>
           </form>

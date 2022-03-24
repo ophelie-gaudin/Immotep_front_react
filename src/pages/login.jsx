@@ -8,6 +8,7 @@ import FormsCard from "../components/FormsCard";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const changeConnectedStatus = useDispatch();
 
@@ -60,16 +61,27 @@ const Login = () => {
             <label>
               Mot de passe
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="password"
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </label>
+
+            <label className="text-[12px] font-medium block w-full">
+              <p className="w-fit">
+                <input
+                  type="checkbox"
+                  className="mr-4"
+                  onClick={() => setShowPassword(!showPassword)}
+                />{" "}
+                Voir le mot de passe
+              </p>
+            </label>
+
             <button className="orange-button forms-buttons" type="submit">
               Je me connecte
             </button>
-            {/* <button className="orange-button forms-buttons"> */}
             <div className="w-full flex justify-center text-primary mb-8">
               {" "}
               <Link
@@ -79,8 +91,6 @@ const Login = () => {
                 J'ai oublié mon mot de passe
               </Link>
             </div>
-
-            {/* </button> */}
           </form>
         </>
       </FormsCard>
