@@ -31,7 +31,7 @@ export default function HousingUpdate() {
   }, [oneHousingArgument]);
 
   const [localization, setLocalization] = useState();
-  const [ad_price, setAdPrice] = useState(0);
+  const [ad_price, setAdPrice] = useState();
   const [property_category, setPropertyCategory] = useState();
   const [area, setArea] = useState();
   const [ad_url, setAdUrl] = useState();
