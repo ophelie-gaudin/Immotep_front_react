@@ -67,14 +67,15 @@ export default function ProjectRead() {
       returnUrl={`/dashboard`}
     >
       <div className='w-full text-greey'>
-        <b>Titre : </b>
+        <b className='font-extrabold'>Titre : </b>
         {myProject.title}
         <br />
         <br />
-        <b>Localisation :</b> {myProject.localization}
+        <b className='font-extrabold'>Localisation :</b>{' '}
+        {myProject.localization}
         <br />
         <br />
-        <b>Commentaires :</b> {myProject.comment}
+        <b className='font-extrabold'>Commentaires :</b> {myProject.comment}
         <br />
         <br />
       </div>
@@ -95,25 +96,25 @@ export default function ProjectRead() {
               tabIndex='0'
               className='focus:outline-none h-16 w-full text-sm leading-none text-gray-800 dark:text-white '
             >
-              <th className='font-normal text-center'>Type de bien</th>
+              <th className='font-extrabold text-center'>Type de bien</th>
               <th
                 className='font-normal text-center '
                 title="De base, nous affichons le prix de l'annonce. Dès que vous rentrez un prix d'offre, nous prenons ce dernier en compte."
               >
-                <div className='flex justify-center'>
+                <div className='flex font-extrabold justify-center'>
                   Prix <GoInfo className='ml-2' />
                 </div>
               </th>
-              <th className='font-normal text-center'>Localisation</th>
+              <th className='font-extrabold text-center'>Localisation</th>
               <th
                 className='font-normal text-center'
                 title="De base, notre calcul de rentabilité s'effectue avec le prix de l'annonce. Dès que vous rentrez un prix d'offre, nous prenons ce dernier en compte."
               >
-                <div className='flex  justify-center'>
+                <div className='flex font-extrabold justify-center'>
                   Rentabilité <GoInfo className='ml-2' />
                 </div>
               </th>
-              <th className='font-normal text-center'>
+              <th className='font-extrabold text-center'>
                 Voir + d'infos <br />{' '}
                 <small className='text-greey/70'>[dernière modif]</small>
               </th>
