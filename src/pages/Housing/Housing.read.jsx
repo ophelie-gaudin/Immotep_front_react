@@ -198,12 +198,12 @@ export default function HousingRead() {
                 <br />
                 <p>
                   Lien vers l'annonce :{" "}
-                  <Link
-                    to={`${myHousingsInfo.ad_url}`}
+                  <a
+                    href={`${myHousingsInfo.ad_url}`}
                     className="text-primary hover:underline"
                   >
                     {myHousingsInfo.ad_url}
-                  </Link>{" "}
+                  </a>{" "}
                 </p>
               </div>
             </div>
