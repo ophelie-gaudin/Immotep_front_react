@@ -1,11 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FormsCard from "../../components/FormsCard";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 export default function ProfileUpdate() {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState();
 
   const navigate = useNavigate();
+
+  const [myProfile, setMyProfile] = useState("");
+
+  const myProfileArgument = `member-data`;
+
+  useEffect(() => {
+    const fetchList = (url, argument) => {
+      const finalURL = argument ? `${url}${argument}` : url;
+      fetch(`${finalURL}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: Cookies.get("token"),
+        },
+      })
+        .then((response) => response.json())
+        .then((response) => {
+          setMyProfile(response.user);
+          console.log("Response:", response);
+        })
+        .catch((err) => console.error(err));
+    };
+    fetchList(`https://immotep-api.herokuapp.com/`, myProfileArgument);
+  }, [myProfileArgument]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,6 +71,7 @@ export default function ProfileUpdate() {
               type="email"
               className="mt-2"
               onChange={(e) => setEmail(e.target.value)}
+              placeholder={myProfile.email}
             ></input>
           </label>
           <button className="orange-button forms-buttons">J'enregistre</button>

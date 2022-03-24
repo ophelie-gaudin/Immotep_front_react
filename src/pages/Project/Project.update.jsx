@@ -10,9 +10,9 @@ export default function ProjectUpdate() {
   const navigate = useNavigate();
   const { project_id } = useParams();
   console.log(useParams());
-  const [title, setTitle] = useState("");
-  const [localization, setLocalization] = useState("");
-  const [comment, setComment] = useState("");
+  const [title, setTitle] = useState();
+  const [localization, setLocalization] = useState();
+  const [comment, setComment] = useState();
 
   const data = {
     title,
