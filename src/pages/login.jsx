@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import Cookies from "js-cookie";
-import { Link, useNavigate } from "react-router-dom";
-import { userLogin } from "../reduxFolder/stateUser/userAction";
-import { useDispatch } from "react-redux";
-import FormsCard from "../components/FormsCard";
+import React, { useState } from 'react';
+import Cookies from 'js-cookie';
+import { Link, useNavigate } from 'react-router-dom';
+import { userLogin } from '../reduxFolder/stateUser/userAction';
+import { useDispatch } from 'react-redux';
+import FormsCard from '../components/FormsCard';
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   const changeConnectedStatus = useDispatch();
@@ -17,9 +17,9 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(`https://immotep-api.herokuapp.com/users/sign_in`, {
-      method: "post",
+      method: 'post',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         user: {
@@ -29,13 +29,13 @@ const Login = () => {
       }),
     })
       .then((res) => {
-        if (res.headers.get("Authorization")) {
-          Cookies.set("token", res.headers.get("Authorization"));
+        if (res.headers.get('Authorization')) {
+          Cookies.set('token', res.headers.get('Authorization'));
           changeConnectedStatus(userLogin());
-          navigate("/dashboard");
+          navigate('/dashboard');
           return res.json();
         } else {
-          throw new Error("Non enregistré"); // TODO refaire l'erreur
+          throw new Error('Non enregistré'); // TODO refaire l'erreur
         }
       })
       .then((json) => console.log(json.user))
@@ -44,16 +44,16 @@ const Login = () => {
 
   return (
     <div>
-      {" "}
-      <FormsCard title="Connexion" returnText="Accueil">
+      {' '}
+      <FormsCard title='Connexion' returnText='Accueil'>
         <>
-          {" "}
+          {' '}
           <form onSubmit={handleSubmit}>
             <label>
               Email
               <input
-                type="email"
-                name="email"
+                type='email'
+                name='email'
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
@@ -61,32 +61,32 @@ const Login = () => {
             <label>
               Mot de passe
               <input
-                type={showPassword ? "text" : "password"}
-                name="password"
+                type={showPassword ? 'text' : 'password'}
+                name='password'
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </label>
 
-            <label className="text-[12px] font-medium block w-full">
-              <p className="w-fit">
+            <label className='text-[12px] font-medium block w-full'>
+              <p className='w-fit'>
                 <input
-                  type="checkbox"
-                  className="mr-4"
+                  type='checkbox'
+                  className='ml-4 mr-4'
                   onClick={() => setShowPassword(!showPassword)}
-                />{" "}
+                />{' '}
                 Voir le mot de passe
               </p>
             </label>
 
-            <button className="orange-button forms-buttons" type="submit">
+            <button className='orange-button forms-buttons' type='submit'>
               Je me connecte
             </button>
-            <div className="w-full flex justify-center text-primary mb-8">
-              {" "}
+            <div className='w-full flex justify-center text-primary mb-8'>
+              {' '}
               <Link
-                to="/forgotpassword"
-                className="hover:underline underline-offset-2"
+                to='/forgotpassword'
+                className='hover:underline underline-offset-2'
               >
                 J'ai oublié mon mot de passe
               </Link>
