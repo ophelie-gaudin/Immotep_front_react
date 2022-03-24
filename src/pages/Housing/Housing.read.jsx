@@ -329,14 +329,14 @@ export default function HousingRead() {
                 <p>
                   Frais de notaire :{" "}
                   <span className=" text-greey/70 italic">
-                    {myHousingsInfo.notary_fees}
+                    {myHousingsInfo.notary_fees} €
                   </span>{" "}
                 </p>
                 <br />
                 <p>
                   Frais d'agence :{" "}
                   <span className=" text-greey/70 italic">
-                    {myHousingsInfo.agency_fees}
+                    {myHousingsInfo.agency_fees} €
                   </span>{" "}
                 </p>
               </div>
