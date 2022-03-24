@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import FormsCard from "../../components/FormsCard";
 import Cookies from "js-cookie";
 import { useParams, useNavigate } from "react-router-dom";
 
 export default function ProjectUpdate() {
+  const [myProject, setMyProject] = useState([]);
+
   const navigate = useNavigate();
   const { project_id } = useParams();
   console.log(useParams());
-  const [title, setTitle] = useState();
-  const [localization, setLocalization] = useState();
-  const [comment, setComment] = useState();
+  const [title, setTitle] = useState("");
+  const [localization, setLocalization] = useState("");
+  const [comment, setComment] = useState("");
 
   const data = {
     title,
@@ -38,6 +40,28 @@ export default function ProjectUpdate() {
       .catch((err) => console.error(err));
   };
 
+  // Get project
+  const projectArgument = `projects/${project_id}`;
+
+  useEffect(() => {
+    const fetchList = (url, argument) => {
+      const finalURL = argument ? `${url}${argument}` : url;
+      fetch(`${finalURL}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: Cookies.get("token"),
+        },
+      })
+        .then((response) => response.json())
+        .then((response) => {
+          setMyProject(response);
+        })
+        .catch((err) => console.error(err));
+    };
+    fetchList(`https://immotep-api.herokuapp.com/`, projectArgument);
+  }, [projectArgument]);
+
   return (
     <div className="mt-12 mb-8">
       <div>
@@ -53,6 +77,7 @@ export default function ProjectUpdate() {
                 type="text"
                 name="title"
                 onChange={(e) => setTitle(e.target.value)}
+                placeholder={myProject.title}
               />
             </label>
             <label>
@@ -61,6 +86,7 @@ export default function ProjectUpdate() {
                 type="text"
                 name="localization"
                 onChange={(e) => setLocalization(e.target.value)}
+                placeholder={myProject.localization}
               />
             </label>
             <label>
@@ -69,6 +95,7 @@ export default function ProjectUpdate() {
                 type="text"
                 name="comment"
                 onChange={(e) => setComment(e.target.value)}
+                placeholder={myProject.comment}
               />
             </label>
             <div className="flex justify-end mb-8 mt-8 mr-6">
