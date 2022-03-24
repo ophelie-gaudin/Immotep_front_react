@@ -81,7 +81,7 @@ export default function ProjectRead() {
       <div className='flex w-full justify-end mb-4'>
         <Link
           to={`/dashboard/${project_id}/edit`}
-          className='text-primary hover:underline mr-4'
+          className='text-primary text-sm border border-primary p-2 mr-4 rounded-[0.25rem] font-bold hover:border-primary;'
         >
           Modifier ce projet
         </Link>
