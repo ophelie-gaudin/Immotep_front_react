@@ -138,10 +138,18 @@ export default function HousingUpdate() {
                 onChange={(e) => setPropertyCategory(e.target.value)}
               >
                 <option value="Studio">Studio</option>
-                <option value="T1 et T2">T1 et T2</option>
+                <option value="T1">T1</option>
+                <option value="T1bis">T1bis</option>
+                <option value="T2">T2</option>
+                <option value="T2bis">T2bis</option>
+                <option value="T3">T3</option>
+                <option value="T4">T4</option>
+                <option value="T5">T5</option>
+                <option value="T6">T6</option>
                 <option value="Grand appartement">Grand appartement</option>
                 <option value="Maison">Maison</option>
                 <option value="Immeuble">Immeuble</option>
+                <option value="Autre">Autre</option>
               </select>
             </label>
             <label className="font-medium">
