@@ -119,7 +119,7 @@ export default function Navbar() {
               <li>
                 <a
                   href='/login'
-                  className='block py-2 pr-4 pl-3 text-white rounded md:p-0 dark:text-white hover:bg-primary  md:px-2 md:py:1 hover:font-bold  border-b border-light md:border-none'
+                  className='block text-lg py-2 pr-4 pl-3 text-white rounded md:p-0 dark:text-white hover:bg-primary  md:px-2 md:py:1 hover:font-bold  border-b border-light md:border-none'
                 >
                   Se connecter
                 </a>
@@ -128,7 +128,7 @@ export default function Navbar() {
               <li>
                 <a
                   href='/register'
-                  className='block py-2 pr-4 pl-3 text-light font-black hover:text-greey hover:font-bold rounded md:p-0 dark:text-white bg-primary  md:px-2 md:py:1 '
+                  className='block text-lg py-2 pr-4 pl-3 text-light font-black hover:text-greey hover:font-bold rounded md:p-0 dark:text-white bg-primary  md:px-2 md:py:1 '
                 >
                   S'inscrire
                 </a>

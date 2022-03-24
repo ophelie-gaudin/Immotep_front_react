@@ -17,6 +17,21 @@ export default function ProjectRead() {
   // Get project
   const projectArgument = `projects/${project_id}`;
 
+  const [dialog, setDialog] = useState({
+    message: '',
+    isLoading: false,
+  });
+
+  function handleModal() {
+    setDialog({
+      title: 'Êtes-vous sûr de vouloir supprimer ce projet ?',
+      message:
+        '⚠ Attention : cette action supprimera tous les logements associés à ce projet',
+
+      isLoading: true,
+    });
+  }
+
   useEffect(() => {
     const fetchList = (url, argument) => {
       const finalURL = argument ? `${url}${argument}` : url;
@@ -67,25 +82,34 @@ export default function ProjectRead() {
       returnUrl={`/dashboard`}
     >
       <div className='w-full text-greey'>
-        <b>Titre : </b>
+        <b className='font-extrabold'>Titre : </b>
         {myProject.title}
         <br />
         <br />
-        <b>Localisation :</b> {myProject.localization}
+        <b className='font-extrabold'>Localisation :</b>{' '}
+        {myProject.localization}
         <br />
         <br />
-        <b>Commentaires :</b> {myProject.comment}
+        <b className='font-extrabold'>Commentaires :</b> {myProject.comment}
         <br />
         <br />
       </div>
       <div className='flex w-full justify-end mb-4'>
+        {dialog.isLoading && (
+          <ProjectDelete title={dialog.title} message={dialog.message} />
+        )}
         <Link
           to={`/dashboard/${project_id}/edit`}
-          className='text-primary hover:underline mr-4'
+          className='text-primary text-sm border border-primary p-2 mr-4 rounded-[0.25rem] font-bold hover:border-primary;'
         >
           Modifier ce projet
         </Link>
-        <ProjectDelete data={project_id} />
+        <button
+          className='block py-2 pr-4 pl-3 text-white rounded border-b border-light md:p-0 dark:text-white bg-primary   hover:border hover:border-primary hover:bg-white hover:text-bold hover:text-[#E24E58] md:px-2 md:py:1  hover:font-bold hover:border hover:border-primary hover:bg-white hover:text-bold hover:text-[#E24E58] md:px-2 md:py:1  hover:font-bold text-bolder '
+          onClick={() => handleModal()}
+        >
+          Supprimer le projet
+        </button>
       </div>
 
       <div className='bg-white dark:bg-gray-800  shadow px-4 md:px-10 pt-4 md:pt-7 pb-5 overflow-y-auto'>
@@ -95,25 +119,25 @@ export default function ProjectRead() {
               tabIndex='0'
               className='focus:outline-none h-16 w-full text-sm leading-none text-gray-800 dark:text-white '
             >
-              <th className='font-normal text-center'>Type de bien</th>
+              <th className='font-extrabold text-center'>Type de bien</th>
               <th
                 className='font-normal text-center '
                 title="De base, nous affichons le prix de l'annonce. Dès que vous rentrez un prix d'offre, nous prenons ce dernier en compte."
               >
-                <div className='flex justify-center'>
+                <div className='flex font-extrabold justify-center'>
                   Prix <GoInfo className='ml-2' />
                 </div>
               </th>
-              <th className='font-normal text-center'>Localisation</th>
+              <th className='font-extrabold text-center'>Localisation</th>
               <th
                 className='font-normal text-center'
                 title="De base, notre calcul de rentabilité s'effectue avec le prix de l'annonce. Dès que vous rentrez un prix d'offre, nous prenons ce dernier en compte."
               >
-                <div className='flex  justify-center'>
+                <div className='flex font-extrabold justify-center'>
                   Rentabilité <GoInfo className='ml-2' />
                 </div>
               </th>
-              <th className='font-normal text-center'>
+              <th className='font-extrabold text-center'>
                 Voir + d'infos <br />{' '}
                 <small className='text-greey/70'>[dernière modif]</small>
               </th>
