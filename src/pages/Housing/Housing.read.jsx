@@ -12,6 +12,18 @@ export default function HousingRead() {
 
   const oneHousingArgument = `projects/${project_id}/housings/${housing_id}`;
 
+  const [dialog, setDialog] = useState({
+    message: "",
+    isLoading: false,
+  });
+
+  function handleModal() {
+    setDialog({
+      message: "Êtes-vous sûr de vouloir supprimer ?",
+      isLoading: true,
+    });
+  }
+
   useEffect(() => {
     const fetchList = (url, argument) => {
       const finalURL = argument ? `${url}${argument}` : url;
@@ -346,7 +358,9 @@ export default function HousingRead() {
       </FormsCard>
 
       <div className="flex justify-around mb-24">
-        <button className="block py-2 pr-4 pl-3 text-white rounded border-b border-light md:p-0 dark:text-white bg-primary md:border-none  md:px-2 md:py:1  hover:font-bold">
+        {dialog.isLoading && <HousingDelete message={dialog.message} />}
+
+        <button className="orange-button">
           <Link
             to={`/dashboard/${myHousingsInfo.project_id}/housing/${myHousingsInfo.id}/edit`}
           >
@@ -354,7 +368,12 @@ export default function HousingRead() {
           </Link>
         </button>
         <br />
-        <HousingDelete data={myHousingsInfo} />
+        <button
+          className="block py-2 pr-4 pl-3 text-white rounded border-b border-light md:p-0 dark:text-white bg-primary   hover:border hover:border-primary hover:bg-white hover:text-bold hover:text-[#E24E58] md:px-2 md:py:1  hover:font-bold hover:border hover:border-primary hover:bg-white hover:text-bold hover:text-[#E24E58] md:px-2 md:py:1  hover:font-bold text-bolder "
+          onClick={() => handleModal()}
+        >
+          Supprimer le logement
+        </button>
       </div>
     </>
   );

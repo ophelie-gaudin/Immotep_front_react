@@ -1,10 +1,9 @@
 import React from 'react';
 import Cookies from 'js-cookie';
 import { useParams, useNavigate } from 'react-router-dom';
+import './delete.css';
 
-export default function HousingDelete() {
-  // const { data } = props;
-
+export default function HousingDelete({ message }) {
   const { housing_id, project_id } = useParams();
 
   const navigate = useNavigate();
@@ -25,16 +24,27 @@ export default function HousingDelete() {
   };
 
   return (
-    <div>
-      <button
-        className='block py-2 pr-4 pl-3 text-white rounded border-b border-light md:p-0 dark:text-white bg-primary  hover:border hover:border-primary hover:bg-white hover:text-bold hover:text-[#E24E58] md:px-2 md:py:1  hover:font-bold'
-        onClick={() => {
-          navigate(`/dashboard/${project_id}`);
-          deletehousing();
-        }}
-      >
-        Supprimer le logement
-      </button>
+    <div id='modal' className='dialog'>
+      <div className='dialog-box'>
+        <h3 className='dialog-box-title'>{message}</h3>
+        <div className='dialog-buttons'>
+          <button
+            onClick={() => {
+              navigate(`/dashboard/${project_id}`);
+              deletehousing();
+            }}
+            className='orange-button forms-buttons dialog-buttons'
+          >
+            Oui
+          </button>
+          <button
+            className='orange-button forms-buttons dialog-buttons'
+            onClick={(e) => navigate(`/dashboard/${project_id}`)}
+          >
+            Non
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
