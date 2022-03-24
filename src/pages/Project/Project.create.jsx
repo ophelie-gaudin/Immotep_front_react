@@ -54,6 +54,7 @@ const ProjectCreate = () => {
                 type="text"
                 name="title"
                 onChange={(e) => setTitle(e.target.value)}
+                required
               />
             </label>
             <label>
