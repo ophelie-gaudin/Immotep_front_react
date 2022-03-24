@@ -24,7 +24,10 @@ export default function ProjectRead() {
 
   function handleModal() {
     setDialog({
-      message: 'Êtes-vous sûr de vouloir supprimer ?',
+      title: 'Êtes-vous sûr de vouloir supprimer ce projet ?',
+      message:
+        '⚠ Attention : cette action supprimera tous les logements associés à ce projet',
+
       isLoading: true,
     });
   }
@@ -92,7 +95,9 @@ export default function ProjectRead() {
         <br />
       </div>
       <div className='flex w-full justify-end mb-4'>
-        {dialog.isLoading && <ProjectDelete message={dialog.message} />}
+        {dialog.isLoading && (
+          <ProjectDelete title={dialog.title} message={dialog.message} />
+        )}
         <Link
           to={`/dashboard/${project_id}/edit`}
           className='text-primary text-sm border border-primary p-2 mr-4 rounded-[0.25rem] font-bold hover:border-primary;'
@@ -103,7 +108,7 @@ export default function ProjectRead() {
           className='block py-2 pr-4 pl-3 text-white rounded border-b border-light md:p-0 dark:text-white bg-primary   hover:border hover:border-primary hover:bg-white hover:text-bold hover:text-[#E24E58] md:px-2 md:py:1  hover:font-bold hover:border hover:border-primary hover:bg-white hover:text-bold hover:text-[#E24E58] md:px-2 md:py:1  hover:font-bold text-bolder '
           onClick={() => handleModal()}
         >
-          Supprimer le logement
+          Supprimer le projet
         </button>
       </div>
 

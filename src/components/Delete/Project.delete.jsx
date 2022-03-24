@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 import { useParams, useNavigate } from 'react-router-dom';
 import './delete.css';
 
-export default function ProjectDelete({ message }) {
+export default function ProjectDelete({ message, title }) {
   const { project_id } = useParams();
   const navigate = useNavigate();
 
@@ -22,7 +22,8 @@ export default function ProjectDelete({ message }) {
   return (
     <div id='modal' className='dialog'>
       <div className='dialog-box'>
-        <h3 className='dialog-box-title'>{message}</h3>
+        <h3 className='dialog-box-title'>{title}</h3>
+        <h3 className='dialog-box-message'>{message}</h3>
         <div className='dialog-buttons'>
           <button
             onClick={() => {
