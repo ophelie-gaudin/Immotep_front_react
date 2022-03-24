@@ -306,6 +306,7 @@ export default function HousingUpdate() {
                 placeholder={myHousingsInfo.rental_vacancy}
                 onChange={(e) => setRentalVacancy(Number(e.target.value))}
                 min="0"
+                max="100"
               />
             </label>
             <WarningArea>
@@ -326,6 +327,7 @@ export default function HousingUpdate() {
                   setMaintenancePercentage(Number(e.target.value))
                 }
                 min="0"
+                max="100"
               />
             </label>
             <WarningArea>
