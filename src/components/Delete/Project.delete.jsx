@@ -1,6 +1,6 @@
-import React from "react";
-import Cookies from "js-cookie";
-import { useParams, useNavigate } from "react-router-dom";
+import React from 'react';
+import Cookies from 'js-cookie';
+import { useParams, useNavigate } from 'react-router-dom';
 
 export default function ProjectDelete(props) {
   const { project_id } = useParams();
@@ -8,10 +8,10 @@ export default function ProjectDelete(props) {
 
   const deleteproject = () => {
     fetch(`https://immotep-api.herokuapp.com/projects/${project_id}`, {
-      method: "DELETE",
+      method: 'DELETE',
       headers: {
-        "Content-Type": "application/json",
-        Authorization: Cookies.get("token"),
+        'Content-Type': 'application/json',
+        Authorization: Cookies.get('token'),
       },
     })
       .then((response) => response.json())
@@ -21,7 +21,7 @@ export default function ProjectDelete(props) {
   return (
     <div>
       <button
-        className="block text-reed hover:underline"
+        className='text-reed text-sm border border-primary p-2 mr-4 rounded-[0.25rem] font-bold hover:border-primary;'
         onClick={() => {
           navigate(`/dashboard`);
           deleteproject();
