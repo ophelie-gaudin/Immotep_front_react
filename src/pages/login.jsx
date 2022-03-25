@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { userLogin } from '../reduxFolder/stateUser/userAction';
 import { useDispatch } from 'react-redux';
 import FormsCard from '../components/FormsCard';
+import { useNotifications } from '@mantine/notifications';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -13,6 +14,7 @@ const Login = () => {
   const changeConnectedStatus = useDispatch();
 
   const navigate = useNavigate();
+  const notifications = useNotifications();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,6 +35,11 @@ const Login = () => {
           Cookies.set('token', res.headers.get('Authorization'));
           changeConnectedStatus(userLogin());
           navigate('/dashboard');
+          notifications.showNotification({
+            radius: 'md',
+            title: 'Yes !',
+            message: 'Ravi de vous parmi nous ! 😃 ',
+          });
           return res.json();
         } else {
           throw new Error('Non enregistré'); // TODO refaire l'erreur

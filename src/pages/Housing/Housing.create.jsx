@@ -37,7 +37,7 @@ const HousingCreate = () => {
             radius: 'md',
             color: 'teal',
             title: 'Félicitations ! 😀',
-            message: 'Vous avez ce logement à votre projet.',
+            message: 'Vous avez ajouté ce logement à votre projet.',
           });
           return res.json();
         } else {
