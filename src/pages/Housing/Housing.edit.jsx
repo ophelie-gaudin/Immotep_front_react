@@ -112,7 +112,7 @@ export default function HousingUpdate() {
         >
           <form onSubmit={handleSubmit} className="text-greey">
             <h2 className="text-lg">Références de l'annonce: </h2>
-            {/* <label className="font-medium">
+            <label className="font-medium">
               Lien vers l'annonce :
               <input
                 type="text"
@@ -184,19 +184,17 @@ export default function HousingUpdate() {
             <WarningArea>
               ⓘ Nous vous conseillons de vérifier le prix au mètre carré pour la
               localisation du bien.{" "}
-            </WarningArea> */}
-            {/* <label className="font-medium">
+            </WarningArea>
+            <label className="font-medium">
               Montant des réparations
               <input
                 type="number"
                 className="mt-2"
                 onChange={(e) => handleSetState(e, "ad_price")}
                 value={myHousingsInfo.ad_price}
-                placeholder={myHousingsInfo.repairs_price}
-                onChange={(e) => setRepairsPrice(Number(e.target.value))}
                 min="0"
               />
-            </label> */}
+            </label>
             <label className="font-medium">
               <input
                 type="checkbox"
@@ -207,18 +205,19 @@ export default function HousingUpdate() {
               ></input>{" "}
               Bien neuf
             </label>
-            {/* <WarningArea>
+            <WarningArea>
               ⓘ Lors de la visite, il faut impérativement poser des questions
               sur l'état du bien et plus particulièrement trois éléments qui
               peuvent très rapidement faire grimper le coût des travaux à
               prévoir:
-              <ul>
-                <li>la toiture (environ 250€/m² de toit),</li>
-                <li>la façade (environ 30€/m² de mur),</li>
-                la chaudière (à condensation gaz : entre 3000 - 6000 €,
+              <li className="list-disc">
+                la toiture (environ 250€/m² de toit),
+              </li>
+              <li className="list-disc">la façade (environ 30€/m² de mur),</li>
+              <li className="list-disc">
+                la chaudière (à condensation gaz : entre 3000 - 6000 € /
                 classique: entre 500 - 2500€).
-                <li></li>
-              </ul>
+              </li>
             </WarningArea>
             <h2 className="text-lg">Charges : </h2>
             <label className="font-medium">
@@ -226,10 +225,8 @@ export default function HousingUpdate() {
               <input
                 type="number"
                 className="mt-2"
-                onChange={(e) => handleSetState(e, "ad_price")}
-                value={myHousingsInfo.ad_price}
-                placeholder={myHousingsInfo.building_co_tax}
-                onChange={(e) => setBuildingCoTax(Number(e.target.value))}
+                onChange={(e) => handleSetState(e, "building_co_tax")}
+                value={myHousingsInfo.building_co_tax}
                 min="0"
               />
             </label>
@@ -238,10 +235,8 @@ export default function HousingUpdate() {
               <input
                 type="number"
                 className="mt-2"
-                onChange={(e) => handleSetState(e, "ad_price")}
-                value={myHousingsInfo.ad_price}
-                placeholder={myHousingsInfo.property_tax}
-                onChange={(e) => setPropertyTax(Number(e.target.value))}
+                onChange={(e) => handleSetState(e, "property_tax")}
+                value={myHousingsInfo.property_tax}
                 min="0"
               />
             </label>
@@ -250,10 +245,8 @@ export default function HousingUpdate() {
               <input
                 type="checkbox"
                 className="mt-2"
-                onChange={(e) => handleSetState(e, "ad_price")}
-                value={myHousingsInfo.ad_price} //
-                placeholder={myHousingsInfo.pno_insurance}
-                onChange={(e) => setPnoInsurance(e.target.value)}
+                onChange={(e) => handleSetState(e, "pno_insurance")}
+                value={myHousingsInfo.pno_insurance}
               />
               Assurance P.N.O.
             </label>
@@ -268,10 +261,10 @@ export default function HousingUpdate() {
                 type="checkbox"
                 className="ml-8 mt-2"
                 name="controlled"
-                onChange={(e) => handleSetState(e, "ad_price")}
-                value={myHousingsInfo.ad_price} //
-                placeholder={myHousingsInfo.rental_unpayment_insurance}
-                onChange={(e) => setRentalUnpaymentInsurance(e.target.value)}
+                onChange={(e) =>
+                  handleSetState(e, "rental_unpayment_insurance")
+                }
+                value={myHousingsInfo.rental_unpayment_insurance}
               />{" "}
               Assurance des loyers impayés
             </label>
@@ -287,10 +280,8 @@ export default function HousingUpdate() {
               <input
                 type="number"
                 className="mt-2"
-                onChange={(e) => handleSetState(e, "ad_price")}
-                value={myHousingsInfo.ad_price}
-                placeholder={myHousingsInfo.annual_rent}
-                onChange={(e) => setAnnualRent(Number(e.target.value))}
+                onChange={(e) => handleSetState(e, "annual_rent")}
+                value={myHousingsInfo.annual_rent}
                 min="0"
               />
             </label>
@@ -299,10 +290,8 @@ export default function HousingUpdate() {
                 type="checkbox"
                 className="ml-8 mt-2"
                 name="controlled"
-                onChange={(e) => handleSetState(e, "ad_price")}
-                value={myHousingsInfo.ad_price} //
-                placeholder={myHousingsInfo.rental_management}
-                onChange={(e) => setRentalManagement(e.target.value)}
+                onChange={(e) => handleSetState(e, "rental_management")}
+                value={myHousingsInfo.rental_management}
               />{" "}
               Gestion Locative
             </label>
@@ -421,7 +410,7 @@ export default function HousingUpdate() {
               />
             </label>
             <hr />
-            <hr /> */}
+            <hr />
             <button className="orange-button forms-buttons" type="submit">
               J'enregistre
             </button>
