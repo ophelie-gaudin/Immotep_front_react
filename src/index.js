@@ -6,7 +6,7 @@ import { NotificationsProvider } from '@mantine/notifications';
 
 ReactDOM.render(
   <React.StrictMode>
-    <NotificationsProvider>
+    <NotificationsProvider position='top-right' limit={3} zIndex={2077}>
       <App />
     </NotificationsProvider>
   </React.StrictMode>,

@@ -33,6 +33,11 @@ const HousingCreate = () => {
       .then((res) => {
         if (res.ok) {
           navigate(`/dashboard/${project_id}`);
+          notifications.showNotification({
+            color: 'teal',
+            title: 'Félicitations ! 😀',
+            message: 'Vous avez ce logement à votre projet.',
+          });
           return res.json();
         } else {
           throw new Error(res);
@@ -92,17 +97,7 @@ const HousingCreate = () => {
               />
             </label>
             <div className='flex justify-end mb-8 mt-8 mr-6'>
-              <button
-                className='orange-button forms-buttons'
-                type='submit'
-                onClick={() =>
-                  notifications.showNotification({
-                    color: 'teal',
-                    title: 'Default notification',
-                    message: 'Hey there, your code is awesome! 🤥',
-                  })
-                }
-              >
+              <button className='orange-button forms-buttons' type='submit'>
                 Créer
               </button>
             </div>
