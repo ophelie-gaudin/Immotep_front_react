@@ -6,6 +6,5 @@ const rootReducer = combineReducers({
 });
 
 let store = createStore(rootReducer);
-store.subscribe();
-
+store.subscribe(() => console.log(store.getState()));
 export default store;
