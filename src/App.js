@@ -19,7 +19,6 @@ import HousingCreate from './pages/Housing/Housing.create';
 import HousingRead from './pages/Housing/Housing.read';
 import ProjectRead from './pages/Project/Project.read';
 import ProjectCreate from './pages/Project/Project.create';
-import ProfileUpdate from './pages/Profile/Profile.update';
 import PasswordCreate from './pages/Password/Password.create';
 import PasswordUpdate from './pages/Password/Password.update';
 import ProfileRead from './pages/Profile/Profile.read';
@@ -75,7 +74,6 @@ function App() {
             {/* PROFILE */}
 
             <Route path='/profile' element={<ProfileRead />} />
-            <Route path='/profile/edit' element={<ProfileUpdate />} />
 
             {/* PASSWORD */}
 
