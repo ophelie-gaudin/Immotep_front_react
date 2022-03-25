@@ -6,7 +6,7 @@ export default function PasswordUpdate() {
   const [password, setPassword] = useState('');
   const password_token = window.location.href
     .slice(window.location.href.indexOf('='))
-    .substring(2); // TODO: fix to get password token
+    .substring(2);
 
   const navigate = useNavigate();
 
