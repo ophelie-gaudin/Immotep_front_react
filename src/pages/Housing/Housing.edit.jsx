@@ -1,33 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import FormsCard from '../../components/FormsCard';
-import Cookies from 'js-cookie';
-import { useParams, useNavigate } from 'react-router-dom';
-import WarningArea from '../../components/Main/WarningArea';
-import Notifications from '../../components/Notifications/Notifications';
+import React, { useState, useEffect } from "react";
+import FormsCard from "../../components/FormsCard";
+import Cookies from "js-cookie";
+import { useParams, useNavigate } from "react-router-dom";
+import WarningArea from "../../components/Main/WarningArea";
+import Notifications from "../../components/Notifications/Notifications";
 
 export default function HousingUpdate() {
   const navigate = useNavigate();
   const { housing_id, project_id } = useParams();
   const [myHousingsInfo, setMyHousingsInfo] = useState({
-    localization: '',
-    ad_price: '',
-    property_category: '',
-    area: '',
-    ad_url: '',
-    comment: '',
-    offer_price: '',
-    repairs_price: '',
-    annual_rent: '',
-    agency_fees: '',
-    pno_insurance: '',
-    property_tax: '',
-    rental_management: '',
-    rental_unpayment_insurance: '',
-    building_co_tax: '',
-    maintenance_percentage: '',
-    new_property: '',
-    rental_vacancy: '',
-    notary_fees: '',
+    localization: "",
+    ad_price: "",
+    property_category: "",
+    area: "",
+    ad_url: "",
+    comment: "",
+    offer_price: "",
+    repairs_price: "",
+    annual_rent: "",
+    agency_fees: "",
+    pno_insurance: "",
+    property_tax: "",
+    rental_management: "",
+    rental_unpayment_insurance: "",
+    building_co_tax: "",
+    maintenance_percentage: "",
+    new_property: "",
+    rental_vacancy: "",
+    notary_fees: "",
   });
 
   const oneHousingArgument = `projects/${project_id}/housings/${housing_id}`;
@@ -36,10 +36,10 @@ export default function HousingUpdate() {
     const fetchList = (url, argument) => {
       const finalURL = argument ? `${url}${argument}` : url;
       fetch(`${finalURL}`, {
-        method: 'GET',
+        method: "GET",
         headers: {
-          'Content-Type': 'application/json',
-          Authorization: Cookies.get('token'),
+          "Content-Type": "application/json",
+          Authorization: Cookies.get("token"),
         },
       })
         .then((response) => response.json())
@@ -77,10 +77,10 @@ export default function HousingUpdate() {
     fetch(
       `https://immotep-api.herokuapp.com/projects/${project_id}/housings/${housing_id}`,
       {
-        method: 'PUT',
+        method: "PUT",
         headers: {
-          'Content-Type': 'application/json',
-          Authorization: Cookies.get('token'),
+          "Content-Type": "application/json",
+          Authorization: Cookies.get("token"),
         },
         body: JSON.stringify(myHousingsInfo),
       }
@@ -89,11 +89,11 @@ export default function HousingUpdate() {
         if (res.ok) {
           navigate(`/dashboard/${project_id}/housing/${housing_id}`);
           Notifications.success(
-            'Les informations ont bien été mises à jour ! 😀'
+            "Les informations ont bien été mises à jour ! 😀"
           );
         } else {
           Notifications.error(
-            'Il y a eu un problème, veuillez réessayer... 🙄'
+            "Il y a eu un problème, veuillez réessayer... 🙄"
           );
           throw new Error(res);
         }
@@ -102,9 +102,9 @@ export default function HousingUpdate() {
   };
 
   const handleSetState = (e, state) => {
-    if (e.target.type === 'checkbox') {
+    if (e.target.type === "checkbox") {
       setMyHousingsInfo({ ...myHousingsInfo, [state]: e.target.checked });
-    } else if (e.target.type === 'number') {
+    } else if (e.target.type === "number") {
       setMyHousingsInfo({ ...myHousingsInfo, [state]: Number(e.target.value) });
     } else {
       setMyHousingsInfo({ ...myHousingsInfo, [state]: e.target.value });
@@ -112,64 +112,69 @@ export default function HousingUpdate() {
   };
 
   return (
-    <div className='mt-12 mb-8'>
+    <div className="mt-12 mb-8">
       <div>
         <FormsCard
-          title='Modifier mon logement'
-          returnText='Mon Logement'
+          title="Modifier mon logement"
+          returnText="Mon Logement"
           returnUrl={`/dashboard/${project_id}/housing/${housing_id}`}
         >
-          <form onSubmit={handleSubmit} className='text-greey'>
-            <h2 className='text-lg'>Références de l'annonce: </h2>
-            <label className='font-medium'>
+          <form onSubmit={handleSubmit} className="text-greey">
+            <h2 className="text-lg font-bold my-4">
+              Références de l'annonce:{" "}
+            </h2>
+            <label className="font-medium">
               Lien vers l'annonce :
               <input
-                type='text'
-                className='mt-2'
-                onChange={(e) => handleSetState(e, 'ad_url')}
+                type="text"
+                className="mt-2"
+                onChange={(e) => handleSetState(e, "ad_url")}
                 value={myHousingsInfo.ad_url}
               />
             </label>
-            <label className='font-medium'>
+            <label className="font-medium">
               Prix du logement :
               <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => handleSetState(e, 'ad_price')}
+                type="number"
+                className="mt-2"
+                onChange={(e) => handleSetState(e, "ad_price")}
                 value={myHousingsInfo.ad_price}
-                min='0'
+                min="0"
               />
-            </label>{' '}
-            <label className='flex flex-col font-medium w-[95%] items-start'>
+            </label>{" "}
+            <label className=" font-medium w-full ">
               Type de bien :
-              <select
-                className='w-full'
-                name='property-category'
-                id='hypothesis'
-                onChange={(e) => handleSetState(e, 'property_category')}
-                value={myHousingsInfo.property_category}
-              >
-                <option value='Studio'>Studio</option>
-                <option value='T1'>T1</option>
-                <option value='T1bis'>T1bis</option>
-                <option value='T2'>T2</option>
-                <option value='T2bis'>T2bis</option>
-                <option value='T3'>T3</option>
-                <option value='T4'>T4</option>
-                <option value='T5'>T5</option>
-                <option value='T6'>T6</option>
-                <option value='Grand appartement'>Grand appartement</option>
-                <option value='Maison'>Maison</option>
-                <option value='Immeuble'>Immeuble</option>
-                <option value='Autre'>Autre</option>
-              </select>
+              <br />
+              <div className="w-full flex justify-center">
+                <select
+                  className="w-[90%]"
+                  name="property-category"
+                  id="hypothesis"
+                  onChange={(e) => handleSetState(e, "property_category")}
+                  value={myHousingsInfo.property_category}
+                >
+                  <option value="Studio">Studio</option>
+                  <option value="T1">T1</option>
+                  <option value="T1bis">T1bis</option>
+                  <option value="T2">T2</option>
+                  <option value="T2bis">T2bis</option>
+                  <option value="T3">T3</option>
+                  <option value="T4">T4</option>
+                  <option value="T5">T5</option>
+                  <option value="T6">T6</option>
+                  <option value="Grand appartement">Grand appartement</option>
+                  <option value="Maison">Maison</option>
+                  <option value="Immeuble">Immeuble</option>
+                  <option value="Autre">Autre</option>
+                </select>
+              </div>
             </label>
-            <label className='font-medium'>
+            <label className="font-medium">
               Localisation :
               <input
-                type='text'
-                className='mt-2'
-                onChange={(e) => handleSetState(e, 'localization')}
+                type="text"
+                className="mt-2"
+                onChange={(e) => handleSetState(e, "localization")}
                 value={myHousingsInfo.localization}
               />
             </label>
@@ -179,22 +184,24 @@ export default function HousingUpdate() {
               avec le prix annoncé. N'hésitez pas à questionner le propriétaire
               ou l'agence lors de la visite.
             </WarningArea>
-            <h2 className='text-lg'>Caractéristiques du bien : </h2>
-            <label className='font-medium'>
+            <h2 className="text-lg  font-bold my-4">
+              Caractéristiques du bien :{" "}
+            </h2>
+            <label className="font-medium">
               Surface en m² :
               <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => handleSetState(e, 'area')}
+                type="number"
+                className="mt-2"
+                onChange={(e) => handleSetState(e, "area")}
                 value={myHousingsInfo.area}
-                min='0'
+                min="0"
               />
             </label>
             <WarningArea>
               ⓘ Nous vous conseillons de vérifier le prix au mètre carré pour la
-              localisation du bien.{' '}
+              localisation du bien.{" "}
             </WarningArea>
-            <label className='font-medium'>
+            <label className="font-medium">
               Montant des réparations
               <input
                 type="number"
@@ -204,14 +211,14 @@ export default function HousingUpdate() {
                 min="0"
               />
             </label>
-            <label className='font-medium'>
+            <label className="font-medium">
               <input
-                type='checkbox'
-                className='ml-8 mt-2'
-                name='controlled'
+                type="checkbox"
+                className="ml-4 mt-2"
+                name="controlled"
                 checked={myHousingsInfo.new_property}
-                onChange={(e) => handleSetState(e, 'new_property')}
-              ></input>{' '}
+                onChange={(e) => handleSetState(e, "new_property")}
+              ></input>{" "}
               Bien neuf
             </label>
             <WarningArea>
@@ -219,43 +226,45 @@ export default function HousingUpdate() {
               sur l'état du bien et plus particulièrement trois éléments qui
               peuvent très rapidement faire grimper le coût des travaux à
               prévoir:
-              <li className='list-disc'>
+              <li className="list-disc">
                 la toiture (environ 250€/m² de toit),
               </li>
-              <li className='list-disc'>la façade (environ 30€/m² de mur),</li>
-              <li className='list-disc'>
+              <li className="list-disc">la façade (environ 30€/m² de mur),</li>
+              <li className="list-disc">
                 la chaudière (à condensation gaz : entre 3000 - 6000 € /
                 classique: entre 500 - 2500€).
               </li>
             </WarningArea>
-            <h2 className='text-lg'>Charges : </h2>
-            <label className='font-medium'>
+            <h2 className="text-lg font-bold my-4">Charges : </h2>
+            <label className="font-medium">
               Charges de co-propriété (en €) :
               <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => handleSetState(e, 'building_co_tax')}
+                type="number"
+                className="mt-2"
+                onChange={(e) => handleSetState(e, "building_co_tax")}
                 value={myHousingsInfo.building_co_tax}
-                min='0'
+                min="0"
               />
             </label>
-            <label className='font-medium'>
+            <label className="font-medium">
               Taxe foncière (en €) :
               <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => handleSetState(e, 'property_tax')}
+                type="number"
+                className="mt-2"
+                onChange={(e) => handleSetState(e, "property_tax")}
                 value={myHousingsInfo.property_tax}
-                min='0'
+                min="0"
               />
             </label>
-            Souhaiterez-vous souscrire à une ...? <br />
-            <label className='font-medium'>
+            <p className="ml-6 font-medium">
+              Souhaiterez-vous souscrire à une ...? <br />
+            </p>
+            <label className="font-medium">
               <input
-                type='checkbox'
-                className='mt-2'
+                type="checkbox"
+                className="mt-2 ml-4"
                 checked={myHousingsInfo.pno_insurance}
-                onChange={(e) => handleSetState(e, 'pno_insurance')}
+                onChange={(e) => handleSetState(e, "pno_insurance")}
               />
               Assurance P.N.O.
             </label>
@@ -263,18 +272,18 @@ export default function HousingUpdate() {
               ⓘ L'assurance Propriétaire Non Occupant garantit au propriétaire
               bailleur une couverture équivalente à la multirisque habitation.
               <br />
-              Elle correspond généralement à environ 7% du loyer.{' '}
+              Elle correspond généralement à environ 7% du loyer.{" "}
             </WarningArea>
-            <label className='font-medium'>
+            <label className="font-medium">
               <input
-                type='checkbox'
-                className='ml-8 mt-2'
-                name='controlled'
+                type="checkbox"
+                className="ml-4 mt-2"
+                name="controlled"
                 onChange={(e) =>
-                  handleSetState(e, 'rental_unpayment_insurance')
+                  handleSetState(e, "rental_unpayment_insurance")
                 }
                 value={myHousingsInfo.rental_unpayment_insurance}
-              />{' '}
+              />{" "}
               Assurance des loyers impayés
             </label>
             <WarningArea>
@@ -283,25 +292,25 @@ export default function HousingUpdate() {
               <br />
               Elle correspond généralement à environ 7% du loyer.
             </WarningArea>
-            <h2 className='text-lg'>Investissement : </h2>
-            <label className='font-medium'>
+            <h2 className="text-lg font-bold my-4">Investissement : </h2>
+            <label className="font-medium">
               Loyer annuel complet (en €):
               <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => handleSetState(e, 'annual_rent')}
+                type="number"
+                className="mt-2"
+                onChange={(e) => handleSetState(e, "annual_rent")}
                 value={myHousingsInfo.annual_rent}
-                min='0'
+                min="0"
               />
             </label>
-            <label className='font-medium'>
+            <label className="font-medium">
               <input
-                type='checkbox'
-                className='ml-8 mt-2'
-                name='controlled'
-                onChange={(e) => handleSetState(e, 'rental_management')}
+                type="checkbox"
+                className="ml-4 mt-2"
+                name="controlled"
+                onChange={(e) => handleSetState(e, "rental_management")}
                 value={myHousingsInfo.rental_management}
-              />{' '}
+              />{" "}
               Gestion Locative
             </label>
             <WarningArea>
@@ -311,17 +320,17 @@ export default function HousingUpdate() {
               du logement.
               <br />
               Il faut compter environ 7% du loyer ainsi qu'un mois de loyer par
-              changement de locataire.{' '}
+              changement de locataire.{" "}
             </WarningArea>
-            <label className='font-medium'>
+            <label className="font-medium">
               Pourcentage de vacance locative (en %)
               <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => handleSetState(e, 'rental_vacancy')}
+                type="number"
+                className="mt-2"
+                onChange={(e) => handleSetState(e, "rental_vacancy")}
                 value={myHousingsInfo.rental_vacancy}
-                min='0'
-                max='100'
+                min="0"
+                max="100"
               />
             </label>
             <WarningArea>
@@ -331,16 +340,16 @@ export default function HousingUpdate() {
               de vacance locative représente 2% de vacance locative sur un an.
               <small>Pourcentage minimal conseillé: 6%</small>
             </WarningArea>
-            <label className='font-medium'>
+            <label className="font-medium">
               Pourcentage de provision pour entretien sur le montant du loyer
               (en %):
               <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => handleSetState(e, 'maintenance_percentage')}
+                type="number"
+                className="mt-2"
+                onChange={(e) => handleSetState(e, "maintenance_percentage")}
                 value={myHousingsInfo.maintenance_percentage}
-                min='0'
-                max='100'
+                min="0"
+                max="100"
               />
             </label>
             <WarningArea>
@@ -349,13 +358,13 @@ export default function HousingUpdate() {
               logement. Cette somme ne rentre pas en compte dans les bénéfices.
               <small>Pourcentage minimal conseillé: 2%</small>
             </WarningArea>
-            <h2 className='text-lg'>Offre : </h2>
-            <label className='font-medium'>
+            <h2 className="text-lg font-bold my-4">Offre : </h2>
+            <label className="font-medium">
               Vos remarques :<br />
               <textarea
-                type='text'
-                className='mt-2 ml-7'
-                onChange={(e) => handleSetState(e, 'comment')}
+                type="text"
+                className="mt-2 ml-12 w-[90%]"
+                onChange={(e) => handleSetState(e, "comment")}
                 value={myHousingsInfo.comment}
               />
             </label>
@@ -363,16 +372,16 @@ export default function HousingUpdate() {
             <WarningArea>
               ⓘ N'hésitez pas à visiter le logement à différents moments de la
               journée et de la semaine pour vérifier les éventuelles nuisances
-              (bar, travaux, circulation...) présentes dans le quartier.{' '}
+              (bar, travaux, circulation...) présentes dans le quartier.{" "}
             </WarningArea>
-            <label className='font-medium'>
+            <label className="font-medium">
               Prix de l'offre (en €) :
               <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => handleSetState(e, 'offer_price')}
+                type="number"
+                className="mt-2"
+                onChange={(e) => handleSetState(e, "offer_price")}
                 value={myHousingsInfo.offer_price}
-                min='0'
+                min="0"
               />
             </label>
             <WarningArea>
@@ -382,31 +391,31 @@ export default function HousingUpdate() {
               Renseignez-vous sur la durée durant laquelle le propriétaire a
               vécu dans le bien : si le propriétaire habite ici depuis
               longtemps, il a eu davantage le temps de rembourser son crédit et
-              sera surement davantage ouvert à une offre.{' '}
+              sera surement davantage ouvert à une offre.{" "}
             </WarningArea>
-            <label className='font-medium'>
+            <label className="font-medium">
               Frais de notaire (en €) :
               <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => handleSetState(e, 'notary_fees')}
+                type="number"
+                className="mt-2"
+                onChange={(e) => handleSetState(e, "notary_fees")}
                 value={myHousingsInfo.notary_fees}
-                min='0'
+                min="0"
               />
             </label>
-            <label className='font-medium'>
+            <label className="font-medium">
               Frais d'agence (en €):
               <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => handleSetState(e, 'agency_fees')}
+                type="number"
+                className="mt-2"
+                onChange={(e) => handleSetState(e, "agency_fees")}
                 value={myHousingsInfo.agency_fees}
-                min='0'
+                min="0"
               />
             </label>
             <hr />
             <hr />
-            <button className='orange-button forms-buttons' type='submit'>
+            <button className="orange-button forms-buttons" type="submit">
               J'enregistre
             </button>
           </form>
