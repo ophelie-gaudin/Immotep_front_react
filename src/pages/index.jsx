@@ -146,13 +146,15 @@ export default function Home() {
 
       <section className="min-h-[100vh] bg-primary  flex justify-center items-center p-12">
         <div className="container flex items-center justify-between flex-wrap md:flex-nowrap">
-          <div className="mb-8 md:mb-0 md:w-1/2 mx-8">
-            <div className="frame">
-              <div data-aos="zoom-out-right">
-                {/* <%= image_tag 'decohome.jpg', :style=>'width:100%' %> */}
-              </div>
-              <div className="bg-whiite h-[300px] max-w-[451px] relative">
-                <div data-aos="zoom-out-right"></div>
+          <div className="mb-12 md:mb-0 md:w-1/2 w-full mx-8">
+            <div className="frame w-full">
+              {/* <div data-aos="zoom-out-right" className="w-full">
+                <%= image_tag 'decohome.jpg', :style=>'width:100%' %>
+              </div> */}
+              <div
+                className="bg-whiite h-[300px] max-w-[451px] relative mx-auto"
+                data-aos="zoom-out-right"
+              >
                 <img
                   src={img1}
                   alt="bâtiments"
@@ -201,12 +203,21 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-8 md:mt-0 md:w-1/2 mx-8">
-            <div className="frame">
-              <div data-aos="zoom-out-right">
-                {/* <%= image_tag 'decohome.jpg', :style=>'width:100%' %> */}
+          <div className="mt-12 md:mt-0 w-full md:w-1/2 mx-8">
+            <div className="frame w-full">
+              {/* <div data-aos="zoom-out-right" className="w-full">
+                <%= image_tag 'decohome.jpg', :style=>'width:100%' %>
+              </div> */}
+              <div
+                className="bg-primary h-[300px] max-w-[451px] relative mx-auto"
+                data-aos="zoom-out-left"
+              >
+                <img
+                  src={img1}
+                  alt="bâtiments"
+                  className=" h-[300px] absolute right-4 bottom-4"
+                />
               </div>
-              <div className="bg-primary w-[40vw] h-[300px]"></div>
             </div>
           </div>
         </div>
