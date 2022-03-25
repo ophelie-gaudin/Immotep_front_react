@@ -76,6 +76,7 @@ const HousingCreate = () => {
                 type="text"
                 name="localization"
                 onChange={(e) => setLocalization(e.target.value)}
+                required
               />
             </label>
             <label>
@@ -84,6 +85,7 @@ const HousingCreate = () => {
                 type="text"
                 name="ad_price"
                 onChange={(e) => setAdPrice(e.target.value)}
+                required
               />
             </label>
             <div className="flex justify-end mb-8 mt-8 mr-6">
