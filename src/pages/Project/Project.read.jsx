@@ -178,7 +178,7 @@ export default function ProjectRead() {
                     ) : (
                       ""
                     )}
-                    {Number(data.offer_profitability) == 0
+                    {Number(data.offer_profitability) === 0
                       ? "Non calculée"
                       : ""}
                   </td>

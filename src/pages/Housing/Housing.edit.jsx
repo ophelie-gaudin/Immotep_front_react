@@ -142,7 +142,7 @@ export default function HousingUpdate() {
                 min="0"
               />
             </label>{" "}
-            <label className=" font-medium w-full ">
+            <label className=" font-medium w-full  ">
               Type de bien :
               <br />
               <div className="w-full flex justify-center">
