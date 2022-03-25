@@ -97,6 +97,8 @@ export default function HousingUpdate() {
   const handleSetState = (e, state) => {
     if (e.taget.type === "checkbox") {
       setMyHousingsInfo({ [state]: e.target.checked });
+    } else if (e.taget.type === "checkbox") {
+      setMyHousingsInfo({ [state]: Number(e.target.value) });
     } else {
       setMyHousingsInfo({ [state]: e.target.value });
     }
@@ -174,7 +176,7 @@ export default function HousingUpdate() {
             <label className="font-medium">
               Surface en m² :
               <input
-                type="text"
+                type="number"
                 className="mt-2"
                 onChange={(e) => handleSetState(e, "area")}
                 value={myHousingsInfo.area}
@@ -245,8 +247,8 @@ export default function HousingUpdate() {
               <input
                 type="checkbox"
                 className="mt-2"
+                checked={myHousingsInfo.pno_insurance}
                 onChange={(e) => handleSetState(e, "pno_insurance")}
-                value={myHousingsInfo.pno_insurance}
               />
               Assurance P.N.O.
             </label>
@@ -309,10 +311,8 @@ export default function HousingUpdate() {
               <input
                 type="number"
                 className="mt-2"
-                onChange={(e) => handleSetState(e, "ad_price")}
-                value={myHousingsInfo.ad_price}
-                placeholder={myHousingsInfo.rental_vacancy}
-                onChange={(e) => setRentalVacancy(Number(e.target.value))}
+                onChange={(e) => handleSetState(e, "rental_vacancy")}
+                value={myHousingsInfo.rental_vacancy}
                 min="0"
                 max="100"
               />
@@ -330,12 +330,8 @@ export default function HousingUpdate() {
               <input
                 type="number"
                 className="mt-2"
-                onChange={(e) => handleSetState(e, "ad_price")}
-                value={myHousingsInfo.ad_price}
-                placeholder={myHousingsInfo.maintenance_percentage}
-                onChange={(e) =>
-                  setMaintenancePercentage(Number(e.target.value))
-                }
+                onChange={(e) => handleSetState(e, "maintenance_percentage")}
+                value={myHousingsInfo.maintenance_percentage}
                 min="0"
                 max="100"
               />
@@ -352,10 +348,8 @@ export default function HousingUpdate() {
               <textarea
                 type="text"
                 className="mt-2 ml-7"
-                onChange={(e) => handleSetState(e, "ad_price")}
-                value={myHousingsInfo.ad_price}
-                placeholder={myHousingsInfo.comment}
-                onChange={(e) => setComment(e.target.value)}
+                onChange={(e) => handleSetState(e, "comment")}
+                value={myHousingsInfo.comment}
               />
             </label>
             <br />
@@ -369,10 +363,8 @@ export default function HousingUpdate() {
               <input
                 type="number"
                 className="mt-2"
-                onChange={(e) => handleSetState(e, "ad_price")}
-                value={myHousingsInfo.ad_price}
-                placeholder={myHousingsInfo.offer_price}
-                onChange={(e) => setOfferPrice(Number(e.target.value))}
+                onChange={(e) => handleSetState(e, "offer_price")}
+                value={myHousingsInfo.offer_price}
                 min="0"
               />
             </label>
@@ -390,10 +382,8 @@ export default function HousingUpdate() {
               <input
                 type="number"
                 className="mt-2"
-                onChange={(e) => handleSetState(e, "ad_price")}
-                value={myHousingsInfo.ad_price}
-                placeholder={myHousingsInfo.notary_fees}
-                onChange={(e) => setNotaryFees(Number(e.target.value))}
+                onChange={(e) => handleSetState(e, "notary_fees")}
+                value={myHousingsInfo.notary_fees}
                 min="0"
               />
             </label>
@@ -402,10 +392,8 @@ export default function HousingUpdate() {
               <input
                 type="number"
                 className="mt-2"
-                onChange={(e) => handleSetState(e, "ad_price")}
-                value={myHousingsInfo.ad_price}
-                placeholder={myHousingsInfo.agency_fees}
-                onChange={(e) => setAgencyFees(Number(e.target.value))}
+                onChange={(e) => handleSetState(e, "agency_fees")}
+                value={myHousingsInfo.agency_fees}
                 min="0"
               />
             </label>
