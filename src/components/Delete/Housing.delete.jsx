@@ -1,6 +1,7 @@
 import React from 'react';
 import Cookies from 'js-cookie';
 import { useParams, useNavigate } from 'react-router-dom';
+import Notifications from '../../components/Notifications/Notifications';
 import './delete.css';
 
 export default function HousingDelete({ message }) {
@@ -32,6 +33,9 @@ export default function HousingDelete({ message }) {
             onClick={() => {
               navigate(`/dashboard/${project_id}`);
               deletehousing();
+              Notifications.info(
+                'Ce logement à bien été supprimé de votre projet ! 😉 '
+              );
             }}
             className='orange-button forms-buttons dialog-buttons'
           >
@@ -39,7 +43,10 @@ export default function HousingDelete({ message }) {
           </button>
           <button
             className='orange-button forms-buttons dialog-buttons'
-            onClick={(e) => navigate(`/dashboard/${project_id}`)}
+            onClick={(e) => {
+              navigate(`/dashboard/${project_id}`);
+              Notifications.info('Vous souhaitez le conserver? Très bien ! 😄');
+            }}
           >
             Non
           </button>
