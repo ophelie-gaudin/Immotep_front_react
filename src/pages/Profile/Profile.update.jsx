@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import FormsCard from "../../components/FormsCard";
-import { useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
+import React, { useState, useEffect } from 'react';
+import FormsCard from '../../components/FormsCard';
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 export default function ProfileUpdate() {
   const [email, setEmail] = useState();
 
   const navigate = useNavigate();
 
-  const [myProfile, setMyProfile] = useState("");
+  const [myProfile, setMyProfile] = useState('');
 
   const myProfileArgument = `member-data`;
 
@@ -16,16 +16,16 @@ export default function ProfileUpdate() {
     const fetchList = (url, argument) => {
       const finalURL = argument ? `${url}${argument}` : url;
       fetch(`${finalURL}`, {
-        method: "GET",
+        method: 'GET',
         headers: {
-          "Content-Type": "application/json",
-          Authorization: Cookies.get("token"),
+          'Content-Type': 'application/json',
+          Authorization: Cookies.get('token'),
         },
       })
         .then((response) => response.json())
         .then((response) => {
           setMyProfile(response.user);
-          console.log("Response:", response);
+          console.log('Response:', response);
         })
         .catch((err) => console.error(err));
     };
@@ -35,9 +35,9 @@ export default function ProfileUpdate() {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(`https://immotep-api.herokuapp.com/users/password`, {
-      method: "PUT",
+      method: 'PUT',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         user: {
@@ -47,34 +47,33 @@ export default function ProfileUpdate() {
     })
       .then((res) => {
         if (res.ok) {
-          navigate("/profile");
+          navigate('/profile');
           return res.json();
         } else {
           throw new Error(res);
         }
       })
-      .then((json) => console.log(json.user.id))
       .catch((err) => console.error(err));
   };
 
   return (
     <div>
       <FormsCard
-        title="Modifier mes informations personnelles"
-        returnText="Mon profil"
-        returnUrl="/profile"
+        title='Modifier mes informations personnelles'
+        returnText='Mon profil'
+        returnUrl='/profile'
       >
         <form onSubmit={handleSubmit}>
-          <label className="font-medium">
+          <label className='font-medium'>
             Ma nouvelle adresse email
             <input
-              type="email"
-              className="mt-2"
+              type='email'
+              className='mt-2'
               onChange={(e) => setEmail(e.target.value)}
               placeholder={myProfile.email}
             ></input>
           </label>
-          <button className="orange-button forms-buttons">J'enregistre</button>
+          <button className='orange-button forms-buttons'>J'enregistre</button>
         </form>
       </FormsCard>
     </div>

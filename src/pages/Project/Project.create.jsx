@@ -1,23 +1,23 @@
-import React, { useState } from "react";
-import FormsCard from "../../components/FormsCard";
+import React, { useState } from 'react';
+import FormsCard from '../../components/FormsCard';
 //import Input from "../../Components/Main/Input";
-import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
+import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
 
 const ProjectCreate = () => {
-  const [title, setTitle] = useState("");
-  const [localization, setLocalization] = useState("");
-  const [comment, setComment] = useState("");
+  const [title, setTitle] = useState('');
+  const [localization, setLocalization] = useState('');
+  const [comment, setComment] = useState('');
 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(`https://immotep-api.herokuapp.com/projects`, {
-      method: "post",
+      method: 'post',
       headers: {
-        "Content-Type": "application/json",
-        Authorization: `${Cookies.get("token")}`,
+        'Content-Type': 'application/json',
+        Authorization: `${Cookies.get('token')}`,
       },
       body: JSON.stringify({
         project: {
@@ -29,30 +29,29 @@ const ProjectCreate = () => {
     })
       .then((res) => {
         if (res.ok) {
-          navigate("/dashboard");
+          navigate('/dashboard');
           return res.json();
         } else {
           throw new Error(res);
         }
       })
-      .then((json) => console.log(json.user.id))
       .catch((err) => console.error(err));
   };
 
   return (
     <div>
       <FormsCard
-        title="Créer un nouveau projet "
-        returnText="Mes projets"
-        returnUrl="/dashboard"
+        title='Créer un nouveau projet '
+        returnText='Mes projets'
+        returnUrl='/dashboard'
       >
         <>
           <form onSubmit={handleSubmit}>
             <label>
               Titre du projet
               <input
-                type="text"
-                name="title"
+                type='text'
+                name='title'
                 onChange={(e) => setTitle(e.target.value)}
                 required
               />
@@ -60,21 +59,21 @@ const ProjectCreate = () => {
             <label>
               Localisation souhaitée du bien
               <input
-                type="text"
-                name="localization"
+                type='text'
+                name='localization'
                 onChange={(e) => setLocalization(e.target.value)}
               />
             </label>
             <label>
               Vos notes
               <input
-                type="text"
-                name="comment"
+                type='text'
+                name='comment'
                 onChange={(e) => setComment(e.target.value)}
               />
             </label>
-            <div className="flex justify-end mb-8 mt-8 mr-6">
-              <button className="orange-button forms-buttons" type="submit">
+            <div className='flex justify-end mb-8 mt-8 mr-6'>
+              <button className='orange-button forms-buttons' type='submit'>
                 Je crée un nouveau projet
               </button>
             </div>
