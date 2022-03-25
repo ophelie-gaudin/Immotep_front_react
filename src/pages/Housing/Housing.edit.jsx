@@ -95,12 +95,12 @@ export default function HousingUpdate() {
   };
 
   const handleSetState = (e, state) => {
-    if (e.taget.type === "checkbox") {
-      setMyHousingsInfo({ [state]: e.target.checked });
-    } else if (e.taget.type === "checkbox") {
-      setMyHousingsInfo({ [state]: Number(e.target.value) });
+    if (e.target.type === "checkbox") {
+      setMyHousingsInfo({ ...myHousingsInfo, [state]: e.target.checked });
+    } else if (e.target.type === "number") {
+      setMyHousingsInfo({ ...myHousingsInfo, [state]: Number(e.target.value) });
     } else {
-      setMyHousingsInfo({ [state]: e.target.value });
+      setMyHousingsInfo({ ...myHousingsInfo, [state]: e.target.value });
     }
   };
 
