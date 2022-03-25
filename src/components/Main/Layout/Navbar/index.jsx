@@ -7,37 +7,6 @@ export default function Navbar() {
   const auth = useSelector((state) => state.connected);
 
   return (
-    // <nav classNameName="bg-whiite h-12 flex items-center fixed w-full z-50">
-    // //   <div classNameName=" flex w-[90%] justify-between mx-auto items-center">
-    // //     <Link classNameName="font-pacifico text-2xl hover:text-primary" to="/">
-    // //       Immotep
-    // //     </Link>
-    // //     {!auth.connected && (
-    //       <div className="flex">
-    //         <Link className="mx-4 hover:text-primary" to="/login">
-    //           Connexion
-    //         </Link>
-    //         <Link className="mx-4 hover:text-primary" to="/register">
-    //           Inscription
-    //         </Link>
-    //       </div>
-    //     )}
-    //     {auth.connected && (
-    //       <div className="flex">
-    //         <Link className="mx-4 hover:text-primary" to="/dashboard">
-    //           Mes Projets
-    //         </Link>
-    //         <Link className="mx-4 hover:text-primary" to="/profile">
-    //           Profil
-    //         </Link>
-    //         <div className="mx-4 hover:text-primary">
-    //           <Logout />
-    //         </div>
-    //       </div>
-    //     )}
-    //   </div>
-    // </nav>
-
     <nav className='bg-primary-light px-2 sm:px-4 py-2.5 rounded fixed w-full z-50 text-light'>
       <div className='container flex flex-wrap justify-between items-center mx-auto'>
         <a href='/' className='flex items-center'>
