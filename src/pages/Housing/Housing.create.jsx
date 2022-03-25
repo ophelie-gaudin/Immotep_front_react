@@ -54,11 +54,6 @@ const HousingCreate = () => {
           <form onSubmit={handleSubmit}>
             <label className='flex flex-col w-[90%] items-start'>
               Type de bien
-              {/* <input
-                type="text"
-                name="property-category"
-                onChange={(e) => setPropertyCategory(e.target.value)}
-              /> */}
               <select
                 className='w-full'
                 name='property-category'

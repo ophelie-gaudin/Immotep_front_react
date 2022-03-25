@@ -15,17 +15,6 @@ export default function Home() {
               <span className='font-medium text-primary-light'>
                 sans vous prendre la tête{' '}
               </span>
-              {/* <br />
-                  <span>
-                    en faisant des <br /> choix éclairés
-                  </span>
-                  <br />
-                  <span>
-                    sans perdre <br /> votre temps
-                  </span>
-                  <br />
-                  <span>en toute simplicité</span> */}
-              {/* https://usefulangle.com/post/75/typing-effect-animation-javascript-css */}
             </div>
           </h1>
 
@@ -147,9 +136,7 @@ export default function Home() {
         <div className='container flex items-center justify-between flex-wrap md:flex-nowrap'>
           <div className='mb-8 md:mb-0 md:w-1/2 mx-8'>
             <div className='frame'>
-              <div data-aos='zoom-out-right'>
-                {/* <%= image_tag 'decohome.jpg', :style=>'width:100%' %> */}
-              </div>
+              <div data-aos='zoom-out-right'></div>
               <div className='bg-whiite w-[40vw] h-[300px]'></div>
             </div>
           </div>
@@ -195,9 +182,7 @@ export default function Home() {
 
           <div className='mt-8 md:mt-0 md:w-1/2 mx-8'>
             <div className='frame'>
-              <div data-aos='zoom-out-right'>
-                {/* <%= image_tag 'decohome.jpg', :style=>'width:100%' %> */}
-              </div>
+              <div data-aos='zoom-out-right'></div>
               <div className='bg-primary w-[40vw] h-[300px]'></div>
             </div>
           </div>

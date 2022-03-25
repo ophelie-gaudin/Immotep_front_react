@@ -41,7 +41,6 @@ function App() {
       <BrowserRouter>
         <Layout>
           <Routes>
-            {/* MAIN */}
             <Route path='/' element={<Home />} />
             <Route path='*' element={<ErrorNotFoundPage />} />
             <Route path='/500' element={<ServorErrorPage />} />
@@ -50,7 +49,6 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/dashboard' element={<Dashboard />} />
 
-            {/* PROJECT */}
             <Route path='/dashboard/new' element={<ProjectCreate />} />
             <Route path='/dashboard/:project_id' element={<ProjectRead />} />
             <Route
@@ -58,7 +56,6 @@ function App() {
               element={<ProjectUpdate />}
             />
 
-            {/* HOUSING */}
             <Route
               path='/dashboard/:project_id/housings/new'
               element={<HousingCreate />}
@@ -72,12 +69,8 @@ function App() {
               element={<HousingUpdate />}
             />
 
-            {/* PROFILE */}
-
             <Route path='/profile' element={<ProfileRead />} />
             <Route path='/profile/edit' element={<ProfileUpdate />} />
-
-            {/* PASSWORD */}
 
             <Route path='/forgotpassword' element={<PasswordCreate />} />
             <Route path='/users/password/edit' element={<PasswordUpdate />} />

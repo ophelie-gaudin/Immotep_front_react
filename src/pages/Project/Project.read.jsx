@@ -141,7 +141,6 @@ export default function ProjectRead() {
                 Voir + d'infos <br />{' '}
                 <small className='text-greey/70'>[dernière modif]</small>
               </th>
-              {/* <th className="font-normal text-left pl-16">Members</th> */}
             </tr>
           </thead>
 
