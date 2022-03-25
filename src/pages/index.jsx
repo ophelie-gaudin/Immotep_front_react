@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import BackgroundVideo from "../assets/video-2.mp4";
 import img1 from "../assets/img1.jpg";
+import img2 from "../assets/img2.jpg";
 
 export default function Home() {
   const auth = useSelector((state) => state.connected);
@@ -148,9 +149,6 @@ export default function Home() {
         <div className="container flex items-center justify-between flex-wrap md:flex-nowrap">
           <div className="mb-12 md:mb-0 md:w-1/2 w-full mx-8">
             <div className="frame w-full">
-              {/* <div data-aos="zoom-out-right" className="w-full">
-                <%= image_tag 'decohome.jpg', :style=>'width:100%' %>
-              </div> */}
               <div
                 className="bg-whiite h-[300px] max-w-[451px] relative mx-auto"
                 data-aos="zoom-out-right"
@@ -205,15 +203,12 @@ export default function Home() {
 
           <div className="mt-12 md:mt-0 w-full md:w-1/2 mx-8">
             <div className="frame w-full">
-              {/* <div data-aos="zoom-out-right" className="w-full">
-                <%= image_tag 'decohome.jpg', :style=>'width:100%' %>
-              </div> */}
               <div
                 className="bg-primary h-[300px] max-w-[451px] relative mx-auto"
                 data-aos="zoom-out-left"
               >
                 <img
-                  src={img1}
+                  src={img2}
                   alt="bâtiments"
                   className=" h-[300px] absolute right-4 bottom-4"
                 />
@@ -234,7 +229,6 @@ export default function Home() {
                 <div className="py-2 px-4 rounded-full border-whiite border-2 text-whiite text-xl hover:bg-whiite hover:text-primary  mr-8">
                   1
                 </div>
-                {/* after:border after:border-whiite */}
               </div>
 
               <div className="flex flex-col">
@@ -363,12 +357,6 @@ export default function Home() {
                 </div>
               </div>
             </li>
-
-            {/* <% if isUser? %>
-      <%= link_to 'Commencez maintenant', projects_path(current_user.id),  class:"btn btn-light rounded mt-2" %>
-    <%else%>
-      <%= link_to 'Commencez maintenant', new_user_registration_path,  class:"btn btn-light rounded mt-2" %>
-    <%end%> */}
           </ul>
 
           <div className="mx-auto">
