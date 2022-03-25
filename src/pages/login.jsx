@@ -33,7 +33,7 @@ const Login = () => {
         Cookies.set('token', res.headers.get('Authorization'));
         changeConnectedStatus(userLogin());
         navigate('/dashboard');
-        Notifications.success('Content de vous revoir');
+        Notifications.info('Ravi de vous revoir 😀');
         return res.json();
       } else {
         console.error(res);

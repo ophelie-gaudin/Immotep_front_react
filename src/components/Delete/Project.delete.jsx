@@ -1,6 +1,7 @@
 import React from 'react';
 import Cookies from 'js-cookie';
 import { useParams, useNavigate } from 'react-router-dom';
+import Notifications from '../../components/Notifications/Notifications';
 import './delete.css';
 
 export default function ProjectDelete({ message, title }) {
@@ -29,6 +30,9 @@ export default function ProjectDelete({ message, title }) {
             onClick={() => {
               navigate(`/dashboard`);
               deleteproject();
+              Notifications.info(
+                'Ce projet ainsi que les logements associés ont bien été supprimés...'
+              );
             }}
             className='orange-button forms-buttons dialog-buttons'
           >
@@ -36,7 +40,12 @@ export default function ProjectDelete({ message, title }) {
           </button>
           <button
             className='orange-button forms-buttons dialog-buttons'
-            onClick={(e) => navigate(`/dashboard`)}
+            onClick={(e) => {
+              navigate(`/dashboard`);
+              Notifications.info(
+                'Très bien, nous conservons donc ce projet ! 😄'
+              );
+            }}
           >
             Non
           </button>

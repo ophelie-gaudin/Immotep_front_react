@@ -15,8 +15,8 @@ const Notifications = {
   },
   success(content) {
     toast.success(content, {
-      position: 'top-center',
-      autoClose: 1500,
+      position: 'top-right',
+      autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -27,8 +27,8 @@ const Notifications = {
   },
   info(content) {
     toast.info(content, {
-      position: 'top-center',
-      autoClose: false,
+      position: 'top-right',
+      autoClose: 2500,
       closeOnClick: true,
       draggable: true,
       rtl: false,

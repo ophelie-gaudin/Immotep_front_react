@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import FormsCard from '../../components/FormsCard';
 import Cookies from 'js-cookie';
 import { useParams, useNavigate } from 'react-router-dom';
+import Notifications from '../../components/Notifications/Notifications';
 
 const HousingCreate = () => {
   const [propertyCategory, setPropertyCategory] = useState('Studio');
@@ -30,8 +31,12 @@ const HousingCreate = () => {
       .then((res) => {
         if (res.ok) {
           navigate(`/dashboard/${project_id}`);
+          Notifications.success('Le logement à bien été ajouté au projet ! 😀');
           return res.json();
         } else {
+          Notifications.error(
+            'Il y a eu un problème, veuillez réessayer... 🙄'
+          );
           throw new Error(res);
         }
       })

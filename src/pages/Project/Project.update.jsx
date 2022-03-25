@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import FormsCard from "../../components/FormsCard";
-import Cookies from "js-cookie";
-import { useParams, useNavigate } from "react-router-dom";
+import FormsCard from '../../components/FormsCard';
+import Cookies from 'js-cookie';
+import { useParams, useNavigate } from 'react-router-dom';
+import Notifications from '../../components/Notifications/Notifications';
 
 export default function ProjectUpdate() {
   const [myProject, setMyProject] = useState([]);
@@ -23,17 +24,21 @@ export default function ProjectUpdate() {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(`https://immotep-api.herokuapp.com/projects/${project_id}`, {
-      method: "PUT",
+      method: 'PUT',
       headers: {
-        "Content-Type": "application/json",
-        Authorization: Cookies.get("token"),
+        'Content-Type': 'application/json',
+        Authorization: Cookies.get('token'),
       },
       body: JSON.stringify(data),
     })
       .then((res) => {
         if (res.ok) {
           navigate(`/dashboard/${project_id}/`);
+          Notifications.success('Le projet à bien été mis à jour ! 😀');
         } else {
+          Notifications.error(
+            'Il y a eu un problème, veuillez réessayer... 🙄'
+          );
           throw new Error(res);
         }
       })
@@ -47,10 +52,10 @@ export default function ProjectUpdate() {
     const fetchList = (url, argument) => {
       const finalURL = argument ? `${url}${argument}` : url;
       fetch(`${finalURL}`, {
-        method: "GET",
+        method: 'GET',
         headers: {
-          "Content-Type": "application/json",
-          Authorization: Cookies.get("token"),
+          'Content-Type': 'application/json',
+          Authorization: Cookies.get('token'),
         },
       })
         .then((response) => response.json())
@@ -63,19 +68,19 @@ export default function ProjectUpdate() {
   }, [projectArgument]);
 
   return (
-    <div className="mt-12 mb-8">
+    <div className='mt-12 mb-8'>
       <div>
         <FormsCard
-          title="Modifier mon logement"
-          returnText="Mon projet"
+          title='Modifier mon logement'
+          returnText='Mon projet'
           returnUrl={`/dashboard/${project_id}/`}
         >
           <form onSubmit={handleSubmit}>
             <label>
               Titre du projet
               <input
-                type="text"
-                name="title"
+                type='text'
+                name='title'
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder={myProject.title}
               />
@@ -83,8 +88,8 @@ export default function ProjectUpdate() {
             <label>
               Localisation souhaitée du bien
               <input
-                type="text"
-                name="localization"
+                type='text'
+                name='localization'
                 onChange={(e) => setLocalization(e.target.value)}
                 placeholder={myProject.localization}
               />
@@ -92,14 +97,14 @@ export default function ProjectUpdate() {
             <label>
               Vos notes
               <input
-                type="text"
-                name="comment"
+                type='text'
+                name='comment'
                 onChange={(e) => setComment(e.target.value)}
                 placeholder={myProject.comment}
               />
             </label>
-            <div className="flex justify-end mb-8 mt-8 mr-6">
-              <button className="orange-button forms-buttons" type="submit">
+            <div className='flex justify-end mb-8 mt-8 mr-6'>
+              <button className='orange-button forms-buttons' type='submit'>
                 Je modifie mon projet
               </button>
             </div>
