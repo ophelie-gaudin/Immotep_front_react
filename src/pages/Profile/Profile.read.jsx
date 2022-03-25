@@ -1,6 +1,5 @@
 import React from 'react';
 import FormsCard from '../../components/FormsCard';
-import OrangeButton from '../../components/Main/OrangeButton';
 import { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 
@@ -38,13 +37,6 @@ const ProfileRead = () => {
       <p className='pt-8 pl-24 mb-24 text-greey'>
         Mon adresse e-mail : {myProfile.email}
       </p>
-      <div className='flex place-content-end mb-12 m-8'>
-        <a href='/users/edit'>
-          <OrangeButton url='/profile/edit'>
-            Je modifie mes informations
-          </OrangeButton>
-        </a>
-      </div>
     </FormsCard>
   );
 };
