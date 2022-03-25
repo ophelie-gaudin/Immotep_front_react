@@ -24,7 +24,7 @@ import PasswordCreate from './pages/Password/Password.create';
 import PasswordUpdate from './pages/Password/Password.update';
 import ProfileRead from './pages/Profile/Profile.read';
 import ProjectUpdate from './pages/Project/Project.update';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {

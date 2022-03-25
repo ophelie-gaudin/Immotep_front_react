@@ -28,20 +28,18 @@ const Login = () => {
           password: password,
         },
       }),
-    })
-      .then((res) => {
-        if (res.headers.get('Authorization')) {
-          Cookies.set('token', res.headers.get('Authorization'));
-          changeConnectedStatus(userLogin());
-          navigate('/dashboard');
-          Notifications.success('Content de vous revoir');
-          return res.json();
-        } else {
-          throw new Error('Non enregistré'); // TODO refaire l'erreur
-        }
-      })
-      .then((json) => console.log(json.user))
-      .catch((err) => console.error(err));
+    }).then((res) => {
+      if (res.headers.get('Authorization')) {
+        Cookies.set('token', res.headers.get('Authorization'));
+        changeConnectedStatus(userLogin());
+        navigate('/dashboard');
+        Notifications.success('Content de vous revoir');
+        return res.json();
+      } else {
+        console.error(res);
+        Notifications.error('Identifiant ou mot de passe invalide');
+      }
+    });
   };
 
   return (
