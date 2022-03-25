@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { userLogin } from '../reduxFolder/stateUser/userAction';
 import { useDispatch } from 'react-redux';
 import FormsCard from '../components/FormsCard';
+import Notifications from '../components/Notifications/Notifications';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -33,6 +34,7 @@ const Login = () => {
           Cookies.set('token', res.headers.get('Authorization'));
           changeConnectedStatus(userLogin());
           navigate('/dashboard');
+          Notifications.success('Content de vous revoir');
           return res.json();
         } else {
           throw new Error('Non enregistré'); // TODO refaire l'erreur
