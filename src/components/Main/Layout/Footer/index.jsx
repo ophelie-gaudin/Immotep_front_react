@@ -220,22 +220,6 @@ export default function Footer() {
             </p>
           </div>
         </div>
-        <div className='w-full flex justify-center'>
-          <p className='mb-4 max-w-[500px] italic text-center'>
-            <small>
-              Cet outil a été créé avec amour 💝 par notre équipe de
-              développeurs. Si vous appréciez notre travail, n'hésitez pas à
-              nous{' '}
-              <a
-                className='font-bold'
-                href='https://checkout.stripe.com/pay/cs_test_a1Bl7Qyw9kBbDBMP8uRG7RoIhdvtErjXN4oS9B1nvyxBKmWHlYFtXHJjo4#fidkdWxOYHwnPyd1blpxYHZxWjA0TjNnSV9AYFdDMTA1ZlZtPGZwYV0zalx1T3Y0MFVca2NuYk9DZHVdNWFBR3FLSkJrRnxrSnNucUhiZ0M9YDw0YVY1MExxT1MzZmFiN3JVNDFNM2dgf2JONTVKPTM3aGRjQicpJ2hsYXYnP34nYnBsYSc%2FJz01MDQ9ZDJnKDc2NDAoMWZgYCg9NWQyKDYxMjNjZzVmMzc2MDIzYWAwYycpJ2hwbGEnPyc0M2YyZmNkYSg8MDRgKDEzMTAoZDU0MShgNmM2NzFmMjEwMzRhMmQ1NDYnKSd2bGEnPycyNWBgZz0zZyg2ZjQ0KDFjZmMoPDdjMSg2NDNkY2AxMTZgM2MxYGE3MmMneCknZ2BxZHYnP15YKSdpZHxqcHFRfHVgJz8ndmxrYmlgWmxxYGgnKSd3YGNgd3dgd0p3bGJsayc%2FJ21xcXV2PyoqbGhoanFgdSttYHdqbnBkdXUrZmpoJ3gl'
-              >
-                payer un café pour nos encourager
-              </a>
-              , nous vous en remercions d'avance ! ☕
-            </small>
-          </p>
-        </div>
       </div>
       <div className='text-center p-6 bg-primary-light'>
         <p>
