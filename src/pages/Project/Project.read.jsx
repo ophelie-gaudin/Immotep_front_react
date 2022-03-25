@@ -14,7 +14,6 @@ export default function ProjectRead() {
 
   const { project_id } = useParams();
 
-  // Get project
   const projectArgument = `projects/${project_id}`;
 
   const [dialog, setDialog] = useState({
@@ -51,12 +50,9 @@ export default function ProjectRead() {
     fetchList(`https://immotep-api.herokuapp.com/`, projectArgument);
   }, [projectArgument]);
 
-  // Get housings
-
   const housingArgument = `projects/${project_id}/housings`;
 
   useEffect(() => {
-    // TODO : request with objects sorted by offer_profitability
     const fetchList = (url, argument) => {
       const finalURL = argument ? `${url}${argument}` : url;
       fetch(`${finalURL}`, {
@@ -212,10 +208,3 @@ export default function ProjectRead() {
     </FormsCard>
   );
 }
-
-//     <FormsCard
-//       title="Biens repérés"
-//       returnText="Mes projets"
-//       returnUrl="/dashboard"
-//     >
-//     </FormsCard>

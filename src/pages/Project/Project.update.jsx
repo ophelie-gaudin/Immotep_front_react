@@ -44,7 +44,6 @@ export default function ProjectUpdate() {
       .catch((err) => console.error(err));
   };
 
-  // Get project
   const projectArgument = `projects/${project_id}`;
 
   useEffect(() => {
