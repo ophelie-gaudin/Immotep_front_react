@@ -34,6 +34,7 @@ const HousingCreate = () => {
         if (res.ok) {
           navigate(`/dashboard/${project_id}`);
           notifications.showNotification({
+            radius: 'md',
             color: 'teal',
             title: 'Félicitations ! 😀',
             message: 'Vous avez ce logement à votre projet.',

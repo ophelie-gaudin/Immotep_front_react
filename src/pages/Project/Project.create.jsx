@@ -34,6 +34,7 @@ const ProjectCreate = () => {
         if (res.ok) {
           navigate('/dashboard');
           notifications.showNotification({
+            radius: 'md',
             color: 'teal',
             title: 'Félicitations ! 😀',
             message: 'Vous venez de créer un nouveau projet.',

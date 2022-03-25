@@ -2,9 +2,12 @@ import React from 'react';
 import Cookies from 'js-cookie';
 import { useParams, useNavigate } from 'react-router-dom';
 import './delete.css';
+import { useNotifications } from '@mantine/notifications';
 
 export default function HousingDelete({ message }) {
   const { housing_id, project_id } = useParams();
+
+  const notifications = useNotifications();
 
   const navigate = useNavigate();
 
@@ -32,6 +35,12 @@ export default function HousingDelete({ message }) {
             onClick={() => {
               navigate(`/dashboard/${project_id}`);
               deletehousing();
+              notifications.showNotification({
+                radius: 'md',
+                color: 'red',
+                title: "C' est fait !",
+                message: 'Vous avez supprimé ce logement de votre projet.',
+              });
             }}
             className='orange-button forms-buttons dialog-buttons'
           >
