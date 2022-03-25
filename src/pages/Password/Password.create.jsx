@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import FormsCard from "../../components/FormsCard";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import FormsCard from '../../components/FormsCard';
+import { useNavigate } from 'react-router-dom';
 
 export default function PasswordCreate() {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(`https://immotep-api.herokuapp.com/users/password`, {
-      method: "post",
+      method: 'post',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         user: {
@@ -21,32 +21,31 @@ export default function PasswordCreate() {
     })
       .then((res) => {
         if (res.ok) {
-          navigate("/login");
+          navigate('/login');
           return res.json();
         } else {
           throw new Error(res);
         }
       })
-      .then((json) => console.log(json.user.id))
       .catch((err) => console.error(err));
   };
 
   return (
     <div>
       <FormsCard
-        title="Oubli de mot de passe"
-        returnText="Me connecter"
-        returnUrl="/login"
+        title='Oubli de mot de passe'
+        returnText='Me connecter'
+        returnUrl='/login'
       >
         <form onSubmit={handleSubmit}>
           <label>
             Email
             <input
-              type="Email"
+              type='Email'
               onChange={(e) => setEmail(e.target.value)}
             ></input>
           </label>
-          <button className="orange-button forms-buttons">
+          <button className='orange-button forms-buttons'>
             Je récupère mon mot de passe
           </button>
         </form>
