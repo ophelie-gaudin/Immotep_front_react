@@ -197,11 +197,11 @@ export default function HousingUpdate() {
             <label className='font-medium'>
               Montant des réparations
               <input
-                type='number'
-                className='mt-2'
-                onChange={(e) => handleSetState(e, 'ad_price')}
-                value={myHousingsInfo.ad_price}
-                min='0'
+                type="number"
+                className="mt-2"
+                onChange={(e) => handleSetState(e, "repairs_price")}
+                value={myHousingsInfo.repairs_price}
+                min="0"
               />
             </label>
             <label className='font-medium'>
