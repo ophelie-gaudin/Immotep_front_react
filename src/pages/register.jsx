@@ -40,7 +40,6 @@ const Register = () => {
           throw new Error(res);
         }
       })
-      .then((json) => console.log(json.user.id))
       .catch((err) => console.error(err));
   };
 

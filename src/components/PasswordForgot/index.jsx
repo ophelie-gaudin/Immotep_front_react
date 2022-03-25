@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 // import { useNavigate } from "react-router-dom";
 
 export default function PasswordForgot() {
@@ -7,9 +7,9 @@ export default function PasswordForgot() {
   const passwordmail = (e) => {
     e.preventDefault();
     fetch(`https://immotep-api.herokuapp.com/users/password`, {
-      method: "post",
+      method: 'post',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({}),
     })
@@ -21,7 +21,6 @@ export default function PasswordForgot() {
           throw new Error(res);
         }
       })
-      .then((json) => console.log(json.user.id))
       .catch((err) => console.error(err));
   };
 
