@@ -7,7 +7,27 @@ import WarningArea from "../../components/Main/WarningArea";
 export default function HousingUpdate() {
   const navigate = useNavigate();
   const { housing_id, project_id } = useParams();
-  const [myHousingsInfo, setMyHousingsInfo] = useState("");
+  const [myHousingsInfo, setMyHousingsInfo] = useState({
+    localization: "",
+    ad_price: "",
+    property_category: "",
+    area: "",
+    ad_url: "",
+    comment: "",
+    offer_price: "",
+    repairs_price: "",
+    annual_rent: "",
+    agency_fees: "",
+    pno_insurance: "",
+    property_tax: "",
+    rental_management: "",
+    rental_unpayment_insurance: "",
+    building_co_tax: "",
+    maintenance_percentage: "",
+    new_property: "",
+    rental_vacancy: "",
+    notary_fees: "",
+  });
 
   const oneHousingArgument = `projects/${project_id}/housings/${housing_id}`;
 
@@ -23,57 +43,36 @@ export default function HousingUpdate() {
       })
         .then((response) => response.json())
         .then((response) => {
-          setMyHousingsInfo(response);
+          setMyHousingsInfo({
+            localization: response.localization,
+            ad_price: response.ad_price,
+            property_category: response.property_category,
+            area: response.area,
+            ad_url: response.ad_url,
+            comment: response.comment,
+            offer_price: response.offer_price,
+            repairs_price: response.repairs_price,
+            annual_rent: response.annual_rent,
+            agency_fees: response.agency_fees,
+            pno_insurance: response.pno_insurance,
+            property_tax: response.property_tax,
+            rental_management: response.rental_management,
+            rental_unpayment_insurance: response.rental_unpayment_insurance,
+            building_co_tax: response.building_co_tax,
+            maintenance_percentage: response.maintenance_percentage,
+            new_property: response.new_property,
+            rental_vacancy: response.rental_vacancy,
+            notary_fees: response.notary_fees,
+          });
         })
         .catch((err) => console.error(err));
     };
     fetchList(`https://immotep-api.herokuapp.com/`, oneHousingArgument);
   }, [oneHousingArgument]);
 
-  const [localization, setLocalization] = useState();
-  const [ad_price, setAdPrice] = useState();
-  const [property_category, setPropertyCategory] = useState();
-  const [area, setArea] = useState();
-  const [ad_url, setAdUrl] = useState();
-  const [comment, setComment] = useState();
-  const [offer_price, setOfferPrice] = useState();
-  const [repairs_price, setRepairsPrice] = useState();
-  const [annual_rent, setAnnualRent] = useState();
-  const [agency_fees, setAgencyFees] = useState();
-  const [pno_insurance, setPnoInsurance] = useState();
-  const [property_tax, setPropertyTax] = useState();
-  const [rental_management, setRentalManagement] = useState();
-  const [rental_unpayment_insurance, setRentalUnpaymentInsurance] = useState();
-  const [building_co_tax, setBuildingCoTax] = useState();
-  const [maintenance_percentage, setMaintenancePercentage] = useState();
-  const [new_property, setNewProperty] = useState();
-  const [rental_vacancy, setRentalVacancy] = useState();
-  const [notary_fees, setNotaryFees] = useState();
-
-  const data = {
-    localization,
-    ad_price,
-    property_category,
-    area,
-    ad_url,
-    comment,
-    offer_price,
-    repairs_price,
-    annual_rent,
-    agency_fees,
-    pno_insurance,
-    property_tax,
-    rental_management,
-    rental_unpayment_insurance,
-    building_co_tax,
-    maintenance_percentage,
-    new_property,
-    rental_vacancy,
-    notary_fees,
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
+
     fetch(
       `https://immotep-api.herokuapp.com/projects/${project_id}/housings/${housing_id}`,
       {
@@ -82,7 +81,7 @@ export default function HousingUpdate() {
           "Content-Type": "application/json",
           Authorization: Cookies.get("token"),
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(myHousingsInfo),
       }
     )
       .then((res) => {
@@ -95,6 +94,14 @@ export default function HousingUpdate() {
       .catch((err) => console.error(err));
   };
 
+  const handleSetState = (e, state) => {
+    if (e.taget.type === "checkbox") {
+      setMyHousingsInfo({ [state]: e.target.checked });
+    } else {
+      setMyHousingsInfo({ [state]: e.target.value });
+    }
+  };
+
   return (
     <div className="mt-12 mb-8">
       <div>
@@ -105,13 +112,13 @@ export default function HousingUpdate() {
         >
           <form onSubmit={handleSubmit} className="text-greey">
             <h2 className="text-lg">Références de l'annonce: </h2>
-            <label className="font-medium">
+            {/* <label className="font-medium">
               Lien vers l'annonce :
               <input
                 type="text"
                 className="mt-2"
-                placeholder={myHousingsInfo.ad_url}
-                onChange={(e) => setAdUrl(e.target.value)}
+                onChange={(e) => handleSetState(e, "ad_url")}
+                value={myHousingsInfo.ad_url}
               />
             </label>
             <label className="font-medium">
@@ -119,8 +126,8 @@ export default function HousingUpdate() {
               <input
                 type="number"
                 className="mt-2"
-                placeholder={myHousingsInfo.ad_price}
-                onChange={(e) => setAdPrice(Number(e.target.value))}
+                onChange={(e) => handleSetState(e, "ad_price")}
+                value={myHousingsInfo.ad_price}
                 min="0"
               />
             </label>{" "}
@@ -130,8 +137,8 @@ export default function HousingUpdate() {
                 className="w-full"
                 name="property-category"
                 id="hypothesis"
-                placeholder={myHousingsInfo.property_category}
-                onChange={(e) => setPropertyCategory(e.target.value)}
+                onChange={(e) => handleSetState(e, "property_category")}
+                value={myHousingsInfo.property_category}
               >
                 <option value="Studio">Studio</option>
                 <option value="T1">T1</option>
@@ -153,8 +160,8 @@ export default function HousingUpdate() {
               <input
                 type="text"
                 className="mt-2"
-                placeholder={myHousingsInfo.localization}
-                onChange={(e) => setLocalization(e.target.value)}
+                onChange={(e) => handleSetState(e, "localization")}
+                value={myHousingsInfo.localization}
               />
             </label>
             <WarningArea>
@@ -169,36 +176,38 @@ export default function HousingUpdate() {
               <input
                 type="text"
                 className="mt-2"
-                placeholder={myHousingsInfo.area}
-                onChange={(e) => setArea(e.target.value)}
+                onChange={(e) => handleSetState(e, "area")}
+                value={myHousingsInfo.area}
                 min="0"
               />
             </label>
             <WarningArea>
               ⓘ Nous vous conseillons de vérifier le prix au mètre carré pour la
               localisation du bien.{" "}
-            </WarningArea>
-            <label className="font-medium">
+            </WarningArea> */}
+            {/* <label className="font-medium">
               Montant des réparations
               <input
                 type="number"
                 className="mt-2"
+                onChange={(e) => handleSetState(e, "ad_price")}
+                value={myHousingsInfo.ad_price}
                 placeholder={myHousingsInfo.repairs_price}
                 onChange={(e) => setRepairsPrice(Number(e.target.value))}
                 min="0"
               />
-            </label>
+            </label> */}
             <label className="font-medium">
               <input
                 type="checkbox"
                 className="ml-8 mt-2"
                 name="controlled"
-                placeholder={myHousingsInfo.new_property}
-                onChange={(e) => setNewProperty(e.target.value)}
+                checked={myHousingsInfo.new_property}
+                onChange={(e) => handleSetState(e, "new_property")}
               ></input>{" "}
               Bien neuf
             </label>
-            <WarningArea>
+            {/* <WarningArea>
               ⓘ Lors de la visite, il faut impérativement poser des questions
               sur l'état du bien et plus particulièrement trois éléments qui
               peuvent très rapidement faire grimper le coût des travaux à
@@ -217,6 +226,8 @@ export default function HousingUpdate() {
               <input
                 type="number"
                 className="mt-2"
+                onChange={(e) => handleSetState(e, "ad_price")}
+                value={myHousingsInfo.ad_price}
                 placeholder={myHousingsInfo.building_co_tax}
                 onChange={(e) => setBuildingCoTax(Number(e.target.value))}
                 min="0"
@@ -227,6 +238,8 @@ export default function HousingUpdate() {
               <input
                 type="number"
                 className="mt-2"
+                onChange={(e) => handleSetState(e, "ad_price")}
+                value={myHousingsInfo.ad_price}
                 placeholder={myHousingsInfo.property_tax}
                 onChange={(e) => setPropertyTax(Number(e.target.value))}
                 min="0"
@@ -237,6 +250,8 @@ export default function HousingUpdate() {
               <input
                 type="checkbox"
                 className="mt-2"
+                onChange={(e) => handleSetState(e, "ad_price")}
+                value={myHousingsInfo.ad_price} //
                 placeholder={myHousingsInfo.pno_insurance}
                 onChange={(e) => setPnoInsurance(e.target.value)}
               />
@@ -253,6 +268,8 @@ export default function HousingUpdate() {
                 type="checkbox"
                 className="ml-8 mt-2"
                 name="controlled"
+                onChange={(e) => handleSetState(e, "ad_price")}
+                value={myHousingsInfo.ad_price} //
                 placeholder={myHousingsInfo.rental_unpayment_insurance}
                 onChange={(e) => setRentalUnpaymentInsurance(e.target.value)}
               />{" "}
@@ -270,6 +287,8 @@ export default function HousingUpdate() {
               <input
                 type="number"
                 className="mt-2"
+                onChange={(e) => handleSetState(e, "ad_price")}
+                value={myHousingsInfo.ad_price}
                 placeholder={myHousingsInfo.annual_rent}
                 onChange={(e) => setAnnualRent(Number(e.target.value))}
                 min="0"
@@ -280,6 +299,8 @@ export default function HousingUpdate() {
                 type="checkbox"
                 className="ml-8 mt-2"
                 name="controlled"
+                onChange={(e) => handleSetState(e, "ad_price")}
+                value={myHousingsInfo.ad_price} //
                 placeholder={myHousingsInfo.rental_management}
                 onChange={(e) => setRentalManagement(e.target.value)}
               />{" "}
@@ -299,6 +320,8 @@ export default function HousingUpdate() {
               <input
                 type="number"
                 className="mt-2"
+                onChange={(e) => handleSetState(e, "ad_price")}
+                value={myHousingsInfo.ad_price}
                 placeholder={myHousingsInfo.rental_vacancy}
                 onChange={(e) => setRentalVacancy(Number(e.target.value))}
                 min="0"
@@ -318,6 +341,8 @@ export default function HousingUpdate() {
               <input
                 type="number"
                 className="mt-2"
+                onChange={(e) => handleSetState(e, "ad_price")}
+                value={myHousingsInfo.ad_price}
                 placeholder={myHousingsInfo.maintenance_percentage}
                 onChange={(e) =>
                   setMaintenancePercentage(Number(e.target.value))
@@ -338,6 +363,8 @@ export default function HousingUpdate() {
               <textarea
                 type="text"
                 className="mt-2 ml-7"
+                onChange={(e) => handleSetState(e, "ad_price")}
+                value={myHousingsInfo.ad_price}
                 placeholder={myHousingsInfo.comment}
                 onChange={(e) => setComment(e.target.value)}
               />
@@ -353,6 +380,8 @@ export default function HousingUpdate() {
               <input
                 type="number"
                 className="mt-2"
+                onChange={(e) => handleSetState(e, "ad_price")}
+                value={myHousingsInfo.ad_price}
                 placeholder={myHousingsInfo.offer_price}
                 onChange={(e) => setOfferPrice(Number(e.target.value))}
                 min="0"
@@ -372,6 +401,8 @@ export default function HousingUpdate() {
               <input
                 type="number"
                 className="mt-2"
+                onChange={(e) => handleSetState(e, "ad_price")}
+                value={myHousingsInfo.ad_price}
                 placeholder={myHousingsInfo.notary_fees}
                 onChange={(e) => setNotaryFees(Number(e.target.value))}
                 min="0"
@@ -382,13 +413,15 @@ export default function HousingUpdate() {
               <input
                 type="number"
                 className="mt-2"
+                onChange={(e) => handleSetState(e, "ad_price")}
+                value={myHousingsInfo.ad_price}
                 placeholder={myHousingsInfo.agency_fees}
                 onChange={(e) => setAgencyFees(Number(e.target.value))}
                 min="0"
               />
             </label>
             <hr />
-            <hr />
+            <hr /> */}
             <button className="orange-button forms-buttons" type="submit">
               J'enregistre
             </button>
