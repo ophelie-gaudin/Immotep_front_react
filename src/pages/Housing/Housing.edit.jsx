@@ -10,6 +10,8 @@ export default function HousingUpdate() {
   const { housing_id, project_id } = useParams();
   const [myHousingsInfo, setMyHousingsInfo] = useState('');
 
+  const notifications = useNotifications();
+
   const oneHousingArgument = `projects/${project_id}/housings/${housing_id}`;
 
   useEffect(() => {
@@ -72,8 +74,6 @@ export default function HousingUpdate() {
     rental_vacancy,
     notary_fees,
   };
-
-  const notifications = useNotifications();
 
   const handleSubmit = (e) => {
     e.preventDefault();

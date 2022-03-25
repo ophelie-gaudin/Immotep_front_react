@@ -15,13 +15,13 @@ export default function ProjectUpdate() {
   const [localization, setLocalization] = useState();
   const [comment, setComment] = useState();
 
+  const notifications = useNotifications();
+
   const data = {
     title,
     localization,
     comment,
   };
-
-  const notifications = useNotifications();
 
   const handleSubmit = (e) => {
     e.preventDefault();
