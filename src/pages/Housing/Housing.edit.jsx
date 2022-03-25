@@ -3,6 +3,7 @@ import FormsCard from '../../components/FormsCard';
 import Cookies from 'js-cookie';
 import { useParams, useNavigate } from 'react-router-dom';
 import WarningArea from '../../components/Main/WarningArea';
+import { useNotifications } from '@mantine/notifications';
 
 export default function HousingUpdate() {
   const navigate = useNavigate();
@@ -72,6 +73,8 @@ export default function HousingUpdate() {
     notary_fees,
   };
 
+  const notifications = useNotifications();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(
@@ -88,6 +91,11 @@ export default function HousingUpdate() {
       .then((res) => {
         if (res.ok) {
           navigate(`/dashboard/${project_id}/housing/${housing_id}`);
+          notifications.showNotification({
+            radius: 'teal',
+            title: 'Parfait !',
+            message: 'Les informations ont bien étés mises à jour ! 😃 ',
+          });
         } else {
           throw new Error(res);
         }
