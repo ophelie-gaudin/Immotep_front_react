@@ -192,8 +192,8 @@ export default function HousingUpdate() {
               <input
                 type="number"
                 className="mt-2"
-                onChange={(e) => handleSetState(e, "ad_price")}
-                value={myHousingsInfo.ad_price}
+                onChange={(e) => handleSetState(e, "repairs_price")}
+                value={myHousingsInfo.repairs_price}
                 min="0"
               />
             </label>
