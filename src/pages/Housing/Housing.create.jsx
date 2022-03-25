@@ -43,7 +43,7 @@ const HousingCreate = () => {
           throw new Error(res);
         }
       })
-      .then((json) => console.log(json.user.id))
+      .then((json) => console.log(json))
       .catch((err) => console.error(err));
   };
 
