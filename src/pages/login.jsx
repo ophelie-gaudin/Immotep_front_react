@@ -38,7 +38,7 @@ const Login = () => {
           notifications.showNotification({
             radius: 'md',
             title: 'Yes !',
-            message: 'Ravi de vous parmi nous ! 😃 ',
+            message: 'Ravi de vous revoir parmi nous ! 😃 ',
           });
           return res.json();
         } else {
