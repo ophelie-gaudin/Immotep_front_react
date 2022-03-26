@@ -6,7 +6,7 @@ export default function Layout(props) {
   return (
     <div className=" !min-h-[100vh] flex flex-col justify-between">
       <Navbar />
-      <div className="h-[60px]"></div>
+      <div className="h-[100px]"></div>
       {props.children}
 
       <Footer />
