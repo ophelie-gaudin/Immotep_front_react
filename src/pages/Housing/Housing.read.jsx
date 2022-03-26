@@ -170,12 +170,12 @@ export default function HousingRead() {
             </div>
             <div className="flex flex-col w-1/2">
               <p>
-                Rentabilité (selon prix de l'annonce) :{" "}
-                {myHousingsInfo.ad_profitability}
+                Rentabilité (prix de l'annonce) :{" "}
+                {Number(myHousingsInfo.ad_profitability).toFixed(1) + " %"}
               </p>
               <p>
-                Rentabilité (selon prix de l'offre) :{" "}
-                {myHousingsInfo.offer_profitability}
+                Rentabilité (prix de l'offre) :{" "}
+                {Number(myHousingsInfo.offer_profitability).toFixed(1) + " %"}
               </p>
             </div>
           </div>
