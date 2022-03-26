@@ -17,17 +17,6 @@ export default function Home() {
               <span className="font-medium text-primary-light">
                 sans vous prendre la tête{" "}
               </span>
-              {/* <br />
-                  <span>
-                    en faisant des <br /> choix éclairés
-                  </span>
-                  <br />
-                  <span>
-                    sans perdre <br /> votre temps
-                  </span>
-                  <br />
-                  <span>en toute simplicité</span> */}
-              {/* https://usefulangle.com/post/75/typing-effect-animation-javascript-css */}
             </div>
           </h1>
 
