@@ -164,7 +164,6 @@ ____________________________________________ */
   margin-right: auto;
 }
 
-
 /* 
 ____________________________________________
 
@@ -207,4 +206,24 @@ ____________________________________________ */
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root {
+  @apply !text-3xl;
+}
+
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
+  @apply !text-primary !text-4xl;
+}
+
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed {
+  @apply !text-primary-light;
+}
+
+.css-1f5ro5o-MuiButtonBase-root-MuiButton-root {
+  @apply !bg-primary;
+}
+
+.css-18st3fs-MuiButtonBase-root-MuiButton-root {
+  @apply !text-primary;
 }

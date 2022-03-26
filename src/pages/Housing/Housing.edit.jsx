@@ -4,6 +4,15 @@ import Cookies from "js-cookie";
 import { useParams, useNavigate } from "react-router-dom";
 import WarningArea from "../../components/Main/WarningArea";
 import Notifications from "../../components/Notifications/Notifications";
+// import * as React from 'react';
+import Box from "@mui/material/Box";
+import Stepper from "@mui/material/Stepper";
+import Step from "@mui/material/Step";
+import StepLabel from "@mui/material/StepLabel";
+import StepContent from "@mui/material/StepContent";
+import Button from "@mui/material/Button";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
 
 export default function HousingUpdate() {
   const navigate = useNavigate();
@@ -111,6 +120,343 @@ export default function HousingUpdate() {
     }
   };
 
+  const [activeStep, setActiveStep] = React.useState(0);
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleReset = () => {
+    setActiveStep(0);
+  };
+
+  const steps = [
+    {
+      label: (
+        <h2 className="text-lg font-bold my-4">Références de l'annonce: </h2>
+      ),
+      description: (
+        <div>
+          <label className="font-medium my-6">
+            Lien vers l'annonce :
+            <input
+              type="text"
+              className="mt-2  my-6"
+              onChange={(e) => handleSetState(e, "ad_url")}
+              value={myHousingsInfo.ad_url}
+            />
+          </label>
+          <label className="font-medium my-6">
+            Prix du logement :
+            <input
+              type="number"
+              className="mt-2 my-6"
+              onChange={(e) => handleSetState(e, "ad_price")}
+              value={myHousingsInfo.ad_price}
+              min="0"
+            />
+          </label>{" "}
+          <label className=" font-medium w-full  mt-6 ">
+            Type de bien :
+            <br />
+            <div className="w-full flex justify-center">
+              <select
+                className="w-[90%]  mb-6 mt-3"
+                name="property-category"
+                id="hypothesis"
+                onChange={(e) => handleSetState(e, "property_category")}
+                value={myHousingsInfo.property_category}
+              >
+                <option value="Studio">Studio</option>
+                <option value="T1">T1</option>
+                <option value="T1bis">T1bis</option>
+                <option value="T2">T2</option>
+                <option value="T2bis">T2bis</option>
+                <option value="T3">T3</option>
+                <option value="T4">T4</option>
+                <option value="T5">T5</option>
+                <option value="T6">T6</option>
+                <option value="Grand appartement">Grand appartement</option>
+                <option value="Maison">Maison</option>
+                <option value="Immeuble">Immeuble</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+          </label>
+          <label className="font-medium my-6 ">
+            Localisation :
+            <input
+              type="text"
+              className="  my-2"
+              onChange={(e) => handleSetState(e, "localization")}
+              value={myHousingsInfo.localization}
+            />
+          </label>
+          <WarningArea>
+            ⓘ Nous vous conseillons de vérifier sur plusieurs annonces le prix
+            des biens similaires afin de voir s'il n'y a pas d'incohérence avec
+            le prix annoncé. N'hésitez pas à questionner le propriétaire ou
+            l'agence lors de la visite.
+          </WarningArea>
+        </div>
+      ),
+    },
+    {
+      label: (
+        <h2 className="text-lg  font-bold my-4">Caractéristiques du bien : </h2>
+      ),
+      description: (
+        <div>
+          <label className="font-medium block w-full text-left">
+            Surface (en m²)
+            <input
+              type="number"
+              className="mt-2 !ml-0"
+              onChange={(e) => handleSetState(e, "area")}
+              value={myHousingsInfo.area}
+              min="0"
+            />
+          </label>
+          <WarningArea>
+            ⓘ Nous vous conseillons de vérifier le prix au mètre carré pour la
+            localisation du bien.{" "}
+          </WarningArea>
+          <label className="font-medium block w-full text-left my-8">
+            Montant des réparations (en €)
+            <input
+              type="number"
+              className="mt-2 !ml-0"
+              onChange={(e) => handleSetState(e, "repairs_price")}
+              value={myHousingsInfo.repairs_price}
+              min="0"
+            />
+          </label>
+          <label className="font-medium  block w-full text-left">
+            <input
+              type="checkbox"
+              className="ml-4 mt-2"
+              name="controlled"
+              checked={myHousingsInfo.new_property}
+              onChange={(e) => handleSetState(e, "new_property")}
+            ></input>{" "}
+            Bien neuf
+          </label>
+          <WarningArea>
+            ⓘ Lors de la visite, il faut impérativement poser des questions sur
+            l'état du bien et plus particulièrement trois éléments qui peuvent
+            très rapidement faire grimper le coût des travaux à prévoir:
+            <li className="list-disc">la toiture (environ 250€/m² de toit),</li>
+            <li className="list-disc">la façade (environ 30€/m² de mur),</li>
+            <li className="list-disc">
+              la chaudière (à condensation gaz : entre 3000 - 6000 € /
+              classique: entre 500 - 2500€).
+            </li>
+          </WarningArea>
+        </div>
+      ),
+    },
+    {
+      label: <h2 className="text-lg font-bold my-4">Charges </h2>,
+      description: (
+        <div>
+          <label className="font-medium  my-6  block w-full text-left">
+            Charges de co-propriété (en €)
+            <input
+              type="number"
+              className="mt-3 mb-6 !ml-0"
+              onChange={(e) => handleSetState(e, "building_co_tax")}
+              value={myHousingsInfo.building_co_tax}
+              min="0"
+            />
+          </label>
+          <label className="font-medium  my-6 block w-full text-left">
+            Taxe foncière (en €)
+            <input
+              type="number"
+              className="mt-2 !ml-0"
+              onChange={(e) => handleSetState(e, "property_tax")}
+              value={myHousingsInfo.property_tax}
+              min="0"
+            />
+          </label>
+          <p className="ml-6 font-medium  mt-8 mb-4">
+            Souhaiterez-vous souscrire à une ...? <br />
+          </p>
+          <label className="font-medium block w-full text-left">
+            <input
+              type="checkbox"
+              className="mt-2 ml-4  mr-4"
+              checked={myHousingsInfo.pno_insurance}
+              onChange={(e) => handleSetState(e, "pno_insurance")}
+            />
+            Assurance P.N.O.
+          </label>
+          <WarningArea>
+            ⓘ L'assurance Propriétaire Non Occupant garantit au propriétaire
+            bailleur une couverture équivalente à la multirisque habitation.
+            <br />
+            Elle correspond généralement à environ 7% du loyer.{" "}
+          </WarningArea>
+          <label className="font-medium mt-8 block w-full text-left">
+            <input
+              type="checkbox"
+              className="ml-4 mr-4 mt-3"
+              name="controlled"
+              onChange={(e) => handleSetState(e, "rental_unpayment_insurance")}
+              value={myHousingsInfo.rental_unpayment_insurance}
+            />{" "}
+            Assurance des loyers impayés
+          </label>
+          <WarningArea>
+            ⓘ L'assurance pour loyers impayés garantit le versement du loyer au
+            propriétaire en cas de défault de paiement par le locataire.
+            <br />
+            Elle correspond généralement à environ 7% du loyer.
+          </WarningArea>
+        </div>
+      ),
+    },
+    {
+      label: <h2 className="text-lg font-bold my-4">Investissement : </h2>,
+      description: (
+        <div>
+          <label className="font-medium block w-full text-left">
+            Loyer annuel complet (en €):
+            <input
+              type="number"
+              className="mt-2"
+              onChange={(e) => handleSetState(e, "annual_rent")}
+              value={myHousingsInfo.annual_rent}
+              min="0"
+            />
+          </label>
+
+          <label className="font-medium block w-full text-left mt-8 ">
+            <input
+              type="checkbox"
+              className="ml-4 mt-2"
+              name="controlled"
+              onChange={(e) => handleSetState(e, "rental_management")}
+              value={myHousingsInfo.rental_management}
+            />{" "}
+            Gestion Locative
+          </label>
+          <WarningArea>
+            ⓘ La gestion locative permet à un tiers (souvent une agence
+            immobilière) de gérer la recherche d'un locataire, le suivi du
+            paiement des loyers ainsi que les contrôles périodiques de l'état du
+            logement.
+            <br />
+            Il faut compter environ 7% du loyer ainsi qu'un mois de loyer par
+            changement de locataire.{" "}
+          </WarningArea>
+
+          <label className="font-medium  block w-full text-left my-8">
+            Pourcentage de vacance locative (en %)
+            <input
+              type="number"
+              className="mt-2 !ml-0"
+              onChange={(e) => handleSetState(e, "rental_vacancy")}
+              value={myHousingsInfo.rental_vacancy}
+              min="0"
+              max="100"
+            />
+          </label>
+          <WarningArea>
+            ⓘ Le pourcentage de vacance locative permet de prendre en compte
+            dans nos calculs les périodes sans locataire (périodes entre le
+            départ d'un locataire et l'arrivée d'un nouveau, etc.) Une semaine
+            de vacance locative représente 2% de vacance locative sur un an.
+            <small>Pourcentage minimal conseillé: 6%</small>
+          </WarningArea>
+
+          <label className="font-medium  block w-full text-left my-8">
+            Pourcentage de provision pour entretien sur le montant du loyer (en
+            %)
+            <input
+              type="number"
+              className="mt-2 !ml-0"
+              onChange={(e) => handleSetState(e, "maintenance_percentage")}
+              value={myHousingsInfo.maintenance_percentage}
+              min="0"
+              max="100"
+            />
+          </label>
+          <WarningArea>
+            ⓘ Le pourcentage de réserve permet de mettre chaque mois une somme
+            de côté pour prendre en compte l'entretien à faire sur un logement.
+            Cette somme ne rentre pas en compte dans les bénéfices.
+            <small>Pourcentage minimal conseillé: 2%</small>
+          </WarningArea>
+        </div>
+      ),
+    },
+    {
+      label: <h2 className="text-lg font-bold my-4">Offre : </h2>,
+      description: (
+        <div>
+          <label className="font-medium mt-4 block w-full text-left">
+            Vos remarques :<br />
+            <textarea
+              type="text"
+              className="mt-2  w-[90%]"
+              onChange={(e) => handleSetState(e, "comment")}
+              value={myHousingsInfo.comment}
+            />
+          </label>
+          <WarningArea>
+            ⓘ N'hésitez pas à visiter le logement à différents moments de la
+            journée et de la semaine pour vérifier les éventuelles nuisances
+            (bar, travaux, circulation...) présentes dans le quartier.{" "}
+          </WarningArea>
+          <label className="font-medium mt-8 block w-full text-left">
+            Prix de l'offre (en €) :
+            <input
+              type="number"
+              className="mt-2 !ml-0"
+              onChange={(e) => handleSetState(e, "offer_price")}
+              value={myHousingsInfo.offer_price}
+              min="0"
+            />
+          </label>
+          <WarningArea>
+            ⓘ Demandez les raisons de la vente du bien : si la vente est
+            urgente, vous pourrez plus facilement négocier le prix.
+            <br />
+            Renseignez-vous sur la durée durant laquelle le propriétaire a vécu
+            dans le bien : si le propriétaire habite ici depuis longtemps, il a
+            eu davantage le temps de rembourser son crédit et sera surement
+            davantage ouvert à une offre.{" "}
+          </WarningArea>
+          <label className="font-medium  mt-8  block w-full text-left">
+            Frais de notaire (en €) :
+            <input
+              type="number"
+              className="mt-2 !ml-0"
+              onChange={(e) => handleSetState(e, "notary_fees")}
+              value={myHousingsInfo.notary_fees}
+              min="0"
+            />
+          </label>
+          <label className="font-medium my-8 block w-full text-left">
+            Frais d'agence (en €):
+            <input
+              type="number"
+              className="mt-2 !ml-0"
+              onChange={(e) => handleSetState(e, "agency_fees")}
+              value={myHousingsInfo.agency_fees}
+              min="0"
+            />
+          </label>
+        </div>
+      ),
+    },
+  ];
+
   return (
     <div className="mt-12 mb-8">
       <div>
@@ -119,8 +465,11 @@ export default function HousingUpdate() {
           returnText="Mon Logement"
           returnUrl={`/dashboard/${project_id}/housing/${housing_id}`}
         >
-          <form onSubmit={handleSubmit} className="text-greey">
-            <h2 className="text-lg font-bold my-4">
+          <form
+            onSubmit={handleSubmit}
+            className="text-greey w-full flex justify-center"
+          >
+            {/* <h2 className="text-lg font-bold my-4">
               Références de l'annonce:{" "}
             </h2>
             <label className="font-medium">
@@ -183,8 +532,8 @@ export default function HousingUpdate() {
               des biens similaires afin de voir s'il n'y a pas d'incohérence
               avec le prix annoncé. N'hésitez pas à questionner le propriétaire
               ou l'agence lors de la visite.
-            </WarningArea>
-            <h2 className="text-lg  font-bold my-4">
+            </WarningArea> */}
+            {/* <h2 className="text-lg  font-bold my-4">
               Caractéristiques du bien :{" "}
             </h2>
             <label className="font-medium">
@@ -234,8 +583,8 @@ export default function HousingUpdate() {
                 la chaudière (à condensation gaz : entre 3000 - 6000 € /
                 classique: entre 500 - 2500€).
               </li>
-            </WarningArea>
-            <h2 className="text-lg font-bold my-4">Charges : </h2>
+            </WarningArea> */}
+            {/* <h2 className="text-lg font-bold my-4">Charges : </h2>
             <label className="font-medium">
               Charges de co-propriété (en €) :
               <input
@@ -291,8 +640,8 @@ export default function HousingUpdate() {
               au propriétaire en cas de défault de paiement par le locataire.
               <br />
               Elle correspond généralement à environ 7% du loyer.
-            </WarningArea>
-            <h2 className="text-lg font-bold my-4">Investissement : </h2>
+            </WarningArea> */}
+            {/* <h2 className="text-lg font-bold my-4">Investissement : </h2>
             <label className="font-medium">
               Loyer annuel complet (en €):
               <input
@@ -357,8 +706,8 @@ export default function HousingUpdate() {
               de côté pour prendre en compte l'entretien à faire sur un
               logement. Cette somme ne rentre pas en compte dans les bénéfices.
               <small>Pourcentage minimal conseillé: 2%</small>
-            </WarningArea>
-            <h2 className="text-lg font-bold my-4">Offre : </h2>
+            </WarningArea> */}
+            {/* <h2 className="text-lg font-bold my-4">Offre : </h2>
             <label className="font-medium">
               Vos remarques :<br />
               <textarea
@@ -412,12 +761,76 @@ export default function HousingUpdate() {
                 value={myHousingsInfo.agency_fees}
                 min="0"
               />
-            </label>
-            <hr />
+            </label> */}
+
+            <Box sx={{ maxWidth: 700 }}>
+              <Stepper activeStep={activeStep} orientation="vertical">
+                {steps.map((step, index) => (
+                  <Step key={step.label}>
+                    <StepLabel
+                      optional={
+                        index === 4 ? (
+                          <Typography variant="caption">
+                            Dernière étape
+                          </Typography>
+                        ) : null
+                      }
+                    >
+                      {step.label}
+                    </StepLabel>
+                    <StepContent>
+                      <Typography>{step.description}</Typography>
+                      <Box sx={{ mb: 2 }}>
+                        <div>
+                          <Button
+                            disabled={index === 0}
+                            onClick={handleBack}
+                            sx={{ mt: 1, mr: 1 }}
+                          >
+                            Précédent
+                          </Button>
+
+                          {index === steps.length - 1 ? (
+                            <Button
+                              variant="contained"
+                              onClick={handleNext}
+                              sx={{ mt: 1, mr: 1 }}
+                              type="submit"
+                            >
+                              J'enregistre
+                            </Button>
+                          ) : (
+                            <Button
+                              variant="contained"
+                              onClick={handleNext}
+                              sx={{ mt: 1, mr: 1 }}
+                            >
+                              Suivant
+                            </Button>
+                          )}
+                        </div>
+                      </Box>
+                    </StepContent>
+                  </Step>
+                ))}
+              </Stepper>
+              {activeStep === steps.length && (
+                <Paper square elevation={0} sx={{ p: 3 }}>
+                  <Typography>
+                    Vous avez bien renseigné tous les champs ! 😄{" "}
+                  </Typography>
+                  <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
+                    Réinitialiser
+                  </Button>
+                </Paper>
+              )}
+            </Box>
+
+            {/* <hr />
             <hr />
             <button className="orange-button forms-buttons" type="submit">
               J'enregistre
-            </button>
+            </button> */}
           </form>
         </FormsCard>
       </div>
