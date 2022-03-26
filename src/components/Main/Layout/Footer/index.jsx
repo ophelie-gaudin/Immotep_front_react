@@ -164,7 +164,10 @@ export default function Footer() {
               <br />
               FRANCE
             </p>
-            <p className="flex items-center justify-center md:justify-start mb-4">
+            <a
+              href="mailto:immotep.thp@gmail.com"
+              className="flex items-center justify-center md:justify-start mb-4"
+            >
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -181,8 +184,11 @@ export default function Footer() {
                 ></path>
               </svg>
               immotep.thp@gmail.com
-            </p>
-            <p className="flex items-center justify-center md:justify-start mb-4">
+            </a>
+            <a
+              href="phone:+0123456788"
+              className="flex items-center justify-center md:justify-start mb-4"
+            >
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -199,7 +205,7 @@ export default function Footer() {
                 ></path>
               </svg>
               + 01 234 567 88
-            </p>
+            </a>
             <p className="flex items-center justify-center md:justify-start">
               <svg
                 aria-hidden="true"
