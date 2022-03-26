@@ -137,7 +137,6 @@ export default function ProjectRead() {
                 Voir + d'infos <br />{" "}
                 <small className="text-greey/70">[dernière modif]</small>
               </th>
-              {/* <th className="font-normal text-left pl-16">Members</th> */}
             </tr>
           </thead>
 
@@ -152,7 +151,6 @@ export default function ProjectRead() {
                   <td className="pl-12">{data.offer_price}</td>
                   <td className="pl-12">{data.localization}</td>
                   <td className="pl-12">
-                    {/* TODO : fix :data.offer_profitability */}
                     {Number(data.offer_profitability) >= 10 ? (
                       <div className="bg-primary-light rounded w-fit px-2 py-1">
                         {Number(data.offer_profitability).toFixed(1) + " %"}
